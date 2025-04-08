@@ -1,5 +1,5 @@
 ## Работа с Гитом
-Перед тем, как закоммитить измененеия, убедитесь, что создали новую feature branch от develop branch. 
+Перед тем, как закоммитить изменения, убедитесь, что создали новую feature branch от develop branch. 
 ```bash
 git checkout develop
 git checkout -b your-branch-name
