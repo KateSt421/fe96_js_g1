@@ -1,0 +1,225 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #27ae60;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.hero {
+  min-height: calc(20vh + 2rem);
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/hero-bg.jpg');
+  background-size: cover;
+  padding: 1rem;
+}
+
+.search-container {
+  width: 100%;
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+.search-container input {
+  width: calc(100% - 5rem);
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.plants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.plant-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.plant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.plant-card img {
+  width: 100%;
+  height: calc(200px + 2vw);
+  object-fit: cover;
+  border-radius: 0.4rem;
+  transition: transform 0.3s ease;
+}
+
+.plant-card:hover img {
+  transform: scale(1.05);
+}
+
+.plant-card h3 {
+  margin: 1rem 0;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.plant-card p {
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.plant-card button {
+  width: 100%;
+  padding: 0.8rem;
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.plant-card button:hover {
+  background: #219a52;
+  transform: scale(1.02);
+}
+
+@keyframes addedToCart {
+  0% { transform: translateY(-5px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(-5px); }
+}
+
+.added-to-cart {
+  animation: addedToCart 0.5s ease;
+}
+
+.added-to-cart button {
+  background: #219a52;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.quantity-controls button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-controls span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.categories {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+  justify-content: center;
+}
+
+.category-btn {
+  padding: 0.8rem 1.5rem;
+  border: 2px solid var(--secondary-color);
+  background: rgba(39, 174, 96, 0.1);
+  color: var(--secondary-color);
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.category-btn:hover {
+  background: rgba(39, 174, 96, 0.2);
+  transform: translateY(-2px);
+}
+
+.category-btn.active {
+  background: var(--secondary-color);
+  color: white;
+}
+
+.cart-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 1rem;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-details button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .plants-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+
+  .plant-card img {
+    height: calc(150px + 2vw);
+  }
+
+  .cart-item {
+    flex-direction: column;
+  }
+}
+
+.cart-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.cart-link:hover {
+  color: var(--secondary-color);
+}
+
+.cart-link i {
+  font-size: 1.25rem;
+}
+
+.cart-link:hover i {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+}

@@ -1,38 +1,46 @@
-<!doctype html>
-<html lang="ru">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-    rel="stylesheet">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-    rel="stylesheet">
-
-  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-  <script src="/node_modules/date-fns/cdn.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"
-    integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer">
-    </script>
-
-
-
-  <title>Frontend-developer_beauty_plants</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/styles/styles.css" rel="stylesheet">
 </head>
-
 <body>
- 
-</body>
+    <header class="hero">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="/">Flower Shop</a>
+                <div class="search-container">
+                    <input type="text" id="search" placeholder="Search plants...">
+                    <button id="searchBtn">Search</button>
+                </div>
+                <a href="/cart.html" class="cart-link">
+                    <i class="bi bi-cart3"></i>
+                    Cart
+                </a>
+            </div>
+        </nav>
+    </header>
 
+    <main class="container">
+        <div class="categories">
+            <button class="category-btn" data-category="all">Show All</button>
+            <button class="category-btn" data-category="indoor">Indoor Plants</button>
+            <button class="category-btn" data-category="outdoor">Outdoor Plants</button>
+            <button class="category-btn" data-category="succulents">Succulents</button>
+            <button class="category-btn" data-category="flowering">Flowering Plants</button>
+            <button class="category-btn" data-category="tropical">Tropical Plants</button>
+            <button class="category-btn" data-category="care">Plant Care</button>
+        </div>
+        <div id="plants-grid" class="plants-grid"></div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+</body>
 </html>
