@@ -1,0 +1,163 @@
+:root {
+  /* ----------- Константы ----------- */
+  
+}
+
+/* ----------- Цвета ----------- */
+$White_00: #ffffff;
+$Grey_94: #f2f2f3;
+$Grey_01: #D9D9D9;
+$Grey_02: #B1B1B1;
+$Grey_03: #667777;
+$Green_96: #9BB96C;
+$Green_67:#677E51;
+$Black_00: #000000;
+$Black_01: #010101;
+
+/* ----------- Стили шрифтов ----------- */
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('/public/assets/fonts/Montserrat-SemiBold.eot');
+	src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
+		url('/public/assets/fonts/Montserrat-SemiBold.woff') format('woff'),
+		url('/public/assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('/public/assets/fonts/Montserrat-Regular.eot');
+	src: local('Montserrat Regular'), local('Montserrat-Regular'),
+		url('/public/assets/fonts/Montserrat-Regular.woff') format('woff'),
+		url('/public/assets/fonts/Montserrat-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+  font-family: 'Belleza';
+  src: url('/public/assets/fonts/Belleza-Regular.eot');
+  src: local('Belleza Regular'), local('Belleza-Regular'),
+      url('/public/assets/fonts/Belleza-Regular.woff2') format('woff2'),
+      url('/public/assets/fonts/Belleza-Regular.woff') format('woff'),
+      url('/public/assets/fonts/Belleza-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Заголовки, на макете шрифты */
+
+@mixin title_Montserrat_regular {
+  /* служебный миксин, его использовать не надо */
+  font-family: 'Montserrat';
+  font-weight: 400;
+}
+
+@mixin montserrat_regular_L {
+  @include title_Montserrat_regular;
+  font-size: 1.5rem;
+  line-height: 133%;
+}
+
+@mixin montserrat_regular_S {
+  @include title_Montserrat_regular;
+  font-size: 1rem;
+  line-height: 150%;
+}
+/* Жирные цифры */
+
+@mixin title_Montserrat_semi {
+  /* служебный миксин, его использовать не надо */
+  font-family: 'Montserrat';
+  font-weight: 600;
+}
+
+@mixin montserrat_semi_L {
+  @include title_Montserrat_semi;
+  font-size: 1.5rem;
+  line-height: 133%;
+}
+
+@mixin montserrat_semi_S {
+  @include title_Montserrat_semi;
+  font-size: 1rem;
+  line-height: 125%;
+}
+
+/* Заголовки, на макете шрифт Belleza */
+
+@mixin txt_title {
+  /* служебный миксин, его использовать не надо */
+  font-family: 'Belleza';
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.5px;
+}
+
+@mixin txt_title_80 {
+  @include txt_title;
+  font-size: 5rem;
+}
+
+
+
+/* ----------- Размеры отступов, паддингов ----------- */
+/* ----------- Ограничения ширин, шаблоны для @media ----------- */
+
+@mixin container {
+  max-width: 90rem;
+  padding: 0 3rem;
+  margin: 0 auto;
+  @media (max-width: 1024px) {
+      max-width: none;
+      padding: 0 2rem;
+  }
+  @media (max-width: 480px) {
+      padding: 0 1.5rem;
+  }
+}
+
+/* ----------- Кнопки и ссылки ----------- */
+/* разные настройки размеров кнопок */
+@mixin btn_size_52 {
+  box-sizing: border-box;
+  height: 3.25rem;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 3rem;
+  @include montserrat_semi_S;
+  border-radius: 2.5rem;
+}
+
+@mixin btn_size_36 {
+  box-sizing: border-box;
+  height: 2.25rem;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  @include montserrat_regular_S;
+  border-radius: 1.5rem;
+}
+
+@mixin btn_size_36_circle {
+  box-sizing: border-box;
+  height: 2.25rem;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.125rem 1rem 0.125rem 0.125rem;
+  @include montserrat_regular_S;
+  border-radius: 1.5rem;
+}
+
+
+
+/* ----------- Контейнеры-карточки ----------- */
