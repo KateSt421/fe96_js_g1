@@ -1,5 +1,6 @@
 @import 'design_system';
 
+
 :root {
   --primary-color: #2c3e50;
   --secondary-color: #27ae60;
@@ -18,8 +19,7 @@ body {
 
 .hero {
   min-height: calc(20vh + 2rem);
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('/images/hero-bg.jpg');
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/hero-bg.jpg');
   background-size: cover;
   padding: 1rem;
 }
@@ -32,8 +32,36 @@ body {
 
 .search-container input {
   width: calc(100% - 5rem);
-  padding: 0.5rem;
+  padding: 0.8rem 1.5rem;
   font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 2rem;
+  background: white;
+  color: var(--primary-color);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-container input:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.1);
+}
+
+#searchBtn {
+  padding: 0.8rem 1.5rem;
+  border: 2px solid var(--secondary-color);
+  background: rgba(39, 174, 96, 0.1);
+  color: var(--secondary-color);
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+
+#searchBtn:hover {
+  background: var(--secondary-color);
+  color: white;
 }
 
 .plants-grid {
@@ -47,29 +75,63 @@ body {
   border: 1px solid #ddd;
   padding: 1rem;
   border-radius: 0.5rem;
-  transition: all 0.3s ease;
   background: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   position: relative;
   overflow: hidden;
 }
 
-.plant-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+.plant-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0);
+  transition: background 0.3s ease;
+  pointer-events: none;
+}
+
+.plant-card:hover::after {
+  background: rgba(0,0,0,0.5);
 }
 
 .plant-card img {
   width: 100%;
   height: calc(200px + 2vw);
-  -o-object-fit: cover;
   object-fit: cover;
   border-radius: 0.4rem;
-  transition: transform 0.3s ease;
 }
 
-.plant-card:hover img {
-  transform: scale(1.05);
+.add-to-cart-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.8rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #27ae60;
+  color: white;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 2;
+  pointer-events: auto;
+  width: auto !important;
+  margin: 0 !important;
+  backdrop-filter: blur(2px);
+}
+
+.plant-card:hover .add-to-cart-btn {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.quantity-controls {
+  position: relative;
+  z-index: 1;
 }
 
 .plant-card h3 {
@@ -98,26 +160,16 @@ body {
 
 .plant-card button:hover {
   background: #219a52;
-  transform: scale(1.02);
 }
 
-@keyframes addedToCart {
-  0% {
-    transform: translateY(-5px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(-5px);
-  }
-}
-.added-to-cart {
-  animation: addedToCart 0.5s ease;
+.add-to-cart-btn.clicked {
+  background: rgba(39, 174, 96, 0.3) !important;
+  border-color: #27ae60;
 }
 
-.added-to-cart button {
-  background: #219a52;
+.quantity-controls button.clicked {
+  border-color: #27ae60;
+  background: rgba(39, 174, 96, 0.2);
 }
 
 .quantity-controls {
@@ -137,6 +189,64 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #27ae60;
+  color: var(--secondary-color);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  position: relative;
+}
+
+.quantity-controls button:hover {
+  background: rgba(39, 174, 96, 0.15);
+  border-color: white;
+}
+
+.quantity-controls button:active {
+  background: rgba(39, 174, 96, 0.3);
+}
+
+.plant-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(39, 174, 96, 0.15);
+}
+
+.plant-card img {
+  width: 100%;
+  height: calc(200px + 2vw);
+  object-fit: cover;
+  border-radius: 0.4rem;
+  transition: transform 0.3s ease;
+}
+
+.plant-card:hover img {
+  transform: scale(1.05);
+}
+
+.plant-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--secondary-color);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.plant-card:hover::before {
+  transform: scaleX(1);
 }
 
 .quantity-controls span {
@@ -174,12 +284,46 @@ body {
   color: white;
 }
 
+button[type="submit"].category-btn {
+  background: var(--secondary-color);
+  color: white;
+  margin: 1rem 0;
+}
+
+button[type="submit"].category-btn:hover {
+  background: #219a52;
+  transform: translateY(-2px);
+}
+
 .cart-item {
   display: flex;
   gap: 1rem;
   padding: 1rem;
   border-bottom: 1px solid #ddd;
   margin-bottom: 1rem;
+}
+
+.cart-item .quantity-controls button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(39, 174, 96, 0.1);
+  border: 1px solid #27ae60;
+  color: var(--secondary-color);
+}
+
+.cart-item .quantity-controls button:hover {
+  background: rgba(39, 174, 96, 0.15);
+  border-color: #27ae60;
+}
+
+.cart-item .quantity-controls button:active {
+  background: rgba(39, 174, 96, 0.3);
 }
 
 .item-details {
@@ -200,13 +344,16 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 1rem;
   }
+
   .plant-card img {
     height: calc(150px + 2vw);
   }
+
   .cart-item {
     flex-direction: column;
   }
 }
+
 .cart-link {
   display: flex;
   align-items: center;
@@ -228,4 +375,6 @@ body {
 .cart-link:hover i {
   transform: translateY(-2px);
   transition: transform 0.3s ease;
-} /*# sourceMappingURL=styles.css.map */
+}
+
+/*# sourceMappingURL=styles.css.map */
