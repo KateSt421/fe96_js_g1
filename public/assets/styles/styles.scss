@@ -1,5 +1,3 @@
-@import 'design_system';
-
 :root {
   --primary-color: #2c3e50;
   --secondary-color: #27ae60;
@@ -18,8 +16,7 @@ body {
 
 .hero {
   min-height: calc(20vh + 2rem);
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('/images/hero-bg.jpg');
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/hero-bg.jpg');
   background-size: cover;
   padding: 1rem;
 }
@@ -49,20 +46,19 @@ body {
   border-radius: 0.5rem;
   transition: all 0.3s ease;
   background: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   position: relative;
   overflow: hidden;
 }
 
 .plant-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .plant-card img {
   width: 100%;
   height: calc(200px + 2vw);
-  -o-object-fit: cover;
   object-fit: cover;
   border-radius: 0.4rem;
   transition: transform 0.3s ease;
@@ -102,16 +98,11 @@ body {
 }
 
 @keyframes addedToCart {
-  0% {
-    transform: translateY(-5px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(-5px);
-  }
+  0% { transform: translateY(-5px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(-5px); }
 }
+
 .added-to-cart {
   animation: addedToCart 0.5s ease;
 }
@@ -200,13 +191,16 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 1rem;
   }
+
   .plant-card img {
     height: calc(150px + 2vw);
   }
+
   .cart-item {
     flex-direction: column;
   }
 }
+
 .cart-link {
   display: flex;
   align-items: center;
@@ -228,4 +222,4 @@ body {
 .cart-link:hover i {
   transform: translateY(-2px);
   transition: transform 0.3s ease;
-} /*# sourceMappingURL=styles.css.map */
+}
