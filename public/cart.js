@@ -24,9 +24,9 @@ class CartManager {
         <h3>${item.name}</h3>
         <p>$${item.price.toFixed(2)}</p>
         <div class="quantity-controls">
-          <button onclick="cartManager.updateQuantity(${item.id}, -1)">-</button>
+          <button onclick="cartManager.updateQuantity(${item.id}, -1)" class="quantity-btn">-</button>
           <span>${item.quantity}</span>
-          <button onclick="cartManager.updateQuantity(${item.id}, 1)">+</button>
+          <button onclick="cartManager.updateQuantity(${item.id}, 1)" class="quantity-btn">+</button>
         </div>
       </div>
     `).join('');

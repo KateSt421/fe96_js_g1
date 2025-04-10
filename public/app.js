@@ -69,6 +69,7 @@ class PlantStore {
           <img src="${plant.image}" alt="${plant.name}">
           <h3>${plant.name}</h3>
           <p>$${plant.price.toFixed(2)}</p>
+          <button class="add-to-cart-btn" onclick="plantStore.updateQuantity(${plant.id}, 1)">Add to Cart</button>
           <div class="quantity-controls">
             <button onclick="plantStore.updateQuantity(${plant.id}, -1)">-</button>
             <span>${quantity}</span>
@@ -84,7 +85,7 @@ class PlantStore {
     if (plant) {
       const cart = JSON.parse(localStorage.getItem('cart') || '[]');
       const existingItem = cart.find(item => item.id === plantId);
-      
+
       if (existingItem) {
         existingItem.quantity = Math.max(0, existingItem.quantity + change);
         if (existingItem.quantity === 0) {
@@ -94,15 +95,15 @@ class PlantStore {
       } else if (change > 0) {
         cart.push({ ...plant, quantity: 1 });
       }
-      
+
       localStorage.setItem('cart', JSON.stringify(cart));
       this.filterByCategory(this.currentCategory);
-      
+
       if (change > 0) {
-        const card = document.querySelector(`[data-plant-id="${plantId}"]`);
-        if (card) {
-          card.classList.add('added-to-cart');
-          setTimeout(() => card.classList.remove('added-to-cart'), 1000);
+        const button = document.querySelector(`[data-plant-id="${plantId}"] .add-to-cart-btn`);
+        if (button) {
+          button.classList.add('clicked');
+          setTimeout(() => button.classList.remove('clicked'), 1000);
         }
       }
     }
