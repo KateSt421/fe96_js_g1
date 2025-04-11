@@ -18,6 +18,13 @@ let cart = [];
 
 // Plant endpoints
 app.get('/api/plants', (req, res) => res.json(plants));
+app.get('/api/plants/search', (req, res) => {
+  const { query } = req.query;
+  const filtered = plants.filter(p =>
+    p.name.toLowerCase().includes(query.toLowerCase())
+  );
+  res.json(filtered);
+});
 app.get('/api/plants/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const plant = plants.find(p => p.id === id);
@@ -26,13 +33,6 @@ app.get('/api/plants/:id', (req, res) => {
   } else {
     res.status(404).json({ error: 'Plant not found' });
   }
-});
-app.get('/api/plants/search', (req, res) => {
-  const { query } = req.query;
-  const filtered = plants.filter(p =>
-    p.name.toLowerCase().includes(query.toLowerCase())
-  );
-  res.json(filtered);
 });
 app.post('/api/plants', (req, res) => {
   plants.push(req.body);
@@ -51,6 +51,6 @@ const host = process.env.HOST || 'localhost';
 app.listen(port, host, () => {
   console.log(`Server running on http://${host}:${port}`);
   if (host === 'localhost') {
-    console.log(`If you're on macOS and can't connect, try: HOST=127.0.0.1 npm start`);
+    console.log("If you're on macOS and can't connect, try: HOST=127.0.0.1 npm start");
   }
 });

@@ -15,9 +15,7 @@ class PlantStore {
 
     // Click event for search button
     searchBtn.addEventListener('click', () => {
-      if (searchInput.value.length >= 3) {
         this.searchPlants(searchInput.value);
-      }
     });
 
     // Enter key event for search input
@@ -31,8 +29,15 @@ class PlantStore {
 
   async searchPlants(query) {
     this.currentFilter = query;
-    const response = await axios.get(`/api/plants/search?query=${query}`);
-    this.displayPlants(response.data);
+    try {
+      const response = await axios.get(`/api/plants/search`, {
+        params: { query: query }
+      });
+      this.displayPlants(response.data);
+    } catch (error) {
+      console.error('Search error:', error);
+      this.displayPlants([]);
+    }
   }
 
   async loadPlants() {
