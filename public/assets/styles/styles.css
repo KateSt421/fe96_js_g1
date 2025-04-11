@@ -377,4 +377,30 @@ button[type="submit"].category-btn:hover {
   transition: transform 0.3s ease;
 }
 
+.btn {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+  justify-content: center;
+}
+
+.btn-primary {
+  padding: 0.8rem 1.5rem;
+  border: 2px;
+  background: rgba(144, 148, 146, 0.1);
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+.btn-primary:hover {
+  background: rgba(143, 145, 144, 0.2);
+  transform: translateY(-2px);
+}
+.card {
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  border: none;
+}
+
 /*# sourceMappingURL=styles.css.map */
