@@ -1,4 +1,14 @@
 const plants = [
+
+  {
+    id: 1,
+    name: "Peace Lily",
+    price: 29.99,
+    image: "./assets/images/plant1.png",
+    category: "indoor",
+    description: "полное описание продукта",
+    comment: “маленький серый текст”
+  },…]
   {
     id: 1,
     name: "Peace Lily",
