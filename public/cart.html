@@ -31,11 +31,95 @@
         <div class="col-md-4">
           <div class="checkout-form">
             <h3>Checkout</h3>
-            <form id="checkout-form">
+            <!--<form id="checkout-form">
               <div class="mb-3">
                 <label>Address</label>
                 <input type="text" class="form-control" required />
+              </div>-->
+            <form id="deliveryForm">
+              <div class="mb-3">
+                <label>Имя</label>
+                <input
+                  type="text"
+                  id="name"
+                  class="form-control"
+                  placeholder="Имя"
+                  minlength="2"
+                  maxlength="50"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Пожалуйста, введите имя (минимум 2 символа)
+                </div>
               </div>
+
+              <div class="mb-3">
+                <label>Адрес</label>
+                <div class="row">
+                  <div class="col-md-8 mb-3">
+                    <input
+                      type="text"
+                      id="street"
+                      class="form-control"
+                      placeholder="Улица"
+                      minlength="3"
+                      maxlength="50"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Пожалуйста, введите улицу (минимум 3 символа)
+                    </div>
+                  </div>
+                  <div class="col-md-2 mb-3">
+                    <input
+                      type="text"
+                      id="house"
+                      class="form-control"
+                      placeholder="Дом"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Пожалуйста, введите номер дома
+                    </div>
+                  </div>
+                  <div class="col-md-2 mb-3">
+                    <input
+                      type="text"
+                      id="apartment"
+                      class="form-control"
+                      placeholder="Квартира/Офис"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Пожалуйста, введите номер квартиры
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label>Дата</label>
+                <input type="date" id="date" class="form-control" required />
+                <div class="invalid-feedback">
+                  Пожалуйста, выберите корректную дату
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label>Время</label>
+                <input
+                  type="time"
+                  id="time"
+                  class="form-control"
+                  required
+                  min="08:00"
+                  max="22:00"
+                />
+                <div class="invalid-feedback">
+                  Пожалуйста, выберите время между 8:00 и 22:00
+                </div>
+              </div>
+
               <div class="price-summary">
                 <p>Subtotal: <span id="subtotal">$0</span></p>
                 <p>Discount: <span id="discount">$0</span></p>

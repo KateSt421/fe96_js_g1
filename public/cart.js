@@ -101,3 +101,143 @@ class CartManager {
 }
 
 const cartManager = new CartManager()
+
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('deliveryForm')
+  const submitButton = document.querySelector('.category-btn')
+
+  // Регулярные выражения для валидации
+  const regexPatterns = {
+    name: /^[a-zA-Zа-яА-ЯёЁ\s-]{2,50}$/, // Имя: буквы, пробелы, дефисы, 2-50 символов
+    street: /^[a-zA-Zа-яА-ЯёЁ0-9\s-.,]{3,50}$/, // Улица: буквы, цифры, пробелы, дефисы, точки, запятые
+    house: /^[a-zA-Zа-яА-ЯёЁ0-9/-]{1,10}$/, // Дом: буквы, цифры, слэш, дефис (для случаев типа "12/3" или "12А")
+    apartment: /^[a-zA-Zа-яА-ЯёЁ0-9/-]{1,10}$/, // Квартира: аналогично дому
+  }
+
+  // Функция валидации поля
+  function validateField(field, regex) {
+    const isValid = regex.test(field.value.trim())
+    if (!isValid) {
+      field.classList.add('is-invalid')
+      field.classList.remove('is-valid')
+    } else {
+      field.classList.remove('is-invalid')
+      field.classList.add('is-valid')
+    }
+    return isValid
+  }
+
+  // Валидация даты  НЕ РАБОТАЕТ
+  function validateDate(dateField) {
+    const selectedDate = new Date(dateField.value)
+    const today = new Date()
+    today.setHours(0, 0, 0, 0) // Убираем время для сравнения только дат
+
+    // Создаём дату, которая на 2 года больше текущей
+    const maxAllowedDate = new Date()
+    maxAllowedDate.setFullYear(today.getFullYear() + 2)
+    maxAllowedDate.setHours(23, 59, 59, 999) // Конец дня
+
+    const isValid = selectedDate >= today && selectedDate <= maxAllowedDate
+
+    if (!isValid) {
+      dateField.classList.add('is-invalid')
+      dateField.classList.remove('is-valid')
+      // Обновляем сообщение об ошибке
+      const errorElement = dateField.nextElementSibling
+      if (errorElement && errorElement.classList.contains('invalid-feedback')) {
+        errorElement.textContent =
+          'Пожалуйста, выберите дату между сегодняшним днём и ' +
+          maxAllowedDate.toLocaleDateString()
+      }
+    } else {
+      dateField.classList.remove('is-invalid')
+      dateField.classList.add('is-valid')
+    }
+    return isValid
+  }
+
+  // Валидация времени (уже есть min/max в HTML, но проверим и в JS)
+  function validateTime(timeField) {
+    const timeValue = timeField.value
+    const [hours, minutes] = timeValue.split(':').map(Number)
+    const isValid =
+      timeValue && hours >= 8 && (hours < 22 || (hours === 22 && minutes === 0))
+
+    if (!isValid) {
+      timeField.classList.add('is-invalid')
+      timeField.classList.remove('is-valid')
+    } else {
+      timeField.classList.remove('is-invalid')
+      timeField.classList.add('is-valid')
+    }
+    return isValid
+  }
+
+  // Обработчик отправки формы
+  submitButton.addEventListener('click', function (e) {
+    e.preventDefault()
+
+    // Валидируем все поля
+    const isNameValid = validateField(
+      document.getElementById('name'),
+      regexPatterns.name
+    )
+    const isStreetValid = validateField(
+      document.getElementById('street'),
+      regexPatterns.street
+    )
+    const isHouseValid = validateField(
+      document.getElementById('house'),
+      regexPatterns.house
+    )
+    const isApartmentValid = validateField(
+      document.getElementById('apartment'),
+      regexPatterns.apartment
+    )
+    const isDateValid = validateDate(document.getElementById('date'))
+    const isTimeValid = validateTime(document.getElementById('time'))
+
+    // Если все поля валидны, можно отправить форму
+    if (
+      isNameValid &&
+      isStreetValid &&
+      isHouseValid &&
+      isApartmentValid &&
+      isDateValid &&
+      isTimeValid
+    ) {
+      // Здесь можно отправить форму, например:
+      // form.submit();
+      console.log('Форма валидна, отправляем данные')
+      alert('Форма успешно отправлена!')
+    } else {
+      console.log('Форма содержит ошибки')
+    }
+  })
+
+  // Добавляем обработчики для валидации при вводе (опционально)
+  document.getElementById('name').addEventListener('input', function () {
+    validateField(this, regexPatterns.name)
+  })
+
+  document.getElementById('street').addEventListener('input', function () {
+    validateField(this, regexPatterns.street)
+  })
+
+  document.getElementById('house').addEventListener('input', function () {
+    validateField(this, regexPatterns.house)
+  })
+
+  document.getElementById('apartment').addEventListener('input', function () {
+    validateField(this, regexPatterns.apartment)
+  })
+
+  document.getElementById('date').addEventListener('change', function () {
+    validateDate(this)
+  })
+
+  document.getElementById('time').addEventListener('change', function () {
+    validateTime(this)
+  })
+})
