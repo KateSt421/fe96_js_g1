@@ -17,7 +17,6 @@ class CartManager {
       return
     }
 
-    //карточка товара
     cartItems.innerHTML = items
       .map(
         (item) =>
