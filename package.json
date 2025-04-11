@@ -23,7 +23,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "6": "^0.0.1",
     "@types/node": "^22.13.11",
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
