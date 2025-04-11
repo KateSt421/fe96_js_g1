@@ -18,7 +18,8 @@
     "frontend",
     "responsive",
     "design",
-    "developer"],
+    "developer"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
