@@ -1,0 +1,47 @@
+
+.plant-details-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.plant-image-container {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.plant-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.plant-image-container:hover img {
+    transform: scale(1.05);
+}
+
+.plant-details-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.plant-details-price {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.plant-details-description {
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 2rem;
+}
