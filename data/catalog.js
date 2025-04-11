@@ -5,14 +5,14 @@ module.exports = [
     id: 1,
     name: "Peace Lily",
     price: 21.99,
-    image: "assets/peace-lily.jpg",
+    image: "./assets/images/plant1.png",
     category: "indoor"
   },
   {
     id: 2,
     name: "Monstera Deliciosa",
     price: 39.99,
-    image: "assets/monstera.jpg",
+    image: "./assets/images/plant1.png",
     category: "indoor"
   },
   {
