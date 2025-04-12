@@ -362,7 +362,7 @@ const plants = [
 },
 {
   id: 41,
-  name: "Ficus mix",
+  name: "Фикус микс",
   price: 1210,
   image: "./assets/images/plant41.jpg",
   category: "foliage plants",
@@ -596,7 +596,7 @@ const plants = [
 },
 {
   id: 68,
-  name: "Howea",
+  name: "Ховея",
   price: 990,
   image: "./assets/images/plant68.jpg",
   category: "palms",
