@@ -1,0 +1,36 @@
+@charset "UTF-8";
+:root {
+  /* ----------- Константы ----------- */
+}
+
+/* ----------- Цвета ----------- */
+/* ----------- Стили шрифтов ----------- */
+@font-face {
+  font-family: "Montserrat";
+  src: url("/public/assets/fonts/Montserrat-SemiBold.eot");
+  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("/public/assets/fonts/Montserrat-SemiBold.woff") format("woff"), url("/public/assets/fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("/public/assets/fonts/Montserrat-Regular.eot");
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("/public/assets/fonts/Montserrat-Regular.woff") format("woff"), url("/public/assets/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Belleza";
+  src: url("/public/assets/fonts/Belleza-Regular.eot");
+  src: local("Belleza Regular"), local("Belleza-Regular"), url("/public/assets/fonts/Belleza-Regular.woff2") format("woff2"), url("/public/assets/fonts/Belleza-Regular.woff") format("woff"), url("/public/assets/fonts/Belleza-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Заголовки, на макете шрифты */
+/* Жирные цифры */
+/* Заголовки, на макете шрифт Belleza */
+/* ----------- Размеры отступов, паддингов ----------- */
+/* ----------- Ограничения ширин, шаблоны для @media ----------- */
+/* ----------- Кнопки и ссылки ----------- */
+/* разные настройки размеров кнопок */
+/* ----------- Контейнеры-карточки ----------- *//*# sourceMappingURL=cart.css.map */
