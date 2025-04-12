@@ -48,61 +48,56 @@
       </div>
     </div>-->
 
-    <div class="container py-4">
-      <h1 class="mb-4">Корзина</h1>
-  
-      <div class="row">
-        <!-- Секция товаров (пустая, заполняется JS) -->
-        <div class="col-lg-8">
-          <div id="cart-items" class="cart__items">
-            <!-- Здесь появятся товары через cart.js -->
+    <div class="cart-page">
+      <div class="container">
+        <div class="cart-header">
+          <h1>Корзина</h1>
+          <button class="clear-btn" disabled>Очистить</button>
+        </div>
+    
+        <!-- Пустая корзина -->
+        <div class="cart-empty">
+          <p>В корзине пока ничего нет</p>
+        </div>
+    
+        <div class="promo-code">
+          <input type="text" placeholder="Промокод" />
+          <button>Применить</button>
+        </div>
+    
+        <div class="summary">
+          <div class="price-row discount">
+            <span>Скидка</span>
+            <span>-0 ₽</span>
+          </div>
+          <div class="price-row total">
+            <span>Итого</span>
+            <span>0 ₽</span>
           </div>
         </div>
-  
-        <!-- Секция "Итого" -->
-        <div class="col-lg-4">
-          <div class="checkout__form">
-            <h3 class="checkout__title">Итого</h3>
-            
-            <!-- Доставка -->
-            <div class="checkout__delivery">
-              <h5>Доставка</h5>
-              <div class="delivery-fields">
-                <input type="text" placeholder="Имя" id="delivery-name">
-                <input type="text" placeholder="Фамилия" id="delivery-surname">
-                <input type="text" placeholder="ул. Ленина" id="delivery-address">
-                <div class="delivery-time">
-                  <input type="date" id="delivery-date">
-                  <select id="delivery-time">
-                    <option>Любое время</option>
-                    <option>9:00–12:00</option>
-                    <option>12:00–15:00</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-  
-            <!-- Итоговая сумма -->
-            <div class="checkout__summary">
-              <div class="summary-row">
-                <span>Товары:</span>
-                <span id="subtotal">0 ₽</span>
-              </div>
-              <div class="summary-row">
-                <span>Доставка:</span>
-                <span>0 ₽</span>
-              </div>
-              <div class="summary-total">
-                <span>Итого:</span>
-                <span id="total">0 ₽</span>
-              </div>
-              <button id="checkout-btn" class="checkout-btn">Оформить заказ</button>
-            </div>
+    
+        <div class="delivery-form">
+          <h3>Доставка</h3>
+          <div class="form-group">
+            <input type="text" placeholder="Имя*" />
           </div>
+          <div class="form-group">
+            <input type="text" placeholder="Улица*" />
+            <input type="text" placeholder="Дом*" />
+            <input type="text" placeholder="Квартира / офис*" />
+          </div>
+          <div class="form-group">
+            <select>
+              <option>Дата</option>
+            </select>
+            <select>
+              <option>Время</option>
+            </select>
+          </div>
+          <button class="submit-btn">Оплатить</button>
         </div>
       </div>
     </div>
-  
 
     <script src="cart.js"></script>
   </body>

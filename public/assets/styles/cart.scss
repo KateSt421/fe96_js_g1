@@ -1,170 +1,140 @@
 @import './design_system.scss';
 
-/* ----------- Основные стили ----------- */
-.cart-container {
-  @include container;
-  padding-top: 3rem;
-  padding-bottom: 5rem;
-  display: flex;
-  gap: 2rem;
-}
+.cart-page {
+  background-color: $Grey_94;
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+  min-height: 100vh;
 
-/* ----------- Секция товаров ----------- */
-.cart-items {
-  flex-grow: 1;
-  background: $White_00;
-  border-radius: 1rem;
-  padding: 2rem;
-}
-
-.cart-item {
-  display: flex;
-  align-items: center;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid $Grey_01;
-
-  &:last-child {
-    border-bottom: none;
+  .container {
+    @include container;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
   }
 
-  &__image {
-    width: 6rem;
-    height: 6rem;
-    object-fit: cover;
-    border-radius: 0.5rem;
-    margin-right: 1.5rem;
-  }
+  .cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  &__info {
-    flex-grow: 1;
-  }
+    h1 {
+      @include txt_title_80;
+      color: $Black_00;
+    }
 
-  &__name {
-    @include montserrat_regular_S;
-    color: $Black_00;
-    margin-bottom: 0.25rem;
-
-    &-size {
-      display: block;
+    .clear-btn {
+      @include btn_size_36;
+      background-color: transparent;
       color: $Grey_03;
+      border: 1px solid $Grey_03;
+      cursor: not-allowed;
     }
   }
 
-  &__price {
-    @include montserrat_semi_S;
-    color: $Black_00;
-    min-width: 6rem;
-    text-align: right;
-    margin: 0 1.5rem;
+  .cart-empty {
+    background-color: $White_00;
+    border-radius: 2rem;
+    padding: 4rem;
+    text-align: center;
+
+    p {
+      @include montserrat_regular_L;
+      color: $Grey_02;
+    }
   }
 
-  &__quantity {
+  .promo-code {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
+
+    input {
+      flex: 1;
+      padding: 1rem 2rem;
+      border-radius: 2rem;
+      border: 1px solid $Grey_01;
+      @include montserrat_regular_S;
+      background-color: $White_00;
+      color: $Black_00;
+    }
 
     button {
-      @include btn_size_36_circle;
-      background: $Grey_94;
+      @include btn_size_36;
+      background-color: $Green_96;
+      color: $White_00;
       border: none;
-      cursor: pointer;
+    }
+  }
 
-      &:hover {
-        background: $Grey_01;
+  .summary {
+    background-color: $White_00;
+    padding: 2.5rem 3rem;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-end;
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      @include montserrat_semi_S;
+      color: $Black_00;
+
+      &.discount {
+        color: $Green_67;
+      }
+
+      &.total {
+        font-size: 1.5rem;
       }
     }
   }
-}
 
-/* ----------- Блок оформления заказа ----------- */
-.checkout-sidebar {
-  width: 25rem;
-  position: sticky;
-  top: 1rem;
-  align-self: flex-start;
-}
-
-.checkout-card {
-  background: $White_00;
-  border-radius: 1rem;
-  padding: 2rem;
-}
-
-.checkout-title {
-  @include montserrat_semi_L;
-  color: $Black_00;
-  margin-bottom: 1.5rem;
-}
-
-.delivery-section {
-  margin-bottom: 2rem;
-
-  &__title {
-    @include montserrat_regular_S;
-    color: $Grey_03;
-    margin-bottom: 1rem;
-  }
-}
-
-.delivery-form {
-  input, select {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    margin-bottom: 0.75rem;
-    border: 1px solid $Grey_01;
-    border-radius: 0.5rem;
-    @include montserrat_regular_S;
-
-    &:focus {
-      outline: none;
-      border-color: $Green_96;
-    }
-  }
-}
-
-.delivery-time {
-  display: flex;
-  gap: 0.75rem;
-
-  input {
-    flex: 1;
-  }
-
-  select {
-    width: auto;
-    min-width: 8rem;
-  }
-}
-
-/* ----------- Итоговая сумма ----------- */
-.order-summary {
-  border-top: 1px solid $Grey_01;
-  padding-top: 1.5rem;
-
-  &__row {
+  .delivery-form {
+    background-color: $White_00;
+    padding: 3rem;
+    border-radius: 2rem;
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.75rem;
-    @include montserrat_regular_S;
-  }
+    flex-direction: column;
+    gap: 2rem;
 
-  &__total {
-    @include montserrat_semi_L;
-    margin: 1.5rem 0;
-    padding-top: 1rem;
-    border-top: 1px solid $Grey_01;
-  }
-}
+    h3 {
+      @include montserrat_semi_L;
+      color: $Black_00;
+    }
 
-.checkout-btn {
-  @include btn_size_52;
-  background: $Green_96;
-  color: $White_00;
-  border: none;
-  width: 100%;
-  justify-content: center;
+    .form-group {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
 
-  &:hover {
-    background: $Green_67;
+      input, select {
+        flex: 1;
+        padding: 1rem 1.5rem;
+        border: 1px solid $Grey_01;
+        border-radius: 2rem;
+        background-color: $Grey_94;
+        @include montserrat_regular_S;
+        color: $Black_01;
+      }
+
+      select {
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg fill='black' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        background-size: 1rem;
+      }
+    }
+
+    .submit-btn {
+      align-self: flex-end;
+      @include btn_size_52;
+      background-color: $Green_96;
+      color: $White_00;
+      border: none;
+    }
   }
 }
