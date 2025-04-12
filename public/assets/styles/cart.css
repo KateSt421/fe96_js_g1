@@ -33,4 +33,223 @@
 /* ----------- Ограничения ширин, шаблоны для @media ----------- */
 /* ----------- Кнопки и ссылки ----------- */
 /* разные настройки размеров кнопок */
-/* ----------- Контейнеры-карточки ----------- *//*# sourceMappingURL=cart.css.map */
+/* ----------- Контейнеры-карточки ----------- */
+/* ----------- Основные стили ----------- */
+.cart-container {
+  max-width: 90rem;
+  padding: 0 3rem;
+  margin: 0 auto;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  display: flex;
+  gap: 2rem;
+}
+@media (max-width: 1024px) {
+  .cart-container {
+    max-width: none;
+    padding: 0 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .cart-container {
+    padding: 0 1.5rem;
+  }
+}
+
+/* ----------- Секция товаров ----------- */
+.cart-items {
+  flex-grow: 1;
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #D9D9D9;
+}
+.cart-item:last-child {
+  border-bottom: none;
+}
+.cart-item__image {
+  width: 6rem;
+  height: 6rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.5rem;
+  margin-right: 1.5rem;
+}
+.cart-item__info {
+  flex-grow: 1;
+}
+.cart-item__name {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150%;
+  color: #000000;
+  margin-bottom: 0.25rem;
+}
+.cart-item__name-size {
+  display: block;
+  color: #667777;
+}
+.cart-item__price {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 125%;
+  color: #000000;
+  min-width: 6rem;
+  text-align: right;
+  margin: 0 1.5rem;
+}
+.cart-item__quantity {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.cart-item__quantity button {
+  box-sizing: border-box;
+  height: 2.25rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.125rem 1rem 0.125rem 0.125rem;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150%;
+  border-radius: 1.5rem;
+  background: #f2f2f3;
+  border: none;
+  cursor: pointer;
+}
+.cart-item__quantity button:hover {
+  background: #D9D9D9;
+}
+
+/* ----------- Блок оформления заказа ----------- */
+.checkout-sidebar {
+  width: 25rem;
+  position: sticky;
+  top: 1rem;
+  align-self: flex-start;
+}
+
+.checkout-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.checkout-title {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 133%;
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+
+.delivery-section {
+  margin-bottom: 2rem;
+}
+.delivery-section__title {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150%;
+  color: #667777;
+  margin-bottom: 1rem;
+}
+
+.delivery-form input, .delivery-form select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid #D9D9D9;
+  border-radius: 0.5rem;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150%;
+}
+.delivery-form input:focus, .delivery-form select:focus {
+  outline: none;
+  border-color: #9BB96C;
+}
+
+.delivery-time {
+  display: flex;
+  gap: 0.75rem;
+}
+.delivery-time input {
+  flex: 1;
+}
+.delivery-time select {
+  width: auto;
+  min-width: 8rem;
+}
+
+/* ----------- Итоговая сумма ----------- */
+.order-summary {
+  border-top: 1px solid #D9D9D9;
+  padding-top: 1.5rem;
+}
+.order-summary__row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150%;
+}
+.order-summary__total {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 133%;
+  margin: 1.5rem 0;
+  padding-top: 1rem;
+  border-top: 1px solid #D9D9D9;
+}
+
+.checkout-btn {
+  box-sizing: border-box;
+  height: 3.25rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 3rem;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 125%;
+  border-radius: 2.5rem;
+  background: #9BB96C;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+  justify-content: center;
+}
+.checkout-btn:hover {
+  background: #677E51;
+}/*# sourceMappingURL=cart.css.map */

@@ -1,1 +1,170 @@
-@import 'design_system.scss';
+@import './design_system.scss';
+
+/* ----------- Основные стили ----------- */
+.cart-container {
+  @include container;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  display: flex;
+  gap: 2rem;
+}
+
+/* ----------- Секция товаров ----------- */
+.cart-items {
+  flex-grow: 1;
+  background: $White_00;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid $Grey_01;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &__image {
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-right: 1.5rem;
+  }
+
+  &__info {
+    flex-grow: 1;
+  }
+
+  &__name {
+    @include montserrat_regular_S;
+    color: $Black_00;
+    margin-bottom: 0.25rem;
+
+    &-size {
+      display: block;
+      color: $Grey_03;
+    }
+  }
+
+  &__price {
+    @include montserrat_semi_S;
+    color: $Black_00;
+    min-width: 6rem;
+    text-align: right;
+    margin: 0 1.5rem;
+  }
+
+  &__quantity {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    button {
+      @include btn_size_36_circle;
+      background: $Grey_94;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        background: $Grey_01;
+      }
+    }
+  }
+}
+
+/* ----------- Блок оформления заказа ----------- */
+.checkout-sidebar {
+  width: 25rem;
+  position: sticky;
+  top: 1rem;
+  align-self: flex-start;
+}
+
+.checkout-card {
+  background: $White_00;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.checkout-title {
+  @include montserrat_semi_L;
+  color: $Black_00;
+  margin-bottom: 1.5rem;
+}
+
+.delivery-section {
+  margin-bottom: 2rem;
+
+  &__title {
+    @include montserrat_regular_S;
+    color: $Grey_03;
+    margin-bottom: 1rem;
+  }
+}
+
+.delivery-form {
+  input, select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.75rem;
+    border: 1px solid $Grey_01;
+    border-radius: 0.5rem;
+    @include montserrat_regular_S;
+
+    &:focus {
+      outline: none;
+      border-color: $Green_96;
+    }
+  }
+}
+
+.delivery-time {
+  display: flex;
+  gap: 0.75rem;
+
+  input {
+    flex: 1;
+  }
+
+  select {
+    width: auto;
+    min-width: 8rem;
+  }
+}
+
+/* ----------- Итоговая сумма ----------- */
+.order-summary {
+  border-top: 1px solid $Grey_01;
+  padding-top: 1.5rem;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    @include montserrat_regular_S;
+  }
+
+  &__total {
+    @include montserrat_semi_L;
+    margin: 1.5rem 0;
+    padding-top: 1rem;
+    border-top: 1px solid $Grey_01;
+  }
+}
+
+.checkout-btn {
+  @include btn_size_52;
+  background: $Green_96;
+  color: $White_00;
+  border: none;
+  width: 100%;
+  justify-content: center;
+
+  &:hover {
+    background: $Green_67;
+  }
+}
