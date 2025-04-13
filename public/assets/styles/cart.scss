@@ -1,17 +1,13 @@
-@import './design_system.scss';
+@import 'design_system';
 
-.font-belleza {
-  font-family: $Belleza;
-}
-.font-montserrat {
-  font-family: $Montserrat;
-}
+$Belleza: 'Belleza', sans-serif;
+$Montserrat: 'Montserrat', sans-serif;
 
 /* Общие стили для блоков корзины, промо и доставки */
 .cart__header,
 .cart__promo,
 .cart__delivery {
-  background-color: $Grey_94 !important;
+  background-color: $Grey_94;
   border-radius: 2rem;  // 32px
   padding: 1.5rem;      // 24px
   margin-bottom: 2rem;
@@ -19,7 +15,7 @@
 
 /* Заголовки "Корзина" и "Доставка" */
 .cart__title {
-  @extend .font-belleza;
+  font-family: $Belleza;
   font-size: 2rem;      // 32px
   margin: 0;
   color: #2c1500;
@@ -43,13 +39,13 @@
   justify-content: space-between;
   align-items: center;
 
-  .promo__inpt {
+  .promo__input {
     width: 18.375rem;   // 294px
     height: 2.5rem;     // 40px
     padding: 0 1rem;
     font-size: 1rem;
-    border: 1px solid $Grey_01;
-    border-radius: 0.5rem; // 8px
+    border: 1px solid $Grey_94;
+    border-radius: 0.75rem;   // 12px = 0.75rem
     background-color: $White_00;
   }
 
@@ -88,11 +84,11 @@
     margin-bottom: 0.5rem;
   }
 
-  .cart__inpt {
+  .cart__input {
     font-size: 1rem;
     color: $Black_00;
     background-color: $White_00;
-    border: 1px solid $Grey_01;
+    border: 1px solid $Grey_94;
     border-radius: 0.75rem;   // 12px = 0.75rem
     height: 2.5rem;          // 40px
     line-height: 2.5rem;
