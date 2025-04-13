@@ -30,4 +30,44 @@
 /* ----------- Ограничения ширин, шаблоны для @media ----------- */
 /* ----------- Кнопки и ссылки ----------- */
 /* разные настройки размеров кнопок */
-/* ----------- Контейнеры-карточки ----------- *//*# sourceMappingURL=design_system.css.map */
+/* ----------- Контейнеры-карточки ----------- */
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  text-align: center;
+  margin-top: 8rem;
+}
+
+.error-404 {
+  background-color: white;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+  color: #667777;
+  font-size: 8rem;
+}
+
+.text-404 {
+  font-size: 1.5rem;
+}
+
+.button-404 {
+  margin-top: 2rem;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #677E51;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-404:hover {
+  background-color: #667777;
+}/*# sourceMappingURL=errors.css.map */

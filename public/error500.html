@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/errors.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <div class="error-404">
+    <h1>500</h1>
+    <div><p class="text-404">Ошибка сервера</p></div>
+    <p>На сервере произошла непредвиденная ошибка. Пожалуйста, подождите, она вскоре будет исправлена.</p>
+    <button class="button-404" id="goHomeButton">Перейти на главную</button>
+    </div>
+    </div>
+
+    <script>
+        document.getElementById('goHomeButton').addEventListener('click',function(){
+            window.location.href='index.html';
+        });
+    </script>
+</body>
+</html>
