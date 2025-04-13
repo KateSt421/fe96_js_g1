@@ -31,15 +31,6 @@
 /* ----------- Кнопки и ссылки ----------- */
 /* разные настройки размеров кнопок */
 /* ----------- Контейнеры-карточки ----------- */
-body {
-  background-color: #ffffff;
-  /* служебный миксин, его использовать не надо */
-  font-family: "Montserrat";
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 150%;
-}
-
 .cart-page {
   max-width: 90rem;
   padding: 0 3rem;
@@ -62,7 +53,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
 }
 .cart-page .cart-header h1 {
   /* служебный миксин, его использовать не надо */
@@ -94,7 +85,6 @@ body {
   border: 1px solid #667777;
   color: #667777;
   cursor: pointer;
-  transition: 0.2s;
 }
 .cart-page .cart-header .cart-clear:hover {
   border-color: #000000;
@@ -102,12 +92,16 @@ body {
 }
 .cart-page .cart-empty {
   background-color: #f2f2f3;
-  border-radius: 1.5rem;
+  border-radius: 2rem;
   padding: 5rem 2rem;
   text-align: center;
   margin-bottom: 2rem;
   color: #B1B1B1;
-  font-size: 1.125rem;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 133%;
 }
 .cart-page .promo {
   display: flex;
@@ -117,28 +111,28 @@ body {
 }
 .cart-page .promo input {
   flex: 1;
-  padding: 0.75rem 1.25rem;
+  padding: 1rem 1.5rem;
   border-radius: 2rem;
   border: 1px solid #D9D9D9;
   background-color: #ffffff;
-  font-size: 1rem;
+  font-size: 1.125rem;
+  height: 3.25rem;
 }
 .cart-page .promo button {
   box-sizing: border-box;
-  height: 2.25rem;
+  height: 3.25rem;
   width: -moz-fit-content;
   width: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 1rem 3rem;
   /* служебный миксин, его использовать не надо */
   font-family: "Montserrat";
-  font-weight: 400;
+  font-weight: 600;
   font-size: 1rem;
-  line-height: 150%;
-  border-radius: 1.5rem;
+  line-height: 125%;
+  border-radius: 2.5rem;
   background-color: #010101;
   border: none;
   color: #ffffff;
@@ -150,8 +144,8 @@ body {
 }
 .cart-page .summary {
   background-color: #f2f2f3;
-  border-radius: 1.5rem;
-  padding: 2rem;
+  border-radius: 2rem;
+  padding: 2.5rem;
   margin-bottom: 2rem;
 }
 .cart-page .summary p {
@@ -164,34 +158,32 @@ body {
   color: #667777;
   display: flex;
   justify-content: space-between;
-  font-size: 1rem;
+  font-size: 1.125rem;
 }
 .cart-page .summary .total-wrapper {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 .cart-page .summary .total-label,
 .cart-page .summary .total-value {
   /* служебный миксин, его использовать не надо */
   font-family: "Montserrat";
   font-weight: 600;
-  font-size: 1rem;
-  line-height: 125%;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  line-height: 133%;
   color: #000000;
 }
 .cart-page .delivery-form {
   background-color: #f2f2f3;
-  border-radius: 1.5rem;
-  padding: 2rem;
+  border-radius: 2rem;
+  padding: 2.5rem;
 }
 .cart-page .delivery-form h3 {
   /* служебный миксин, его использовать не надо */
   font-family: "Montserrat";
   font-weight: 600;
-  font-size: 1rem;
-  line-height: 125%;
-  font-size: 1.25rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  line-height: 133%;
+  margin-bottom: 2rem;
   color: #000000;
 }
 .cart-page .delivery-form form {
@@ -202,11 +194,12 @@ body {
 .cart-page .delivery-form form input,
 .cart-page .delivery-form form select {
   width: 100%;
-  padding: 0.75rem 1.25rem;
-  font-size: 1rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.125rem;
   border: 1px solid #D9D9D9;
   border-radius: 2rem;
   background-color: #ffffff;
+  height: 3.25rem;
 }
 .cart-page .delivery-form form .row-3 {
   display: flex;
@@ -240,8 +233,11 @@ body {
   background-color: #010101;
   border: none;
   color: #ffffff;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   align-self: flex-end;
   cursor: pointer;
   transition: 0.2s;
+}
+.cart-page .delivery-form form .submit-btn:hover {
+  background-color: #677E51;
 }/*# sourceMappingURL=cart.css.map */

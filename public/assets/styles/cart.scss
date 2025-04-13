@@ -1,10 +1,5 @@
 @import './design_system.scss';
 
-body {
-  background-color: $White_00;
-  @include montserrat_regular_S;
-}
-
 .cart-page {
   @include container;
   padding-top: 3rem;
@@ -14,7 +9,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
 
     h1 {
       @include txt_title_80;
@@ -28,7 +23,6 @@ body {
       border: 1px solid $Grey_03;
       color: $Grey_03;
       cursor: pointer;
-      transition: 0.2s;
 
       &:hover {
         border-color: $Black_00;
@@ -39,12 +33,12 @@ body {
 
   .cart-empty {
     background-color: $Grey_94;
-    border-radius: 1.5rem;
+    border-radius: 2rem;
     padding: 5rem 2rem;
     text-align: center;
     margin-bottom: 2rem;
     color: $Grey_02;
-    font-size: 1.125rem;
+    @include montserrat_regular_L;
   }
 
   .promo {
@@ -55,15 +49,16 @@ body {
 
     input {
       flex: 1;
-      padding: 0.75rem 1.25rem;
+      padding: 1rem 1.5rem;
       border-radius: 2rem;
       border: 1px solid $Grey_01;
       background-color: $White_00;
-      font-size: 1rem;
+      font-size: 1.125rem;
+      height: 3.25rem;
     }
 
     button {
-      @include btn_size_36;
+      @include btn_size_52;
       background-color: $Black_01;
       border: none;
       color: $White_00;
@@ -78,8 +73,8 @@ body {
 
   .summary {
     background-color: $Grey_94;
-    border-radius: 1.5rem;
-    padding: 2rem;
+    border-radius: 2rem;
+    padding: 2.5rem;
     margin-bottom: 2rem;
 
     p {
@@ -88,30 +83,28 @@ body {
       color: $Grey_03;
       display: flex;
       justify-content: space-between;
-      font-size: 1rem;
+      font-size: 1.125rem;
     }
 
     .total-wrapper {
-      margin-top: 1rem;
+      margin-top: 2rem;
     }
 
     .total-label,
     .total-value {
-      @include montserrat_semi_S;
-      font-size: 1.25rem;
+      @include montserrat_semi_L;
       color: $Black_00;
     }
   }
 
   .delivery-form {
     background-color: $Grey_94;
-    border-radius: 1.5rem;
-    padding: 2rem;
+    border-radius: 2rem;
+    padding: 2.5rem;
 
     h3 {
-      @include montserrat_semi_S;
-      font-size: 1.25rem;
-      margin-bottom: 1.5rem;
+      @include montserrat_semi_L;
+      margin-bottom: 2rem;
       color: $Black_00;
     }
 
@@ -123,11 +116,12 @@ body {
       input,
       select {
         width: 100%;
-        padding: 0.75rem 1.25rem;
-        font-size: 1rem;
+        padding: 1rem 1.5rem;
+        font-size: 1.125rem;
         border: 1px solid $Grey_01;
         border-radius: 2rem;
         background-color: $White_00;
+        height: 3.25rem;
       }
 
       .row-3 {
@@ -153,11 +147,14 @@ body {
         background-color: $Black_01;
         border: none;
         color: $White_00;
-        margin-top: 1.5rem;
+        margin-top: 2rem;
         align-self: flex-end;
         cursor: pointer;
         transition: 0.2s;
 
+        &:hover {
+          background-color: $Green_67;
+        }
       }
     }
   }
