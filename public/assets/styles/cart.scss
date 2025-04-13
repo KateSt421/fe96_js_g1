@@ -1,101 +1,135 @@
 @import './design_system.scss';
 
-.cart-section {
-  padding: 2rem;
-  font-family: 'Montserrat', sans-serif;
-  background: $White_00;
+.font-belleza {
+  font-family: $Belleza;
+}
+.font-montserrat {
+  font-family: $Montserrat;
+}
 
-  h2, h3 {
-    font-weight: 600;
-    color: $Black_00;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+/* Общие стили для блоков корзины, промо и доставки */
+.cart__header,
+.cart__promo,
+.cart__delivery {
+  background-color: $Grey_94 !important;
+  border-radius: 2rem;  // 32px
+  padding: 1.5rem;      // 24px
+  margin-bottom: 2rem;
+}
+
+/* Заголовки "Корзина" и "Доставка" */
+.cart__title {
+  @extend .font-belleza;
+  font-size: 2rem;      // 32px
+  margin: 0;
+  color: #2c1500;
+}
+
+/* Кнопка "Очистить" */
+.cart__btn-clear {
+  font-family: $Montserrat;
+  font-size: 0.875rem;  // 14px
+  font-weight: 600;
+  padding: 0.625rem 1.25rem; // 10px x 20px
+  background-color: rgba(0, 0, 0, 0.02);
+  border: none;
+  border-radius: 2.5rem;  // 40px
+  cursor: pointer;
+}
+
+/* Промо-блок */
+.cart__promo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .promo__inpt {
+    width: 18.375rem;   // 294px
+    height: 2.5rem;     // 40px
+    padding: 0 1rem;
+    font-size: 1rem;
+    border: 1px solid $Grey_01;
+    border-radius: 0.5rem; // 8px
+    background-color: $White_00;
   }
 
-  .cart-header {
-    background: $Grey_94;
-    padding: 1rem 1.5rem;
-    border-radius: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .btn-clear {
-    background: transparent;
+  .promo__btn {
+    height: 2.5rem;     // 40px
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    background-color: $Black_00;
+    color: $White_00;
     border: none;
-    font-size: 0.9rem;
-    color: $Black_01;
+    border-radius: 2rem;  // 32px
+    cursor: pointer;
+  }
+
+  .promo__disc {
+    font-size: 1.125rem;
     font-weight: 500;
+    color: $Black_00;
+  }
+}
+
+/* Итоговая секция */
+.cart__total {
+  h3,
+  .total-amount {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}
+
+/* Поля формы доставки */
+.cart__delivery {
+  .form-label {
+    font-family: $Montserrat;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
   }
 
-  .promo-section {
-    background: $Grey_94;
-    padding: 1rem;
-    border-radius: 1rem;
-    margin-bottom: 2rem;
-
-    .promo-input {
-      width: 18.375rem; // 294px
-      height: 2.5rem;   // 40px
-      padding: 0.75rem 1rem;
-      font-size: 1rem;
-    }
-
-    .btn-apply {
-      background: $Black_00;
-      color: $White_00;
-      padding: 0.75rem 1.5rem;
-      border-radius: 2rem;
-      border: none;
-      font-size: 0.9rem;
-    }
-
-    .promo-discount {
-      font-size: 1.125rem;
-      font-weight: 500;
-      color: $black;
-    }
+  .cart__inpt {
+    font-size: 1rem;
+    color: $Black_00;
+    background-color: $White_00;
+    border: 1px solid $Grey_01;
+    border-radius: 0.75rem;   // 12px = 0.75rem
+    height: 2.5rem;          // 40px
+    line-height: 2.5rem;
+    padding: 0 1rem;
+    width: 100%;
   }
 
-  .total-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-
-    .total-price {
-      font-weight: bold;
-      font-size: 1.5rem;
-    }
+  /* Размеры полей по макету 
+  .input--name {
+    width: 82rem;   // 1312px
   }
-
-  .delivery-section {
-    background: $Grey_94;
-    padding: 2rem;
-    border-radius: 1.5rem;
-
-    .form-label {
-      font-size: 0.9rem;
-      color: $Black_00;
-      margin-bottom: 0.5rem;
-    }
-
-    .form-control,
-    .form-select {
-      font-size: 1rem;
-      padding: 0.75rem 1rem;
-      border-radius: 0.5rem;
-      border: 1px solid $Grey_01;
-      background: $White_00;
-      color: $Black_00;
-    }
-
-    .btn-pay {
-      background: $Black_00;
-      color: $White_00;
-      padding: 0.75rem 2rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 2rem;
-    }
+  .input--street {
+    width: 40.5rem; // 648px
   }
+  .input--house {
+    width: 19.75rem; // 316px
+  }
+  .input--apt {
+    width: 19.75rem; // 316px
+  }
+  .input--date {
+    width: 40.5rem; // 648px
+  }
+  .input--time {
+    width: 40.5rem; // 648px
+  } */
+}
+
+/* Кнопка "Оплатить" */
+.cart__btn-pay {
+  display: block;
+  margin: 2rem auto 0;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  background-color: $Black_00;
+  color: $White_00;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
 }

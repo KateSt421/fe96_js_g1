@@ -48,63 +48,96 @@
       </div>
     </div>-->
 
-    <div class="cart-section container">
-      <div class="cart-header d-flex justify-content-between align-items-center">
-        <h2>Корзина</h2>
-        <button class="btn-clear">Очистить</button>
-      </div>
-    
-      <div class="promo-section d-flex gap-2">
-        <input type="text" class="form-control promo-input" placeholder="Trava" />
-        <button class="btn-apply">Применить</button>
-        <div class="promo-discount" id="discount">-0 ₽</div>
-      </div>
-    
-      <div class="total-section">
-        <h3>Итого</h3>
-        <span class="total-price" id="total">0 ₽</span>
-      </div>
-    
-      <div class="delivery-section">
-        <h3>Доставка</h3>
-    
+    <div class="container py-5">
+      <!-- Заголовок корзины -->
+      <section class="cart__header bg-light p-4 rounded-4 mb-4 d-flex justify-content-between align-items-center">
+        <h2 class="cart__title font-belleza mb-0">Корзина</h2>
+        <button class="cart__btn-clear btn btn-outline-secondary">Очистить</button>
+      </section>
+
+      <!-- Промо-блок -->
+      <section class="cart__promo bg-light p-4 rounded-4 mb-4 d-flex justify-content-between align-items-center">
+        <div class="promo__wrap d-flex align-items-center gap-2">
+          <input type="text" class="promo__input" placeholder="Trava" />
+          <button class="promo__btn btn btn-dark">Применить</button>
+        </div>
+        <div class="promo__discount">0 ₽</div>
+      </section>
+
+      <!-- Итоговая сумма -->
+      <section class="cart__total d-flex justify-content-between align-items-center mb-4 px-2">
+        <h3 class="mb-0">Итого</h3>
+        <span class="mb-0 total__amount">0 ₽</span>
+      </section>
+
+      <!-- Блок доставки -->
+      <section class="cart__delivery bg-light p-4 rounded-4 mb-4">
+        <h2 class="cart__title font-belleza mb-3">Доставка</h2>
         <form>
           <div class="mb-3">
             <label for="name" class="form-label">Имя*</label>
-            <input type="text" id="name" class="form-control" placeholder="Имя" />
+            <input
+              type="text"
+              id="name"
+              class="form-control cart__input input--name"
+              placeholder="Имя"
+            />
           </div>
-    
+
+          <!-- Поля: Улица, Дом, Квартира/офис -->
           <div class="row mb-3">
             <div class="col-md-6">
               <label for="street" class="form-label">Улица*</label>
-              <input type="text" id="street" class="form-control" placeholder="ул.Ленина" />
+              <input
+                type="text"
+                id="street"
+                class="form-control cart__input input--street"
+                placeholder="ул.Ленина"
+              />
             </div>
             <div class="col-md-3">
               <label for="house" class="form-label">Дом*</label>
-              <input type="text" id="house" class="form-control" placeholder="12к1" />
+              <input
+                type="text"
+                id="house"
+                class="form-control cart__input input--house"
+                placeholder="12к1"
+              />
             </div>
             <div class="col-md-3">
               <label for="apt" class="form-label">Квартира / офис*</label>
-              <input type="text" id="apt" class="form-control" placeholder="12" />
+              <input
+                type="text"
+                id="apt"
+                class="form-control cart__input input--apt"
+                placeholder="12"
+              />
             </div>
           </div>
 
+          <!-- Поля: Дата, Время -->
           <div class="row mb-3">
             <div class="col-md-6">
               <label for="date" class="form-label">Дата</label>
-              <input type="date" id="date" class="form-control" />
+              <input
+                type="date"
+                id="date"
+                class="form-control cart__input input--date"
+              />
             </div>
             <div class="col-md-6">
-            <label for="time" class="form-label">Время</label>
-            <select id="time" class="form-select">
-              <option selected>Любое</option>
-            </select></div></div>
-
-    
-          <div class="text-center">
-            <button class="btn-pay" type="submit">Оплатить</button>
+              <label for="time" class="form-label">Время</label>
+              <select id="time" class="form-select cart__input input--time">
+                <option selected>Любое</option>
+              </select>
+            </div>
           </div>
         </form>
+      </section>
+
+      <!-- Кнопка "Оплатить" (расположена под серым блоком доставки) -->
+      <div class="text-center">
+        <button class="cart__btn-pay btn btn-dark btn-lg">Оплатить</button>
       </div>
     </div>
 
