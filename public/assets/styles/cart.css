@@ -100,7 +100,7 @@
 }
 
 /* Поля формы доставки */
-.cart__delivery {
+/*.cart__delivery {
   /* Размеры полей по макету 
   .input--name {
     width: 82rem;   // 1312px
@@ -119,8 +119,8 @@
   }
   .input--time {
     width: 40.5rem; // 648px
-  } */
-}
+  } 
+}*/
 .cart__delivery .form-label {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
