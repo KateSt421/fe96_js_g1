@@ -108,10 +108,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Регулярные выражения для валидации
   const regexPatterns = {
-    name: /^[a-zA-Zа-яА-ЯёЁ\s-]{2,50}$/, // Имя: буквы, пробелы, дефисы, 2-50 символов
-    street: /^[a-zA-Zа-яА-ЯёЁ0-9\s-.,]{3,50}$/, // Улица: буквы, цифры, пробелы, дефисы, точки, запятые
-    house: /^[a-zA-Zа-яА-ЯёЁ0-9/-]{1,10}$/, // Дом: буквы, цифры, слэш, дефис (для случаев типа "12/3" или "12А")
-    apartment: /^[a-zA-Zа-яА-ЯёЁ0-9/-]{1,10}$/, // Квартира: аналогично дому
+    name: /^[a-zA-Zа-яА-ЯёЁ\s-]{2,50}$/u, // Имя: буквы, пробелы, дефисы, 2-50 символов
+    street: /^[a-zA-Zа-яА-ЯёЁ0-9\s\-,.]{3,50}$/u, // Улица: буквы, цифры, пробелы, дефисы, точки, запятые
+    house: /^[a-zA-Zа-яА-ЯёЁ0-9\/-]{1,10}$/u, // Дом: буквы, цифры, слэш, дефис
+    apartment: /^[a-zA-Zа-яА-ЯёЁ0-9\/-]{1,10}$/u, // Квартира: аналогично дому
   }
 
   // Функция валидации поля
@@ -129,26 +129,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Валидация даты  НЕ РАБОТАЕТ
   function validateDate(dateField) {
+    if (!dateField.value) {
+      dateField.classList.add('is-invalid')
+      dateField.classList.remove('is-valid')
+      return false
+    }
+
     const selectedDate = new Date(dateField.value)
     const today = new Date()
-    today.setHours(0, 0, 0, 0) // Убираем время для сравнения только дат
+    today.setHours(0, 0, 0, 0)
 
-    // Создаём дату, которая на 2 года больше текущей
     const maxAllowedDate = new Date()
     maxAllowedDate.setFullYear(today.getFullYear() + 2)
-    maxAllowedDate.setHours(23, 59, 59, 999) // Конец дня
+    maxAllowedDate.setHours(0, 0, 0, 0)
 
     const isValid = selectedDate >= today && selectedDate <= maxAllowedDate
 
     if (!isValid) {
       dateField.classList.add('is-invalid')
       dateField.classList.remove('is-valid')
-      // Обновляем сообщение об ошибке
       const errorElement = dateField.nextElementSibling
       if (errorElement && errorElement.classList.contains('invalid-feedback')) {
-        errorElement.textContent =
-          'Пожалуйста, выберите дату между сегодняшним днём и ' +
-          maxAllowedDate.toLocaleDateString()
+        errorElement.textContent = `Пожалуйста, выберите дату между ${today.toLocaleDateString()} и ${maxAllowedDate.toLocaleDateString()}`
       }
     } else {
       dateField.classList.remove('is-invalid')
