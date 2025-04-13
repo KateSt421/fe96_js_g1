@@ -48,89 +48,68 @@
       </div>
     </div>-->
 
-    <body class="bg-white font-montserrat">
-      <div class="container py-5">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-          <h1 class="fs-2 fw-normal font-belleza text-dark mb-0">Корзина</h1>
-          <button class="btn btn-outline-secondary rounded-pill px-4">Очистить</button>
-        </div>
-  
-        <!-- Product Card -->
-        <div class="card mb-3 p-3 d-flex flex-row align-items-center rounded-4 shadow-sm">
-          <img src="assets/image_177cd703.jpeg" class="img-thumbnail rounded-3 me-3" style="width: 96px; height: 96px; object-fit: cover;" alt="Монстера" />
-          <div class="flex-grow-1">
-            <h5 class="mb-1">Монстера Делициоза 17/60 см</h5>
-            <p class="text-muted mb-0">3 860 ₽</p>
+    <body class="cart">
+      <main class="container py-5">
+        <section class="cart__block">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="cart__title">Корзина</h2>
+            <button class="btn btn-outline-secondary btn-sm">Очистить</button>
           </div>
-          <div class="d-flex align-items-center gap-2">
-            <button class="btn btn-light border rounded-circle"><i class="bi bi-dash"></i></button>
-            <span class="mx-2">1</span>
-            <button class="btn btn-light border rounded-circle"><i class="bi bi-plus"></i></button>
-          </div>
-          <strong class="ms-3">3 860 ₽</strong>
-          <button class="btn btn-link text-danger ms-3"><i class="bi bi-trash"></i></button>
-        </div>
+          <!-- Корзина без товаров -->
+        </section>
   
-        <!-- Discount and Summary -->
-        <div class="bg-light p-3 rounded-4 mb-3 d-flex justify-content-between align-items-center">
-          <div class="d-flex gap-2">
+        <section class="cart__block">
+          <form class="d-flex flex-column flex-md-row gap-3">
             <input type="text" class="form-control" placeholder="Trava" />
-            <button class="btn btn-dark rounded-pill">Применить</button>
-          </div>
-          <input type="text" class="form-control text-end w-auto" placeholder="-100 ₽" />
-        </div>
+            <button type="submit" class="btn btn-dark px-4">Применить</button>
+          </form>
+        </section>
   
-        <div class="d-flex justify-content-between px-3 mb-5">
-          <p class="fs-4 mb-0">Итого</p>
-          <p class="fs-4 fw-bold mb-0">3 860 ₽</p>
-        </div>
+        <section class="mb-4">
+          <div class="d-flex justify-content-between">
+            <h3 class="cart__total-label">Итого</h3>
+            <h3 class="cart__total-amount">3 860 ₽</h3>
+          </div>
+        </section>
   
-        <!-- Address Form -->
-        <div class="bg-light p-4 rounded-4 mb-5">
-          <input type="text" class="form-control mb-3" placeholder="Доставка" />
-          <div class="row mb-3">
-            <div class="col-md">
-              <label class="form-label">Имя*</label>
-              <input type="text" class="form-control" placeholder="Имя" />
+        <section class="cart__block">
+          <h2 class="cart__title">Доставка</h2>
+          <form class="row g-3">
+            <div class="col-md-4">
+              <label for="firstName" class="form-label">Имя*</label>
+              <input type="text" class="form-control" id="firstName" placeholder="Имя" />
             </div>
-          </div>
-          <div class="row mb-3">
-            <div class="col-md-6">
-              <label class="form-label">Улица*</label>
-              <input type="text" class="form-control" placeholder="ул.Ленина" />
+            <div class="col-md-12">
+              <label for="street" class="form-label">Улица*</label>
+              <input type="text" class="form-control" id="street" placeholder="ул.Ленина" />
             </div>
-            <div class="col-md-3">
-              <label class="form-label">Дом*</label>
-              <input type="text" class="form-control" placeholder="12к1" />
+            <div class="col-md-4">
+              <label for="house" class="form-label">Дом*</label>
+              <input type="text" class="form-control" id="house" placeholder="12к1" />
             </div>
-            <div class="col-md-3">
-              <label class="form-label">Квартира / офис*</label>
-              <input type="text" class="form-control" placeholder="12" />
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <label class="form-label">Дата</label>
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="10 апреля" />
-                <span class="input-group-text"><i class="bi bi-caret-down-fill"></i></span>
-              </div>
+            <div class="col-md-4">
+              <label for="apartment" class="form-label">Квартира / офис*</label>
+              <input type="text" class="form-control" id="apartment" placeholder="12" />
             </div>
             <div class="col-md-6">
-              <label class="form-label">Время</label>
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Любое" />
-                <span class="input-group-text"><i class="bi bi-caret-down-fill"></i></span>
-              </div>
+              <label for="date" class="form-label">Дата</label>
+              <input type="date" class="form-control" id="date" />
             </div>
-          </div>
-        </div>
+            <div class="col-md-6">
+              <label for="time" class="form-label">Время</label>
+              <select class="form-select" id="time">
+                <option selected>Любое</option>
+                <option>10:00</option>
+                <option>14:00</option>
+              </select>
+            </div>
+          </form>
+        </section>
   
-        <!-- Payment Button -->
-        <div class="text-center">
-          <button class="btn btn-dark btn-lg rounded-pill px-5">Оплатить</button>
+        <div class="text-center mt-4">
+          <button class="btn btn-dark px-5 py-2">Оплатить</button>
         </div>
-      </div>
+      </main>
 
     <script src="cart.js"></script>
   </body>
