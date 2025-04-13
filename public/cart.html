@@ -48,56 +48,55 @@
       </div>
     </div>-->
 
-    <div class="cart-page">
-      <div class="container">
-        <div class="cart-header">
-          <h1>Корзина</h1>
-          <button class="clear-btn" disabled>Очистить</button>
+    <main class="cart-page">
+      <div class="cart-header d-flex justify-between align-center mb-4">
+        <h1>Корзина</h1>
+        <button class="cart-clear">Очистить</button>
+      </div>
+
+      <div class="cart-empty">
+        В корзине пока ничего нет
+      </div>
+
+      <div class="promo">
+        <input type="text" placeholder="Введите промокод" />
+        <button>Применить</button>
+      </div>
+
+      <div class="summary">
+        <p>Скидка <span>– 0 ₽</span></p>
+        <div class="d-flex justify-between align-center mt-3 total-wrapper">
+          <div class="total-label">Итого</div>
+          <div class="total-value">0 ₽</div>
         </div>
-    
-        <!-- Пустая корзина -->
-        <div class="cart-empty">
-          <p>В корзине пока ничего нет</p>
-        </div>
-    
-        <div class="promo-code">
-          <input type="text" placeholder="Промокод" />
-          <button>Применить</button>
-        </div>
-    
-        <div class="summary">
-          <div class="price-row discount">
-            <span>Скидка</span>
-            <span>-0 ₽</span>
-          </div>
-          <div class="price-row total">
-            <span>Итого</span>
-            <span>0 ₽</span>
-          </div>
-        </div>
-    
-        <div class="delivery-form">
-          <h3>Доставка</h3>
-          <div class="form-group">
-            <input type="text" placeholder="Имя*" />
-          </div>
-          <div class="form-group">
+      </div>
+
+      <div class="delivery-form">
+        <h3>Доставка</h3>
+        <form>
+          <input type="text" placeholder="Имя*" />
+
+          <div class="row-3">
             <input type="text" placeholder="Улица*" />
             <input type="text" placeholder="Дом*" />
             <input type="text" placeholder="Квартира / офис*" />
           </div>
-          <div class="form-group">
+
+          <div class="row-2">
             <select>
-              <option>Дата</option>
+              <option>Дата доставки*</option>
+              <option>10 апреля</option>
             </select>
             <select>
-              <option>Время</option>
+              <option>Время доставки*</option>
+              <option>Любое</option>
             </select>
           </div>
-          <button class="submit-btn">Оплатить</button>
-        </div>
+
+          <button type="submit" class="submit-btn">Оплатить заказ</button>
+        </form>
       </div>
-    </div>
+    </main>
 
     <script src="cart.js"></script>
   </body>

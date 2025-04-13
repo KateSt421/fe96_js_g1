@@ -1,140 +1,165 @@
-@import './design_system.scss';
+body {
+  background-color: $White_00;
+  @include montserrat_regular_S;
+}
 
 .cart-page {
-  background-color: $Grey_94;
-  padding-top: 4rem;
-  padding-bottom: 6rem;
-  min-height: 100vh;
-
-  .container {
-    @include container;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-  }
+  @include container;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 
   .cart-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 2.5rem;
 
     h1 {
       @include txt_title_80;
+      margin: 0;
       color: $Black_00;
     }
 
-    .clear-btn {
+    .cart-clear {
       @include btn_size_36;
       background-color: transparent;
-      color: $Grey_03;
       border: 1px solid $Grey_03;
-      cursor: not-allowed;
+      color: $Grey_03;
+      cursor: pointer;
+      transition: 0.2s;
+
+      &:hover {
+        border-color: $Black_00;
+        color: $Black_00;
+      }
     }
   }
 
   .cart-empty {
-    background-color: $White_00;
-    border-radius: 2rem;
-    padding: 4rem;
+    background-color: $Grey_94;
+    border-radius: 1.5rem;
+    padding: 5rem 2rem;
     text-align: center;
-
-    p {
-      @include montserrat_regular_L;
-      color: $Grey_02;
-    }
+    margin-bottom: 2rem;
+    color: $Grey_02;
+    font-size: 1.125rem;
   }
 
-  .promo-code {
+  .promo {
     display: flex;
+    align-items: center;
     gap: 1rem;
+    margin-bottom: 2rem;
 
     input {
       flex: 1;
-      padding: 1rem 2rem;
+      padding: 0.75rem 1.25rem;
       border-radius: 2rem;
       border: 1px solid $Grey_01;
-      @include montserrat_regular_S;
       background-color: $White_00;
-      color: $Black_00;
+      font-size: 1rem;
     }
 
     button {
       @include btn_size_36;
       background-color: $Green_96;
-      color: $White_00;
       border: none;
+      color: $White_00;
+      cursor: pointer;
+      transition: 0.2s;
+
+      &:hover {
+        background-color: $Green_67;
+      }
     }
   }
 
   .summary {
-    background-color: $White_00;
-    padding: 2.5rem 3rem;
-    border-radius: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: flex-end;
+    background-color: $Grey_94;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
 
-    .price-row {
+    p {
+      margin: 0;
+      @include montserrat_regular_S;
+      color: $Grey_03;
       display: flex;
       justify-content: space-between;
-      width: 100%;
+      font-size: 1rem;
+    }
+
+    .total-wrapper {
+      margin-top: 1rem;
+    }
+
+    .total-label,
+    .total-value {
       @include montserrat_semi_S;
+      font-size: 1.25rem;
       color: $Black_00;
-
-      &.discount {
-        color: $Green_67;
-      }
-
-      &.total {
-        font-size: 1.5rem;
-      }
     }
   }
 
   .delivery-form {
-    background-color: $White_00;
-    padding: 3rem;
-    border-radius: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    background-color: $Grey_94;
+    border-radius: 1.5rem;
+    padding: 2rem;
 
     h3 {
-      @include montserrat_semi_L;
+      @include montserrat_semi_S;
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
       color: $Black_00;
     }
 
-    .form-group {
+    form {
       display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 1rem;
 
-      input, select {
-        flex: 1;
-        padding: 1rem 1.5rem;
+      input,
+      select {
+        width: 100%;
+        padding: 0.75rem 1.25rem;
+        font-size: 1rem;
         border: 1px solid $Grey_01;
         border-radius: 2rem;
-        background-color: $Grey_94;
-        @include montserrat_regular_S;
-        color: $Black_01;
+        background-color: $White_00;
       }
 
-      select {
-        appearance: none;
-        background-image: url("data:image/svg+xml,%3Csvg fill='black' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: right 1rem center;
-        background-size: 1rem;
-      }
-    }
+      .row-3 {
+        display: flex;
+        gap: 1rem;
 
-    .submit-btn {
-      align-self: flex-end;
-      @include btn_size_52;
-      background-color: $Green_96;
-      color: $White_00;
-      border: none;
+        > * {
+          flex: 1;
+        }
+      }
+
+      .row-2 {
+        display: flex;
+        gap: 1rem;
+
+        > * {
+          flex: 1;
+        }
+      }
+
+      .submit-btn {
+        @include btn_size_52;
+        background-color: $Green_96;
+        border: none;
+        color: $White_00;
+        margin-top: 1.5rem;
+        align-self: flex-end;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+          background-color: $Green_67;
+        }
+      }
     }
   }
 }
