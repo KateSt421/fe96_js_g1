@@ -1,4 +1,4 @@
-@import 'design_system';
+@import url('design_system');
 
 
 .plant-details-container {
@@ -7,7 +7,7 @@
     padding: 2rem;
     background: white;
     border-radius: 1rem;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgb(0 0 0 / 10%);
 }
 
 .plant-image-container {
