@@ -55,7 +55,7 @@
   align-items: center;
   margin-bottom: 3rem;
 }
-.cart-page .cart-header h1 {
+.cart-page .cart-header .h1 {
   /* служебный миксин, его использовать не надо */
   font-family: "Belleza";
   font-weight: 400;
@@ -138,9 +138,6 @@
   color: #ffffff;
   cursor: pointer;
   transition: 0.2s;
-}
-.cart-page .promo button:hover {
-  background-color: #677E51;
 }
 .cart-page .summary {
   background-color: #f2f2f3;
@@ -237,7 +234,4 @@
   align-self: flex-end;
   cursor: pointer;
   transition: 0.2s;
-}
-.cart-page .delivery-form form .submit-btn:hover {
-  background-color: #677E51;
 }/*# sourceMappingURL=cart.css.map */

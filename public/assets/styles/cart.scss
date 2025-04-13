@@ -12,7 +12,7 @@
     margin-bottom: 3rem;
 
     h1 {
-      @include txt_title_80;
+      @include txt_title_80
       margin: 0;
       color: $Black_00;
     }
@@ -64,10 +64,6 @@
       color: $White_00;
       cursor: pointer;
       transition: 0.2s;
-
-      &:hover {
-        background-color: $Green_67;
-      }
     }
   }
 
@@ -151,10 +147,6 @@
         align-self: flex-end;
         cursor: pointer;
         transition: 0.2s;
-
-        &:hover {
-          background-color: $Green_67;
-        }
       }
     }
   }
