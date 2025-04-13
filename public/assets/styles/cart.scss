@@ -1,3 +1,5 @@
+@import './design_system.scss';
+
 body {
   background-color: $White_00;
   @include montserrat_regular_S;
@@ -62,7 +64,7 @@ body {
 
     button {
       @include btn_size_36;
-      background-color: $Green_96;
+      background-color: $Black_01;
       border: none;
       color: $White_00;
       cursor: pointer;
@@ -148,17 +150,14 @@ body {
 
       .submit-btn {
         @include btn_size_52;
-        background-color: $Green_96;
+        background-color: $Black_01;
         border: none;
-        color: $Black_01;
+        color: $White_00;
         margin-top: 1.5rem;
         align-self: flex-end;
         cursor: pointer;
         transition: 0.2s;
 
-        &:hover {
-          background-color: $Green_67;
-        }
       }
     }
   }
