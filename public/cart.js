@@ -116,7 +116,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Функция валидации поля
   function validateField(field, regex) {
-    const isValid = regex.test(field.value.trim())
+    const value = field.value.trim() // Удаляем пробелы по краям
+
+    // 1. Сначала проверяем, пустое ли поле
+    if (!value) {
+      field.classList.add('is-invalid')
+      field.classList.remove('is-valid')
+      return false // Возвращаем false, если поле пустое
+    }
+
+    // 2. Если поле не пустое, проверяем по regex
+    const isValid = regex.test(value)
+
     if (!isValid) {
       field.classList.add('is-invalid')
       field.classList.remove('is-valid')
@@ -124,6 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
       field.classList.remove('is-invalid')
       field.classList.add('is-valid')
     }
+
     return isValid
   }
 
@@ -135,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return false
     }
 
-    const selectedDate = new Date(dateField.value)
+    const selectedDate = new Date(dateField.value + 'T00:00:00') // Явно устанавливаем время
     const today = new Date()
     today.setHours(0, 0, 0, 0)
 
@@ -161,10 +173,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Валидация времени (уже есть min/max в HTML, но проверим и в JS)
   function validateTime(timeField) {
-    const timeValue = timeField.value
-    const [hours, minutes] = timeValue.split(':').map(Number)
+    if (!timeField.value) {
+      timeField.classList.add('is-invalid')
+      timeField.classList.remove('is-valid')
+      return false
+    }
+
+    const [hours, minutes] = timeField.value.split(':').map(Number)
     const isValid =
-      timeValue && hours >= 8 && (hours < 22 || (hours === 22 && minutes === 0))
+      hours >= 8 && (hours < 22 || (hours === 22 && minutes === 0))
 
     if (!isValid) {
       timeField.classList.add('is-invalid')
@@ -177,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Обработчик отправки формы
-  submitButton.addEventListener('click', function (e) {
+  form.addEventListener('submit', function (e) {
     e.preventDefault()
 
     // Валидируем все поля
