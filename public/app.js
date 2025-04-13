@@ -1,4 +1,32 @@
+document.addEventListener('DOMContentLoaded', function() {
+  const searchToggle = document.getElementById('searchToggle');
+  const searchContainer = document.getElementById('searchContainer');
+  const searchInput = document.getElementById('search');
+  const searchBtn = document.getElementById('searchBtn');
 
+  searchToggle.addEventListener('click', function(event) {
+      
+      if (searchContainer.classList.contains('show')) {
+          closeSearch();
+      } else {
+          searchContainer.classList.add('show');
+          searchInput.focus();
+      }
+  });
+
+  function closeSearch() {
+      searchContainer.classList.remove('show');
+      searchInput.value = '';
+  }
+
+  searchBtn.addEventListener('click', closeSearch);
+
+  searchInput.addEventListener('keypress', function(event) {
+      if (event.key === 'Enter') {
+          closeSearch();
+      }
+  });
+});
 class PlantStore {
   constructor() {
     this.initSearch();

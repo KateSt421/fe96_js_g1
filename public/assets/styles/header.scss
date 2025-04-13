@@ -1,0 +1,116 @@
+@import 'design_system.scss';
+
+.header{
+    padding: 1rem;
+    min-height: calc(20vh + 2rem);
+    background-size: cover;
+
+    background: #fff;
+
+    .header_nav{
+        @include container;
+
+        display: flex;
+        justify-content: space-between;
+
+        height: 10rem;
+
+        .header_nav_logo{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.5rem;
+
+            .header_nav_logo_icon{
+                margin-bottom: 1rem;
+            }
+
+            .header_nav_logo_text{
+                height: 15%;
+            }
+        }
+
+        .header_nav_buttons{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+            align-items: center;
+
+            margin-left: 5rem;
+            width: 23%;
+
+            .header_nav_buttons_plants, .header_nav_buttons_services, .header_nav_buttons_company{
+                @include btn_size_36;
+                font-size: 1.05rem;
+                text-decoration: none;
+                color: #000000;
+
+                cursor: pointer;
+            }
+
+            .header_nav_buttons_plants:hover, .header_nav_buttons_services:hover, .header_nav_buttons_company:hover{
+                background-color: #9BB96C;
+                transition: background-color 0.2s;
+                color: #fff;
+            }
+
+            .header_nav_buttons_plants:active, .header_nav_buttons_services:active, .header_nav_buttons_company:active{
+                background-color: #677E51;
+                color: #fff;
+            }
+        }
+
+        .header_nav_icons{
+            display: flex;
+            justify-content: space-evenly;
+            width: 13%;
+
+            cursor: pointer;
+            
+        }
+    }
+
+    .searchContainer {
+        display: none;
+        position: absolute;
+        padding: 1rem 0 1rem 1rem;
+        top: 16%;
+        left: 0.20rem;
+        right: 0.20rem;
+
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        border-radius: 1.5rem;
+        z-index: 1000;
+    }
+    
+    .searchContainer input {
+        margin-left: 0.7rem;
+        padding: 1rem;
+        box-sizing: border-box;
+
+        width: calc(100% - 10rem);
+        height: 3.5rem;
+
+        font-size: 1rem;
+        border: 2px solid #ddd;
+        border-radius: 2rem;
+        color: var(--primary-color);
+        outline: none;
+        
+    }
+
+    .searchContainer input:focus {
+        border-color: var(--secondary-color);
+        background: rgba(39, 174, 96, 0.1);
+        box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.1);
+    }
+
+    .searchContainer.show {
+        display: block;
+        opacity: 1;
+        transform: translateY(0); 
+    transition: 2s ease-in-out;
+    }
+}
+
