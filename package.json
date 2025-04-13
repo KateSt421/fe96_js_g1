@@ -12,7 +12,10 @@
     "lint:fix": "eslint . --fix",
     "lint:css": "stylelint 'src/css/**/*.css' --fix",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "scss": "node-sass --output-style compressed -o public/assets/styles public/assets/styles/",
+    "scss:watch": "node-sass --output-style compressed -o public/assets/styles/ public/assets/styles/ --watch",
+    "dev": "concurrently \"npm run scss:watch\" \"npm start\""
   },
   "keywords": [
     "frontend",
