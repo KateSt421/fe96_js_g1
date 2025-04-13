@@ -1,76 +1,101 @@
 @import './design_system.scss';
 
-.cart {
-  &__block {
-    background-color: $Grey_94;
-    border-radius: 1.5rem;
-    padding: 2rem;
-    margin-bottom: 2rem;
-  }
+.cart-section {
+  padding: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  background: $White_00;
 
-  &__title {
-    font-size: 2rem;
+  h2, h3 {
     font-weight: 600;
-    margin-bottom: 1.5rem;
+    color: $Black_00;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
   }
 
-  &__total-label,
-  &__total-amount {
-    font-size: 1.8rem;
-    font-weight: bold;
+  .cart-header {
+    background: $Grey_94;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
   }
 
-  &__total-amount {
-    text-align: right;
+  .btn-clear {
+    background: transparent;
+    border: none;
+    font-size: 0.9rem;
+    color: $Black_01;
+    font-weight: 500;
   }
 
-  &__promo {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+  .promo-section {
+    background: $Grey_94;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
 
-    input {
-      flex: 1;
-      padding: 0.8rem 1rem;
-      border-radius: 0.5rem;
-      border: 1px solid $Grey_01;
+    .promo-input {
+      width: 18.375rem; // 294px
+      height: 2.5rem;   // 40px
+      padding: 0.75rem 1rem;
       font-size: 1rem;
     }
 
-    button {
-      padding: 0.8rem 2rem;
-      font-weight: bold;
-    }
-  }
-
-  &__form {
-    .form-label {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-    }
-
-    input,
-    select {
-      padding: 1rem;
-      border-radius: 0.5rem;
-      border: 1px solid $Grey_01;
-      font-size: 1rem;
-      background-color: $White_00;
-    }
-  }
-
-  &__checkout {
-    text-align: center;
-
-    button {
-      padding: 1rem 3rem;
-      font-size: 1rem;
-      font-weight: bold;
-      border-radius: 2rem;
-      background-color: $Black_01;
+    .btn-apply {
+      background: $Black_00;
       color: $White_00;
+      padding: 0.75rem 1.5rem;
+      border-radius: 2rem;
       border: none;
+      font-size: 0.9rem;
+    }
+
+    .promo-discount {
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: $black;
+    }
+  }
+
+  .total-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    .total-price {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+  }
+
+  .delivery-section {
+    background: $Grey_94;
+    padding: 2rem;
+    border-radius: 1.5rem;
+
+    .form-label {
+      font-size: 0.9rem;
+      color: $Black_00;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-control,
+    .form-select {
+      font-size: 1rem;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid $Grey_01;
+      background: $White_00;
+      color: $Black_00;
+    }
+
+    .btn-pay {
+      background: $Black_00;
+      color: $White_00;
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 2rem;
     }
   }
 }

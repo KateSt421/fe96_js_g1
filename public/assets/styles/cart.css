@@ -31,62 +31,84 @@
 /* ----------- Кнопки и ссылки ----------- */
 /* разные настройки размеров кнопок */
 /* ----------- Контейнеры-карточки ----------- */
-.cart__block {
-  background-color: #f2f2f3;
-  border-radius: 1.5rem;
+.cart-section {
   padding: 2rem;
-  margin-bottom: 2rem;
+  font-family: "NeutralFace", sans-serif;
+  background: #ffffff;
 }
-.cart__title {
-  font-size: 2rem;
+.cart-section h2, .cart-section h3 {
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  color: #000000;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
-.cart__total-label, .cart__total-amount {
-  font-size: 1.8rem;
-  font-weight: bold;
+.cart-section .cart-header {
+  background: #f2f2f3;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
 }
-.cart__total-amount {
-  text-align: right;
-}
-.cart__promo {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-.cart__promo input {
-  flex: 1;
-  padding: 0.8rem 1rem;
-  border-radius: 0.5rem;
-  border: 1px solid #D9D9D9;
-  font-size: 1rem;
-}
-.cart__promo button {
-  padding: 0.8rem 2rem;
-  font-weight: bold;
-}
-.cart__form .form-label {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
+.cart-section .btn-clear {
+  background: transparent;
+  border: none;
+  font-size: 0.9rem;
+  color: #010101;
   font-weight: 500;
 }
-.cart__form input,
-.cart__form select {
+.cart-section .promo-section {
+  background: #f2f2f3;
   padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+.cart-section .promo-section .promo-input {
+  width: 18.375rem;
+  height: 2.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+}
+.cart-section .promo-section .btn-apply {
+  background: #000000;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  border: none;
+  font-size: 0.9rem;
+}
+.cart-section .total-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.cart-section .total-section .total-price {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.cart-section .delivery-section {
+  background: #f2f2f3;
+  padding: 2rem;
+  border-radius: 1.5rem;
+}
+.cart-section .delivery-section .form-label {
+  font-size: 0.9rem;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
+.cart-section .delivery-section .form-control,
+.cart-section .delivery-section .form-select {
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
   border-radius: 0.5rem;
   border: 1px solid #D9D9D9;
-  font-size: 1rem;
-  background-color: #ffffff;
+  background: #ffffff;
+  color: #000000;
 }
-.cart__checkout {
-  text-align: center;
-}
-.cart__checkout button {
-  padding: 1rem 3rem;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 2rem;
-  background-color: #010101;
+.cart-section .delivery-section .btn-pay {
+  background: #000000;
   color: #ffffff;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
   border: none;
+  border-radius: 2rem;
 }/*# sourceMappingURL=cart.css.map */
