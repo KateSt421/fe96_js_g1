@@ -1,1 +1,58 @@
 @import './design_system.scss';
+
+.container-cards {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card-btn-add {
+    box-sizing: border-box;
+    height: 3.25rem;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 3rem;
+    @include montserrat_semi_S;
+    border-radius: 2.5rem;
+}
+
+.service-card-btn-delete {
+    display: none;
+}
+
+.service-card-images {
+    width: 14.75rem;
+    border-radius: 20px;
+}
+
+.service-card-text-line1 {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+.service-card-text-line3 {
+    font-family: 'Montserrat';
+    font-weight: normal;
+    font-style: normal;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: row;
+}
+
+.service-card-text-line4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.service-card-text-price {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-style: normal;
+    size: 24px;
+}
