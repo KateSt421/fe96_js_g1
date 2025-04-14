@@ -45,7 +45,7 @@
             align-items: center;
 
             margin-left: 5rem;
-            width: 23%;
+            width: 25%;
 
             &_plants, &_services, &_company{
                 @include btn_size_36;
@@ -142,5 +142,172 @@
         opacity: 1;
         transform: translateY(0); 
         transition: 2s ease-in-out;
+    }
+}
+
+@media screen and (min-width: 1550px) {
+    .header{
+        .header_nav{
+            max-width: none;
+            height: 10rem;
+            width: 97%;
+
+            &_logo{
+                justify-content: center;
+                gap: 0.1rem;
+                width: 15%;
+
+                &_icon{
+                    height: 3.5rem;
+                    width: 3.7rem;
+                }
+
+                &_text{
+                    height: 4.5rem;
+                    width: 5rem;
+                }
+            }
+
+            &_buttons{
+                margin-left: 5rem;
+                width: 30%;
+            }
+
+            .header_nav_icons{
+                width: 16%;
+            }
+        }
+
+        .searchContainer {
+            padding: 1rem 0 1rem 1rem;
+            top: 13%;
+
+            .input-container{
+                input {
+                    margin-left: 4rem;
+                    padding: 1rem;
+
+                    height: 4rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .header{
+        padding: 0;
+
+        .header_nav{
+            height: 9rem;
+            width: 97%;
+
+            .header_nav_logo{
+                gap: 0.3rem;
+            }
+
+            .header_nav_buttons{
+                margin-left: 3.5rem;
+                width: 35%;
+            }
+    
+            .header_nav_icons{
+                width: 16%;
+            }
+        }
+    
+        .searchContainer {
+            .input-container{
+                input {
+                    height: 3rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .header{
+        padding: 0;
+        
+        .header_nav{
+            height: 9rem;
+            width: 100%;
+
+            .header_nav_buttons{
+                width: 40%;
+            }
+
+            .header_nav_icons{
+                gap: 0.4rem;
+                width: 18%;
+            }
+        }
+
+        .searchContainer {
+            top: 17%;
+
+            .input-container{
+                input {
+                    margin-left: 4.2rem;
+                    height: 2.8rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1023px) {
+    .header{
+        padding: 0;
+
+        .header_nav{
+            height: 9rem;
+            width: 98%;
+
+            .header_nav_buttons{
+                margin-left: 1rem;
+                width: 50%;
+            }
+        }
+
+        .searchContainer {
+            top: 16%;
+
+            .input-container{
+                input {
+                    margin-left: 4.5rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 659px) {
+    .header{
+        padding: 0;
+
+        .header_nav{
+            width: 99%;
+
+            .header_nav_buttons{
+                display: none;
+            }
+
+            .header_nav_icons{
+                width: 40%;
+            }
+        }
+
+        .searchContainer {
+            top: 19%;
+
+            .input-container{
+                input {
+                    margin-left: 4rem;
+                    height: 2.5rem;
+                }
+            }
+        }
     }
 }
