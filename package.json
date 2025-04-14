@@ -10,9 +10,13 @@
     "test": "jest",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "lint:css": "stylelint 'src/css/**/*.css' --fix",
+    "lint:css": "stylelint 'public/assets/styles/*.css' --fix 'strict'",
+    "lint:css:fix": "stylelint 'public/assets/styles/*.css' --fix 'lax'",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "scss": "node-sass --output-style compressed -o public/assets/styles public/assets/styles/",
+    "scss:watch": "node-sass --output-style compressed -o public/assets/styles/ public/assets/styles/ --watch",
+    "dev": "concurrently \"npm run scss:watch\" \"npm start\""
   },
   "keywords": [
     "frontend",
@@ -29,5 +33,10 @@
     "express": "^5.1.0",
     "jest": "^29.7.0",
     "supertest": "^7.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.24.0",
+    "stylelint": "^16.18.0",
+    "stylelint-config-standard-scss": "^14.0.0"
   }
 }
