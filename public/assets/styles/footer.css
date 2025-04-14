@@ -3,6 +3,7 @@ footer {
     color: #000; 
     height: 120px;
 }
+
 footer .container {
     display: flex; 
     flex-direction: row; 
@@ -10,20 +11,25 @@ footer .container {
     align-items: center; 
     padding-top: 30px;
 }
+
 footer .list-inline {
     display: flex;
     padding: 0; 
 }
+
 footer .list-inline-item {
     margin: 0 15px; 
 }
+
 footer .social-icons {
     display: flex; 
 }
+
 footer .social-icons a {
     margin-left: 10px; 
     padding: 10px;
 }
+
 .mb-3{
     height: 25px;
     margin-right: 30px;

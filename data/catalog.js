@@ -362,7 +362,7 @@ const plants = [
 },
 {
   id: 41,
-  name: "Ficus mix",
+  name: "Фикус микс",
   price: 1210,
   image: "./assets/images/plant41.jpg",
   category: "foliage plants",
@@ -596,7 +596,7 @@ const plants = [
 },
 {
   id: 68,
-  name: "Howea",
+  name: "Ховея",
   price: 990,
   image: "./assets/images/plant68.jpg",
   category: "palms",
@@ -719,6 +719,106 @@ const plants = [
   category: "citrus",
   description: "Цитрусовые деревья — аромат и свежесть круглый год.Это не только украшение, но и источник свежего аромата. Компактные деревья с яркой листвой и плодами наполняют дом уютом и солнечным настроением.",
   comment: "Высота композиции 70 см"
+},
+{
+  id: 200,
+  name: "Онлайн-консультация по уходу",
+  price: 3860,
+  image: "./assets/images/service1.webp",
+  category: "service",
+  description: "Онлайн-встреча, на которой поможем определить причины проблем с растением и подскажем, как улучшить уход.",
+  comment: "Zoom, 40 минут",
+  service: "онлайн-консультация"
+},
+{
+  id: 201,
+  name: "Выездной фитодизайнер",
+  price: 7900,
+  image: "./assets/images/service2.webp",
+  category: "service",
+  description: "Специалист приедет к вам, чтобы подобрать подходящие растения и оптимально их разместить в интерьере.",
+  comment: "Выезд на 4 часа",
+  service: "консультация на месте"
+},
+{
+  id: 202,
+  name: "Пересадка растений",
+  price: 2400,
+  image: "./assets/images/service3.webp",
+  category: "service",
+  description: "Аккуратно пересадим ваше растение с подбором грунта, дренажа и рекомендациями по дальнейшему уходу.",
+  comment: "На дому, до 1 часа",
+  service: "услуга на выезде"
+},
+{
+  id: 203,
+  name: "Грунт и удобрения подбор",
+  price: 1200,
+  image: "./assets/images/service4.webp",
+  category: "service",
+  description: "Поможем выбрать подходящий грунт и удобрения с учётом вида растения и условий его содержания.",
+  comment: "Онлайн, 30 минут",
+  service: "онлайн-консультация"
+},
+{
+  id: 204,
+  name: "Скорая помощь растению",
+  price: 3000,
+  image: "./assets/images/service5.webp",
+  category: "service",
+  description: "Приезжаем на дом, чтобы оценить состояние растения и оказать срочную помощь при болезнях или вредителях.",
+  comment: "Выезд в пределах МКАД",
+  service: "выездная услуга"
+},
+{
+  id: 205,
+  name: "Уход за офисными растениями",
+  price: 5400,
+  image: "./assets/images/service6.webp",
+  category: "service",
+  description: "Регулярный уход за растениями в офисе — полив, обрезка, удобрение и контроль состояния зелёной зоны.",
+  comment: "1 раз в неделю",
+  service: "подписка на обслуживание"
+},
+{
+  id: 206,
+  name: "Растения в аренду на мероприятие",
+  price: 7500,
+  image: "./assets/images/service7.webp",
+  category: "service",
+  description: "Предоставим стильные растения в аренду для оформления мероприятий — свадьбы, съёмки, выставки и др.",
+  comment: "Сутки аренды",
+  service: "аренда"
+},
+{
+  id: 207,
+  name: "Дизайн-проект с растениями",
+  price: 9500,
+  image: "./assets/images/service8.webp",
+  category: "service",
+  description: "Создадим индивидуальный проект по интеграции растений в интерьер с учётом ваших пожеланий и условий.",
+  comment: "Онлайн, до 1 недели",
+  service: "услуга по проектированию"
+},
+{
+  id: 208,
+  name: "Подарочный сертификат",
+  price: 3000,
+  image: "./assets/images/service9.webp",
+  category: "service",
+  description: "Подарочный сертификат на покупку растений или услуг — идеальный зелёный подарок на любой случай.",
+  comment: "PDF, по почте",
+  service: "электронный формат"
+},
+{
+  id: 209,
+  name: "Настройка автополива",
+  price: 4200,
+  image: "./assets/images/service10.webp",
+  category: "service",
+  description: "Установим систему автополива, подходящую именно для вашего интерьера, образа жизни и растений.",
+  comment: "Выезд, 2 часа",
+  service: "установка на месте"
 },
 ];
 
