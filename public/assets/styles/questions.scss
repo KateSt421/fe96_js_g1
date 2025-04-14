@@ -1,12 +1,12 @@
 @import 'design_system';
 
-// .body {
-//   font-size: 1rem;
-//   line-height: 1.5;
-//   background-color: #fdfdfd;
+//  .body {
+//    font-size: 1rem;
+//  line-height: 1.5;
+//    background-color: #fdfdfd;
 //   padding: 1.25rem;
-// }
-.questionList {
+//  }
+.classquestionList {
   border-radius: 1.5rem;
   padding: 0.9375rem;
   max-width: 31.25rem;
@@ -14,7 +14,7 @@
   margin: 0 auto;
   box-shadow: 0 0 0.625rem rgba(0,0,0,0.1);
 }
-.userInput{
+.classuserInput{
   padding-top: 1rem;
   padding-right: 2rem;
   padding-bottom: 1rem;
@@ -28,7 +28,7 @@
   width: 100%;
   margin-top: 0.5rem;
 }
-.message {
+.classmessage {   
   background: white;
   border-radius: 1.5rem;
   padding: 0.9375rem;
@@ -36,9 +36,9 @@
   margin: 0 auto;
   box-shadow: 0 0 0.625rem rgba(0,0,0,0.1);
 }
-.chat {
-  margin-bottom: 0.625rem; 
-}
+// .classchat {
+//   margin-bottom: 0.625rem; 
+// }
 .user { text-align: right; color: #0e110b; }
 .bot { text-align: left; color: #677E51; }
 #inputArea {

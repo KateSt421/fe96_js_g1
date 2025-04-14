@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="assets/styles/questions.css">
 </head>
 <body>
-    <div id="messages">
-      <div id="chat">
-          <select id="questionList">
+    <div id="messages" class="classmessages"> 
+      
+          <select id="questionList" class="classquestionList">
             <option disabled selected>Выбери вопрос</option>
             <option>Как сделать заказ?</option>
             <option>Вы доставляете заказы?</option>
@@ -24,8 +24,8 @@
             <option>Можно ли забрать заказ самовывозом?</option>
             <option>Есть ли у вас подарочная упаковка?</option>
           </select>
-        <button id="userInput" onclick="sendMessage()">Отправить</button>
-      </div>
+        <button id="userInput" onclick="sendMessage()" class="classuserInput">Отправить</button>
+      
     </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

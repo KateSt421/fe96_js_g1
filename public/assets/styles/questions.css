@@ -1,7 +1,5 @@
 @charset "UTF-8";
-:root {
-  /* ----------- Константы ----------- */
-}
+
 
 /* ----------- Цвета ----------- */
 /* ----------- Стили шрифтов ----------- */
@@ -34,7 +32,7 @@
 /* ----------- Кнопки и ссылки ----------- */
 /* разные настройки размеров кнопок */
 /* ----------- Контейнеры-карточки ----------- */
-.questionList {
+.classquestionList {
   border-radius: 1.5rem;
   padding: 0.9375rem;
   max-width: 31.25rem;
@@ -43,7 +41,7 @@
   box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
 }
 
-.userInput {
+.classuserInput {
   padding-top: 1rem;
   padding-right: 2rem;
   padding-bottom: 1rem;
@@ -58,17 +56,13 @@
   margin-top: 0.5rem;
 }
 
-.message {
+.classmessage {
   background: white;
   border-radius: 1.5rem;
   padding: 0.9375rem;
   max-width: 31.25rem;
   margin: 0 auto;
   box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
-}
-
-.chat {
-  margin-bottom: 0.625rem;
 }
 
 .user {

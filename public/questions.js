@@ -15,11 +15,18 @@ const botAnswers = [
 
 function addMessage(text, sender) {
   const msg = document.createElement('div');
-  msg.classList.add('message', sender);
+  msg.classList.add('classmessage', sender);
   msg.textContent = text;
   messages.appendChild(msg);
   messages.scrollTop = messages.scrollHeight;
 }
+const searchInput = document.getElementById('userInput');
+searchInput.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter' && searchInput.value.length >= 3) {
+    event.preventDefault();
+    this.searchPlants(searchInput.value);
+  }
+});
 
     addMessage(question, 'user');
     function sendMessage() {
