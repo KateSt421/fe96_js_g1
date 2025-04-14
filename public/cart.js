@@ -100,16 +100,14 @@ class CartManager {
   }
 }
 
-
-// Очистка корзины
+// Очистка корзины - не работает, проверить
 document.addEventListener('DOMContentLoaded', () => {
-  const cartManager = new CartManager();
+  const cartManager = new CartManager()
 
-  const clearBtn = document.getElementById('clear-cart');
+  const clearBtn = document.getElementById('clear-cart')
   if (clearBtn) {
     clearBtn.addEventListener('click', () => {
-      localStorage.removeItem('cart');  // удаляем корзину из хранилища
-      cartManager.loadCart();           // перерисовываем интерфейс
-    });
+      cartManager.clearCart()
+    })
   }
-});
+})
