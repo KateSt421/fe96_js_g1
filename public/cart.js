@@ -100,4 +100,16 @@ class CartManager {
   }
 }
 
-const cartManager = new CartManager()
+
+// Очистка корзины
+document.addEventListener('DOMContentLoaded', () => {
+  const cartManager = new CartManager();
+
+  const clearBtn = document.getElementById('clear-cart');
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      localStorage.removeItem('cart');  // удаляем корзину из хранилища
+      cartManager.loadCart();           // перерисовываем интерфейс
+    });
+  }
+});
