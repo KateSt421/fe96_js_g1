@@ -31,31 +31,43 @@
 /* ----------- Кнопки и ссылки ----------- */
 /* разные настройки размеров кнопок */
 /* ----------- Контейнеры-карточки ----------- */
-.container {
+body {
+  height: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.7rem;
-  background-color: #B1B1B1;
-  height: 9rem;
-  max-width: 100%;
 }
 
-.list-inline {
-  display: flex;
-  list-style-type: none;
-  padding: 2rem;
+.container {
+  text-align: center;
+  margin-top: 8rem;
+}
+
+.error-404 {
+  background-color: white;
+  padding: 1.5rem;
+}
+
+h1 {
   margin: 0;
+  color: #667777;
+  font-size: 8rem;
 }
 
-.list-inline-item {
-  margin-right: 1.5rem;
+.text-404 {
+  font-size: 1.5rem;
 }
 
-.social-icons {
-  display: flex;
+.button-404 {
+  margin-top: 2rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  background-color: #677E51;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
 }
 
-.media-brands {
-  margin-left: 3rem;
-}/*# sourceMappingURL=footer.css.map */
+.button-404:hover {
+  background-color: #667777;
+}/*# sourceMappingURL=errors.css.map */

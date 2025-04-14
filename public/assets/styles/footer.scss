@@ -1,0 +1,30 @@
+@import './design_system.scss';
+
+
+.container {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 0.7rem; 
+    background-color: $Grey_02;
+    height: 9rem;
+    max-width: 100%;
+}
+
+.list-inline {
+    display: flex; 
+    list-style-type: none; 
+    padding: 2rem; 
+    margin: 0; 
+}
+
+.list-inline-item {
+    margin-right: 1.5rem; 
+}
+
+.social-icons {
+    display: flex; 
+}
+.media-brands {
+    margin-left: 3rem; 
+}
