@@ -13,7 +13,7 @@ class CartManager {
   displayCart(items) {
     const cartItems = document.getElementById('cart-items')
     if (items.length === 0) {
-      cartItems.innerHTML = '<p class="cart__empty">Корзина пуста</p>'
+      cartItems.innerHTML = '<p>Your cart is empty</p>'
       return
     }
 
@@ -100,14 +100,4 @@ class CartManager {
   }
 }
 
-// Очистка корзины - не работает, проверить
-document.addEventListener('DOMContentLoaded', () => {
-  const cartManager = new CartManager()
-
-  const clearBtn = document.getElementById('clear-cart')
-  if (clearBtn) {
-    clearBtn.addEventListener('click', () => {
-      cartManager.clearCart()
-    })
-  }
-})
+const cartManager = new CartManager()
