@@ -31,6 +31,7 @@
 /* ----------- Кнопки и ссылки ----------- */
 /* разные настройки размеров кнопок */
 /* ----------- Контейнеры-карточки ----------- */
+/* Миксин для шрифта 14px (не было в design_system)*/
 /* Общие стили для блоков корзины, промо и доставки */
 .cart__header,
 .cart__promo,
@@ -53,7 +54,11 @@
 /* Кнопка "Очистить" */
 .cart__btn-clear {
   float: right;
-  font-family: "Montserrat", sans-serif;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150%;
   font-size: 0.875rem;
   font-weight: 600;
   padding: 0.625rem 1.25rem;
@@ -149,13 +154,24 @@
 
 /* Кнопка "Оплатить" */
 .cart__btn-pay {
+  box-sizing: border-box;
+  height: 3.25rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 3rem;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 125%;
+  border-radius: 2.5rem;
   display: block;
   margin: 2rem auto 0;
-  padding: 1rem 2.5rem;
-  font-size: 1rem;
   background-color: #000000;
   color: #ffffff;
   border: none;
-  border-radius: 2rem;
   cursor: pointer;
 }/*# sourceMappingURL=cart.css.map */
