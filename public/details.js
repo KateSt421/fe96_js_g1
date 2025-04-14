@@ -69,18 +69,18 @@ class PlantDetails {
           <p><strong>Category:</strong> ${plant.category.charAt(0).toUpperCase() + plant.category.slice(1)}</p>
           <div class="plant-details-actions">
             ${quantity === 0 ?
-              `<button class="add-to-cart-btn" onclick="plantDetails.updateQuantity(${plant.id}, 1)">Add to Cart</button>` :
+              `<button class="add-to-cart-btn" onclick="plantDetails.updateQuantity(${plant.id}, 1)">Добавить</button>` :
               `<div class="quantity-controls">
-                  <button onclick="plantDetails.updateQuantity(${plant.id}, -1)">-</button>
+                  <button onclick="plantDetails.updateQuantity(${plant.id}, -1)" style="color: black">-</button>
                   <span>${quantity}</span>
-                  <button onclick="plantDetails.updateQuantity(${plant.id}, 1)">+</button>
+                  <button onclick="plantDetails.updateQuantity(${plant.id}, 1)" style="color: black">+</button>
                </div>`
             }
             </div>
         </div>
       </div>
       <nav class="mt-3">
-        <a href="/" class="btn btn-outline-success">&larr; Back to Shop</a>
+        <a href="/" class="btn btn-outline-success">&larr; Назад в каталог</a>
       </nav>
     `;
   }
@@ -91,7 +91,7 @@ class PlantDetails {
       <div class="alert alert-danger" role="alert">
         ${message}
       </div>
-      <a href="/" class="btn btn-primary">Back to Shop</a>
+      <a href="/" class="btn btn-primary">Назад в каталог</a>
     `;
   }
 
