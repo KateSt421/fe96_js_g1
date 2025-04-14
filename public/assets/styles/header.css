@@ -77,15 +77,16 @@
 .header .header_nav .header_nav_logo_text {
   height: 15%;
 }
-.header .header_nav .header_nav_buttons {
+.header .header_nav .header_nav_menu {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
   align-items: center;
   margin-left: 5rem;
   width: 25%;
+  list-style-type: none;
 }
-.header .header_nav .header_nav_buttons_plants, .header .header_nav .header_nav_buttons_services, .header .header_nav .header_nav_buttons_company {
+.header .header_nav .header_nav_menu_plants, .header .header_nav .header_nav_menu_services, .header .header_nav .header_nav_menu_company {
   box-sizing: border-box;
   height: 2.25rem;
   width: -moz-fit-content;
@@ -106,12 +107,12 @@
   color: #000000;
   cursor: pointer;
 }
-.header .header_nav .header_nav_buttons_plants:hover, .header .header_nav .header_nav_buttons_services:hover, .header .header_nav .header_nav_buttons_company:hover {
+.header .header_nav .header_nav_menu_plants:hover, .header .header_nav .header_nav_menu_services:hover, .header .header_nav .header_nav_menu_company:hover {
   background-color: #9BB96C;
   color: #ffffff;
   transition: background-color 0.2s;
 }
-.header .header_nav .header_nav_buttons_plants:active, .header .header_nav .header_nav_buttons_services:active, .header .header_nav .header_nav_buttons_company:active {
+.header .header_nav .header_nav_menu_plants:active, .header .header_nav .header_nav_menu_services:active, .header .header_nav .header_nav_menu_company:active {
   background-color: #677E51;
   color: #ffffff;
 }
@@ -128,6 +129,12 @@
   border: none;
   background-color: #ffffff;
 }
+.header .header_nav .hamb {
+  display: none;
+}
+.header .header_nav .popup {
+  display: none;
+}
 .header .searchContainer {
   display: none;
   position: fixed;
@@ -137,7 +144,7 @@
   right: 0;
   background-color: #ffffff;
   border-top: 0.125rem solid #f2f2f3;
-  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.0392156863);
+  box-shadow: 0px 0.25rem 0.5rem 0px rgba(0, 0, 0, 0.0392156863);
   z-index: 1000;
 }
 .header .searchContainer .input-container {
@@ -196,7 +203,7 @@
     height: 4.5rem;
     width: 5rem;
   }
-  .header .header_nav_buttons {
+  .header .header_nav_menu {
     margin-left: 5rem;
     width: 30%;
   }
@@ -224,7 +231,7 @@
   .header .header_nav .header_nav_logo {
     gap: 0.3rem;
   }
-  .header .header_nav .header_nav_buttons {
+  .header .header_nav .header_nav_menu {
     margin-left: 3.5rem;
     width: 35%;
   }
@@ -243,7 +250,7 @@
     height: 9rem;
     width: 100%;
   }
-  .header .header_nav .header_nav_buttons {
+  .header .header_nav .header_nav_menu {
     width: 40%;
   }
   .header .header_nav .header_nav_icons {
@@ -266,7 +273,7 @@
     height: 9rem;
     width: 98%;
   }
-  .header .header_nav .header_nav_buttons {
+  .header .header_nav .header_nav_menu {
     margin-left: 1rem;
     width: 50%;
   }
@@ -284,16 +291,19 @@
   .header .header_nav {
     width: 99%;
   }
-  .header .header_nav .header_nav_buttons {
+  .header .header_nav_logo {
+    margin-left: 2.5rem;
+  }
+  .header .header_nav .header_nav_menu {
     display: none;
   }
   .header .header_nav .header_nav_icons {
     width: 40%;
   }
-  .header .searchContainer {
+  .searchContainer {
     top: 19%;
   }
-  .header .searchContainer .input-container input {
+  .searchContainer .input-container input {
     margin-left: 4rem;
     height: 2.5rem;
   }

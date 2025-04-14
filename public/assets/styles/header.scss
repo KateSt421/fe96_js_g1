@@ -38,7 +38,7 @@
             }
         }
 
-        .header_nav_buttons{
+        .header_nav_menu{
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-around;
@@ -46,9 +46,11 @@
 
             margin-left: 5rem;
             width: 25%;
+            list-style-type: none;
 
             &_plants, &_services, &_company{
                 @include btn_size_36;
+
                 font-size: 1.05rem;
                 text-decoration: none;
                 color: ($Black_00);
@@ -84,6 +86,14 @@
                 background-color: ($White_00);
             }
         }
+
+        .hamb {
+            display: none;
+        }
+        
+        .popup {
+            display: none;
+        }
     }
 
     .searchContainer {
@@ -96,7 +106,7 @@
 
         background-color: ($White_00);
         border-top: 0.125rem solid $Grey_94;
-        box-shadow: 0px 4px 8px 0px #0000000A;
+        box-shadow: 0px 0.25rem 0.5rem 0px #0000000A;
         z-index: 1000;
 
         .input-container{
@@ -168,7 +178,7 @@
                 }
             }
 
-            &_buttons{
+            &_menu{
                 margin-left: 5rem;
                 width: 30%;
             }
@@ -206,7 +216,7 @@
                 gap: 0.3rem;
             }
 
-            .header_nav_buttons{
+            .header_nav_menu{
                 margin-left: 3.5rem;
                 width: 35%;
             }
@@ -234,7 +244,7 @@
             height: 9rem;
             width: 100%;
 
-            .header_nav_buttons{
+            .header_nav_menu{
                 width: 40%;
             }
 
@@ -265,7 +275,7 @@
             height: 9rem;
             width: 98%;
 
-            .header_nav_buttons{
+            .header_nav_menu{
                 margin-left: 1rem;
                 width: 50%;
             }
@@ -290,7 +300,11 @@
         .header_nav{
             width: 99%;
 
-            .header_nav_buttons{
+            &_logo{
+                margin-left: 2.5rem;
+            }
+
+            .header_nav_menu{
                 display: none;
             }
 
@@ -298,15 +312,15 @@
                 width: 40%;
             }
         }
+    }
 
-        .searchContainer {
-            top: 19%;
+    .searchContainer {
+        top: 19%;
 
-            .input-container{
-                input {
-                    margin-left: 4rem;
-                    height: 2.5rem;
-                }
+        .input-container{
+            input {
+                margin-left: 4rem;
+                height: 2.5rem;
             }
         }
     }
