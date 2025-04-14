@@ -2,31 +2,44 @@ document.addEventListener('DOMContentLoaded', function() {
   const searchToggle = document.getElementById('searchToggle');
   const searchContainer = document.getElementById('searchContainer');
   const searchInput = document.getElementById('search');
-  const searchBtn = document.getElementById('searchBtn');
+  const clearButton = document.getElementById('clearButton');
 
   searchToggle.addEventListener('click', function(event) {
-      
       if (searchContainer.classList.contains('show')) {
           closeSearch();
       } else {
           searchContainer.classList.add('show');
-          searchInput.focus();
       }
   });
-
-  function closeSearch() {
+  
+  const closeSearch = () => {
       searchContainer.classList.remove('show');
       searchInput.value = '';
+      clearButton.style.display = 'none';
   }
 
-  searchBtn.addEventListener('click', closeSearch);
+  searchInput.addEventListener('input', function() {
+    if (searchInput.value.length > 0) {
+        clearButton.style.display = 'inline'; // Показать крестик, если есть текст
+    } else {
+        clearButton.style.display = 'none'; // Скрыть крестик, если нет текста
+    }
+});
+
+clearButton.addEventListener('click', function() {
+  searchInput.value = '';
+  clearButton.style.display = 'none'; // Скрыть крестик после очистки
+  searchInput.focus(); // Вернуть фокус на инпут
+});
 
   searchInput.addEventListener('keypress', function(event) {
       if (event.key === 'Enter') {
           closeSearch();
       }
   });
+  
 });
+
 class PlantStore {
   constructor() {
     this.initSearch();
@@ -39,10 +52,10 @@ class PlantStore {
 
   async initSearch() {
     const searchInput = document.getElementById('search');
-    const searchBtn = document.getElementById('searchBtn');
+    // const searchBtn = document.getElementById('searchBtn');
 
     // Click event for search button
-    searchBtn.addEventListener('click', () => {
+    searchInput.addEventListener('click', () => {
         this.searchPlants(searchInput.value);
     });
 

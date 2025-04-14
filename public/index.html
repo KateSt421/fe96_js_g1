@@ -48,9 +48,9 @@
           </a>
         </div>
         <div class="header_nav_icons">
-          <a class="cart-link" id="searchToggle">
+          <button class="cart-link" id="searchToggle">
             <i class="fa-solid fa-magnifying-glass"></i>
-          </a>
+          </button>
           <a href="/cart.html" class="cart-link">
             <i class="fa-regular fa-user fa-sm"></i>
           </a>
@@ -59,12 +59,15 @@
           </a>
         </div>
       </nav>
-      <div class="searchContainer" id="searchContainer">
-        <input type="text" id="search" placeholder="Найти цветок...">
-        <button id="searchBtn">
-          Поиск
-        </button>
-      </div>
+      
+      <form class="searchContainer" id="searchContainer">
+        <div class="input-container">
+          <input type="text" id="search" placeholder="Поиск...">
+          <span id="clearButton" class="clearButton">
+            <img src="./assets/images/vector_close.svg" alt="erase">
+          </span>
+        </div>
+      </form>
     </header>
 
     <main class="container">

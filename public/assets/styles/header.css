@@ -38,7 +38,7 @@
   padding: 1rem;
   min-height: calc(20vh + 2rem);
   background-size: cover;
-  background: #fff;
+  background-color: #ffffff;
 }
 .header .header_nav {
   max-width: 90rem;
@@ -46,7 +46,13 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  height: 10rem;
+  position: fixed;
+  top: 0;
+  height: 8.5rem;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 0.125rem solid #f2f2f3;
+  background-color: #ffffff;
 }
 @media (max-width: 1024px) {
   .header .header_nav {
@@ -65,10 +71,10 @@
   align-items: center;
   gap: 0.5rem;
 }
-.header .header_nav .header_nav_logo .header_nav_logo_icon {
+.header .header_nav .header_nav_logo_icon {
   margin-bottom: 1rem;
 }
-.header .header_nav .header_nav_logo .header_nav_logo_text {
+.header .header_nav .header_nav_logo_text {
   height: 15%;
 }
 .header .header_nav .header_nav_buttons {
@@ -79,7 +85,7 @@
   margin-left: 5rem;
   width: 23%;
 }
-.header .header_nav .header_nav_buttons .header_nav_buttons_plants, .header .header_nav .header_nav_buttons .header_nav_buttons_services, .header .header_nav .header_nav_buttons .header_nav_buttons_company {
+.header .header_nav .header_nav_buttons_plants, .header .header_nav .header_nav_buttons_services, .header .header_nav .header_nav_buttons_company {
   box-sizing: border-box;
   height: 2.25rem;
   width: -moz-fit-content;
@@ -100,48 +106,69 @@
   color: #000000;
   cursor: pointer;
 }
-.header .header_nav .header_nav_buttons .header_nav_buttons_plants:hover, .header .header_nav .header_nav_buttons .header_nav_buttons_services:hover, .header .header_nav .header_nav_buttons .header_nav_buttons_company:hover {
+.header .header_nav .header_nav_buttons_plants:hover, .header .header_nav .header_nav_buttons_services:hover, .header .header_nav .header_nav_buttons_company:hover {
   background-color: #9BB96C;
+  color: #ffffff;
   transition: background-color 0.2s;
-  color: #fff;
 }
-.header .header_nav .header_nav_buttons .header_nav_buttons_plants:active, .header .header_nav .header_nav_buttons .header_nav_buttons_services:active, .header .header_nav .header_nav_buttons .header_nav_buttons_company:active {
+.header .header_nav .header_nav_buttons_plants:active, .header .header_nav .header_nav_buttons_services:active, .header .header_nav .header_nav_buttons_company:active {
   background-color: #677E51;
-  color: #fff;
+  color: #ffffff;
 }
 .header .header_nav .header_nav_icons {
   display: flex;
   justify-content: space-evenly;
+  align-self: center;
   width: 13%;
   cursor: pointer;
 }
+.header .header_nav .header_nav_icons button {
+  height: 1.5rem;
+  width: 1.5rem;
+  border: none;
+  background-color: #ffffff;
+}
 .header .searchContainer {
   display: none;
-  position: absolute;
+  position: fixed;
   padding: 1rem 0 1rem 1rem;
   top: 16%;
   left: 0;
   right: 0;
-  background-color: #fff;
-  border-top: 2px solid #ddd;
+  background-color: #ffffff;
+  border-top: 0.125rem solid #f2f2f3;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.0392156863);
   z-index: 1000;
 }
-.header .searchContainer input {
-  margin-left: 0.7rem;
+.header .searchContainer .input-container {
+  position: relative;
+}
+.header .searchContainer .input-container input {
+  margin-left: 3rem;
   padding: 1rem;
+  padding-right: 2rem;
   box-sizing: border-box;
   width: calc(100% - 10rem);
   height: 3.5rem;
   font-size: 1rem;
-  border: 2px solid #ddd;
-  border-radius: 2rem;
+  border: 0.125rem solid #f2f2f3;
+  border-radius: 0.75rem;
   color: var(--primary-color);
   outline: none;
 }
-.header .searchContainer input:focus {
-  border-color: var(--secondary-color);
-  background: rgba(39, 174, 96, 0.1);
-  box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.1);
+.header .searchContainer .input-container input:focus {
+  border: 0.125rem solid #9BB96C;
+  background: #ffffff;
+}
+.header .searchContainer .input-container .clearButton {
+  display: none;
+  position: absolute;
+  right: 8rem;
+  top: 50%;
+  height: 1.5rem;
+  width: 1.5rem;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 .header .searchContainer.show {
   display: block;
