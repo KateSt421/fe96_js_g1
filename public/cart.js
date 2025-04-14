@@ -13,7 +13,7 @@ class CartManager {
   displayCart(items) {
     const cartItems = document.getElementById('cart-items')
     if (items.length === 0) {
-      cartItems.innerHTML = '<p>Your cart is empty</p>'
+      cartItems.innerHTML = '<p class="cart__empty">Корзина пуста</p>'
       return
     }
 

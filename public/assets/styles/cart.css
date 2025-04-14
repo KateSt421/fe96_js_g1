@@ -43,6 +43,7 @@
 
 /* Заголовки "Корзина" и "Доставка" */
 .cart__title {
+  display: inline-block;
   font-family: "Belleza", sans-serif;
   font-size: 2rem;
   margin: 0;
@@ -51,6 +52,7 @@
 
 /* Кнопка "Очистить" */
 .cart__btn-clear {
+  float: right;
   font-family: "Montserrat", sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
@@ -59,6 +61,13 @@
   border: none;
   border-radius: 2.5rem;
   cursor: pointer;
+}
+
+.cart__empty {
+  text-align: center;
+  font-size: 1.25rem;
+  color: #667777;
+  padding: 3rem 0;
 }
 
 /* Промо-блок */
@@ -100,7 +109,7 @@
 }
 
 /* Поля формы доставки */
-/*.cart__delivery {
+.cart__delivery {
   /* Размеры полей по макету 
   .input--name {
     width: 82rem;   // 1312px
@@ -119,8 +128,8 @@
   }
   .input--time {
     width: 40.5rem; // 648px
-  } 
-}*/
+  } */
+}
 .cart__delivery .form-label {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;

@@ -8,29 +8,38 @@ $Montserrat: 'Montserrat', sans-serif;
 .cart__promo,
 .cart__delivery {
   background-color: $Grey_94;
-  border-radius: 2rem;  // 32px
-  padding: 1.5rem;      // 24px
+  border-radius: 2rem; // 32px
+  padding: 1.5rem; // 24px
   margin-bottom: 2rem;
 }
 
 /* Заголовки "Корзина" и "Доставка" */
 .cart__title {
+  display: inline-block;
   font-family: $Belleza;
-  font-size: 2rem;      // 32px
+  font-size: 2rem; // 32px
   margin: 0;
   color: #2c1500;
 }
 
 /* Кнопка "Очистить" */
 .cart__btn-clear {
+  float: right;
   font-family: $Montserrat;
-  font-size: 0.875rem;  // 14px
+  font-size: 0.875rem; // 14px
   font-weight: 600;
   padding: 0.625rem 1.25rem; // 10px x 20px
   background-color: rgba(0, 0, 0, 0.02);
   border: none;
-  border-radius: 2.5rem;  // 40px
+  border-radius: 2.5rem; // 40px
   cursor: pointer;
+}
+
+.cart__empty {
+  text-align: center;
+  font-size: 1.25rem;
+  color: $Grey_03;
+  padding: 3rem 0;
 }
 
 /* Промо-блок */
@@ -40,23 +49,23 @@ $Montserrat: 'Montserrat', sans-serif;
   align-items: center;
 
   .promo__input {
-    width: 18.375rem;   // 294px
-    height: 2.5rem;     // 40px
+    width: 18.375rem; // 294px
+    height: 2.5rem; // 40px
     padding: 0 1rem;
     font-size: 1rem;
     border: 1px solid $Grey_94;
-    border-radius: 0.75rem;   // 12px = 0.75rem
+    border-radius: 0.75rem; // 12px = 0.75rem
     background-color: $White_00;
   }
 
   .promo__btn {
-    height: 2.5rem;     // 40px
+    height: 2.5rem; // 40px
     padding: 0 1.5rem;
     font-size: 1rem;
     background-color: $Black_00;
     color: $White_00;
     border: none;
-    border-radius: 2rem;  // 32px
+    border-radius: 2rem; // 32px
     cursor: pointer;
   }
 
@@ -89,8 +98,8 @@ $Montserrat: 'Montserrat', sans-serif;
     color: $Black_00;
     background-color: $White_00;
     border: 1px solid $Grey_94;
-    border-radius: 0.75rem;   // 12px = 0.75rem
-    height: 2.5rem;          // 40px
+    border-radius: 0.75rem; // 12px = 0.75rem
+    height: 2.5rem; // 40px
     line-height: 2.5rem;
     padding: 0 1rem;
     width: 100%;
