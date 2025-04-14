@@ -1,0 +1,50 @@
+@import 'design_system';
+
+.body {
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: #fdfdfd;
+  padding: 1.25rem;
+}
+.questionList {
+
+}
+.userInput{
+  position: relative;
+  padding-top: 1rem;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  background: var(--secondary-color);
+  border: 1px solid #9BB96C;
+  color: white;
+  border-radius: 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+.message {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 0.9375rem;
+  max-width: 31.25rem;
+  margin: 0 auto;
+  box-shadow: 0 0 0.625rem rgba(0,0,0,0.1);
+}
+.user { text-align: right; color: #0e110b; }
+.bot { text-align: left; color: #677E51; }
+#inputArea {
+  display: flex;
+  margin-top: 0.625rem;
+}
+#inputArea input {
+  flex: 1;
+  padding: 0.625rem; 
+  font-size: 1rem;
+}
+#inputArea button {
+  padding: 0.625rem; 
+  font-size: 1rem;
+}
