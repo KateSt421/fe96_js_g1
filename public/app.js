@@ -85,17 +85,24 @@ class PlantStore {
       const inCartClass = quantity > 0 ? 'in-cart' : '';
 
       return `
-        <div class="plant-card ${inCartClass}" data-plant-id="${plant.id}">
-          <img src="${plant.image}" alt="${plant.name}">
-          <button class="details-btn" onclick="window.location.href='/details.html?id=${plant.id}'">Details</button>
-          <h3>${plant.name}</h3>
+        <div class="plant-card ${inCartClass}" data-plant-id="${
+          plant.id
+        }" style="border-color: aliceblue; box-shadow: none; border-radius:1.7rem;">
+          <img src="${plant.image}" alt="${
+          plant.name
+        }" style="border-radius:1.5rem;">
+          <button class="details-btn" onclick="window.location.href='/details.html?id=${
+            plant.id
+          }'">Подробнее</button>
           <p>$${plant.price.toFixed(2)}</p>
-          ${quantity === 0 ?
-            `<button class="add-to-cart-btn" onclick="plantStore.updateQuantity(${plant.id}, 1)">Add to Cart</button>` :
-            `<div class="quantity-controls">
-                <button onclick="plantStore.updateQuantity(${plant.id}, -1)">-</button>
+          <h3>${plant.name}</h3>
+          ${
+            quantity === 0
+              ? `<button class="add-to-cart-btn" onclick="plantStore.updateQuantity(${plant.id}, 1)">Добавить</button>`
+              : `<div class="quantity-controls">
+                <button onclick="plantStore.updateQuantity(${plant.id}, -1)" style="color:black;" >-</button>
                 <span>${quantity}</span>
-                <button onclick="plantStore.updateQuantity(${plant.id}, 1)">+</button>
+                <button onclick="plantStore.updateQuantity(${plant.id}, 1)" style="color:black;">+</button>
              </div>`
           }
         </div>
