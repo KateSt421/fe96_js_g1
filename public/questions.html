@@ -11,22 +11,24 @@
 </head>
 <body>
     <div id="messages">
-      <select id="questionList">
-        <option disabled selected>Выбери вопрос</option>
-        <option>Как сделать заказ?</option>
-        <option>Вы доставляете заказы?</option>
-        <option>Сколько ждать заказ?</option>
-        <option>Какие есть способы оплаты?</option>
-        <option>Как упакованы растения?</option>
-        <option>Вы подскажете, как ухаживать за растением?</option>
-        <option>Есть ли у вас скидки или акции?</option>
-        <option>Можно ли забрать заказ самовывозом?</option>
-        <option>Есть ли у вас подарочная упаковка?</option>
-      </select>
-      <button onclick="sendMessage()" id="userInput">Отправить</button>
-  </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="questions.js"></script>
+      <div id="chat">
+          <select id="questionList">
+            <option disabled selected>Выбери вопрос</option>
+            <option>Как сделать заказ?</option>
+            <option>Вы доставляете заказы?</option>
+            <option>Сколько ждать заказ?</option>
+            <option>Какие есть способы оплаты?</option>
+            <option>Как упакованы растения?</option>
+            <option>Вы подскажете, как ухаживать за растением?</option>
+            <option>Есть ли у вас скидки или акции?</option>
+            <option>Можно ли забрать заказ самовывозом?</option>
+            <option>Есть ли у вас подарочная упаковка?</option>
+          </select>
+        <button id="userInput" onclick="sendMessage()">Отправить</button>
+      </div>
+    </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="questions.js"></script>
 </body>
 </html>
