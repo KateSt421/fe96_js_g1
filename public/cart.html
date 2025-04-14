@@ -17,23 +17,23 @@
       crossorigin="anonymous"
     ></script>
     <link href="assets/styles/styles.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+    />
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <nav class="mt-3">
         <a href="/" class="btn btn-outline-success">&larr; Back to Shop</a>
       </nav>
       <h1>Shopping Cart</h1>
       <div class="row">
-        <div class="col-md-8">
-          <div id="cart-items"></div>
-        </div>
-        <div class="col-md-4">
-          <div class="checkout-form">
-            <h3>Checkout</h3>
-
-            <form id="deliveryForm">
-              <div class="mb-3">
+        <div class="delivery-section">
+          <h3>Доставка</h3>
+          <form id="deliveryForm">
+            <div class="row">
+              <div class="col-12 mb-3">
                 <label for="name">Имя</label>
                 <input
                   type="text"
@@ -44,97 +44,115 @@
                   maxlength="50"
                   required
                 />
-                <div class="invalid-feedback">
-                  Пожалуйста, введите имя (минимум 2 символа)
+                <div class="invalid-feedback bg-danger text-white p-2 rounded">
+                  Укажите имя
                 </div>
               </div>
+            </div>
 
-              <div class="mb-3">
-                <label for="adress">Адрес</label>
-                <div class="row">
-                  <div class="col-md-8 mb-3">
-                    <input
-                      type="text"
-                      id="street"
-                      class="form-control"
-                      placeholder="Улица"
-                      minlength="3"
-                      maxlength="50"
-                      required
-                    />
-                    <div class="invalid-feedback">
-                      Пожалуйста, введите улицу (минимум 3 символа)
-                    </div>
-                  </div>
-                  <div class="col-md-2 mb-3">
-                    <input
-                      type="text"
-                      id="house"
-                      class="form-control"
-                      placeholder="Дом"
-                      required
-                    />
-                    <div class="invalid-feedback">
-                      Пожалуйста, введите номер дома
-                    </div>
-                  </div>
-                  <div class="col-md-2 mb-3">
-                    <input
-                      type="text"
-                      id="apartment"
-                      class="form-control"
-                      placeholder="Квартира/Офис"
-                      required
-                    />
-                    <div class="invalid-feedback">
-                      Пожалуйста, введите номер квартиры
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <label for="date">Дата</label>
+            <div class="row mb-3">
+              <div class="col-md-6 mb-3">
+                <label for="street">Улица</label>
                 <input
-                  type="date"
-                  id="date"
-                  name="date"
+                  type="text"
+                  id="street"
                   class="form-control"
+                  placeholder="Улица"
+                  minlength="3"
+                  maxlength="50"
                   required
-                  min="<?= date('Y-m-d') ?>"
-                  max="<?= date('Y-m-d', strtotime('+2 years')) ?>"
                 />
-                <div class="invalid-feedback">
+                <div class="invalid-feedback bg-danger text-white p-2 rounded">
+                  Укажите улицу
+                </div>
+              </div>
+
+              <div class="col-md-3 mb-3">
+                <label for="house">Дом</label>
+                <input
+                  type="text"
+                  id="house"
+                  class="form-control"
+                  placeholder="Дом"
+                  required
+                />
+                <div class="invalid-feedback bg-danger text-white p-2 rounded">
+                  Добавьте номер дома
+                </div>
+              </div>
+
+              <div class="col-md-3 mb-3">
+                <label for="apartment">Квартира</label>
+                <input
+                  type="text"
+                  id="apartment"
+                  class="form-control"
+                  placeholder="Квартира/Офис"
+                  required
+                />
+                <div class="invalid-feedback bg-danger text-white p-2 rounded">
+                  Добавьте номер квартиры
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="date">Дата</label>
+                <div class="input-group date" id="datepicker">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="date"
+                    required
+                    placeholder="Выберите дату"
+                  />
+                  <span class="input-group-text"
+                    ><i class="bi bi-calendar3"></i
+                  ></span>
+                </div>
+                <div class="invalid-feedback bg-danger text-white p-2 rounded">
                   Пожалуйста, выберите корректную дату
                 </div>
               </div>
 
-              <div class="mb-3">
+              <div class="col-md-6 mb-3">
                 <label for="time">Время</label>
-                <input
-                  type="time"
-                  id="time"
-                  class="form-control"
-                  required
-                  min="08:00"
-                  max="22:00"
-                />
-                <div class="invalid-feedback">
-                  Пожалуйста, выберите время между 8:00 и 22:00
+                <select id="time" class="form-select" required>
+                  <option value="" selected disabled>Выберите время</option>
+                  <option value="8:00-12:00">8:00 - 12:00</option>
+                  <option value="11:00-14:00">11:00 - 14:00</option>
+                  <option value="13:00-18:00">13:00 - 18:00</option>
+                  <option value="17:00-20:00">17:00 - 20:00</option>
+                  <option value="19:00-23:00">19:00 - 23:00</option>
+                </select>
+                <div class="invalid-feedback bg-danger text-white p-2 rounded">
+                  Пожалуйста, выберите временной интервал
                 </div>
               </div>
-
-              <div class="price-summary">
-                <p>Subtotal: <span id="subtotal">$0</span></p>
-                <p>Discount: <span id="discount">$0</span></p>
-                <p>Total: <span id="total">$0</span></p>
-              </div>
-              <button type="submit" class="category-btn">Place Order</button>
-            </form>
-          </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Place Order</button>
+          </form>
         </div>
       </div>
     </div>
-    <script src="cart.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.ru.min.js"></script>
+    <script src="delivery_cart.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $('#datepicker').datepicker({
+          format: 'yyyy-mm-dd',
+          autoclose: true,
+          todayHighlight: true,
+          startDate: new Date(),
+          language: 'ru',
+        })
+      })
+    </script>
   </body>
 </html>

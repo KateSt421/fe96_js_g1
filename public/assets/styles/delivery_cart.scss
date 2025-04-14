@@ -1,0 +1,27 @@
+@import './public/assets/styles/design_system.scss';
+
+/* Добавим стили для красного placeholder */
+input.is-invalid::placeholder {
+  color: red !important;
+  opacity: 1;
+}
+
+/* Стили для валидных полей */
+.is-valid {
+  border-color: #28a745 !important;
+}
+
+/* Стили для невалидных полей */
+.is-invalid {
+  border-color: #dc3545 !important;
+}
+
+/* Дополнительные стили для invalid-feedback */
+.invalid-feedback {
+  display: none;
+  margin-top: 0.25rem;
+}
+
+.is-invalid ~ .invalid-feedback {
+  display: block;
+}
