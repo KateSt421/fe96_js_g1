@@ -13,10 +13,9 @@
 /* Заголовки "Корзина" и "Доставка" */
 .cart__title {
   display: inline-block;
-  font-family: $Belleza;
+  @include txt_title_80;
   font-size: 2rem; // 32px
   margin: 0;
-  color: #2c1500;
 }
 
 /* Кнопка "Очистить" */
@@ -78,7 +77,7 @@
 /* Поля формы доставки */
 .cart__delivery {
   .form-label {
-    font-family: $Montserrat;
+    @include montserrat_regular_S;
     font-size: 1rem;
     margin-bottom: 0.5rem;
   }
