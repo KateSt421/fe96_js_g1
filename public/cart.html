@@ -53,7 +53,7 @@
     </div>-->
 
     <div class="container py-5">
-      <!-- Товары -->
+      <!-- Раздел корзины -->
       <section class="cart-section bg-light p-4 rounded-4 mb-4">
         <h2 class="cart__title font-belleza mb-0">Корзина</h2>
         <button
@@ -66,7 +66,7 @@
         <div id="cart-items" class="cart__items"></div>
       </section>
 
-      <!-- Промокод, скидка -->
+      <!-- Промокод / скидка -->
       <section
         id="cart-promo"
         class="cart__promo bg-light p-4 rounded-4 mb-4 d-flex justify-content-between align-items-center"
@@ -86,81 +86,73 @@
         <span class="mb-0 total__amount" id="total">0 ₽</span>
       </section>
 
-      <!-- Доставка -->
-      <form
-        id="
-      checkout-form"
-      >
+      <!-- Форма для оформления заказа / доставки -->
+      <form id="checkout-form">
         <section
           id="cart-delivery"
           class="cart__delivery bg-light p-4 rounded-4 mb-4"
         >
           <h2 class="cart__title font-belleza mb-3">Доставка</h2>
-          <form>
-            <div class="mb-3">
-              <label for="name" class="form-label">Имя*</label>
+          <div class="mb-3">
+            <label for="name" class="form-label">Имя*</label>
+            <input
+              type="text"
+              id="name"
+              class="form-control cart__input input--name"
+              placeholder="Имя"
+              required
+            />
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="street" class="form-label">Улица*</label>
               <input
                 type="text"
-                id="name"
-                class="form-control cart__input input--name"
-                placeholder="Имя"
+                id="street"
+                class="form-control cart__input input--street"
+                placeholder="ул.Ленина"
                 required
               />
             </div>
-
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <label for="street" class="form-label">Улица*</label>
-                <input
-                  type="text"
-                  id="street"
-                  class="form-control cart__input input--street"
-                  placeholder="ул.Ленина"
-                  required
-                />
-              </div>
-              <div class="col-md-3">
-                <label for="house" class="form-label">Дом*</label>
-                <input
-                  type="text"
-                  id="house"
-                  class="form-control cart__input input--house"
-                  placeholder="12к1"
-                  required
-                />
-              </div>
-              <div class="col-md-3">
-                <label for="apt" class="form-label">Квартира / офис*</label>
-                <input
-                  type="text"
-                  id="apt"
-                  class="form-control cart__input input--apt"
-                  placeholder="12"
-                  required
-                />
-              </div>
+            <div class="col-md-3">
+              <label for="house" class="form-label">Дом*</label>
+              <input
+                type="text"
+                id="house"
+                class="form-control cart__input input--house"
+                placeholder="12к1"
+                required
+              />
             </div>
-
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <label for="date" class="form-label">Дата</label>
-                <input
-                  type="date"
-                  id="date"
-                  class="form-control cart__input input--date"
-                  required
-                />
-              </div>
-              <div class="col-md-6">
-                <label for="time" class="form-label">Время</label>
-                <select id="time" class="form-select cart__input input--time">
-                  <option selected>Любое</option>
-                </select>
-              </div>
+            <div class="col-md-3">
+              <label for="apt" class="form-label">Квартира / офис*</label>
+              <input
+                type="text"
+                id="apt"
+                class="form-control cart__input input--apt"
+                placeholder="12"
+                required
+              />
             </div>
-          </form>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="date" class="form-label">Дата</label>
+              <input
+                type="date"
+                id="date"
+                class="form-control cart__input input--date"
+                required
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="time" class="form-label">Время</label>
+              <select id="time" class="form-select cart__input input--time">
+                <option selected>Любое</option>
+              </select>
+            </div>
+          </div>
         </section>
-
         <div class="text-center">
           <button class="cart__btn-pay btn btn-dark btn-lg">Оплатить</button>
         </div>
