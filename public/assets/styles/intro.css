@@ -1,0 +1,121 @@
+@import 'design_system';
+
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('/public/assets/fonts/Montserrat-SemiBold.eot');
+	src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
+		url('/public/assets/fonts/Montserrat-SemiBold.woff') format('woff'),
+		url('/public/assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('/public/assets/fonts/Montserrat-Regular.eot');
+	src: local('Montserrat Regular'), local('Montserrat-Regular'),
+		url('/public/assets/fonts/Montserrat-Regular.woff') format('woff'),
+		url('/public/assets/fonts/Montserrat-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+  font-family: 'Belleza';
+  src: url('/public/assets/fonts/Belleza-Regular.eot');
+  src: local('Belleza Regular'), local('Belleza-Regular'),
+      url('/public/assets/fonts/Belleza-Regular.woff2') format('woff2'),
+      url('/public/assets/fonts/Belleza-Regular.woff') format('woff'),
+      url('/public/assets/fonts/Belleza-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.main_page{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  
+  .text_side{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    height: 48rem;
+    width: 42rem;
+    margin:0;
+  }
+  
+  .text{
+    height: 48rem;
+    width: 42rem;
+    padding:4rem 3rem;
+  }
+  
+  .text1{
+  font-family: 'Belleza';
+  font-style: normal;
+  font-size: 5rem;
+  line-height: 5rem;
+  color: #010101;
+  align-self: stretch;
+  }
+
+  .text2_button_catalog{
+  align-items: center;
+  background: #010101;
+  color: #FFFFFF;
+  border-radius: 2rem;
+  font: 'Montserrat';
+  font-weight: bold;
+  font-size:1rem;
+  width: 11rem;
+  height:3rem;
+  margin-top:2rem;
+  margin-bottom: 4rem;
+  font-size: 1rem;
+  font-style: normal;
+  }
+  
+  .text3{
+  width: 25rem;
+  max-width: 25rem;
+  height: 4rem;
+  font: 'Montserrat';
+  font-weight: normal;
+  font-style: normal;
+  color: #000000;
+  font-size:1.5rem;
+  margin-right:17.5rem;
+  margin-bottom: 4rem;
+  }
+  
+  .yandex_map{
+  width: 9rem;
+  height:3rem;
+  }
+  
+  .picture_side{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 48rem;
+    width: 41rem;
+    margin:0;
+  }
+  
+  .text2_button_catalog:hover{
+    background:#667777;
+  }
+  
+  .yandex_map{
+      transition: transform 0.1s;
+    }
+  
+    .yandex_map:hover {
+      transform: scale(1.1);
+  }
+
