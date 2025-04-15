@@ -1,18 +1,5 @@
 @import 'design_system';
 
-$Belleza: 'Belleza', sans-serif;
-$Montserrat: 'Montserrat', sans-serif;
-
-/* Миксин для шрифта 14px (не было в design_system)*/
-@mixin montserrat_semi_XS {
-  font-family: 'Montserrat';
-  font-weight: 600;
-  font-size: 0.875rem; // 14px
-  line-height: 1.25rem; // 20px
-  letter-spacing: 0;
-  text-align: center;
-}
-
 /* Общие стили для блоков корзины, промо и доставки */
 .cart__header,
 .cart__promo,
@@ -43,13 +30,6 @@ $Montserrat: 'Montserrat', sans-serif;
   border: none;
   border-radius: 2.5rem; // 40px
   cursor: pointer;
-}
-
-.cart__empty {
-  text-align: center;
-  font-size: 1.25rem;
-  color: $Grey_03;
-  padding: 3rem 0;
 }
 
 /* Промо-блок */
