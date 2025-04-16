@@ -31,7 +31,11 @@
 /* ----------- Кнопки и ссылки ----------- */
 /* разные настройки размеров кнопок */
 /* ----------- Контейнеры-карточки ----------- */
-/* Общие стили для блоков корзины, промо и доставки */
+.cart {
+  padding: 3rem;
+  padding-bottom: 6rem;
+}
+
 .cart__header,
 .cart__promo,
 .cart__delivery {
@@ -41,7 +45,6 @@
   margin-bottom: 2rem;
 }
 
-/* Заголовки "Корзина" и "Доставка" */
 .cart__title {
   display: inline-block;
   /* служебный миксин, его использовать не надо */
@@ -54,7 +57,6 @@
   margin: 0;
 }
 
-/* Кнопка "Очистить" */
 .cart__btn-clear {
   float: right;
   /* служебный миксин, его использовать не надо */
@@ -71,14 +73,13 @@
   cursor: pointer;
 }
 
-.cart__empty {
+.cart__empty-msg {
+  text-align: center;
   font-size: 1.25rem;
   color: #667777;
-  text-align: center;
-  padding: 2rem 0;
+  padding-top: 2rem;
 }
 
-/* Промо-блок */
 .cart__promo {
   display: flex;
   justify-content: space-between;
@@ -103,20 +104,23 @@
   border-radius: 2rem;
   cursor: pointer;
 }
-.cart__promo .promo__disc {
+.cart__promo .promo__discount {
   font-size: 1.125rem;
   font-weight: 500;
   color: #000000;
 }
 
-/* Итоговая секция */
+.cart__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .cart__total h3,
-.cart__total .total-amount {
+.cart__total .total__amount {
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-/* Поля формы доставки */
 .cart__delivery .form-label {
   /* служебный миксин, его использовать не надо */
   font-family: "Montserrat";
@@ -137,8 +141,18 @@
   padding: 0 1rem;
   width: 100%;
 }
+.cart__delivery .form__group-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.cart__delivery .form__group-row .half {
+  width: 50%;
+}
+.cart__delivery .form__group-row .quarter {
+  width: 25%;
+}
 
-/* Кнопка "Оплатить" */
 .cart__btn-pay {
   box-sizing: border-box;
   height: 3.25rem;
@@ -160,4 +174,9 @@
   color: #ffffff;
   border: none;
   cursor: pointer;
+}
+
+.form__submit {
+  text-align: center;
+  margin-top: 2rem;
 }/*# sourceMappingURL=cart.css.map */

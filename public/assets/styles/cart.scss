@@ -1,87 +1,90 @@
 @import 'design_system';
 
-/* Общие стили для блоков корзины, промо и доставки */
+.cart {
+  padding: 3rem; // 48px = 3rem
+  padding-bottom: 6rem; // 96px = 6rem
+}
+
 .cart__header,
 .cart__promo,
 .cart__delivery {
   background-color: $Grey_94;
-  border-radius: 2rem; // 32px
-  padding: 1.5rem; // 24px
+  border-radius: 2rem;
+  padding: 1.5rem;
   margin-bottom: 2rem;
 }
 
-/* Заголовки "Корзина" и "Доставка" */
 .cart__title {
   display: inline-block;
   @include txt_title_80;
-  font-size: 2rem; // 32px
+  font-size: 2rem;
   margin: 0;
 }
 
-/* Кнопка "Очистить" */
 .cart__btn-clear {
   float: right;
   @include montserrat_regular_S;
-  font-size: 0.875rem; // 14px
+  font-size: 0.875rem;
   font-weight: 600;
-  padding: 0.625rem 1.25rem; // 10px x 20px
+  padding: 0.625rem 1.25rem;
   background-color: rgba(0, 0, 0, 0.02);
   border: none;
-  border-radius: 2.5rem; // 40px
+  border-radius: 2.5rem;
   cursor: pointer;
 }
 
-.cart__empty {
+.cart__empty-msg {
+  text-align: center;
   font-size: 1.25rem;
   color: $Grey_03;
-  text-align: center;
-  padding: 2rem 0;
+  padding-top: 2rem;
 }
 
-/* Промо-блок */
 .cart__promo {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   .promo__input {
-    width: 18.375rem; // 294px
-    height: 2.5rem; // 40px
+    width: 18.375rem;
+    height: 2.5rem;
     padding: 0 1rem;
     font-size: 1rem;
     border: 1px solid $Grey_94;
-    border-radius: 0.75rem; // 12px = 0.75rem
+    border-radius: 0.75rem;
     background-color: $White_00;
   }
 
   .promo__btn {
-    height: 2.5rem; // 40px
+    height: 2.5rem;
     padding: 0 1.5rem;
     font-size: 1rem;
     background-color: $Black_00;
     color: $White_00;
     border: none;
-    border-radius: 2rem; // 32px
+    border-radius: 2rem;
     cursor: pointer;
   }
 
-  .promo__disc {
+  .promo__discount {
     font-size: 1.125rem;
     font-weight: 500;
     color: $Black_00;
   }
 }
 
-/* Итоговая секция */
 .cart__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   h3,
-  .total-amount {
+  .total__amount {
     font-size: 1.5rem;
     font-weight: bold;
   }
 }
 
-/* Поля формы доставки */
 .cart__delivery {
   .form-label {
     @include montserrat_regular_S;
@@ -94,15 +97,28 @@
     color: $Black_00;
     background-color: $White_00;
     border: 1px solid $Grey_94;
-    border-radius: 0.75rem; // 12px = 0.75rem
-    height: 2.5rem; // 40px
+    border-radius: 0.75rem;
+    height: 2.5rem;
     line-height: 2.5rem;
     padding: 0 1rem;
     width: 100%;
   }
+
+  .form__group-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    .half {
+      width: 50%;
+    }
+
+    .quarter {
+      width: 25%;
+    }
+  }
 }
 
-/* Кнопка "Оплатить" */
 .cart__btn-pay {
   @include btn_size_52;
   display: block;
@@ -111,4 +127,9 @@
   color: $White_00;
   border: none;
   cursor: pointer;
+}
+
+.form__submit {
+  text-align: center;
+  margin-top: 2rem;
 }
