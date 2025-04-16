@@ -34,3 +34,6 @@ footer .social-icons a {
     height: 25px;
     margin-right: 30px;
 }
+.social-icons .media-brands i {
+    color: black; /* Замените на нужный вам цвет */
+}
