@@ -1,49 +1,73 @@
 @charset "UTF-8";
 /* ----------- Константы ----------- */
-
-:root {
-  /* ----------- Константы ----------- */
-}
-
 /* ----------- Цвета ----------- */
-
 /* ----------- Стили шрифтов ----------- */
 @font-face {
-  font-family: Montserrat;
+  font-family: "Montserrat";
   src: url("/public/assets/fonts/Montserrat-SemiBold.eot");
   src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("/public/assets/fonts/Montserrat-SemiBold.woff") format("woff"), url("/public/assets/fonts/Montserrat-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
-
 @font-face {
-  font-family: Montserrat;
+  font-family: "Montserrat";
   src: url("/public/assets/fonts/Montserrat-Regular.eot");
   src: local("Montserrat Regular"), local("Montserrat-Regular"), url("/public/assets/fonts/Montserrat-Regular.woff") format("woff"), url("/public/assets/fonts/Montserrat-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
-  font-family: Belleza;
+  font-family: "Belleza";
   src: url("/public/assets/fonts/Belleza-Regular.eot");
   src: local("Belleza Regular"), local("Belleza-Regular"), url("/public/assets/fonts/Belleza-Regular.woff2") format("woff2"), url("/public/assets/fonts/Belleza-Regular.woff") format("woff"), url("/public/assets/fonts/Belleza-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
-
 /* Заголовки, на макете шрифты */
-
 /* Жирные цифры */
-
 /* Заголовки, на макете шрифт Belleza */
-
 /* ----------- Размеры отступов, паддингов ----------- */
-
 /* ----------- Ограничения ширин, шаблоны для @media ----------- */
-
 /* ----------- Кнопки и ссылки ----------- */
-
 /* разные настройки размеров кнопок */
-
 /* ----------- Контейнеры-карточки ----------- */
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  text-align: center;
+  margin-top: 8rem;
+}
+
+.error-404 {
+  background-color: white;
+  padding: 1.5rem;
+}
+
+h1 {
+  margin: 0;
+  color: #667777;
+  font-size: 8rem;
+}
+
+.text-404 {
+  font-size: 1.5rem;
+}
+
+.button-404 {
+  margin-top: 2rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  background-color: #677E51;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.button-404:hover {
+  background-color: #667777;
+}/*# sourceMappingURL=errors.css.map */

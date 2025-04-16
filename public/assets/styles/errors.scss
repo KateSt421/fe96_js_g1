@@ -1,0 +1,55 @@
+@import './design_system.scss';
+
+
+body {
+    height: 100%;
+    // margin: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+.container {
+    text-align: center; 
+    margin-top: 8rem;
+}
+.error-404 {
+    background-color: white; 
+    padding: 1.5rem; 
+    @mixin montserrat_regular_L {
+        @include title_Montserrat_regular;
+        font-size: 1.5rem;
+        line-height: 133%;
+    }
+}
+h1 {
+    margin: 0;
+    color: $Grey_03;
+    font-size: 8rem;
+}
+.text-404 {
+    font-size: 1.5rem; 
+}
+.button-404 {
+    margin-top: 2rem;
+    padding: 0.7rem 1.5rem; 
+    font-size: 1rem;
+    background-color: $Green_67;
+    border: none; 
+    border-radius: 0.3rem; 
+    cursor: pointer;
+    @mixin btn_size_36 {
+        box-sizing: border-box;
+        height: 2.25rem;
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        @include montserrat_regular_S;
+        border-radius: 1.5rem;
+    }
+}
+.button-404:hover {
+    background-color: $Grey_03;
+}
