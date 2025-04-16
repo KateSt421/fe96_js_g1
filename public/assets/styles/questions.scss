@@ -1,0 +1,95 @@
+@import 'design_system';
+
+.classquestionList {
+  @include btn_size_36;
+  @include montserrat_regular_S;
+  background-color:$Grey_94;
+  border-radius: 1.5rem;
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 0 0.625rem $Black_01;
+  max-width: fit-content;
+  height: 3rem;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+  appearance: none; 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 0.75rem;
+  outline: none; 
+  option:checked, &:focus option:checked {
+    background-color: $Green_67; // зелёный цвет
+    color: $White_00;            // белый текст на зелёном
+  }
+}
+.classquestionList option {
+  @include montserrat_regular_S;
+  border-radius: 1rem; // скругление у элементов списка
+  padding: 0.5rem;
+  &:disabled {
+    color:$Black_00;
+  }
+}
+.classuserInput{
+  @include btn_size_36;
+  @include montserrat_regular_S;
+  background: $Green_67;
+  border: $Green_96;
+  color:$White_00;
+  cursor: pointer;
+  z-index: 2;
+  margin: 0;
+  flex-shrink: 0;
+}
+.classmessage {   
+  background:$White_00;
+  border-radius: 1.5rem;
+  padding: 0.9375rem;
+  box-shadow: 0 0 0.625rem $Black_01;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 31.25rem;
+  margin: 0 auto;
+}
+#messages {
+  padding-bottom: 5.5rem; // чтобы сообщения не прятались за закреплённой панелью
+}
+.user { 
+  @include montserrat_regular_S;
+  text-align: right; 
+  color: $Black_00; 
+}
+.bot { 
+  @include montserrat_regular_S;
+  text-align: left; 
+  color: $Green_67; 
+}
+#inputArea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: #fdfdfd;
+  z-index: 3;
+  box-shadow: 0 -0.25rem 0.5rem $Black_01;
+}
+#inputArea input {
+  display: none;
+}
+#inputArea button {
+  @include btn_size_36;
+  background-color: $Green_67;
+  color:$White_00;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
