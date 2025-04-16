@@ -71,6 +71,13 @@
   cursor: pointer;
 }
 
+.cart__empty {
+  font-size: 1.25rem;
+  color: #667777;
+  text-align: center;
+  padding: 2rem 0;
+}
+
 /* Промо-блок */
 .cart__promo {
   display: flex;

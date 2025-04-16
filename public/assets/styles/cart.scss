@@ -31,6 +31,13 @@
   cursor: pointer;
 }
 
+.cart__empty {
+  font-size: 1.25rem;
+  color: $Grey_03;
+  text-align: center;
+  padding: 2rem 0;
+}
+
 /* Промо-блок */
 .cart__promo {
   display: flex;

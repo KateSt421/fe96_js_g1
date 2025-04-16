@@ -59,6 +59,7 @@
         >
           Очистить
         </button>
+
         <div id="cart-items" class="cart__items"></div>
       </section>
 
@@ -75,7 +76,16 @@
       </section>
 
       <!-- Итоговая сумма -->
+      <!--<section
+        id="cart-subtotal"
+        class="cart__subtotal d-flex justify-content-between align-items-center mb-2 px-2"
+      >
+        <h3 class="mb-0">Сумма</h3>
+        <span class="mb-0 subtotal__amount" id="subtotal">0 ₽</span>
+      </section>-->
+
       <section
+        id="cart-total"
         class="cart__total d-flex justify-content-between align-items-center mb-4 px-2"
       >
         <h3 class="mb-0">Итого</h3>
@@ -84,10 +94,7 @@
 
       <!-- Форма для оформления заказа / доставки -->
       <form id="checkout-form">
-        <section
-          id="cart-delivery"
-          class="cart__delivery bg-light p-4 rounded-4 mb-4"
-        >
+        <section class="cart__delivery bg-light p-4 rounded-4 mb-4">
           <h2 class="cart__title font-belleza mb-3">Доставка</h2>
           <div class="mb-3">
             <label for="name" class="form-label">Имя*</label>
