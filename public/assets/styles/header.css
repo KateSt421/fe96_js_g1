@@ -190,6 +190,36 @@
   transition: 2s ease-in-out;
 }
 
+.cart-link {
+  position: relative;
+}
+
+.cart-count {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 125%;
+  display: none;
+  position: absolute;
+  left: 0.8rem;
+  bottom: 1rem;
+  width: 0.9rem;
+  height: 0.9rem;
+  z-index: 100;
+  border-radius: 0.25rem;
+  background-color: #FA6C59;
+  color: #ffffff;
+  text-align: center;
+  font-size: 0.7rem;
+}
+
+.cart-count:hover {
+  background-color: #ffffff;
+  color: #000000;
+  border: 0.125rem solid var(--secondary-color);
+}
+
 @media screen and (min-width: 1550px) {
   .header .header__nav {
     max-width: none;

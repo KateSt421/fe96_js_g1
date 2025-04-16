@@ -161,6 +161,36 @@
 }
 
 
+.cart-link{
+    position: relative;
+}
+
+.cart-count{
+    @include montserrat_semi_S;
+
+    display: none;
+    position: absolute;
+    left: 0.8rem;
+    bottom: 1rem;
+    width: 0.9rem;
+    height: 0.9rem;
+    z-index: 100;
+
+    border-radius: 0.25rem;
+    background-color: $Orange_00;
+    color: $White_00;
+
+    text-align: center;
+    font-size: 0.7rem;
+}
+
+.cart-count:hover{
+    background-color: $White_00;
+    color: $Black_00;
+    border: 0.125rem solid var(--secondary-color);
+}
+
+
 // Адаптив:
 @media screen and (min-width: 1550px) {
     .header{

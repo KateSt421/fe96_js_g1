@@ -1,3 +1,4 @@
+//Функция для выплывающей панели поиска
 document.addEventListener('DOMContentLoaded', function() {
   const searchToggle = document.getElementById('searchToggle');
   const searchContainer = document.getElementById('searchContainer');
@@ -11,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
           searchContainer.classList.add('show');
       }
   });
-  
+
   const closeSearch = () => {
       searchContainer.classList.remove('show');
       searchInput.value = '';
@@ -20,16 +21,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
   searchInput.addEventListener('input', function() {
     if (searchInput.value.length > 0) {
-        clearButton.style.display = 'inline'; // Показать крестик, если есть текст
+        clearButton.style.display = 'inline';
     } else {
-        clearButton.style.display = 'none'; // Скрыть крестик, если нет текста
+        clearButton.style.display = 'none';
     }
 });
 
+//Функция для появления/удаления крестика в поле поиска
 clearButton.addEventListener('click', function() {
   searchInput.value = '';
-  clearButton.style.display = 'none'; // Скрыть крестик после очистки
-  searchInput.focus(); // Вернуть фокус на инпут
+  clearButton.style.display = 'none';
+  searchInput.focus(); 
 });
 
   searchInput.addEventListener('keypress', function(event) {
@@ -48,6 +50,7 @@ class PlantStore {
     this.plants = [];
     this.currentFilter = '';
     this.currentCategory = 'all';
+    this.updateCartCount();
   }
 
   async initSearch() {
@@ -144,6 +147,22 @@ class PlantStore {
     }).join('');
   }
 
+updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+  const totalCount = cart.reduce((total, item) => total + item.quantity, 0);
+  const cartCountElement = document.getElementById('cart-count'); 
+  
+  if (totalCount > 0) {
+      cartCountElement.textContent = totalCount;
+      cartCountElement.style.display = 'block';
+      cartCountElement.style.textShadow = '2px 2px 4px rgba(0, 0, 0, 0.9)';
+  } else {
+      cartCountElement.textContent = ''; 
+      cartCountElement.style.display = 'none';
+      cartCountElement.style.textShadow = 'none';
+  }
+}
+
   updateQuantity(plantId, change) {
     const plant = this.plants.find(p => p.id === plantId);
     if (plant) {
@@ -161,6 +180,7 @@ class PlantStore {
       }
 
       localStorage.setItem('cart', JSON.stringify(cart));
+      this.updateCartCount();
       this.filterByCategory(this.currentCategory);
 
       if (change > 0) {
@@ -177,41 +197,34 @@ class PlantStore {
 const plantStore = new PlantStore();
 
 
-
+//Функция для выплывающего бургер-меню
 const burger = document.querySelector("#burger");
 const popup = document.getElementById("popup");
 const body = document.body;
 
-// Клонируем меню, чтобы задать свои стили для мобильной версии
 const menu = document.getElementById("menu").cloneNode(1);
 
-// При клике на иконку burger вызываем ф-ию burgerHandler
 burger.addEventListener("click", burgerHandler);
 
-// Выполняем действия при клике ..
 function burgerHandler(e) {
   e.preventDefault();
-  // Переключаем стили элементов при клике
+
   popup.classList.toggle("open");
   burger.classList.toggle("active");
   body.classList.toggle("noscroll");
   renderPopup();
 }
 
-// Здесь мы рендерим элементы в наш попап
 function renderPopup() {
   popup.appendChild(menu);
 }
 
-// Код для закрытия меню при нажатии на ссылку
 const links = Array.from(menu.children);
 
-// Для каждого элемента меню при клике вызываем ф-ию
 links.forEach((link) => {
   link.addEventListener("click", closeOnClick);
 });
 
-// Закрытие попапа при клике на меню
 function closeOnClick() {
   popup.classList.remove("open");
   burger.classList.remove("active");
