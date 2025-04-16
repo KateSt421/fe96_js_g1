@@ -6,7 +6,7 @@ class PlantStore {
     this.initCategories();
     this.plants = [];
     this.currentFilter = '';
-    this.currentCategory = 'all';
+    this.currentCategory = 'flowering';
   }
 
   async initSearch() {
@@ -43,7 +43,8 @@ class PlantStore {
   async loadPlants() {
     const response = await axios.get('/api/plants');
     this.plants = response.data;
-    this.displayPlants(this.plants);
+      const filtered = this.plants.filter(plant => plant.category === this.currentCategory);
+    this.displayPlants(filtered);
   }
 
   initCategories() {
@@ -55,7 +56,7 @@ class PlantStore {
       });
     });
     // Set 'Show All' as initially active
-    document.querySelector('[data-category="all"]').classList.add('active');
+    document.querySelector('[data-category="flowering"]').classList.add('active');
   }
 
   filterByCategory(category) {
@@ -96,7 +97,7 @@ class PlantStore {
                 <button onclick="plantStore.updateQuantity(${plant.id}, -1)">-</button>
                 <span>${quantity}</span>
                 <button onclick="plantStore.updateQuantity(${plant.id}, 1)">+</button>
-             </div>`
+            </div>`
           }
         </div>
       `;
