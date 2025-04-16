@@ -21,14 +21,14 @@ function addMessage(text, sender) {
   messages.scrollTop = messages.scrollHeight;
 }
 const searchInput = document.getElementById('userInput');
-searchInput.addEventListener('keypress', (event) => {
+searchInput.addEventListener('keydown', (event) => {
   if (event.key === 'Enter' && searchInput.value.length >= 3) {
     event.preventDefault();
     this.searchPlants(searchInput.value);
   }
 });
 
-    addMessage(question, 'user');
+    addMessage(text, 'user');
     function sendMessage() {
       const text = input.value.trim();
       if (text === "") return;
