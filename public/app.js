@@ -19,7 +19,7 @@ class PlantStore {
     });
 
     // Enter key event for search input
-    searchInput.addEventListener('keypress', (event) => {
+    searchInput.addEventListener('keydown', (event) => {
       if (event.key === 'Enter' && searchInput.value.length >= 3) {
         event.preventDefault();
         this.searchPlants(searchInput.value);
