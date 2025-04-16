@@ -34,8 +34,13 @@ class CartManager {
   displayCart(items) {
     const cartItems = document.getElementById('cart-items')
     if (items.length === 0) {
-      cartItems.innerHTML =
-        '<p id="cart-empty-text" class="cart__empty text-center mt-3">Все еще не выбрали зеленого друга?</p>'
+      cartItems.innerHTML = `
+  <div class="cart__empty-wrapper text-center mt-3">
+    <img src="/assets/images/empty_cart.png" alt="Empty cart" class="cart__empty-img" />
+    <p class="cart__empty-text">Все еще не выбрали зеленого друга?</p>
+    <button class="cart__btn-pay">Выбрать</button>
+  </div>
+`
       return
     }
 

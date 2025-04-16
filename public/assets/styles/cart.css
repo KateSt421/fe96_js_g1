@@ -35,6 +35,27 @@
   padding: 3rem;
   padding-bottom: 6rem;
 }
+.cart__empty-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  padding: 4rem 0;
+}
+.cart__empty-img {
+  width: 8rem;
+  height: 8rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.cart__empty-text {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #000;
+  margin: 0;
+  text-align: center;
+}
 
 .cart__header,
 .cart__promo,
