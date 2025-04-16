@@ -2,9 +2,10 @@
 
 .classquestionList {
   @include btn_size_36;
+  @include montserrat_regular_S;
   background-color:$Grey_94;
-  
   border-radius: 1.5rem;
+  border: 1px solid #ccc;
   padding: 0.5rem 1rem;
   box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
   max-width: fit-content;
@@ -18,14 +19,22 @@
   background-position: right 1rem center;
   background-size: 0.75rem;
   outline: none; 
-  
+  option:checked, &:focus option:checked {
+    background-color: $Green_67; // твой зелёный цвет
+    color: $White_00;            // белый текст на зелёном
+  }
 }
 .classquestionList option {
+  @include montserrat_regular_S;
   border-radius: 1rem; // скругление у элементов списка
   padding: 0.5rem;
+  &:disabled {
+    color: #999;
+  }
 }
 .classuserInput{
   @include btn_size_36;
+  @include montserrat_regular_S;
   background: $Green_67;
   border: $Green_96;
   color:$White_00;
@@ -49,10 +58,12 @@
   padding-bottom: 5.5rem; // чтобы сообщения не прятались за закреплённой панелью
 }
 .user { 
+  @include montserrat_regular_S;
   text-align: right; 
   color: $Black_00; 
 }
 .bot { 
+  @include montserrat_regular_S;
   text-align: left; 
   color: $Green_67; 
 }

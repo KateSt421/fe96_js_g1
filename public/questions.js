@@ -1,5 +1,6 @@
 const messages = document.getElementById('messages');
 const input = document.getElementById('questionList');
+const sendButton = document.getElementById('userInput');
 
 const botAnswers = [
   "Заказ оформляется в несколько шагов — это просто и быстро.",
@@ -20,26 +21,27 @@ function addMessage(text, sender) {
   messages.appendChild(msg);
   messages.scrollTop = messages.scrollHeight;
 }
-const searchInput = document.getElementById('userInput');
-searchInput.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter' && searchInput.value.length >= 3) {
-    event.preventDefault();
-    this.searchPlants(searchInput.value);
-  }
-});
-
-    addMessage(text, 'user');
-    function sendMessage() {
-      const text = input.value.trim();
-      if (text === "") return;
-      addMessage(text, 'user');
-      input.value = '';
-
+function sendMessage() {
+  const selectedIndex = input.selectedIndex;
+  const selectedText = input.value.trim();
+  if (selectedIndex === 0 || !selectedText) return;
+  addMessage(selectedText, 'user');
   // Рандомный ответ
   const randomIndex = Math.floor(Math.random() * botAnswers.length);
   const botReply = botAnswers[randomIndex];
 
-  setTimeout(() => {
+   setTimeout(() => {
     addMessage(botReply, 'bot');
-  }, 500);
+   }, 500);
+  input.selectedIndex = 0; // сброс селекта на "Выберите вопрос"
 }
+
+input.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    sendMessage();
+  }
+});
+
+// Обработка кнопки
+sendButton.addEventListener('click', sendMessage);
