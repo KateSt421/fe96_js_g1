@@ -1,5 +1,10 @@
 @import './public/assets/styles/design_system.scss';
 
+.row {
+  background-color: ($Grey_02);
+  border-radius: 1rem;
+}
+
 /* Добавим стили для красного placeholder */
 input.is-invalid::placeholder {
   color: red !important;
