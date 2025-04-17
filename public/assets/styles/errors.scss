@@ -1,25 +1,26 @@
 @import './design_system.scss';
 
 
-body {
-    height: 100%;
-    // margin: 0;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-}
+
 .container {
-    text-align: center; 
-    margin-top: 8rem;
+    display: flex;
+    align-items: center; 
+    justify-content: flex-end;
+    gap:3rem;
 }
 .error-404 {
-    background-color: white; 
-    padding: 20px; 
-    @mixin montserrat_regular_L {
+    margin-right: 16.3rem;
+    max-width: 50%;
         @include title_Montserrat_regular;
         font-size: 1.5rem;
         line-height: 133%;
-    }
+}
+.error-500 {
+    margin: 2rem;
+    max-width: 50%;
+        @include title_Montserrat_regular;
+        font-size: 1.5rem;
+        line-height: 133%;
 }
 h1 {
     margin: 0;
@@ -31,11 +32,11 @@ h1 {
 }
 .button-404 {
     margin-top: 2rem;
-    padding: 10px 20px; 
-    font-size: 1rem;
+    padding: 0.6rem 1.3rem; 
+    font-size: 2rem;
     background-color: $Green_67;
     border: none; 
-    border-radius: 5px; 
+    border-radius: 0.3rem; 
     cursor: pointer;
     @mixin btn_size_36 {
         box-sizing: border-box;
@@ -52,4 +53,16 @@ h1 {
 }
 .button-404:hover {
     background-color: $Grey_03;
+}
+.error-image {
+    max-width: 50%; 
+    height: 38rem;
+    display: block;
+    margin: 0;
+}
+.error500-image {
+    max-width: 45%; 
+    height: 38rem;
+    display: block;
+    margin: 0;
 }

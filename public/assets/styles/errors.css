@@ -31,21 +31,31 @@
 /* ----------- Кнопки и ссылки ----------- */
 /* разные настройки размеров кнопок */
 /* ----------- Контейнеры-карточки ----------- */
-body {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .container {
-  text-align: center;
-  margin-top: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3rem;
 }
 
 .error-404 {
-  background-color: white;
-  padding: 20px;
+  margin-right: 16.3rem;
+  max-width: 50%;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 133%;
+}
+
+.error-500 {
+  margin: 2rem;
+  max-width: 50%;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 133%;
 }
 
 h1 {
@@ -60,14 +70,28 @@ h1 {
 
 .button-404 {
   margin-top: 2rem;
-  padding: 10px 20px;
-  font-size: 1rem;
+  padding: 0.6rem 1.3rem;
+  font-size: 2rem;
   background-color: #677E51;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.3rem;
   cursor: pointer;
 }
 
 .button-404:hover {
   background-color: #667777;
+}
+
+.error-image {
+  max-width: 50%;
+  height: 38rem;
+  display: block;
+  margin: 0;
+}
+
+.error500-image {
+  max-width: 45%;
+  height: 38rem;
+  display: block;
+  margin: 0;
 }/*# sourceMappingURL=errors.css.map */
