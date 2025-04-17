@@ -52,7 +52,42 @@ class PlantDetails {
     const quantity = cartItem ? cartItem.quantity : 0;
 
     const detailsContainer = document.getElementById('plant-details');
-    detailsContainer.innerHTML = `
+
+    if(plant.category ==="service"){
+      detailsContainer.innerHTML = `
+      <div class="row">
+        <div class="col-md-6">
+          <div class="servis-image-container">
+            <img src="${plant.image}" alt="${plant.name}" class="servis-image"></img>
+          </div>
+        </div>
+        <div class="col-md-6">
+        <h1>${plant.name}</h1>
+        <div class="plant-details-price">$${plant.price.toFixed(2)}</div>
+        <p class="plant-details-description">Описание: ${plant.description.toLowerCase()}</p>
+        <p><stronge>Категория:  </stronge>${plant.category.charAt(0).toUpperCase() + plant.category.slice(1)}</p>
+        <p><stronge>Комментарий:  </stronge>${plant.comment.charAt(0).toUpperCase() + plant.comment.slice(1)}</p>
+        <p><stronge>Тип услуги:  </stronge>${plant.service.charAt(0).toUpperCase() + plant.service.slice(1)}</p>
+        <div class="plant-details-actions">
+            ${quantity === 0 ?
+              `<button class="add-to-cart-btn" onclick="plantDetails.updateQuantity(${plant.id}, 1)">Add to Cart</button>` :
+              `<div class="quantity-controls">
+                  <button onclick="plantDetails.updateQuantity(${plant.id}, -1)">-</button>
+                  <span>${quantity}</span>
+                  <button onclick="plantDetails.updateQuantity(${plant.id}, 1)">+</button>
+              </div>`
+            }
+        </div>
+      </div>
+      </div>`;
+      detailsContainer.innerHTML += `
+      <nav class="mt-3">
+        <a href="/" class="btn btn-outline-success">&larr; Back to Shop</a>
+      </nav>
+    `;
+      return;
+    }
+    detailsContainer.innerHTML += `
       <div class="row">
         <div class="col-md-6">
           <div class="plant-image-container">
@@ -74,11 +109,12 @@ class PlantDetails {
                   <button onclick="plantDetails.updateQuantity(${plant.id}, -1)">-</button>
                   <span>${quantity}</span>
                   <button onclick="plantDetails.updateQuantity(${plant.id}, 1)">+</button>
-               </div>`
+              </div>`
             }
             </div>
         </div>
-      </div>
+      </div>`;
+      detailsContainer.innerHTML += `
       <nav class="mt-3">
         <a href="/" class="btn btn-outline-success">&larr; Back to Shop</a>
       </nav>
