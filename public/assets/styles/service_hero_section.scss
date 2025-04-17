@@ -1,10 +1,10 @@
 @import './design_system.scss';
 
 
-.container {
+.container-hero {
     display: flex;
     align-items: stretch; 
-    height: 100vh;
+    height: 10vh;
     width: 100%;
 }
 .blok_1 {
@@ -13,40 +13,40 @@
     max-width: 50%;
     
 }
-.blok_2{
+.blok_2 {
     object-fit: cover; 
     width: 50%;
     height: auto;
     flex-shrink: 0;
     margin-left: 12.5rem;
 }
-.image_blok_1{
+.image_blok_1 {
     margin-top: 1.3rem;
     margin: 1rem;
     width: 37.5rem;
 }
-h1{
+h1 {
     font-size: 3.8rem;
     margin: 2.2rem;
         font-family: 'Montserrat';
-        src: url('/public/assets/fonts/Montserrat-Regular.eot');
+        src: url('../fonts/Montserrat-Regular.eot');
         src: local('Montserrat Regular'), local('Montserrat-Regular'),
-            url('/public/assets/fonts/Montserrat-Regular.woff') format('woff'),
-            url('/public/assets/fonts/Montserrat-Regular.ttf') format('truetype');
+            url('../fonts/Montserrat-Regular.woff') format('woff'),
+            url('../fonts/Montserrat-Regular.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
     }
-h1 span{
+h1 span {
     display: block;
 }
-.text_blok_1{
+.text_blok_1 {
     font-size: 1rem;
     margin: 1.6rem;
         font-family: 'Montserrat';
-        src: url('/public/assets/fonts/Montserrat-Regular.eot');
+        src: url('../fonts/Montserrat-Regular.eot');
         src: local('Montserrat Regular'), local('Montserrat-Regular'),
-            url('/public/assets/fonts/Montserrat-Regular.woff') format('woff'),
-            url('/public/assets/fonts/Montserrat-Regular.ttf') format('truetype');
+            url('../fonts/Montserrat-Regular.woff') format('woff'),
+            url('../fonts/Montserrat-Regular.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
 }

@@ -1,25 +1,30 @@
 @charset "UTF-8";
-/* ----------- Константы ----------- */
+:root {
+  /* ----------- Константы ----------- */
+  --basic-font-weight: 600;
+  --title-font-weight: 400;
+}
+
 /* ----------- Цвета ----------- */
 /* ----------- Стили шрифтов ----------- */
 @font-face {
   font-family: "Montserrat";
-  src: url("/public/assets/fonts/Montserrat-SemiBold.eot");
-  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("/public/assets/fonts/Montserrat-SemiBold.woff") format("woff"), url("/public/assets/fonts/Montserrat-SemiBold.ttf") format("truetype");
-  font-weight: 600;
+  src: url("../fonts/Montserrat-SemiBold.eot");
+  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("../fonts/Montserrat-SemiBold.woff") format("woff"), url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: var(--basic-font-weight);
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("/public/assets/fonts/Montserrat-Regular.eot");
-  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("/public/assets/fonts/Montserrat-Regular.woff") format("woff"), url("/public/assets/fonts/Montserrat-Regular.ttf") format("truetype");
+  src: url("../fonts/Montserrat-Regular.eot");
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Belleza";
-  src: url("/public/assets/fonts/Belleza-Regular.eot");
-  src: local("Belleza Regular"), local("Belleza-Regular"), url("/public/assets/fonts/Belleza-Regular.woff2") format("woff2"), url("/public/assets/fonts/Belleza-Regular.woff") format("woff"), url("/public/assets/fonts/Belleza-Regular.ttf") format("truetype");
+  src: url("../fonts/Belleza-Regular.eot");
+  src: local("Belleza Regular"), local("Belleza-Regular"), url("../fonts/Belleza-Regular.woff2") format("woff2"), url("../fonts/Belleza-Regular.woff") format("woff"), url("../fonts/Belleza-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -31,12 +36,13 @@
 /* ----------- Кнопки и ссылки ----------- */
 /* разные настройки размеров кнопок */
 /* ----------- Контейнеры-карточки ----------- */
-.container {
+.container-hero {
   display: flex;
   align-items: stretch;
-  height: 100vh;
+  height: 60vh;
   width: 100%;
 }
+
 .blok_1 {
   flex: 1;
   padding: 1.3rem;
@@ -44,7 +50,8 @@
 }
 
 .blok_2 {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 50%;
   height: auto;
   flex-shrink: 0;
@@ -61,8 +68,8 @@ h1 {
   font-size: 3.8rem;
   margin: 2.2rem;
   font-family: "Montserrat";
-  src: url("/public/assets/fonts/Montserrat-Regular.eot");
-  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("/public/assets/fonts/Montserrat-Regular.woff") format("woff"), url("/public/assets/fonts/Montserrat-Regular.ttf") format("truetype");
+  src: url("../fonts/Montserrat-Regular.eot");
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -75,10 +82,8 @@ h1 span {
   font-size: 1rem;
   margin: 1.6rem;
   font-family: "Montserrat";
-  src: url("/public/assets/fonts/Montserrat-Regular.eot");
-  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("/public/assets/fonts/Montserrat-Regular.woff") format("woff"), url("/public/assets/fonts/Montserrat-Regular.ttf") format("truetype");
+  src: url("../fonts/Montserrat-Regular.eot");
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
-}
-
-/*# sourceMappingURL=service_hero_section.css.map */
+}/*# sourceMappingURL=service_hero_section.css.map */
