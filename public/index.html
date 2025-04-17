@@ -1,152 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flower Shop</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/362708026e.js"
-      crossorigin="anonymous"
-    ></script>
-    <link href="assets/styles/styles.css" rel="stylesheet" />
-    <link href="assets/styles/footer.css" rel="stylesheet" />
-    <link href="./assets/styles/header.css" rel="stylesheet" />
-    <!-- Фавиконы -->
-    <link
-      rel="icon"
-      type="image/png"
-      href="assets/images/favicon/favicon-96x96.png"
-      sizes="96x96"
-    />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="assets/images/favicon/favicon.svg"
-    />
-    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/images/favicon/apple-touch-icon.png"
-    />
-    <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
-  </head>
-  <body>
-    <header class="header">
-      <nav class="header_nav">
-        <div class="header_nav_logo">
-          <img
-            src="./assets/images/vector_logo.svg"
-            alt="company logo"
-            class="header_nav_logo_icon"
-          />
-          <a href="http://localhost:7001/">
-            <img
-              src="./assets/images/vector_Planty'x.svg"
-              alt="company logo"
-              class="header_nav_logo_text"
-            />
-          </a>
-        </div>
-        <div class="header_nav_buttons">
-          <a href="catalog.html" class="header_nav_buttons_plants"> Цветы </a>
-          <a href="services.html" class="header_nav_buttons_services">
-            Услуги
-          </a>
-          <a href="company.html" class="header_nav_buttons_company"> О Нас </a>
-        </div>
-        <div class="header_nav_icons">
-          <a class="cart-link" id="searchToggle">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </a>
-          <a href="/cart.html" class="cart-link">
-            <i class="fa-regular fa-user fa-sm"></i>
-          </a>
-          <a href="/cart.html" class="cart-link">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </a>
-        </div>
-      </nav>
-      <div class="searchContainer" id="searchContainer">
-        <input type="text" id="search" placeholder="Найти цветок..." />
-        <button id="searchBtn">Поиск</button>
-      </div>
-    </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Flower Shop</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+            rel="stylesheet"
+        />
+        <script
+            src="https://kit.fontawesome.com/362708026e.js"
+            crossorigin="anonymous"
+        ></script>
+        <link href="assets/styles/styles.css" rel="stylesheet" />
+        <link href="./assets/styles/header.css" rel="stylesheet">
+        <link href="assets/styles/footer.css" rel="stylesheet" />
+        <!-- Фавиконы -->
+        <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
+        <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+    </head>
+    <body>
+
+        <header class="header">
+            <nav class="header__nav">
+
+                <!-- бургер меню для адаптива -->
+                <div class="burger">
+                    <div class="burger__field" id="burger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+
+                <!-- логотип компании -->
+                <div class="nav__logo">
+                    <img src="./assets/images/vector_logo.svg" alt="company logo" class="nav__logo-icon">
+                    <a href="http://localhost:7001/">
+                        <img src="./assets/images/vector_Planty'x.svg" alt="company logo" class="nav__logo-text">
+                    </a>
+                </div>
+
+                <!-- навигация по сайту -->
+                <ul class="nav__menu" id="menu"> 
+                    <li><a href="catalog.html" class="nav__menu-plants">Цветы</a></li>
+                    <li><a href="services.html" class="nav__menu-services">Услуги</a></li>
+                    <li><a href="company.html" class="nav__menu-company">О Нас</a></li>
+                </ul>
+
+                <!-- иконки -->
+                <div class="nav__icons">
+                    <button class="cart-link" id="searchToggle">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <a href="/cart.html" class="cart-link">
+                        <i class="fa-regular fa-user fa-sm"></i>
+                    </a>
+                    <a href="/cart.html" class="cart-link">
+                        <span id="cart-count" class="cart-count"></span>
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- попап для бургера (для мобилки) -->
+            <div class="header__popup" id="popup"></div>
+
+            <!-- инпут для поиска по сайту-->
+            <form class="header__searchContainer" id="searchContainer">
+                <div class="input-container">
+                    <input type="text" id="search" placeholder="Поиск...">
+                    <span id="clearButton" class="clearButton">
+                        <img src="./assets/images/vector_close.svg" alt="erase">
+                    </span>
+                </div>
+            </form>
+        </header>
 
     <main class="container">
-      <div class="categories">
-        <button class="category-btn" data-category="orchids">Орхидеи</button>
-        <button class="category-btn" data-category="citrus">Цитрусовые</button>
-        <button class="category-btn" data-category="foliage plants">
-          Декоративнолиственные
-        </button>
-        <button class="category-btn" data-category="succulents and cacti">
-          Суккуленты и кактусы
-        </button>
-        <button class="category-btn" data-category="flowering">Цветущие</button>
-        <button class="category-btn" data-category="palms">Пальмы</button>
-        <button class="category-btn" data-category="ferns">Папоротники</button>
-        <button class="category-btn" data-category="service">Услуги</button>
-      </div>
-      <div id="plants-grid" class="plants-grid"></div>
+        <div class="categories">
+            <button class="category-btn" data-category="orchids">
+                Орхидеи
+            </button>
+            <button class="category-btn" data-category="citrus">
+                Цитрусовые
+            </button>
+            <button class="category-btn" data-category="foliage plants">
+                Декоративнолиственные
+            </button>
+            <button class="category-btn" data-category="succulents and cacti">
+                Суккуленты и кактусы
+            </button>
+            <button class="category-btn" data-category="flowering">
+                Цветущие
+            </button>
+            <button class="category-btn" data-category="palms">
+                Пальмы
+            </button>
+            <button class="category-btn" data-category="ferns">
+                Папоротники
+            </button>
+            <button class="category-btn" data-category="service">Услуги</button>
+        </div>
+        <div id="plants-grid" class="plants-grid"></div>
     </main>
 
-    <footer>
-      <div class="container">
-        <img
-          src="assets/images/logo.png"
-          alt="Логотип"
-          class="mb-3"
-          style="max-width: 123px"
-        />
+        <footer >
+            <div class="container">
+                <img src="assets/images/logo.png" alt="Логотип" class="mb-3" style="max-width: 123px;">
 
-        <ul class="list-inline mb-3">
-          <li class="list-inline-item">
-            <a href="catalog.html" class="text-dark">Каталог</a>
-          </li>
-          <li class="list-inline-item">
-            <a href="services.html" class="text-dark">Услуги</a>
-          </li>
-          <li class="list-inline-item">
-            <a href="company.html" class="text-dark">Компания</a>
-          </li>
-        </ul>
-        <div class="social-icons">
-          <a
-            class="media-brands"
-            target="_blank"
-            href="https://twitter.com/?lang=ru"
-          >
-            <i class="fa-brands fa-twitter" aria-hidden="true"></i
-          ></a>
-          <a
-            class="media-brands"
-            href="https://www.facebook.com/?locale=ru_RU"
-            target="_blank"
-          >
-            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i
-          ></a>
-          <a
-            class="media-brands"
-            href="https://www.instagram.com/"
-            target="_blank"
-          >
-            <i class="fa-brands fa-instagram" aria-hidden="true"></i
-          ></a>
-        </div>
-      </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="app.js"></script>
-  </body>
+                <ul class="list-inline mb-3">
+                    <li class="list-inline-item"><a href="catalog.html" class="text-dark">Каталог</a></li>
+                    <li class="list-inline-item"><a href="services.html" class="text-dark">Услуги</a></li>
+                    <li class="list-inline-item"><a href="company.html" class="text-dark">Компания</a></li>
+                </ul>
+                <div class="social-icons">
+                    <a class="media-brands" target="_blank" href="https://twitter.com/?lang=ru">
+                        <i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
+                    <a class="media-brands" href="https://www.facebook.com/?locale=ru_RU" target="_blank">
+                        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                    <a class="media-brands" href="https://www.instagram.com/" target="_blank">
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="app.js"></script>
+    </body>
 </html>
