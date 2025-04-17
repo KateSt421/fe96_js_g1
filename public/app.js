@@ -34,7 +34,7 @@ clearButton.addEventListener('click', function() {
   searchInput.focus(); 
 });
 
-  searchInput.addEventListener('keypress', function(event) {
+  searchInput.addEventListener('keydown', function(event) {
       if (event.key === 'Enter') {
           closeSearch();
       }
@@ -49,9 +49,8 @@ class PlantStore {
     this.initCategories();
     this.plants = [];
     this.currentFilter = '';
-    this.currentCategory = 'all';
-    this.updateCartCount();
     this.currentCategory = 'flowering';
+    this.updateCartCount();
   }
 
   async initSearch() {
@@ -100,7 +99,7 @@ class PlantStore {
         this.filterByCategory(btn.dataset.category);
       });
     });
-    // Set 'Show All' as initially active
+    // Set 'Show Flowering' as initially active
     document.querySelector('[data-category="flowering"]').classList.add('active');
   }
 

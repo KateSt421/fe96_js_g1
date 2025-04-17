@@ -42,44 +42,59 @@
   </head>
   <body>
     <header class="header">
-      <nav class="header_nav">
-        <div class="header_nav_logo">
-          <img
-            src="./assets/images/vector_logo.svg"
-            alt="company logo"
-            class="header_nav_logo_icon"
-          />
-          <a href="http://localhost:7001/">
-            <img
-              src="./assets/images/vector_Planty'x.svg"
-              alt="company logo"
-              class="header_nav_logo_text"
-            />
-          </a>
-        </div>
-        <div class="header_nav_buttons">
-          <a href="catalog.html" class="header_nav_buttons_plants"> Цветы </a>
-          <a href="services.html" class="header_nav_buttons_services">
-            Услуги
-          </a>
-          <a href="company.html" class="header_nav_buttons_company"> О Нас </a>
-        </div>
-        <div class="header_nav_icons">
-          <a class="cart-link" id="searchToggle">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </a>
-          <a href="/cart.html" class="cart-link">
-            <i class="fa-regular fa-user fa-sm"></i>
-          </a>
-          <a href="/cart.html" class="cart-link">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </a>
-        </div>
-      </nav>
-      <div class="searchContainer" id="searchContainer">
-        <input type="text" id="search" placeholder="Найти цветок..." />
-        <button id="searchBtn">Поиск</button>
-      </div>
+        <nav class="header__nav">
+
+            <!-- бургер меню -->
+            <div class="burger">
+                <div class="burger__field" id="burger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+
+            <!-- логотип компании -->
+            <div class="nav__logo">
+                <img src="./assets/images/vector_logo.svg" alt="company logo" class="nav__logo-icon">
+                <a href="http://localhost:7001/">
+                    <img src="./assets/images/vector_Planty'x.svg" alt="company logo" class="nav__logo-text">
+                </a>
+            </div>
+
+            <!-- навигация по сайту -->
+            <ul class="nav__menu" id="menu">
+                <li><a href="#" class="nav__menu-plants">Цветы</a></li>
+                <li><a href="services.html" class="nav__menu-services">Услуги</a></li>
+                <li><a href="company.html" class="nav__menu-company">О Нас</a></li>
+            </ul>
+
+            <!-- иконки -->
+            <div class="nav__icons">
+                <button class="cart-link" id="searchToggle">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <a href="/cart.html" class="cart-link">
+                    <i class="fa-regular fa-user fa-sm"></i>
+                </a>
+                <a href="/cart.html" class="cart-link">
+                    <span id="cart-count" class="cart-count"></span>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </div>
+        </nav>
+
+        <!-- попап для бургера (для мобилки) -->
+        <div class="header__popup" id="popup"></div>
+
+        <!-- инпут для поиска по сайту-->
+        <form class="header__searchContainer" id="searchContainer">
+            <div class="input-container">
+                <input type="text" id="search" placeholder="Поиск...">
+                <span id="clearButton" class="clearButton">
+                    <img src="./assets/images/vector_close.svg" alt="erase">
+                </span>
+            </div>
+        </form>
     </header>
 
     <main class="container">
