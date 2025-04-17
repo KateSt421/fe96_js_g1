@@ -87,6 +87,7 @@ class PlantDetails {
     `;
       return;
     }
+    
     detailsContainer.innerHTML += `
       <div class="row">
         <div class="col-md-6">
