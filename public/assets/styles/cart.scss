@@ -140,6 +140,25 @@
       width: 25%;
     }
   }
+
+  .input--date,
+  .input--time {
+    appearance: none;
+    background-color: $White_00;
+    border: 1px solid $Grey_94;
+    border-radius: 0.75rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding: 0 1rem;
+    width: 100%;
+    font-size: 1rem;
+    color: $Black_00;
+    background-image: url('../images/arrow_drop_down.svg');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.5rem; //в макете 24px = 1.5rem
+    cursor: pointer;
+  }
 }
 
 .cart__btn-pay {

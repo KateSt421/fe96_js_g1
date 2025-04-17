@@ -173,6 +173,26 @@
 .cart__delivery .form__group-row .quarter {
   width: 25%;
 }
+.cart__delivery .input--date,
+.cart__delivery .input--time {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #ffffff;
+  border: 1px solid #f2f2f3;
+  border-radius: 0.75rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  padding: 0 1rem;
+  width: 100%;
+  font-size: 1rem;
+  color: #000000;
+  background-image: url("../images/arrow_drop_down.svg");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.5rem;
+  cursor: pointer;
+}
 
 .cart__btn-pay {
   box-sizing: border-box;
