@@ -1,3 +1,46 @@
+//Функция для выплывающей панели поиска
+document.addEventListener('DOMContentLoaded', function() {
+  const searchToggle = document.getElementById('searchToggle');
+  const searchContainer = document.getElementById('searchContainer');
+  const searchInput = document.getElementById('search');
+  const clearButton = document.getElementById('clearButton');
+
+  searchToggle.addEventListener('click', function(event) {
+      if (searchContainer.classList.contains('show')) {
+          closeSearch();
+      } else {
+          searchContainer.classList.add('show');
+      }
+  });
+
+  const closeSearch = () => {
+      searchContainer.classList.remove('show');
+      searchInput.value = '';
+      clearButton.style.display = 'none';
+  }
+
+  searchInput.addEventListener('input', function() {
+    if (searchInput.value.length > 0) {
+        clearButton.style.display = 'inline';
+    } else {
+        clearButton.style.display = 'none';
+    }
+});
+
+//Функция для появления/удаления крестика в поле поиска
+clearButton.addEventListener('click', function() {
+  searchInput.value = '';
+  clearButton.style.display = 'none';
+  searchInput.focus(); 
+});
+
+  searchInput.addEventListener('keypress', function(event) {
+      if (event.key === 'Enter') {
+          closeSearch();
+      }
+  });
+  
+});
 
 class PlantStore {
   constructor() {
@@ -6,15 +49,17 @@ class PlantStore {
     this.initCategories();
     this.plants = [];
     this.currentFilter = '';
+    this.currentCategory = 'all';
+    this.updateCartCount();
     this.currentCategory = 'flowering';
   }
 
   async initSearch() {
     const searchInput = document.getElementById('search');
-    const searchBtn = document.getElementById('searchBtn');
+    // const searchBtn = document.getElementById('searchBtn');
 
     // Click event for search button
-    searchBtn.addEventListener('click', () => {
+    searchInput.addEventListener('click', () => {
         this.searchPlants(searchInput.value);
     });
 
@@ -104,6 +149,22 @@ class PlantStore {
     }).join('');
   }
 
+updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+  const totalCount = cart.reduce((total, item) => total + item.quantity, 0);
+  const cartCountElement = document.getElementById('cart-count'); 
+  
+  if (totalCount > 0) {
+      cartCountElement.textContent = totalCount;
+      cartCountElement.style.display = 'block';
+      cartCountElement.style.textShadow = '2px 2px 4px rgba(0, 0, 0, 0.9)';
+  } else {
+      cartCountElement.textContent = ''; 
+      cartCountElement.style.display = 'none';
+      cartCountElement.style.textShadow = 'none';
+  }
+}
+
   updateQuantity(plantId, change) {
     const plant = this.plants.find(p => p.id === plantId);
     if (plant) {
@@ -121,6 +182,7 @@ class PlantStore {
       }
 
       localStorage.setItem('cart', JSON.stringify(cart));
+      this.updateCartCount();
       this.filterByCategory(this.currentCategory);
 
       if (change > 0) {
@@ -135,3 +197,38 @@ class PlantStore {
 }
 
 const plantStore = new PlantStore();
+
+
+//Функция для выплывающего бургер-меню
+const burger = document.querySelector("#burger");
+const popup = document.getElementById("popup");
+const body = document.body;
+
+const menu = document.getElementById("menu").cloneNode(1);
+
+burger.addEventListener("click", burgerHandler);
+
+function burgerHandler(e) {
+  e.preventDefault();
+
+  popup.classList.toggle("open");
+  burger.classList.toggle("active");
+  body.classList.toggle("noscroll");
+  renderPopup();
+}
+
+function renderPopup() {
+  popup.appendChild(menu);
+}
+
+const links = Array.from(menu.children);
+
+links.forEach((link) => {
+  link.addEventListener("click", closeOnClick);
+});
+
+function closeOnClick() {
+  popup.classList.remove("open");
+  burger.classList.remove("active");
+  body.classList.remove("noscroll");
+}

@@ -7,6 +7,10 @@
     <title>Plant Details - Flower Shop</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <script
+        src="https://kit.fontawesome.com/362708026e.js"
+        crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="assets/styles/styles.css">
     <link rel="stylesheet" href="assets/styles/details.css">
     <style>
@@ -15,29 +19,64 @@
             height:25rem;
         }
     </style>
+    <link rel="stylesheet" href="./assets/styles/header.css">
 </head>
 
 <body>
-    <header class="hero">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <a class="navbar-brand" href="/">Flower Shop</a>
-                <div class="search-container">
-                    <input type="text" id="search" placeholder="Search plants...">
-                    <button id="searchBtn">Search</button>
-                </div>
-                <div class="nav-links">
-                    <a href="/company.html" class="about-link">
-                        <i class="bi bi-building"></i>
-                        About Us
-                    </a>
-                    <a href="/cart.html" class="cart-link">
-                        <i class="bi bi-cart3"></i>
-                        Cart
-                    </a>
+    <header class="header">
+        <nav class="header__nav">
+
+            <!-- бургер меню -->
+            <div class="burger">
+                <div class="burger__field" id="burger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </div>
             </div>
+
+            <!-- логотип компании -->
+            <div class="nav__logo">
+                <img src="./assets/images/vector_logo.svg" alt="company logo" class="nav__logo-icon">
+                <a href="http://localhost:7001/">
+                    <img src="./assets/images/vector_Planty'x.svg" alt="company logo" class="nav__logo-text">
+                </a>
+            </div>
+
+            <!-- навигация по сайту -->
+            <ul class="nav__menu" id="menu">
+                <li><a href="catalog.html" class="nav__menu-plants">Цветы</a></li>
+                <li><a href="services.html" class="nav__menu-services">Услуги</a></li>
+                <li><a href="company.html" class="nav__menu-company">О Нас</a></li>
+            </ul>
+
+            <!-- иконки -->
+            <div class="nav__icons">
+                <button class="cart-link" id="searchToggle">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <a href="/cart.html" class="cart-link">
+                    <i class="fa-regular fa-user fa-sm"></i>
+                </a>
+                <a href="/cart.html" class="cart-link">
+                    <span id="cart-count" class="cart-count"></span>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </div>
         </nav>
+
+        <!-- попап для бургера (для мобилки) -->
+        <div class="header__popup" id="popup"></div>
+
+        <!-- инпут для поиска по сайту-->
+        <form class="header__searchContainer" id="searchContainer">
+            <div class="input-container">
+                <input type="text" id="search" placeholder="Поиск...">
+                <span id="clearButton" class="clearButton">
+                    <img src="./assets/images/vector_close.svg" alt="erase">
+                </span>
+            </div>
+        </form>
     </header>
 
     <main class="container">
@@ -49,5 +88,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="details.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
