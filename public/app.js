@@ -1,47 +1,3 @@
-//Функция для выплывающей панели поиска
-document.addEventListener('DOMContentLoaded', function() {
-  const searchToggle = document.getElementById('searchToggle');
-  const searchContainer = document.getElementById('searchContainer');
-  const searchInput = document.getElementById('search');
-  const clearButton = document.getElementById('clearButton');
-
-  searchToggle.addEventListener('click', function(event) {
-      if (searchContainer.classList.contains('show')) {
-          closeSearch();
-      } else {
-          searchContainer.classList.add('show');
-      }
-  });
-
-  const closeSearch = () => {
-      searchContainer.classList.remove('show');
-      searchInput.value = '';
-      clearButton.style.display = 'none';
-  }
-
-  searchInput.addEventListener('input', function() {
-    if (searchInput.value.length > 0) {
-        clearButton.style.display = 'inline';
-    } else {
-        clearButton.style.display = 'none';
-    }
-});
-
-//Функция для появления/удаления крестика в поле поиска
-clearButton.addEventListener('click', function() {
-  searchInput.value = '';
-  clearButton.style.display = 'none';
-  searchInput.focus(); 
-});
-
-  searchInput.addEventListener('keypress', function(event) {
-      if (event.key === 'Enter') {
-          closeSearch();
-      }
-  });
-  
-});
-
 class PlantStore {
   constructor() {
     this.initSearch();
@@ -49,9 +5,8 @@ class PlantStore {
     this.initCategories();
     this.plants = [];
     this.currentFilter = '';
-    this.currentCategory = 'all';
-    this.updateCartCount();
     this.currentCategory = 'flowering';
+    this.updateCartCount();
   }
 
   async initSearch() {
@@ -100,7 +55,7 @@ class PlantStore {
         this.filterByCategory(btn.dataset.category);
       });
     });
-    // Set 'Show All' as initially active
+    // Set 'Show Flowering' as initially active
     document.querySelector('[data-category="flowering"]').classList.add('active');
   }
 
@@ -131,14 +86,16 @@ class PlantStore {
       const inCartClass = quantity > 0 ? 'in-cart' : '';
 
       return `
-        <div class="plant-card ${inCartClass}" data-plant-id="${plant.id}">
+        <div class="product-card ${inCartClass}" data-plant-id="${plant.id}">
           <img src="${plant.image}" alt="${plant.name}">
-          <button class="details-btn" onclick="window.location.href='/details.html?id=${plant.id}'">Details</button>
+          <button class="product-details-btn" onclick="window.location.href='/details.html?id=${plant.id}'">Подробнее..</button>
           <h3>${plant.name}</h3>
-          <p>$${plant.price.toFixed(2)}</p>
+          <p class-"cart-product-price">${plant.price.toFixed(2)} Руб.</p>
+          <p class="product-item-description">${plant.description}</p>
+          <p>${plant.comment}</p>
           ${quantity === 0 ?
-            `<button class="add-to-cart-btn" onclick="plantStore.updateQuantity(${plant.id}, 1)">Add to Cart</button>` :
-            `<div class="quantity-controls">
+            `<button class="product-add-to-cart-btn" onclick="plantStore.updateQuantity(${plant.id}, 1)">Добавить</button>` :
+            `<div class="product-quantity-controls">
                 <button onclick="plantStore.updateQuantity(${plant.id}, -1)">-</button>
                 <span>${quantity}</span>
                 <button onclick="plantStore.updateQuantity(${plant.id}, 1)">+</button>
@@ -197,38 +154,3 @@ updateCartCount() {
 }
 
 const plantStore = new PlantStore();
-
-
-//Функция для выплывающего бургер-меню
-const burger = document.querySelector("#burger");
-const popup = document.getElementById("popup");
-const body = document.body;
-
-const menu = document.getElementById("menu").cloneNode(1);
-
-burger.addEventListener("click", burgerHandler);
-
-function burgerHandler(e) {
-  e.preventDefault();
-
-  popup.classList.toggle("open");
-  burger.classList.toggle("active");
-  body.classList.toggle("noscroll");
-  renderPopup();
-}
-
-function renderPopup() {
-  popup.appendChild(menu);
-}
-
-const links = Array.from(menu.children);
-
-links.forEach((link) => {
-  link.addEventListener("click", closeOnClick);
-});
-
-function closeOnClick() {
-  popup.classList.remove("open");
-  burger.classList.remove("active");
-  body.classList.remove("noscroll");
-}

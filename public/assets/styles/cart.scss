@@ -1,0 +1,177 @@
+@import 'design_system';
+
+.cart {
+  padding: 3rem; // 48px = 3rem
+  padding-bottom: 6rem; // 96px = 6rem
+
+  &__empty-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+    padding: 4rem 0;
+  }
+
+  &__empty-img {
+    width: 8rem;
+    height: 8rem;
+    object-fit: contain;
+  }
+
+  &__empty-text {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #000;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.cart__header,
+.cart__promo,
+.cart__delivery {
+  background-color: $Grey_94;
+  border-radius: 2rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.cart__title {
+  display: inline-block;
+  @include txt_title_80;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.cart__btn-clear {
+  float: right;
+  @include montserrat_regular_S;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.625rem 1.25rem;
+  background-color: rgba(0, 0, 0, 0.02);
+  border: none;
+  border-radius: 2.5rem;
+  cursor: pointer;
+}
+
+.cart__empty-msg {
+  text-align: center;
+  font-size: 1.25rem;
+  color: $Grey_03;
+  padding-top: 2rem;
+}
+
+.cart__promo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .promo__input {
+    width: 18.375rem;
+    height: 2.5rem;
+    padding: 0 1rem;
+    font-size: 1rem;
+    border: 1px solid $Grey_94;
+    border-radius: 0.75rem;
+    background-color: $White_00;
+  }
+
+  .promo__btn {
+    height: 2.5rem;
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    background-color: $Black_00;
+    color: $White_00;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+  }
+
+  .promo__discount {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: $Black_00;
+  }
+}
+
+.cart__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h3,
+  .total__amount {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}
+
+.cart__delivery {
+  .form-label {
+    @include montserrat_regular_S;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .cart__input {
+    font-size: 1rem;
+    color: $Black_00;
+    background-color: $White_00;
+    border: 1px solid $Grey_94;
+    border-radius: 0.75rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding: 0 1rem;
+    width: 100%;
+  }
+
+  .form__group-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    .half {
+      width: 50%;
+    }
+
+    .quarter {
+      width: 25%;
+    }
+  }
+
+  .input--date,
+  .input--time {
+    appearance: none;
+    background-color: $White_00;
+    border: 1px solid $Grey_94;
+    border-radius: 0.75rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding: 0 1rem;
+    width: 100%;
+    font-size: 1rem;
+    color: $Black_00;
+    background-image: url('../images/arrow_drop_down.svg');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.5rem; //в макете 24px = 1.5rem
+    cursor: pointer;
+  }
+}
+
+.cart__btn-pay {
+  @include btn_size_52;
+  display: block;
+  margin: 2rem auto 0;
+  background-color: $Black_00;
+  color: $White_00;
+  border: none;
+  cursor: pointer;
+}
+
+.form__submit {
+  text-align: center;
+  margin-top: 2rem;
+}
