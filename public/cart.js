@@ -6,6 +6,27 @@ class CartManager {
 
   loadCart() {
     const cart = JSON.parse(localStorage.getItem('cart') || '[]')
+
+    const promoWrapper = document.getElementById('cart-promo')
+    const clearBtn = document.getElementById('clear-cart')
+    const totalSection = document.getElementById('cart-total')
+    const emptyText = document.getElementById('checkout-form')
+    const subtotalSection = document.getElementById('cart-subtotal')
+
+    if (cart.length === 0) {
+      if (promoWrapper) promoWrapper.style.display = 'none'
+      if (clearBtn) clearBtn.style.display = 'none'
+      if (totalSection) totalSection.style.display = 'none'
+      if (subtotalSection) subtotalSection.style.display = 'none'
+      if (emptyText) emptyText.style.display = 'none'
+    } else {
+      if (promoWrapper) promoWrapper.style.display = 'flex'
+      if (clearBtn) clearBtn.style.display = 'inline-block'
+      if (totalSection) totalSection.style.display = 'flex'
+      if (subtotalSection) subtotalSection.style.display = 'flex'
+      if (emptyText) emptyText.style.display = 'block'
+    }
+
     this.displayCart(cart)
     this.calculateTotals(cart)
   }
@@ -13,30 +34,35 @@ class CartManager {
   displayCart(items) {
     const cartItems = document.getElementById('cart-items')
     if (items.length === 0) {
-      cartItems.innerHTML = '<p>Your cart is empty</p>'
+      cartItems.innerHTML = `
+  <div class="cart__empty-wrapper text-center mt-3">
+    <img src="assets/images/empty_cart.svg" alt="Empty cart" class="cart__empty-img" />
+    <p class="cart__empty-text">Все еще не выбрали зеленого друга?</p>
+    <button class="cart__btn-pay">Выбрать</button>
+  </div>
+`
       return
     }
 
     cartItems.innerHTML = items
       .map(
         (item) =>
-          `<div class="plant-card" data-plant-id="${item.id}">
-        <img src="${item.image}" alt="${item.name}">
-        <h3>${item.name}</h3>
-        <p class="item-price" data-item-id="${item.id}">$${(
+          `<div class="product-card" data-plant-id="${item.id}">
+            <img src="${item.image}" alt="${item.name}">
+            <h3>${item.name}</h3>
+            <p class="item-price" data-item-id="${item.id}">${(
             item.price * item.quantity
-          ).toFixed(2)}</p>
-        <div class="quantity-controls">
-          <button onclick="cartManager.updateQuantity(${
-            item.id
-          }, -1)" class="quantity-btn">-</button>
-          <span>${item.quantity}</span>
-          <button onclick="cartManager.updateQuantity(${
-            item.id
-          }, 1)" class="quantity-btn">+</button>
-        </div>
-      </div>
-    `
+          ).toFixed(2)} ₽</p>
+            <div class="product-quantity-controls">
+              <button onclick="cartManager.updateQuantity(${
+                item.id
+              }, -1)" class="quantity-btn">-</button>
+              <span>${item.quantity}</span>
+              <button onclick="cartManager.updateQuantity(${
+                item.id
+              }, 1)" class="quantity-btn">+</button>
+            </div>
+          </div>`
       )
       .join('')
   }
@@ -52,17 +78,8 @@ class CartManager {
       }
       localStorage.setItem('cart', JSON.stringify(cart))
       this.loadCart()
-      this.calculateTotals(cart) // Обновляем сумму после изменения количества
-
-      // Обновляем цену товара в карточке
-      const itemPriceElement = document.querySelector(
-        `.item-price[data-item-id="${itemId}"]`
-      )
-      if (itemPriceElement) {
-        itemPriceElement.textContent = `$${(item.price * item.quantity).toFixed(
-          2
-        )}`
-      }
+      this.calculateTotals(cart)
+      // Обновление цены товара производится в loadCart, поэтому отдельный updatePrice не обязателен
     }
   }
 
@@ -78,9 +95,9 @@ class CartManager {
     const discount = this.calculateDiscount(subtotal)
     const total = subtotal - discount
 
-    document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`
-    document.getElementById('discount').textContent = `$${discount.toFixed(2)}`
-    document.getElementById('total').textContent = `$${total.toFixed(2)}`
+    document.getElementById('subtotal').textContent = `${subtotal.toFixed(2)} ₽`
+    document.getElementById('discount').textContent = `${discount.toFixed(2)} ₽`
+    document.getElementById('total').textContent = `${total.toFixed(2)} ₽`
   }
 
   removeItem(itemId) {
