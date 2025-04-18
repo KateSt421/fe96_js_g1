@@ -86,14 +86,16 @@ class PlantStore {
       const inCartClass = quantity > 0 ? 'in-cart' : '';
 
       return `
-        <div class="plant-card ${inCartClass}" data-plant-id="${plant.id}">
+        <div class="product-card ${inCartClass}" data-plant-id="${plant.id}">
           <img src="${plant.image}" alt="${plant.name}">
-          <button class="details-btn" onclick="window.location.href='/details.html?id=${plant.id}'">Details</button>
+          <button class="product-details-btn" onclick="window.location.href='/details.html?id=${plant.id}'">Подробнее..</button>
           <h3>${plant.name}</h3>
-          <p>$${plant.price.toFixed(2)}</p>
+          <p class-"cart-product-price">${plant.price.toFixed(2)} Руб.</p>
+          <p class="product-item-description">${plant.description}</p>
+          <p>${plant.comment}</p>
           ${quantity === 0 ?
-            `<button class="add-to-cart-btn" onclick="plantStore.updateQuantity(${plant.id}, 1)">Add to Cart</button>` :
-            `<div class="quantity-controls">
+            `<button class="product-add-to-cart-btn" onclick="plantStore.updateQuantity(${plant.id}, 1)">Добавить</button>` :
+            `<div class="product-quantity-controls">
                 <button onclick="plantStore.updateQuantity(${plant.id}, -1)">-</button>
                 <span>${quantity}</span>
                 <button onclick="plantStore.updateQuantity(${plant.id}, 1)">+</button>

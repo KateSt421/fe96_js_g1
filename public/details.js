@@ -19,7 +19,7 @@ class PlantDetails {
     });
 
     // Enter key event for search input
-    searchInput.addEventListener('keypress', (event) => {
+    searchInput.addEventListener('keydown', (event) => {
       if (event.key === 'Enter' && searchInput.value.length >= 3) {
         event.preventDefault();
         window.location.href = `/?search=${encodeURIComponent(searchInput.value)}`;
@@ -55,7 +55,7 @@ class PlantDetails {
 
     const detailsContainer = document.getElementById('plant-details');
 
-    if(plant.category ==="service"){
+    if(plant.category ==="service") {
       detailsContainer.innerHTML = `
       <div class="row">
         <div class="col-md-6">
@@ -65,7 +65,7 @@ class PlantDetails {
         </div>
         <div class="col-md-6">
         <h1>${plant.name}</h1>
-        <div class="plant-details-price">$${plant.price.toFixed(2)}</div>
+        <div class="plant-details-price">${plant.price.toFixed(2)} Руб.</div>
         <p class="plant-details-description">Описание: ${plant.description.toLowerCase()}</p>
         <p><stronge>Категория:  </stronge>${plant.category.charAt(0).toUpperCase() + plant.category.slice(1)}</p>
         <p><stronge>Комментарий:  </stronge>${plant.comment.charAt(0).toUpperCase() + plant.comment.slice(1)}</p>
@@ -82,46 +82,36 @@ class PlantDetails {
         </div>
       </div>
       </div>`;
-      detailsContainer.innerHTML += `
-      <nav class="mt-3">
-        <a href="/" class="btn btn-outline-success">&larr; Back to Shop</a>
-      </nav>
-    `;
+
       return;
     }
-    
-    detailsContainer.innerHTML += `
-      <div class="row">
-        <div class="col-md-6">
-          <div class="plant-image-container">
-            <img src="${plant.image}" alt="${plant.name}">
-          </div>
-        </div>
-        <div class="col-md-6">
-          <h1>${plant.name}</h1>
-          <div class="plant-details-price">$${plant.price.toFixed(2)}</div>
-          <p class="plant-details-description">
-            Premium quality ${plant.name.toLowerCase()} for your home or garden.
-            This beautiful plant is perfect for adding a touch of natural beauty to any space.
-          </p>
-          <p><strong>Category:</strong> ${plant.category.charAt(0).toUpperCase() + plant.category.slice(1)}</p>
-          <div class="plant-details-actions">
-            ${quantity === 0 ?
-              `<button class="add-to-cart-btn" onclick="plantDetails.updateQuantity(${plant.id}, 1)">Add to Cart</button>` :
-              `<div class="quantity-controls">
-                  <button onclick="plantDetails.updateQuantity(${plant.id}, -1)">-</button>
-                  <span>${quantity}</span>
-                  <button onclick="plantDetails.updateQuantity(${plant.id}, 1)">+</button>
-              </div>`
-            }
+    else {
+        detailsContainer.innerHTML = `
+          <div class="row">
+            <div class="col-md-6">
+              <div class="plant-image-container">
+                <img src="${plant.image}" alt="${plant.name}">
+              </div>
             </div>
-        </div>
-      </div>`;
-      detailsContainer.innerHTML += `
-      <nav class="mt-3">
-        <a href="/" class="btn btn-outline-success">&larr; Back to Shop</a>
-      </nav>
-    `;
+            <div class="col-md-6">
+              <h1>${plant.name}</h1>
+              <div class="plant-details-price">${plant.price.toFixed(2)} Руб.</div>
+              <p class="plant-details-description">Описание: ${plant.description.toLowerCase()}</p>
+              <p><stronge>Категория:  </stronge>${plant.category.charAt(0).toUpperCase() + plant.category.slice(1)}</p>
+              <p><stronge>Комментарий:  </stronge>${plant.comment.charAt(0).toUpperCase() + plant.comment.slice(1)}</p>
+              <div class="product-details-actions">
+                ${quantity === 0 ?
+                  `<button class="product-add-to-cart-btn" onclick="plantDetails.updateQuantity(${plant.id}, 1)">Добавить</button>` :
+                  `<div class="product-quantity-controls">
+                      <button onclick="plantDetails.updateQuantity(${plant.id}, -1)">-</button>
+                      <span>${quantity}</span>
+                      <button onclick="plantDetails.updateQuantity(${plant.id}, 1)">+</button>
+                  </div>`
+                }
+                </div>
+            </div>
+          </div>`;
+      }
   }
 
   showError(message) {
