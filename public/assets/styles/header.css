@@ -1,6 +1,6 @@
 @charset "UTF-8";
+/* ----------- Константы ----------- */
 :root {
-  /* ----------- Константы ----------- */
   --basic-font-weight: 600;
   --title-font-weight: 400;
 }
@@ -146,7 +146,7 @@
   display: none;
   position: fixed;
   padding: 1rem 0 1rem 1rem;
-  top: 8%;
+  top: 16%;
   left: 0;
   right: 0;
   background-color: #ffffff;

@@ -83,7 +83,7 @@
   margin: 0;
 }
 
-.- {
+.cart__btn-clear {
   float: right;
   /* служебный миксин, его использовать не надо */
   font-family: "Montserrat";
