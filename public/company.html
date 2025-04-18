@@ -6,29 +6,68 @@
     <title>About Us - Flower Shop</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <script
+        src="https://kit.fontawesome.com/362708026e.js"
+        crossorigin="anonymous"
+    ></script>
     <link href="assets/styles/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles/header.css">
 </head>
 <body>
-    <header class="hero">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <a class="navbar-brand" href="/">Flower Shop</a>
-                <div class="search-container">
-                    <input type="text" id="search" placeholder="Search plants...">
-                    <button id="searchBtn">Search</button>
-                </div>
-                <div class="nav-links">
-                    <a href="/company.html" class="about-link">
-                        <i class="bi bi-building"></i>
-                        About Us
-                    </a>
-                    <a href="/cart.html" class="cart-link">
-                        <i class="bi bi-cart3"></i>
-                        Cart
-                    </a>
+    
+    <header class="header">
+        <nav class="header__nav">
+
+            <!-- бургер меню -->
+            <div class="burger">
+                <div class="burger__field" id="burger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </div>
             </div>
+
+            <!-- логотип компании -->
+            <div class="nav__logo">
+                <img src="./assets/images/vector_logo.svg" alt="company logo" class="nav__logo-icon">
+                <a href="http://localhost:7001/">
+                    <img src="./assets/images/vector_Planty'x.svg" alt="company logo" class="nav__logo-text">
+                </a>
+            </div>
+
+            <!-- навигация по сайту -->
+            <ul class="nav__menu" id="menu"> 
+                <li><a href="http://localhost:7001/" class="nav__menu-plants">Цветы</a></li>
+                <li><a href="services.html" class="nav__menu-services">Услуги</a></li>
+                <li><a href="company.html" class="nav__menu-company">О Нас</a></li>
+            </ul>
+
+            <!-- иконки -->
+            <div class="nav__icons">
+                <button class="cart-link" id="searchToggle">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <a href="/cart.html" class="cart-link">
+                    <i class="fa-regular fa-user fa-sm"></i>
+                </a>
+                <a href="/cart.html" class="cart-link">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </div>
         </nav>
+
+        <!-- попап для бургера (для мобилки) -->
+        <div class="header__popup" id="popup"></div>
+
+        <!-- инпут для поиска по сайту-->
+        <form class="header__searchContainer" id="searchContainer">
+            <div class="input-container">
+                <input type="text" id="search" placeholder="Поиск...">
+                <span id="clearButton" class="clearButton">
+                    <img src="./assets/images/vector_close.svg" alt="erase">
+                </span>
+            </div>
+        </form>
     </header>
 
     <section class="carousel-section">
@@ -115,10 +154,26 @@
                         <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A0f7d38b6841f61e7490fb2a31645c4827ad8b8695ec71b897b2e252bb041ed8e&amp;source=constructor" width="540" height="480" frameborder="0"></iframe>
                     </div>
                 </div>
+
+                <h2 class="mt-4">Green Places We've Planted</h2>
+                <p>As part of our commitment to sustainability, we've planted trees and created green spaces in various locations throughout the Moscow region.</p>
+                
+                <div class="text-center mt-4 mb-5">
+                    <div class="card p-4 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Explore Our Green Impact</h4>
+                            <a href="/mapsComponent.html" class="btn btn-success">
+                                <i class="bi bi-map"></i> View Interactive Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
 
+    <script src="app.js"></script>
+    <script src="header.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
