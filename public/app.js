@@ -1,4 +1,3 @@
-
 class PlantStore {
   constructor() {
     this.initSearch();
@@ -7,14 +6,15 @@ class PlantStore {
     this.plants = [];
     this.currentFilter = '';
     this.currentCategory = 'flowering';
+    this.updateCartCount();
   }
 
   async initSearch() {
     const searchInput = document.getElementById('search');
-    const searchBtn = document.getElementById('searchBtn');
+    // const searchBtn = document.getElementById('searchBtn');
 
     // Click event for search button
-    searchBtn.addEventListener('click', () => {
+    searchInput.addEventListener('click', () => {
         this.searchPlants(searchInput.value);
     });
 
@@ -55,7 +55,7 @@ class PlantStore {
         this.filterByCategory(btn.dataset.category);
       });
     });
-    // Set 'Show All' as initially active
+    // Set 'Show Flowering' as initially active
     document.querySelector('[data-category="flowering"]').classList.add('active');
   }
 
@@ -104,6 +104,22 @@ class PlantStore {
     }).join('');
   }
 
+updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+  const totalCount = cart.reduce((total, item) => total + item.quantity, 0);
+  const cartCountElement = document.getElementById('cart-count'); 
+  
+  if (totalCount > 0) {
+      cartCountElement.textContent = totalCount;
+      cartCountElement.style.display = 'block';
+      cartCountElement.style.textShadow = '2px 2px 4px rgba(0, 0, 0, 0.9)';
+  } else {
+      cartCountElement.textContent = ''; 
+      cartCountElement.style.display = 'none';
+      cartCountElement.style.textShadow = 'none';
+  }
+}
+
   updateQuantity(plantId, change) {
     const plant = this.plants.find(p => p.id === plantId);
     if (plant) {
@@ -121,6 +137,7 @@ class PlantStore {
       }
 
       localStorage.setItem('cart', JSON.stringify(cart));
+      this.updateCartCount();
       this.filterByCategory(this.currentCategory);
 
       if (change > 0) {

@@ -1,6 +1,7 @@
 :root {
   /* ----------- Константы ----------- */
-  
+  --basic-font-weight: 600;
+  --title-font-weight: 400;
 }
 
 /* ----------- Цвета ----------- */
@@ -13,35 +14,36 @@ $Green_96: #9BB96C;
 $Green_67:#677E51;
 $Black_00: #000000;
 $Black_01: #010101;
+$Orange_00: #FA6C59;
 
 /* ----------- Стили шрифтов ----------- */
 
 @font-face {
 	font-family: 'Montserrat';
-	src: url('/public/assets/fonts/Montserrat-SemiBold.eot');
+	src: url('../fonts/Montserrat-SemiBold.eot');
 	src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
-		url('/public/assets/fonts/Montserrat-SemiBold.woff') format('woff'),
-		url('/public/assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
-	font-weight: 600;
+		url('../fonts/Montserrat-SemiBold.woff') format('woff'),
+		url('../fonts/Montserrat-SemiBold.ttf') format('truetype');
+	font-weight: var(--basic-font-weight);
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Montserrat';
-	src: url('/public/assets/fonts/Montserrat-Regular.eot');
+	src: url('../fonts/Montserrat-Regular.eot');
 	src: local('Montserrat Regular'), local('Montserrat-Regular'),
-		url('/public/assets/fonts/Montserrat-Regular.woff') format('woff'),
-		url('/public/assets/fonts/Montserrat-Regular.ttf') format('truetype');
+		url('../fonts/Montserrat-Regular.woff') format('woff'),
+		url('../fonts/Montserrat-Regular.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
   font-family: 'Belleza';
-  src: url('/public/assets/fonts/Belleza-Regular.eot');
+  src: url('../fonts/Belleza-Regular.eot');
   src: local('Belleza Regular'), local('Belleza-Regular'),
-      url('/public/assets/fonts/Belleza-Regular.woff2') format('woff2'),
-      url('/public/assets/fonts/Belleza-Regular.woff') format('woff'),
-      url('/public/assets/fonts/Belleza-Regular.ttf') format('truetype');
+      url('../fonts/Belleza-Regular.woff2') format('woff2'),
+      url('../fonts/Belleza-Regular.woff') format('woff'),
+      url('../fonts/Belleza-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -51,7 +53,7 @@ $Black_01: #010101;
 @mixin title_Montserrat_regular {
   /* служебный миксин, его использовать не надо */
   font-family: 'Montserrat';
-  font-weight: 400;
+  font-weight: var(--title-font-weight);
 }
 
 @mixin montserrat_regular_L {
@@ -70,7 +72,7 @@ $Black_01: #010101;
 @mixin title_Montserrat_semi {
   /* служебный миксин, его использовать не надо */
   font-family: 'Montserrat';
-  font-weight: 600;
+  font-weight: var(--basic-font-weight);
 }
 
 @mixin montserrat_semi_L {
@@ -90,7 +92,7 @@ $Black_01: #010101;
 @mixin txt_title {
   /* служебный миксин, его использовать не надо */
   font-family: 'Belleza';
-  font-weight: 400;
+  font-weight: var(--title-font-weight);
   line-height: 110%;
   letter-spacing: -0.5px;
 }
