@@ -47,13 +47,13 @@ class CartManager {
     cartItems.innerHTML = items
       .map(
         (item) =>
-          `<div class="plant-card" data-plant-id="${item.id}">
+          `<div class="product-card" data-plant-id="${item.id}">
             <img src="${item.image}" alt="${item.name}">
             <h3>${item.name}</h3>
-            <p class="item-price" data-item-id="${item.id}">$${(
+            <p class="item-price" data-item-id="${item.id}">${(
             item.price * item.quantity
-          ).toFixed(2)}</p>
-            <div class="quantity-controls">
+          ).toFixed(2)} ₽</p>
+            <div class="product-quantity-controls">
               <button onclick="cartManager.updateQuantity(${
                 item.id
               }, -1)" class="quantity-btn">-</button>
@@ -95,9 +95,9 @@ class CartManager {
     const discount = this.calculateDiscount(subtotal)
     const total = subtotal - discount
 
-    document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`
-    document.getElementById('discount').textContent = `$${discount.toFixed(2)}`
-    document.getElementById('total').textContent = `$${total.toFixed(2)}`
+    document.getElementById('subtotal').textContent = `${subtotal.toFixed(2)} ₽`
+    document.getElementById('discount').textContent = `${discount.toFixed(2)} ₽`
+    document.getElementById('total').textContent = `${total.toFixed(2)} ₽`
   }
 
   removeItem(itemId) {
