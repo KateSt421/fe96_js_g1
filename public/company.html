@@ -18,6 +18,7 @@
     ></script>
     <link href="assets/styles/styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/styles/header.css" />
+    <link rel="stylesheet" href="./assets/styles/company.css">
   </head>
   <body>
     <header class="header">
@@ -273,11 +274,60 @@
                 </a>
               </div>
             </div>
-          </div>
+          </div> 
+          <div class="email_form">
+          <h3 class="title_email">Хотите получать свежие советы?</h3>
+          <p class="text_email">Бесплатный сервис помощи для Ваших растений</p>
+          <form
+          action="https://postmail.invotes.com/send"
+          method="post"
+          id="email_form"
+        >
+          <input type="hidden" name="subject" placeholder="Subject" />
+          <input class="input_email" type="email" name="text" placeholder="Email"></input>
+          <input
+            type="hidden"
+            name="access_token"
+            value="8di3pg9yxh4cvk9oy4q11t6a"
+          />
+          <input
+            type="hidden"
+            name="success_url"
+            value=".?message=Email+Successfully+Sent%21&isError=0"
+          />
+          <input
+            type="hidden"
+            name="error_url"
+            value=".?message=Email+could+not+be+sent.&isError=1"
+          />
+          <button id="submit_form" type="submit" value="Send" >
+              <img class="img_send" src="./assets/images/IconSend.svg" alt="send">
+          </button>
+        </form>
+        <p id="responseMessage" class="hidden"></p>
+        </div>
+        <script>
+          let submitButton = document.getElementById("submit_form");
+          let form = document.getElementById("email_form");
+          const newText = form.subject;
+          console.log(newText, newText.value);
+          form.subject.value = "Привет! Команда Planty'x надеется, что ваши новые растения прекрасно осваиваются в вашем доме! Уход за растениями порой непрост, поэтому мы предлагаем несколько способов получить свежие советы и поддержку:1. Блог Planty'x: Советы по уходу, решению проблем и выбору грунтов; 2. База знаний: Ответы на часто задаваемые вопросы о растениях; 3. Персональная консультация: Отправьте фото вашего растения и вопрос на plantyx@mail.ru; 4. Социальные сети: Новости, советы и вдохновение; 5. Онлайн-калькулятор полива: Определите оптимальный режим полива. Мы верим, что у вас все получится! Если вам нужна помощь, просто свяжитесь с нами. С наилучшими пожеланиями, Команда Planty'x!";
+          console.log(form.subject.value);
+          // form.addEventListener("submit", function (e) {
+          //   setTimeout(function () {
+          //     submitButton.value = "Sending...";
+          //     submitButton.disabled = true;
+          //   }, 1);
+          // });
+          function validateEmail(email) {
+            const re = /^[^s@]+@[^s@]+.[^s@]+$/;
+            return re.test(String(email).toLowerCase());
+          }
+        </script>
         </div>
       </div>
     </main>
-
+    <script src="company.js"></script>
     <script src="app.js"></script>
     <script src="header.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
