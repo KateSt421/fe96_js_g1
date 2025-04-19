@@ -2,6 +2,14 @@ class CartManager {
   constructor() {
     this.loadCart()
     this.initCheckout()
+
+    const clearBtn = document.getElementById('clear-cart')
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        localStorage.setItem('cart', '[]')
+        this.loadCart()
+      })
+    }
   }
 
   loadCart() {
@@ -19,6 +27,19 @@ class CartManager {
       if (totalSection) totalSection.style.display = 'none'
       if (subtotalSection) subtotalSection.style.display = 'none'
       if (emptyText) emptyText.style.display = 'none'
+
+      const cartItems = document.getElementById('cart-items')
+      if (cartItems) {
+        cartItems.innerHTML = `
+          <div class="cart__empty-wrapper text-center mt-3">
+            <img src="assets/images/empty_cart.svg" alt="Empty cart" class="cart__empty-img" />
+            <p class="cart__empty-text">Все еще не выбрали зеленого друга?</p>
+            <button type="button" class="cart__btn-pay" onclick="window.location.href='index.html'">Выбрать</button>
+          </div>
+        `
+      }
+
+      return
     } else {
       if (promoWrapper) promoWrapper.style.display = 'flex'
       if (clearBtn) clearBtn.style.display = 'inline-block'
@@ -33,16 +54,7 @@ class CartManager {
 
   displayCart(items) {
     const cartItems = document.getElementById('cart-items')
-    if (items.length === 0) {
-      cartItems.innerHTML = `
-  <div class="cart__empty-wrapper text-center mt-3">
-    <img src="assets/images/empty_cart.svg" alt="Empty cart" class="cart__empty-img" />
-    <p class="cart__empty-text">Все еще не выбрали зеленого друга?</p>
-    <button type="button" class="cart__btn-pay" onclick="window.location.href='index.html'">Выбрать</button>
-  </div>
-`
-      return
-    }
+    if (!cartItems) return
 
     cartItems.innerHTML = items
       .map(
@@ -100,12 +112,12 @@ class CartManager {
     document.getElementById('total').textContent = `${total.toFixed(2)} ₽`
   }
 
-  removeItem(itemId) {
-    let cart = JSON.parse(localStorage.getItem('cart') || '[]')
-    cart = cart.filter((item) => item.id !== itemId)
-    localStorage.setItem('cart', JSON.stringify(cart))
-    this.loadCart()
-  }
+  //removeItem(itemId) {
+  //let cart = JSON.parse(localStorage.getItem('cart') || '[]')
+  //cart = cart.filter((item) => item.id !== itemId)
+  //localStorage.setItem('cart', JSON.stringify(cart))
+  //this.loadCart()
+  //}
 
   initCheckout() {
     document.getElementById('checkout-form').addEventListener('submit', (e) => {
