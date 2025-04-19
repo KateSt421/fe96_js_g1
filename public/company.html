@@ -1,181 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us - Flower Shop</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
     <script
-        src="https://kit.fontawesome.com/362708026e.js"
-        crossorigin="anonymous"
+      src="https://kit.fontawesome.com/362708026e.js"
+      crossorigin="anonymous"
     ></script>
-    <link href="assets/styles/styles.css" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/styles/header.css">
-</head>
-<body>
-    
+    <link href="assets/styles/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/styles/header.css" />
+  </head>
+  <body>
     <header class="header">
-        <nav class="header__nav">
+      <nav class="header__nav">
+        <!-- бургер меню -->
+        <div class="burger">
+          <div class="burger__field" id="burger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </div>
 
-            <!-- бургер меню -->
-            <div class="burger">
-                <div class="burger__field" id="burger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
+        <!-- логотип компании -->
+        <div class="nav__logo">
+          <img
+            src="./assets/images/vector_logo.svg"
+            alt="company logo"
+            class="nav__logo-icon"
+          />
+          <a href="http://localhost:7001/">
+            <img
+              src="./assets/images/vector_Planty'x.svg"
+              alt="company logo"
+              class="nav__logo-text"
+            />
+          </a>
+        </div>
 
-            <!-- логотип компании -->
-            <div class="nav__logo">
-                <img src="./assets/images/vector_logo.svg" alt="company logo" class="nav__logo-icon">
-                <a href="http://localhost:7001/">
-                    <img src="./assets/images/vector_Planty'x.svg" alt="company logo" class="nav__logo-text">
-                </a>
-            </div>
+        <!-- навигация по сайту -->
+        <ul class="nav__menu" id="menu">
+          <li>
+            <a href="http://localhost:7001/" class="nav__menu-plants">Цветы</a>
+          </li>
+          <li><a href="services.html" class="nav__menu-services">Услуги</a></li>
+          <li><a href="company.html" class="nav__menu-company">О Нас</a></li>
+        </ul>
 
-            <!-- навигация по сайту -->
-            <ul class="nav__menu" id="menu"> 
-                <li><a href="http://localhost:7001/" class="nav__menu-plants">Цветы</a></li>
-                <li><a href="services.html" class="nav__menu-services">Услуги</a></li>
-                <li><a href="company.html" class="nav__menu-company">О Нас</a></li>
-            </ul>
+        <!-- иконки -->
+        <div class="nav__icons">
+          <button class="cart-link" id="searchToggle">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <a href="/cart.html" class="cart-link">
+            <i class="fa-regular fa-user fa-sm"></i>
+          </a>
+          <a href="/cart.html" class="cart-link">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+        </div>
+      </nav>
 
-            <!-- иконки -->
-            <div class="nav__icons">
-                <button class="cart-link" id="searchToggle">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-                <a href="/cart.html" class="cart-link">
-                    <i class="fa-regular fa-user fa-sm"></i>
-                </a>
-                <a href="/cart.html" class="cart-link">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </a>
-            </div>
-        </nav>
+      <!-- попап для бургера (для мобилки) -->
+      <div class="header__popup" id="popup"></div>
 
-        <!-- попап для бургера (для мобилки) -->
-        <div class="header__popup" id="popup"></div>
-
-        <!-- инпут для поиска по сайту-->
-        <form class="header__searchContainer" id="searchContainer">
-            <div class="input-container">
-                <input type="text" id="search" placeholder="Поиск...">
-                <span id="clearButton" class="clearButton">
-                    <img src="./assets/images/vector_close.svg" alt="erase">
-                </span>
-            </div>
-        </form>
+      <!-- инпут для поиска по сайту-->
+      <form class="header__searchContainer" id="searchContainer">
+        <div class="input-container">
+          <input type="text" id="search" placeholder="Поиск..." />
+          <span id="clearButton" class="clearButton">
+            <img src="./assets/images/vector_close.svg" alt="erase" />
+          </span>
+        </div>
+      </form>
     </header>
 
     <section class="carousel-section">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="/images/hero-bg.jpg" class="d-block w-100" alt="Our greenhouse">
-                    <div class="carousel-caption">
-                        <h2>Our Greenhouse</h2>
-                        <p>Where our beautiful plants begin their journey</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://images.pexels.com/photos/1029844/pexels-photo-1029844.jpeg" class="d-block w-100" alt="Our team">
-                    <div class="carousel-caption">
-                        <h2>Our Expert Team</h2>
-                        <p>Plant specialists with decades of experience</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://images.pexels.com/photos/793012/pexels-photo-793012.jpeg" class="d-block w-100" alt="Our store">
-                    <div class="carousel-caption">
-                        <h2>Our Store</h2>
-                        <p>Visit us in-person for personalized plant care advice</p>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
         </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="./assets/images/photo-1569350080887-dd38c27caad0.avif"
+              class="d-block w-100"
+              alt="Our greenhouse"
+            />
+            <div class="carousel-caption">
+              <h2>Our Greenhouse</h2>
+              <p>Where our beautiful plants begin their journey</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://images.pexels.com/photos/1029844/pexels-photo-1029844.jpeg"
+              class="d-block w-100"
+              alt="Our team"
+            />
+            <div class="carousel-caption">
+              <h2>Our Expert Team</h2>
+              <p>Plant specialists with decades of experience</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://images.pexels.com/photos/793012/pexels-photo-793012.jpeg"
+              class="d-block w-100"
+              alt="Our store"
+            />
+            <div class="carousel-caption">
+              <h2>Our Store</h2>
+              <p>Visit us in-person for personalized plant care advice</p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </section>
 
     <main class="container mt-5">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <h1 class="text-center mb-4">About Flower Shop</h1>
-                <p>Flower Shop was founded in 2010 with a simple mission: to bring the beauty and benefits of plants into people's homes and workplaces. We believe that surrounding yourself with greenery improves well-being, productivity, and happiness.</p>
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <h1 class="text-center mb-4">About Flower Shop</h1>
+          <p>
+            Flower Shop was founded in 2010 with a simple mission: to bring the
+            beauty and benefits of plants into people's homes and workplaces. We
+            believe that surrounding yourself with greenery improves well-being,
+            productivity, and happiness.
+          </p>
 
-                <h2 class="mt-4">Our Mission</h2>
-                <p>We're dedicated to providing high-quality, sustainably grown plants that thrive in any environment. Our expert team carefully selects each plant in our collection, ensuring they're healthy, resilient, and perfect for both beginners and experienced plant parents.</p>
+          <h2 class="mt-4">Our Mission</h2>
+          <p>
+            We're dedicated to providing high-quality, sustainably grown plants
+            that thrive in any environment. Our expert team carefully selects
+            each plant in our collection, ensuring they're healthy, resilient,
+            and perfect for both beginners and experienced plant parents.
+          </p>
 
-                <h2 class="mt-4">Our Commitment</h2>
-                <p>Sustainability is at the heart of everything we do. We use eco-friendly growing practices, biodegradable packaging, and partner with suppliers who share our values. When you shop with us, you're supporting responsible environmental stewardship.</p>
+          <h2 class="mt-4">Our Commitment</h2>
+          <p>
+            Sustainability is at the heart of everything we do. We use
+            eco-friendly growing practices, biodegradable packaging, and partner
+            with suppliers who share our values. When you shop with us, you're
+            supporting responsible environmental stewardship.
+          </p>
 
-                <h2 class="mt-4">Our Expertise</h2>
-                <p>Our team consists of horticulturists, botanists, and plant enthusiasts who love sharing their knowledge. We're always available to offer advice on plant selection, care tips, or troubleshooting if your green friends need some help.</p>
+          <h2 class="mt-4">Our Expertise</h2>
+          <p>
+            Our team consists of horticulturists, botanists, and plant
+            enthusiasts who love sharing their knowledge. We're always available
+            to offer advice on plant selection, care tips, or troubleshooting if
+            your green friends need some help.
+          </p>
 
-                <h2 class="mt-4">Expert Plant Care Tips</h2>
-                <div class="row mt-3">
-                    <div class="col-md-6">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h3 class="card-title text-success">Watering Best Practices</h3>
-                                <p class="card-text">Most houseplants die from overwatering rather than underwatering. Always check the soil moisture before watering - insert your finger about an inch into the soil, and only water if it feels dry. Different plants have different watering needs, so learn about each species' specific requirements.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h3 class="card-title text-success">Light Requirements</h3>
-                                <p class="card-text">Understanding your home's light conditions is crucial for plant success. South-facing windows provide bright direct light, east and west windows offer medium light, and north windows provide low light. Match your plants to the available light or supplement with grow lights for light-loving plants in darker spaces.</p>
-                            </div>
-                        </div>
-                    </div>
+          <h2 class="mt-4">Expert Plant Care Tips</h2>
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <h3 class="card-title text-success">
+                    Watering Best Practices
+                  </h3>
+                  <p class="card-text">
+                    Most houseplants die from overwatering rather than
+                    underwatering. Always check the soil moisture before
+                    watering - insert your finger about an inch into the soil,
+                    and only water if it feels dry. Different plants have
+                    different watering needs, so learn about each species'
+                    specific requirements.
+                  </p>
                 </div>
-
-                <h2 class="mt-4">Green Places We've Planted</h2>
-                <p>As part of our commitment to sustainability, we've planted trees and created green spaces in various locations. Explore the map below to see our impact:</p>
-
-                <div id="map-container" class="mt-4 mb-5">
-                    <div id="map" style="width: 100%; height: 400px;">
-                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A0f7d38b6841f61e7490fb2a31645c4827ad8b8695ec71b897b2e252bb041ed8e&amp;source=constructor" width="540" height="480" frameborder="0"></iframe>
-                    </div>
-                </div>
-
-                <h2 class="mt-4">Green Places We've Planted</h2>
-                <p>As part of our commitment to sustainability, we've planted trees and created green spaces in various locations throughout the Moscow region.</p>
-                
-                <div class="text-center mt-4 mb-5">
-                    <div class="card p-4 shadow-sm">
-                        <div class="card-body">
-                            <h4 class="card-title">Explore Our Green Impact</h4>
-                            <a href="/mapsComponent.html" class="btn btn-success">
-                                <i class="bi bi-map"></i> View Interactive Maps
-                            </a>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
+            <div class="col-md-6">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <h3 class="card-title text-success">Light Requirements</h3>
+                  <p class="card-text">
+                    Understanding your home's light conditions is crucial for
+                    plant success. South-facing windows provide bright direct
+                    light, east and west windows offer medium light, and north
+                    windows provide low light. Match your plants to the
+                    available light or supplement with grow lights for
+                    light-loving plants in darker spaces.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="mt-4">Green Places We've Planted</h2>
+          <p>
+            As part of our commitment to sustainability, we've planted trees and
+            created green spaces in various locations. Explore the map below to
+            see our impact:
+          </p>
+
+          <div id="map-container" class="mt-4 mb-5">
+            <div id="map" style="width: 100%; height: 400px">
+              <iframe
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3A0f7d38b6841f61e7490fb2a31645c4827ad8b8695ec71b897b2e252bb041ed8e&amp;source=constructor"
+                width="540"
+                height="480"
+                frameborder="0"
+              ></iframe>
+            </div>
+          </div>
+
+          <h2 class="mt-4">Green Places We've Planted</h2>
+          <p>
+            As part of our commitment to sustainability, we've planted trees and
+            created green spaces in various locations throughout the Moscow
+            region.
+          </p>
+
+          <div class="text-center mt-4 mb-5">
+            <div class="card p-4 shadow-sm">
+              <div class="card-body">
+                <h4 class="card-title">Explore Our Green Impact</h4>
+                <a href="/mapsComponent.html" class="btn btn-success">
+                  <i class="bi bi-map"></i> View Interactive Maps
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </main>
 
     <script src="app.js"></script>
     <script src="header.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-</body>
+  </body>
 </html>
