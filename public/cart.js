@@ -38,7 +38,7 @@ class CartManager {
   <div class="cart__empty-wrapper text-center mt-3">
     <img src="assets/images/empty_cart.svg" alt="Empty cart" class="cart__empty-img" />
     <p class="cart__empty-text">Все еще не выбрали зеленого друга?</p>
-    <button class="cart__btn-pay">Выбрать</button>
+    <button class="cart__btn-pay" onclick=onclick="window.location.href='catalog.html'">Выбрать</button>
   </div>
 `
       return
