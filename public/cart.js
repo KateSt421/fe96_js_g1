@@ -60,23 +60,27 @@ class CartManager {
       .map(
         (item) => `
       <div class="cart__item">
-        <img src="${item.image}" alt="${item.name}" class="cart__item-img" />
-        
-        <div class="cart__item-info">
-          <p class="cart__item-name">${item.name}</p>
-          <p class="cart__item-price">${item.price.toFixed(2)} ₽</p>
+          <img src="${item.image}" alt="${item.name}" class="cart__image" />
+          
+          <div class="cart__details">
+            <p class="cart__name">${item.name}</p>
+            <p class="cart__unit-price">${item.price.toFixed(2)} ₽</p>
+          </div>
+
+          <div class="cart__quantity-controls">
+            <button class="cart__btn" onclick="cartManager.updateQuantity(${
+              item.id
+            }, -1)">-</button>
+            <span class="cart__count">${item.quantity}</span>
+            <button class="cart__btn" onclick="cartManager.updateQuantity(${
+              item.id
+            }, 1)">+</button>
+          </div>
+
+          <div class="cart__price-total">${(item.price * item.quantity).toFixed(
+            2
+          )} ₽</div>
         </div>
-        
-        <div class="cart__item-controls">
-          <button class="cart__btn" onclick="cartManager.updateQuantity(${
-            item.id
-          }, -1)">−</button>
-          <span class="cart__item-qty">${item.quantity}</span>
-          <button class="cart__btn" onclick="cartManager.updateQuantity(${
-            item.id
-          }, 1)">+</button>
-        </div>
-      </div>
     `
       )
       .join('')

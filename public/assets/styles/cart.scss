@@ -1,8 +1,218 @@
 @import 'design_system';
 
 .cart {
-  padding: 3rem; // 48px = 3rem
-  padding-bottom: 6rem; // 96px = 6rem
+  padding: 3rem;
+  padding-bottom: 6rem;
+
+  &__header {
+    background-color: $Grey_94;
+    border-radius: 2rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  &__header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    @include txt_title_80;
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  &__btn-clear {
+    @include montserrat_regular_S;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.625rem 1.25rem;
+    background-color: rgba(0, 0, 0, 0.02);
+    border: none;
+    border-radius: 2.5rem;
+    cursor: pointer;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__item {
+    background-color: $White_00;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.05);
+
+    img {
+      width: 6rem;
+      height: 6rem;
+      border-radius: 1.5rem;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+  }
+
+  &__details {
+    flex-grow: 1;
+    margin: 0 1.5rem;
+
+    .cart__name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .cart__unit-price {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0;
+      font-size: 0.875rem;
+      color: $Grey_03;
+    }
+  }
+
+  &__quantity {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .cart__btn {
+      width: 2rem;
+      height: 2rem;
+      border: 1px solid $Grey_94;
+      background-color: transparent;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+
+    .cart__count {
+      @include montserrat_regular_M;
+      font-size: 1rem;
+      min-width: 1.5rem;
+      text-align: center;
+    }
+  }
+
+  &__total-price {
+    @include montserrat_semi_M;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  &__promo {
+    background-color: $Grey_94;
+    border-radius: 2rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .promo__input {
+      width: 18.375rem;
+      height: 2.5rem;
+      padding: 0 1rem;
+      font-size: 1rem;
+      border: 1px solid $Grey_94;
+      border-radius: 0.75rem;
+      background-color: $White_00;
+    }
+
+    .promo__btn {
+      height: 2.5rem;
+      padding: 0 1.5rem;
+      font-size: 1rem;
+      background-color: $Black_00;
+      color: $White_00;
+      border: none;
+      border-radius: 2rem;
+      cursor: pointer;
+    }
+
+    .promo__discount {
+      @include montserrat_semi_M;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__subtotal,
+  &__total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    p,
+    h3,
+    .total__amount {
+      @include montserrat_semi_M;
+      font-size: 1.5rem;
+      margin: 0;
+    }
+  }
+
+  &__delivery {
+    background-color: $Grey_94;
+    border-radius: 2rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+
+    .form-label {
+      @include montserrat_regular_S;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .cart__input {
+      font-size: 1rem;
+      color: $Black_00;
+      background-color: $White_00;
+      border: 1px solid $Grey_94;
+      border-radius: 0.75rem;
+      height: 2.5rem;
+      line-height: 2.5rem;
+      padding: 0 1rem;
+      width: 100%;
+    }
+
+    .form__group-row {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+
+      .half {
+        width: 50%;
+      }
+
+      .quarter {
+        width: 25%;
+      }
+    }
+  }
+
+  &__btn-pay {
+    @include btn_size_52;
+    display: block;
+    margin: 2rem auto 0;
+    background-color: $Black_00;
+    color: $White_00;
+    border: none;
+    cursor: pointer;
+  }
 
   &__empty-wrapper {
     display: flex;
@@ -20,221 +230,11 @@
   }
 
   &__empty-text {
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: #000;
+    @include montserrat_semi_M;
+    font-size: 1.25rem;
     margin: 0;
     text-align: center;
   }
-}
-
-.cart__header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem; // немного пространства между шапкой и товарами
-}
-
-.cart__header,
-.cart__promo,
-.cart__delivery {
-  background-color: $Grey_94;
-  border-radius: 2rem;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.cart__title {
-  display: inline-block;
-  @include txt_title_80;
-  font-size: 2rem;
-  margin: 0;
-}
-
-.cart__btn-clear {
-  float: right;
-  @include montserrat_regular_S;
-  font-size: 0.875rem;
-  font-weight: 600;
-  padding: 0.625rem 1.25rem;
-  background-color: rgba(0, 0, 0, 0.02);
-  border: none;
-  border-radius: 2.5rem;
-  cursor: pointer;
-}
-
-.cart__item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: $White_00;
-  border-radius: 2rem;
-  padding: 1rem 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.cart__item-img {
-  width: 6rem;
-  height: 6rem;
-  object-fit: cover;
-  border-radius: 1.5rem;
-}
-
-.cart__item-info {
-  flex: 1;
-  margin-left: 1.5rem;
-
-  .cart__item-name {
-    @include montserrat_semi_S;
-    margin: 0 0 0.5rem 0;
-  }
-
-  .cart__item-price {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 1rem; // 16px
-    line-height: 1.5rem; // 24px
-    letter-spacing: 0;
-    color: $Black_00;
-    margin: 0;
-  }
-}
-
-.cart__item-controls {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-
-  .cart__btn {
-    background-color: $Grey_94;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 1rem;
-    cursor: pointer;
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: $Black_00;
-  }
-
-  .cart__item-qty {
-    font-size: 1.125rem;
-    font-weight: 500;
-  }
-}
-
-.cart__empty-msg {
-  text-align: center;
-  font-size: 1.25rem;
-  color: $Grey_03;
-  padding-top: 2rem;
-}
-
-.cart__promo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  .promo__input {
-    width: 18.375rem;
-    height: 2.5rem;
-    padding: 0 1rem;
-    font-size: 1rem;
-    border: 1px solid $Grey_94;
-    border-radius: 0.75rem;
-    background-color: $White_00;
-  }
-
-  .promo__btn {
-    height: 2.5rem;
-    padding: 0 1.5rem;
-    font-size: 1rem;
-    background-color: $Black_00;
-    color: $White_00;
-    border: none;
-    border-radius: 2rem;
-    cursor: pointer;
-  }
-
-  .promo__discount {
-    font-size: 1.125rem;
-    font-weight: 500;
-    color: $Black_00;
-  }
-}
-
-.cart__total {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  h3,
-  .total__amount {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-}
-
-.cart__delivery {
-  .form-label {
-    @include montserrat_regular_S;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .cart__input {
-    font-size: 1rem;
-    color: $Black_00;
-    background-color: $White_00;
-    border: 1px solid $Grey_94;
-    border-radius: 0.75rem;
-    height: 2.5rem;
-    line-height: 2.5rem;
-    padding: 0 1rem;
-    width: 100%;
-  }
-
-  .form__group-row {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-
-    .half {
-      width: 50%;
-    }
-
-    .quarter {
-      width: 25%;
-    }
-  }
-
-  .input--date,
-  .input--time {
-    appearance: none;
-    background-color: $White_00;
-    border: 1px solid $Grey_94;
-    border-radius: 0.75rem;
-    height: 2.5rem;
-    line-height: 2.5rem;
-    padding: 0 1rem;
-    width: 100%;
-    font-size: 1rem;
-    color: $Black_00;
-    background-image: url('../images/arrow_drop_down.svg');
-    background-repeat: no-repeat;
-    background-position: right 1rem center;
-    background-size: 1.5rem; //в макете 24px = 1.5rem
-    cursor: pointer;
-  }
-}
-
-.cart__btn-pay {
-  @include btn_size_52;
-  display: block;
-  margin: 2rem auto 0;
-  background-color: $Black_00;
-  color: $White_00;
-  border: none;
-  cursor: pointer;
 }
 
 .form__submit {
