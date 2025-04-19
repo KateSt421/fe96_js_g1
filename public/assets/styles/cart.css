@@ -62,6 +62,13 @@
   text-align: center;
 }
 
+.cart__header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
 .cart__header,
 .cart__promo,
 .cart__delivery {
@@ -97,6 +104,66 @@
   border: none;
   border-radius: 2.5rem;
   cursor: pointer;
+}
+
+.cart__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-radius: 2rem;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.cart__item-img {
+  width: 6rem;
+  height: 6rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1.5rem;
+}
+
+.cart__item-info {
+  flex: 1;
+  margin-left: 1.5rem;
+}
+.cart__item-info .cart__item-name {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
+  font-size: 1rem;
+  line-height: 125%;
+  margin: 0 0 0.5rem 0;
+}
+.cart__item-info .cart__item-price {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0;
+  color: #000000;
+  margin: 0;
+}
+
+.cart__item-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.cart__item-controls .cart__btn {
+  background-color: #f2f2f3;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #000000;
+}
+.cart__item-controls .cart__item-qty {
+  font-size: 1.125rem;
+  font-weight: 500;
 }
 
 .cart__empty-msg {

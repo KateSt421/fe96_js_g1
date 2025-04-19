@@ -28,6 +28,13 @@
   }
 }
 
+.cart__header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem; // немного пространства между шапкой и товарами
+}
+
 .cart__header,
 .cart__promo,
 .cart__delivery {
@@ -54,6 +61,65 @@
   border: none;
   border-radius: 2.5rem;
   cursor: pointer;
+}
+
+.cart__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $White_00;
+  border-radius: 2rem;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.cart__item-img {
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+  border-radius: 1.5rem;
+}
+
+.cart__item-info {
+  flex: 1;
+  margin-left: 1.5rem;
+
+  .cart__item-name {
+    @include montserrat_semi_S;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .cart__item-price {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1rem; // 16px
+    line-height: 1.5rem; // 24px
+    letter-spacing: 0;
+    color: $Black_00;
+    margin: 0;
+  }
+}
+
+.cart__item-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .cart__btn {
+    background-color: $Grey_94;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: $Black_00;
+  }
+
+  .cart__item-qty {
+    font-size: 1.125rem;
+    font-weight: 500;
+  }
 }
 
 .cart__empty-msg {
