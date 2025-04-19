@@ -174,7 +174,8 @@ body {
   border-color: #27ae60;
 }
 
-.cart-link, .about-link {
+.cart-link,
+.about-link {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -185,15 +186,18 @@ body {
   margin-left: 1rem;
 }
 
-.cart-link:hover, .about-link:hover {
+.cart-link:hover,
+.about-link:hover {
   color: var(--secondary-color);
 }
 
-.cart-link i, .about-link i {
+.cart-link i,
+.about-link i {
   font-size: 1.25rem;
 }
 
-.cart-link:hover i, .about-link:hover i {
+.cart-link:hover i,
+.about-link:hover i {
   transform: translateY(-2px);
   transition: transform 0.3s ease;
 }
@@ -347,46 +351,6 @@ body {
   font-size: 1.2rem;
   font-weight: bold;
   color: var(--primary-color);
-}
-
-.categories {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  padding: 2rem 0;
-  justify-content: center;
-}
-
-.category-btn {
-  padding: 0.8rem 1.5rem;
-  border: 2px solid var(--secondary-color);
-  background: rgba(39, 174, 96, 0.1);
-  color: var(--secondary-color);
-  border-radius: 2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 500;
-}
-
-.category-btn:hover {
-  background: rgba(39, 174, 96, 0.2);
-  transform: translateY(-2px);
-}
-
-.category-btn.active {
-  background: var(--secondary-color);
-  color: white;
-}
-
-button[type=submit].category-btn {
-  background: var(--secondary-color);
-  color: white;
-  margin: 1rem 0;
-}
-
-button[type=submit].category-btn:hover {
-  background: #219a52;
-  transform: translateY(-2px);
 }
 
 .cart-plant-card {

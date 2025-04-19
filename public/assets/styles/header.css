@@ -1,6 +1,6 @@
 @charset "UTF-8";
+/* ----------- Константы ----------- */
 :root {
-  /* ----------- Константы ----------- */
   --basic-font-weight: 600;
   --title-font-weight: 400;
 }
@@ -112,12 +112,12 @@
   cursor: pointer;
 }
 .header .header__nav .nav__menu-plants:hover, .header .header__nav .nav__menu-services:hover, .header .header__nav .nav__menu-company:hover {
-  background-color: #9BB96C;
+  background-color: #9bb96c;
   color: #ffffff;
   transition: background-color 0.2s;
 }
 .header .header__nav .nav__menu-plants:active, .header .header__nav .nav__menu-services:active, .header .header__nav .nav__menu-company:active {
-  background-color: #677E51;
+  background-color: #677e51;
   color: #ffffff;
 }
 .header .header__nav .nav__icons {
@@ -171,7 +171,7 @@
   outline: none;
 }
 .header__searchContainer .input-container input:focus {
-  border: 0.125rem solid #9BB96C;
+  border: 0.125rem solid #9bb96c;
   background: #ffffff;
 }
 .header__searchContainer .input-container .clearButton {
@@ -210,7 +210,7 @@
   height: 0.9rem;
   z-index: 100;
   border-radius: 0.25rem;
-  background-color: #FA6C59;
+  background-color: #fa6c59;
   color: #ffffff;
   text-align: center;
   font-size: 0.7rem;
@@ -404,12 +404,12 @@
     text-decoration: none;
   }
   .header__popup .nav__menu > li > a:hover {
-    background-color: #9BB96C;
+    background-color: #9bb96c;
     color: #ffffff;
     transition: background-color 0.2s;
   }
   .header__popup .nav__menu > li > a:active {
-    background-color: #677E51;
+    background-color: #677e51;
     color: #ffffff;
   }
   .burger__field.active .bar:nth-child(1) {

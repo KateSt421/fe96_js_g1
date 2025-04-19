@@ -1,0 +1,50 @@
+@import 'design_system';
+
+/* ----------- контейнер категорий ----------- */
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem 0;
+  justify-content: flex-start;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ----------- кнопки категорий ----------- */
+.category-btn,
+button[type='submit'].category-btn {
+  width: fit-content;
+  transform: translateY(-0.125rem);
+  @include btn_textIcon_36;
+}
+
+/* обычные категории */
+.category-btn {
+  color: $Black_00;
+  background: transparent;
+
+  &:hover {
+    color: $Green_96;
+    background-color: $Green_Light_08;
+  }
+
+  &:active,
+  &.active {
+    color: $White_00;
+    background-color: $Green_96;
+  }
+}
+
+button[type='submit'].category-btn {
+  color: $White_00;
+  background-color: $Green_96;
+
+  &:hover {
+    color: $Green_96;
+    background-color: $Green_Light_08;
+  }
+}

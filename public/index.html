@@ -16,10 +16,13 @@
       src="https://kit.fontawesome.com/362708026e.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+    <link rel="stylesheet" href="./assets/styles/normalize.css" />
     <link href="assets/styles/styles.css" rel="stylesheet" />
     <link href="assets/styles/footer.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/styles/service_hero_section.css">
+    <link rel="stylesheet" href="assets/styles/service_hero_section.css" />
     <link href="assets/styles/header.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/styles/main_filters.css" />
     <link href="assets/styles/cards.css" rel="stylesheet" />
     <!-- Фавиконы -->
     <link
@@ -43,87 +46,128 @@
   </head>
   <body>
     <header class="header">
-        <nav class="header__nav">
+      <nav class="header__nav">
+        <!-- бургер меню -->
+        <div class="burger">
+          <div class="burger__field" id="burger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </div>
 
-            <!-- бургер меню -->
-            <div class="burger">
-                <div class="burger__field" id="burger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
+        <!-- логотип компании -->
+        <div class="nav__logo">
+          <img
+            src="./assets/images/vector_logo.svg"
+            alt="company logo"
+            class="nav__logo-icon"
+          />
+          <a href="http://localhost:7001/">
+            <img
+              src="./assets/images/vector_Planty'x.svg"
+              alt="company logo"
+              class="nav__logo-text"
+            />
+          </a>
+        </div>
 
-            <!-- логотип компании -->
-            <div class="nav__logo">
-                <img src="./assets/images/vector_logo.svg" alt="company logo" class="nav__logo-icon">
-                <a href="http://localhost:7001/">
-                    <img src="./assets/images/vector_Planty'x.svg" alt="company logo" class="nav__logo-text">
-                </a>
-            </div>
+        <!-- навигация по сайту -->
+        <ul class="nav__menu" id="menu">
+          <li><a href="#flowers" class="nav__menu-plants">Цветы</a></li>
+          <li><a href="services.html" class="nav__menu-services">Услуги</a></li>
+          <li><a href="company.html" class="nav__menu-company">О Нас</a></li>
+        </ul>
 
-            <!-- навигация по сайту -->
-            <ul class="nav__menu" id="menu">
-                <li><a href="#flowers" class="nav__menu-plants">Цветы</a></li>
-                <li><a href="services.html" class="nav__menu-services">Услуги</a></li>
-                <li><a href="company.html" class="nav__menu-company">О Нас</a></li>
-            </ul>
+        <!-- иконки -->
+        <div class="nav__icons">
+          <button class="cart-link" id="searchToggle">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <a href="/cart.html" class="cart-link">
+            <i class="fa-regular fa-user fa-sm"></i>
+          </a>
+          <a href="/cart.html" class="cart-link">
+            <span id="cart-count" class="cart-count"></span>
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+        </div>
+      </nav>
 
-            <!-- иконки -->
-            <div class="nav__icons">
-                <button class="cart-link" id="searchToggle">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-                <a href="/cart.html" class="cart-link">
-                    <i class="fa-regular fa-user fa-sm"></i>
-                </a>
-                <a href="/cart.html" class="cart-link">
-                    <span id="cart-count" class="cart-count"></span>
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </a>
-            </div>
-        </nav>
+      <!-- попап для бургера (для мобилки) -->
+      <div class="header__popup" id="popup"></div>
 
-        <!-- попап для бургера (для мобилки) -->
-        <div class="header__popup" id="popup"></div>
-
-        <!-- инпут для поиска по сайту-->
-        <form class="header__searchContainer" id="searchContainer">
-            <div class="input-container">
-                <input type="text" id="search" placeholder="Поиск...">
-                <span id="clearButton" class="clearButton">
-                    <img src="./assets/images/vector_close.svg" alt="erase">
-                </span>
-            </div>
-        </form>
+      <!-- инпут для поиска по сайту-->
+      <form class="header__searchContainer" id="searchContainer">
+        <div class="input-container">
+          <input type="text" id="search" placeholder="Поиск..." />
+          <span id="clearButton" class="clearButton">
+            <img src="./assets/images/vector_close.svg" alt="erase" />
+          </span>
+        </div>
+      </form>
     </header>
 
     <main class="container">
       <div class="container-hero">
         <div class="blok_1">
-        <h1><span>Озеленение</span>
-        <span>и уход</span></h1>
-        <p class="text_blok_1">
-        Если вы понимаете, что покупка, пересадка, удобрение и уход за живым растением - ответственный момент, и у вас нет на это времени или желания - мы предлагаем вам готовое решение!
-        </p>
-        <img src="assets/images/cataloge-services-cart-2.jpg" class="image_blok_1" alt="">
+          <h1><span>Озеленение</span> <span>и уход</span></h1>
+          <p class="text_blok_1">
+            Если вы понимаете, что покупка, пересадка, удобрение и уход за живым
+            растением - ответственный момент, и у вас нет на это времени или
+            желания - мы предлагаем вам готовое решение!
+          </p>
+          <img
+            src="assets/images/cataloge-services-cart-2.jpg"
+            class="image_blok_1"
+            alt=""
+          />
         </div>
         <div class="blok_2">
-        <img src="assets/images/catalog-services-cart-1.jpg" alt="">
+          <img src="assets/images/catalog-services-cart-1.jpg" alt="" />
         </div>
-    </div>
+      </div>
       <div class="categories">
-        <button class="category-btn" data-category="orchids">Орхидеи</button>
-        <button class="category-btn" data-category="citrus">Цитрусовые</button>
+        <button class="category-btn" data-category="orchids">
+          <img src="./assets/images/filter_images/orchid.png" alt="Орхидея" />
+          Орхидеи
+        </button>
+        <button class="category-btn" data-category="citrus">
+          <img
+            src="./assets/images/filter_images/citrus.png"
+            alt="Цитрусовое дерево"
+          />Цитрусовые
+        </button>
         <button class="category-btn" data-category="foliage plants">
+          <img
+            src="./assets/images/filter_images/dekor_leafes.png"
+            alt="Растение с листьями"
+          />
           Декоративнолиственные
         </button>
         <button class="category-btn" data-category="succulents and cacti">
+          <img src="./assets/images/filter_images/cactus.png" alt="Кактус" />
           Суккуленты и кактусы
         </button>
-        <button class="category-btn" data-category="flowering">Цветущие</button>
-        <button class="category-btn" data-category="palms">Пальмы</button>
-        <button class="category-btn" data-category="ferns">Папоротники</button>
+        <button class="category-btn" data-category="flowering">
+          <img
+            src="./assets/images/filter_images/blooming.png"
+            alt="Цветок в горшке"
+          />
+          Цветущие
+        </button>
+        <button class="category-btn" data-category="palms">
+          <img
+            src="./assets/images/filter_images/palms.png"
+            alt="Пальма"
+          />Пальмы
+        </button>
+        <button class="category-btn" data-category="ferns">
+          <img
+            src="./assets/images/filter_images/paporotnik.png"
+            alt="Папоротник"
+          />Папоротники
+        </button>
         <button class="category-btn" data-category="service">Услуги</button>
       </div>
       <div id="flowers"></div>
