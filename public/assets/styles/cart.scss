@@ -1,5 +1,17 @@
 @import 'design_system';
 
+@mixin montserrat_semi_XL {
+  @include title_Montserrat_semi;
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+@mixin montserrat_semi_M {
+  @include title_Montserrat_semi;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .cart {
   padding: 3rem;
   padding-bottom: 6rem;
@@ -48,6 +60,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 1.5rem;
+    gap: 1.5rem;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.05);
 
     img {
@@ -62,32 +75,22 @@
   &__details {
     flex-grow: 1;
     margin: 0 1.5rem;
-
-    .cart__name {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 24px;
-      letter-spacing: 0;
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .cart__unit-price {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 24px;
-      letter-spacing: 0;
-      font-size: 0.875rem;
-      color: $Grey_03;
-    }
   }
 
-  &__quantity {
+  .cart__name,
+  .cart__unit-price {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__quantity-controls {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
 
     .cart__btn {
       width: 2rem;
@@ -96,20 +99,24 @@
       background-color: transparent;
       border-radius: 0.5rem;
       cursor: pointer;
+      font-size: 1.25rem;
+      padding: 0;
     }
 
     .cart__count {
-      @include montserrat_regular_M;
+      @include montserrat_regular_S;
       font-size: 1rem;
       min-width: 1.5rem;
       text-align: center;
     }
   }
 
-  &__total-price {
-    @include montserrat_semi_M;
+  .cart__price-total {
+    @include montserrat_semi_L;
     font-size: 1rem;
+    min-width: 5rem;
     white-space: nowrap;
+    text-align: right;
   }
 
   &__promo {
@@ -144,7 +151,7 @@
     }
 
     .promo__discount {
-      @include montserrat_semi_M;
+      @include montserrat_semi_L;
       font-size: 1.5rem;
     }
   }
@@ -159,7 +166,7 @@
     p,
     h3,
     .total__amount {
-      @include montserrat_semi_M;
+      @include title_Montserrat_semi;
       font-size: 1.5rem;
       margin: 0;
     }
