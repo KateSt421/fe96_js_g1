@@ -80,6 +80,11 @@ class CartManager {
           <div id="cart-subtotal" class="cart__price-total"><span id="subtotal">${(
             item.price * item.quantity
           ).toFixed(2)} ₽</span></div>
+          <button class="cart__delete" onclick="cartManager.removeItem(${
+            item.id
+          })">
+  <img src="assets/images/clear_cart.svg" alt="Удалить товар" />
+</button>
         </div>
     `
       )
@@ -119,12 +124,12 @@ class CartManager {
     document.getElementById('total').textContent = `${total.toFixed(2)} ₽`
   }
 
-  //removeItem(itemId) {
-  //let cart = JSON.parse(localStorage.getItem('cart') || '[]')
-  //cart = cart.filter((item) => item.id !== itemId)
-  //localStorage.setItem('cart', JSON.stringify(cart))
-  //this.loadCart()
-  //}
+  removeItem(itemId) {
+    let cart = JSON.parse(localStorage.getItem('cart') || '[]')
+    cart = cart.filter((item) => item.id !== itemId)
+    localStorage.setItem('cart', JSON.stringify(cart))
+    this.loadCart()
+  }
 
   initCheckout() {
     document.getElementById('checkout-form').addEventListener('submit', (e) => {
