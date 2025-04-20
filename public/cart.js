@@ -77,9 +77,9 @@ class CartManager {
             }, 1)">+</button>
           </div>
 
-          <div class="cart__price-total">${(item.price * item.quantity).toFixed(
-            2
-          )} ₽</div>
+          <div id="cart-subtotal" class="cart__price-total"><span id="subtotal">${(
+            item.price * item.quantity
+          ).toFixed(2)} ₽</span></div>
         </div>
     `
       )

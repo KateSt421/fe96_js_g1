@@ -65,11 +65,9 @@
 .cart__btn-clear {
   /* служебный миксин, его использовать не надо */
   font-family: "Montserrat";
-  font-weight: var(--title-font-weight);
-  font-size: 1rem;
-  line-height: 150%;
+  font-weight: var(--basic-font-weight);
   font-size: 0.875rem;
-  font-weight: 600;
+  line-height: 1.25rem;
   padding: 0.625rem 1.25rem;
   background-color: rgba(0, 0, 0, 0.02);
   border: none;
@@ -105,11 +103,11 @@
 }
 .cart .cart__name,
 .cart .cart__unit-price {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  line-height: 24px;
-  letter-spacing: 0;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
   font-size: 1rem;
+  line-height: 1.5rem;
   margin-bottom: 0.5rem;
 }
 .cart__quantity-controls {
@@ -133,7 +131,6 @@
   font-weight: var(--title-font-weight);
   font-size: 1rem;
   line-height: 150%;
-  font-size: 1rem;
   min-width: 1.5rem;
   text-align: center;
 }
@@ -182,17 +179,16 @@
   font-weight: var(--basic-font-weight);
   font-size: 1.5rem;
   line-height: 133%;
-  font-size: 1.5rem;
 }
-.cart__subtotal, .cart__total {
+.cart__price-total, .cart__total {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
 }
-.cart__subtotal p,
-.cart__subtotal h3,
-.cart__subtotal .total__amount, .cart__total p,
+.cart__price-total p,
+.cart__price-total h3,
+.cart__price-total .total__amount, .cart__total p,
 .cart__total h3,
 .cart__total .total__amount {
   /* служебный миксин, его использовать не надо */
