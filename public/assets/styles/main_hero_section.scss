@@ -1,0 +1,111 @@
+@import 'design_system';
+/* ----------- main breakpoint  ----------- */
+/* ----------- hero section ----------- */
+.hero {
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  height: fit-content;
+  margin: 0 auto;
+}
+.page_block_wrapper_hero {
+  margin: 0 !important;
+  width: 100%;
+}
+.hero_block_wrapper {
+  width: 100%;
+  padding: 0 3rem;
+}
+.hero_wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 4rem 0;
+  gap: 4rem;
+}
+.hero_slogan {
+  @include txt_title_80;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: $Black_00;
+}
+.hero_button {
+  width: 11rem;
+}
+.hero_description {
+  @include montserrat_regular_L;
+  max-width: 25rem;
+  color: $Black_00;
+}
+.hero_reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  @include montserrat_regular_S;
+}
+.hero_image {
+  max-width: 41.5rem;
+  width: 100%;
+  background-image: url('../images/main_hero_img.jpg');
+  background-size: cover;
+  background-position: bottom;
+}
+
+/* ----------- breakpoint 1280 ----------- */
+@media (max-width: 1280px) {
+  /* ----------- hero section ----------- */
+  .hero_wrapper {
+    padding: 2rem 0;
+    gap: 3rem;
+  }
+  .hero_block_wrapper {
+    padding: 0 2rem;
+  }
+  .hero_slogan {
+    @include page_title_64;
+    gap: 1rem;
+  }
+}
+
+/* ----------- breakpoint 1024 ----------- */
+@media (max-width: 1024px) {
+  /* ----------- hero section ----------- */
+  .hero {
+    margin: 0;
+    background-image: url('../images/main_hero_img.jpg');
+    background-size: cover;
+    background-position: bottom;
+  }
+  .hero_wrapper {
+    max-width: none;
+    padding: 2rem 0;
+    gap: 3rem;
+  }
+  .hero_block_wrapper {
+    padding: 0 1.5rem;
+  }
+  .hero_slogan {
+    @include page_title_64;
+    gap: 1rem;
+  }
+  .hero_description {
+    @include montserrat_regular_S;
+    max-width: 16.5rem;
+    color: $Black_00;
+  }
+  .hero_image {
+    display: none;
+  }
+}
+
+/* ----------- breakpoint 640 ----------- */
+@media (max-width: 640px) {
+  .hero_block_wrapper {
+    padding: 0 1rem;
+  }
+  /* ----------- hero section ----------- */
+  .hero_slogan {
+    @include page_title_48;
+  }
+}
