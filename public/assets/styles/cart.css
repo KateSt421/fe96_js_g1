@@ -7,11 +7,12 @@
 
 /* ----------- Цвета ----------- */
 /* ----------- Стили шрифтов ----------- */
+/* ----------- Привязанные шрифты ----------- */
 @font-face {
   font-family: "Montserrat";
   src: url("../fonts/Montserrat-SemiBold.eot");
   src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("../fonts/Montserrat-SemiBold.woff") format("woff"), url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
-  font-weight: var(--basic-font-weight);
+  font-weight: 600;
   font-style: normal;
 }
 @font-face {
@@ -19,6 +20,13 @@
   src: url("../fonts/Montserrat-Regular.eot");
   src: local("Montserrat Regular"), local("Montserrat-Regular"), url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.ttf") format("truetype");
   font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraBold.eot");
+  src: local("Montserrat ExtraBold"), local("Montserrat-ExtraBold"), url("../fonts/Montserrat-ExtraBold.woff") format("woff"), url("../fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: 900;
   font-style: normal;
 }
 @font-face {
@@ -79,6 +87,7 @@
   line-height: 110%;
   letter-spacing: -0.5px;
   font-size: 5rem;
+  line-height: 5.5rem;
   font-size: 2rem;
   margin: 0;
 }
