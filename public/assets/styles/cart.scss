@@ -45,7 +45,7 @@
   &__btn-clear {
     @include montserrat_semi_XS;
     padding: 0.625rem 1.25rem;
-    background-color: rgba(0, 0, 0, 0.02);
+    background-color: rgba(0, 0, 0, 0.05);
     border: none;
     border-radius: 2.5rem;
     cursor: pointer;
@@ -65,7 +65,7 @@
     justify-content: space-between;
     padding: 1.5rem;
     gap: 1.5rem;
-    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.02);
 
     img {
       width: 6rem;
@@ -141,7 +141,7 @@
     .promo__btn {
       height: 2.5rem;
       padding: 0 1.5rem;
-      font-size: 1rem;
+      @include montserrat_semi_XS;
       background-color: $Black_00;
       color: $White_00;
       border: none;

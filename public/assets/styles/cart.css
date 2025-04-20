@@ -69,7 +69,7 @@
   font-size: 0.875rem;
   line-height: 1.25rem;
   padding: 0.625rem 1.25rem;
-  background-color: rgba(0, 0, 0, 0.02);
+  background-color: rgba(0, 0, 0, 0.05);
   border: none;
   border-radius: 2.5rem;
   cursor: pointer;
@@ -87,7 +87,7 @@
   justify-content: space-between;
   padding: 1.5rem;
   gap: 1.5rem;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.02);
 }
 .cart__item img {
   width: 6rem;
@@ -166,7 +166,11 @@
 .cart__promo .promo__btn {
   height: 2.5rem;
   padding: 0 1.5rem;
-  font-size: 1rem;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   background-color: #000000;
   color: #ffffff;
   border: none;
