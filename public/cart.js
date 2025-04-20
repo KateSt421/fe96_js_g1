@@ -82,8 +82,7 @@ class CartManager {
           ).toFixed(2)} ₽</span></div>
           <button class="cart__delete" onclick="cartManager.removeItem(${
             item.id
-          })">
-  <img src="assets/images/clear_cart.svg" alt="Удалить товар" />
+          })"><img src="assets/images/clear_cart.svg" alt="Delete item" />
 </button>
         </div>
     `

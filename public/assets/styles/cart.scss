@@ -111,12 +111,17 @@
     }
   }
 
-  .cart__price-total {
-    @include montserrat_semi_L;
-    font-size: 1rem;
-    min-width: 5rem;
-    white-space: nowrap;
-    text-align: right;
+  .cart__delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 1rem;
+
+    img {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
   }
 
   &__promo {

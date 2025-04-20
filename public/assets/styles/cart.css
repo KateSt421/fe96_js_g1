@@ -134,16 +134,16 @@
   min-width: 1.5rem;
   text-align: center;
 }
-.cart .cart__price-total {
-  /* служебный миксин, его использовать не надо */
-  font-family: "Montserrat";
-  font-weight: var(--basic-font-weight);
-  font-size: 1.5rem;
-  line-height: 133%;
-  font-size: 1rem;
-  min-width: 5rem;
-  white-space: nowrap;
-  text-align: right;
+.cart .cart__delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 1rem;
+}
+.cart .cart__delete img {
+  width: 1.25rem;
+  height: 1.25rem;
 }
 .cart__promo {
   background-color: #f2f2f3;
