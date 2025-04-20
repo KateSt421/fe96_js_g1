@@ -18,6 +18,12 @@
   line-height: 1.25rem; // 20px
 }
 
+@mixin txt_title_32 {
+  @include txt_title;
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
 .cart {
   padding: 3rem;
   padding-bottom: 6rem;
@@ -37,8 +43,7 @@
   }
 
   &__title {
-    @include txt_title_80;
-    font-size: 2rem;
+    @include txt_title_32;
     margin: 0;
   }
 
