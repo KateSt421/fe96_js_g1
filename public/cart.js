@@ -32,6 +32,7 @@ class CartManager {
   }
 
   displayCart(items) {
+    console.log(document)
     const cartItems = document.getElementById('cart-items')
     if (items.length === 0) {
       cartItems.innerHTML = `
@@ -118,3 +119,4 @@ class CartManager {
 }
 
 const cartManager = new CartManager()
+module.exports = cartManager
