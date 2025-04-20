@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="./assets/styles/normalize.css" />
     <link href="assets/styles/styles.css" rel="stylesheet" />
     <link href="assets/styles/footer.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/styles/service_hero_section.css" />
+    <link rel="stylesheet" href="assets/styles/main_hero_section.css">
     <link href="assets/styles/header.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/styles/main_filters.css" />
     <link href="assets/styles/cards.css" rel="stylesheet" />
@@ -77,7 +77,6 @@
           <li><a href="#flowers" class="nav__menu-plants">Цветы</a></li>
           <li><a href="services.html" class="nav__menu-services">Услуги</a></li>
           <li><a href="company.html" class="nav__menu-company">О Нас</a></li>
-          li><a href="main_hero_section.html" class="nav__menu-company">Тест Hero</a></li>
         </ul>
 
         <!-- иконки -->
@@ -110,24 +109,22 @@
     </header>
 
     <main class="container">
-      <div class="container-hero">
-        <div class="blok_1">
-          <h1><span>Озеленение</span> <span>и уход</span></h1>
-          <p class="text_blok_1">
-            Если вы понимаете, что покупка, пересадка, удобрение и уход за живым
-            растением - ответственный момент, и у вас нет на это времени или
-            желания - мы предлагаем вам готовое решение!
-          </p>
-          <img
-            src="assets/images/cataloge-services-cart-2.jpg"
-            class="image_blok_1"
-            alt=""
-          />
+      <section class="hero">
+        <div class="hero_block_wrapper">
+          <div class="hero_wrapper">
+            <div class="hero_slogan">
+              Растения</br>
+              с любовью
+            <a class="btn_solid_text_52 hero_button" href="#plants-grid">Выбрать</a>
+            </div>
+            <div class="hero_description">Комнатные растения для уюта и свежести в вашем доме</div>
+            <div class="hero_reviews">Наши отзывы на Яндекс картах:
+            <iframe src="https://yandex.ru/sprav/widget/rating-badge/118008288343" width="150" height="50" frameborder="0"></iframe>
+          </div>
+          </div>
         </div>
-        <div class="blok_2">
-          <img src="assets/images/catalog-services-cart-1.jpg" alt="" />
-        </div>
-      </div>
+        <div class="hero_image"></div>
+      </section>
       <div class="categories">
         <button class="category-btn" data-category="orchids">
           <img src="./assets/images/filter_images/orchid.png" alt="Орхидея" />
