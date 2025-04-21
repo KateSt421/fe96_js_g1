@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="07014d12-d9d0-4000-8098-00b753f52272" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/vector_Planty'x.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/vector_Planty.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/styles/cards.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/cards.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/styles/cart.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/cart.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/styles/company.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/company.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/styles/design_system.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/design_system.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/styles/details.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/details.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/styles/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/styles/main_filters.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/main_filters.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/styles/main_hero_section.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/main_hero_section.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/styles/main_hero_section.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/main_hero_section.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/styles/main_hero_section.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/main_hero_section.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/styles/questions.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/questions.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/styles/service_hero_section.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/service_hero_section.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/company.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/company.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/details.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/details.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;myFelis&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/KateSt421/fe96_js_g1.git&quot;,
+    &quot;accountId&quot;: &quot;46b01491-da5e-4ad1-9fc9-02c4ad9fa1c5&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2vRs5lzDQUMUTRq6a6M8ODuoOZV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "bugfix/service-catalog-page-styles",
+    "last_opened_file_path": "C:/Users/MegaVolt/PycharmProjects/fe96_js_g1/public"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\MegaVolt\PycharmProjects\fe96_js_g1\public" />
+      <recent name="C:\Users\MegaVolt\PycharmProjects\fe96_js_g1\test" />
+      <recent name="C:\Users\MegaVolt\PycharmProjects\fe96_js_g1\public\assets\styles" />
+      <recent name="C:\Users\MegaVolt\PycharmProjects\fe96_js_g1\src\assets\images" />
+      <recent name="C:\Users\MegaVolt\PycharmProjects\fe96_js_g1\src\assets\styles" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\MegaVolt\PycharmProjects\fe96_js_g1\public" />
+      <recent name="C:\Users\MegaVolt\PycharmProjects\fe96_js_g1" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-98f27166c754-ba05f1cad1b1-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.21829.153" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="07014d12-d9d0-4000-8098-00b753f52272" name="Changes" comment="" />
+      <created>1744119039166</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1744119039166</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

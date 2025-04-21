@@ -1,11 +1,11 @@
 class PlantStore {
-  constructor() {
+  constructor(currentCategory="flowering") {
     this.initSearch();
     this.loadPlants();
     this.initCategories();
     this.plants = [];
     this.currentFilter = '';
-    this.currentCategory = 'flowering';
+    this.currentCategory = currentCategory;
     this.updateCartCount();
   }
 
@@ -56,7 +56,11 @@ class PlantStore {
       });
     });
     // Set 'Show Flowering' as initially active
-    document.querySelector('[data-category="flowering"]').classList.add('active');
+    const activeCategory = document.querySelector('[data-category="flowering"]')
+    if (activeCategory) {
+      activeCategory.classList.add('active');
+    }
+    else document.querySelector('[data-category="service"]').classList.add('active');
   }
 
   filterByCategory(category) {
