@@ -61,8 +61,8 @@ class CartManager {
       .map(
         (item) => `
       <div class="cart__item">
-          <img src="${item.image}" alt="${item.name}" class="cart__image" />
-          
+        <img src="${item.image}" alt="${item.name}" class="cart__image" />
+        <div class="cart__item-content">
           <div class="cart__details">
             <p class="cart__name">${item.name}</p>
             <p class="cart__unit-price">${item.price.toFixed(2)} ₽</p>
@@ -78,14 +78,17 @@ class CartManager {
             }, 1)">+</button>
           </div>
 
-          <div id="cart-subtotal" class="cart__price-total"><span id="subtotal">${(
+          <div class="cart__price-total"><span id="subtotal">${(
             item.price * item.quantity
           ).toFixed(2)} ₽</span></div>
+
           <button class="cart__delete" onclick="cartManager.removeItem(${
             item.id
-          })"><img src="assets/images/clear_cart.svg" alt="Delete item" />
-</button>
+          })">
+            <img src="assets/images/clear_cart.svg" alt="Delete item" />
+          </button>
         </div>
+      </div>
     `
       )
       .join('')

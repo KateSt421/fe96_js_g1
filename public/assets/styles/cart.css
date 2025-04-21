@@ -11,39 +11,30 @@
 /* ----------- Стили шрифтов ----------- */
 /* ----------- Привязанные шрифты ----------- */
 @font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat-SemiBold.eot');
-  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
-    url('../fonts/Montserrat-SemiBold.woff') format('woff'),
-    url('../fonts/Montserrat-SemiBold.ttf') format('truetype');
-  font-weight: var(--basic-font-weight);
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-SemiBold.eot");
+  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("../fonts/Montserrat-SemiBold.woff") format("woff"), url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat-Regular.eot');
-  src: local('Montserrat Regular'), local('Montserrat-Regular'),
-    url('../fonts/Montserrat-Regular.woff') format('woff'),
-    url('../fonts/Montserrat-Regular.ttf') format('truetype');
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.eot");
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat-ExtraBold.eot');
-  src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'),
-    url('../fonts/Montserrat-ExtraBold.woff') format('woff'),
-    url('../fonts/Montserrat-ExtraBold.ttf') format('truetype');
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraBold.eot");
+  src: local("Montserrat ExtraBold"), local("Montserrat-ExtraBold"), url("../fonts/Montserrat-ExtraBold.woff") format("woff"), url("../fonts/Montserrat-ExtraBold.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Belleza';
-  src: url('../fonts/Belleza-Regular.eot');
-  src: local('Belleza Regular'), local('Belleza-Regular'),
-    url('../fonts/Belleza-Regular.woff2') format('woff2'),
-    url('../fonts/Belleza-Regular.woff') format('woff'),
-    url('../fonts/Belleza-Regular.ttf') format('truetype');
+  font-family: "Belleza";
+  src: url("../fonts/Belleza-Regular.eot");
+  src: local("Belleza Regular"), local("Belleza-Regular"), url("../fonts/Belleza-Regular.woff2") format("woff2"), url("../fonts/Belleza-Regular.woff") format("woff"), url("../fonts/Belleza-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -54,6 +45,31 @@
 /* ----------- Ограничения ширин, шаблоны для @media ----------- */
 /* ----------- Кнопки и ссылки ----------- */
 /* разные настройки размеров кнопок */
+.btn_solid_text_52 {
+  color: #ffffff;
+  background-color: #000000;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.25rem;
+  padding: 1rem 3rem;
+  border-radius: 2.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
+  font-size: 1rem;
+  line-height: 125%;
+}
+.btn_solid_text_52:hover {
+  background-color: #677e51;
+  border-style: none;
+}
+.btn_solid_text_52:active {
+  background-color: #9bb96c;
+}
+
 /* ----------- Контейнеры-карточки ----------- */
 .cart {
   padding: 3rem;
@@ -73,7 +89,7 @@
 }
 .cart__btn-clear {
   /* служебный миксин, его использовать не надо */
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: var(--basic-font-weight);
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -89,30 +105,39 @@
   gap: 1.5rem;
 }
 .cart__item {
-  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem;
   border-radius: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.02);
+  width: 100%;
+}
+.cart__item-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem;
-  gap: 1.5rem;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.02);
+  flex: 1;
+  gap: 1rem;
 }
 .cart__item img {
-  width: 6rem;
-  height: 6rem;
+  width: 5rem;
+  height: 5rem;
   border-radius: 1.5rem;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   flex-shrink: 0;
 }
 .cart__details {
   flex-grow: 1;
-  margin: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.cart .cart__title {
+.cart__title {
   /* служебный миксин, его использовать не надо */
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: var(--basic-font-weight);
   font-size: 2rem;
   line-height: 2.5rem;
@@ -120,47 +145,71 @@
   font-weight: 500;
   color: rgb(44, 21, 0);
 }
-.cart .cart__name,
-.cart .cart__unit-price {
+.cart .cart__name {
   /* служебный миксин, его использовать не надо */
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: var(--basic-font-weight);
   font-size: 1rem;
   line-height: 1.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+.cart .cart__unit-price {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 .cart__quantity-controls {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
-.cart__quantity-controls .cart__btn {
-  width: 2rem;
-  height: 2rem;
-  border: 1px solid #f2f2f3;
-  background-color: transparent;
-  border-radius: 0.5rem;
+.cart__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: none;
+  background: none;
   cursor: pointer;
   font-size: 1.25rem;
   padding: 0;
 }
-.cart__quantity-controls .cart__count {
+.cart__count {
   /* служебный миксин, его использовать не надо */
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: var(--title-font-weight);
   font-size: 1rem;
   line-height: 150%;
-  min-width: 1.5rem;
+  width: 5rem;
+  height: 2.5rem;
   text-align: center;
+  border-radius: 0.75rem;
+  border: 1px solid #d9d9d9;
+  font-size: 1rem;
+  padding: 0 0.75rem;
+  line-height: 2.5rem;
+  background-color: #ffffff;
 }
-.cart .cart__delete {
+.cart__price-total {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
+  font-size: 1.5rem;
+  line-height: 133%;
+  margin-left: 1rem;
+  white-space: nowrap;
+}
+.cart__delete {
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
   margin-left: 1rem;
 }
-.cart .cart__delete img {
+.cart__delete img {
   width: 1.25rem;
   height: 1.25rem;
 }
@@ -186,7 +235,7 @@
   height: 2.5rem;
   padding: 0 1.5rem;
   /* служебный миксин, его использовать не надо */
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: var(--basic-font-weight);
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -198,26 +247,22 @@
 }
 .cart__promo .promo__discount {
   /* служебный миксин, его использовать не надо */
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: var(--basic-font-weight);
   font-size: 1.5rem;
   line-height: 133%;
 }
-.cart__price-total,
 .cart__total {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
 }
-.cart__price-total p,
-.cart__price-total h3,
-.cart__price-total .total__amount,
 .cart__total p,
 .cart__total h3,
 .cart__total .total__amount {
   /* служебный миксин, его использовать не надо */
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: var(--basic-font-weight);
   font-size: 1.5rem;
   margin: 0;
@@ -230,7 +275,7 @@
 }
 .cart__delivery .form-label {
   /* служебный миксин, его использовать не надо */
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: var(--title-font-weight);
   font-size: 1rem;
   line-height: 150%;
@@ -269,7 +314,7 @@
   border-radius: 2.5rem;
   transition: 0.2s ease-out;
   /* служебный миксин, его использовать не надо */
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: var(--basic-font-weight);
   font-size: 1rem;
   line-height: 125%;
@@ -292,11 +337,11 @@
   width: 8rem;
   height: 8rem;
   -o-object-fit: contain;
-  object-fit: contain;
+     object-fit: contain;
 }
 .cart__empty-text {
   /* служебный миксин, его использовать не надо */
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: var(--basic-font-weight);
   font-size: 1rem;
   line-height: 1.5rem;
@@ -304,8 +349,7 @@
   margin: 0;
   text-align: center;
 }
-
-.form__submit {
+.cart .form__submit {
   text-align: center;
   margin-top: 2rem;
-} /*# sourceMappingURL=cart.css.map */
+}/*# sourceMappingURL=cart.css.map */
