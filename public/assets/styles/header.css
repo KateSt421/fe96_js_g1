@@ -72,7 +72,6 @@
 
 /* ----------- Контейнеры-карточки ----------- */
 .header {
-  padding: 1rem;
   min-height: calc(20vh + 2rem);
   background-size: cover;
   background-color: #ffffff;
@@ -81,6 +80,7 @@
   max-width: 90rem;
   padding: 0 3rem;
   margin: 0 auto;
+  max-width: 96rem;
   display: flex;
   justify-content: space-between;
   position: fixed;
@@ -460,7 +460,11 @@
     overflow: hidden;
   }
   .header__searchContainer {
-    top: 19%;
+    top: 17%;
+    border-top: none;
+  }
+  .header__searchContainer .input-container {
+    border: solid red;
   }
   .header__searchContainer .input-container input {
     margin-left: 4rem;
