@@ -283,6 +283,7 @@
 
             .nav__menu{
                 width: 40%;
+                font-size: 1.2rem;
             }
 
             .nav__icons{
@@ -410,7 +411,7 @@
         @include btn_size_36;
         margin-bottom: 3rem;
 
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         color: ($Black_00);
         text-decoration: none;
     }
@@ -442,14 +443,15 @@
     }
 
     .header__searchContainer {
-        top: 17%;
+        top: 7%;
         border-top: none;
 
         .input-container{
-            border: solid red;
+            border: none;
             input {
-                margin-left: 4rem;
+                margin-left: 1rem;
                 height: 2.5rem;
+                width: 98%;
             }
         }
     }
