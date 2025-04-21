@@ -7,11 +7,12 @@
 
 /* ----------- Цвета ----------- */
 /* ----------- Стили шрифтов ----------- */
+/* ----------- Привязанные шрифты ----------- */
 @font-face {
   font-family: "Montserrat";
   src: url("../fonts/Montserrat-SemiBold.eot");
   src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("../fonts/Montserrat-SemiBold.woff") format("woff"), url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
-  font-weight: var(--basic-font-weight);
+  font-weight: 600;
   font-style: normal;
 }
 @font-face {
@@ -19,6 +20,13 @@
   src: url("../fonts/Montserrat-Regular.eot");
   src: local("Montserrat Regular"), local("Montserrat-Regular"), url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.ttf") format("truetype");
   font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraBold.eot");
+  src: local("Montserrat ExtraBold"), local("Montserrat-ExtraBold"), url("../fonts/Montserrat-ExtraBold.woff") format("woff"), url("../fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: 900;
   font-style: normal;
 }
 @font-face {
@@ -35,6 +43,31 @@
 /* ----------- Ограничения ширин, шаблоны для @media ----------- */
 /* ----------- Кнопки и ссылки ----------- */
 /* разные настройки размеров кнопок */
+.btn_solid_text_52 {
+  color: #ffffff;
+  background-color: #000000;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.25rem;
+  padding: 1rem 3rem;
+  border-radius: 2.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
+  font-size: 1rem;
+  line-height: 125%;
+}
+.btn_solid_text_52:hover {
+  background-color: #677e51;
+  border-style: none;
+}
+.btn_solid_text_52:active {
+  background-color: #9bb96c;
+}
+
 /* ----------- Контейнеры-карточки ----------- */
 .header {
   padding: 1rem;
@@ -112,12 +145,12 @@
   cursor: pointer;
 }
 .header .header__nav .nav__menu-plants:hover, .header .header__nav .nav__menu-services:hover, .header .header__nav .nav__menu-company:hover {
-  background-color: #9BB96C;
+  background-color: #9bb96c;
   color: #ffffff;
   transition: background-color 0.2s;
 }
 .header .header__nav .nav__menu-plants:active, .header .header__nav .nav__menu-services:active, .header .header__nav .nav__menu-company:active {
-  background-color: #677E51;
+  background-color: #677e51;
   color: #ffffff;
 }
 .header .header__nav .nav__icons {
@@ -171,7 +204,7 @@
   outline: none;
 }
 .header__searchContainer .input-container input:focus {
-  border: 0.125rem solid #9BB96C;
+  border: 0.125rem solid #9bb96c;
   background: #ffffff;
 }
 .header__searchContainer .input-container .clearButton {
@@ -210,7 +243,7 @@
   height: 0.9rem;
   z-index: 100;
   border-radius: 0.25rem;
-  background-color: #FA6C59;
+  background-color: #fa6c59;
   color: #ffffff;
   text-align: center;
   font-size: 0.7rem;
@@ -404,12 +437,12 @@
     text-decoration: none;
   }
   .header__popup .nav__menu > li > a:hover {
-    background-color: #9BB96C;
+    background-color: #9bb96c;
     color: #ffffff;
     transition: background-color 0.2s;
   }
   .header__popup .nav__menu > li > a:active {
-    background-color: #677E51;
+    background-color: #677e51;
     color: #ffffff;
   }
   .burger__field.active .bar:nth-child(1) {
