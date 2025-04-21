@@ -1,0 +1,112 @@
+@import 'design_system';
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('/public/assets/fonts/Montserrat-SemiBold.eot');
+	src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
+		url('/public/assets/fonts/Montserrat-SemiBold.woff') format('woff'),
+		url('/public/assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('/public/assets/fonts/Montserrat-Regular.eot');
+	src: local('Montserrat Regular'), local('Montserrat-Regular'),
+		url('/public/assets/fonts/Montserrat-Regular.woff') format('woff'),
+		url('/public/assets/fonts/Montserrat-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+  font-family: 'Belleza';
+  src: url('/public/assets/fonts/Belleza-Regular.eot');
+  src: local('Belleza Regular'), local('Belleza-Regular'),
+      url('/public/assets/fonts/Belleza-Regular.woff2') format('woff2'),
+      url('/public/assets/fonts/Belleza-Regular.woff') format('woff'),
+      url('/public/assets/fonts/Belleza-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.main_page{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  
+  .text_side{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    height: 48rem;
+    width: 42rem;
+    margin:0;
+  }
+  
+  .text{
+    height: 48rem;
+    width: 42rem;
+    padding:4rem 3rem;
+  }
+  
+  .text1{
+    @include txt_title_80;
+  font-style: normal;
+  color: $Black_01;
+  align-self: stretch;
+  }
+
+  .text2_button_catalog{
+    @include montserrat_semi_S;
+  align-items: center;
+  background: $Black_01;
+  color: $White_00;
+  border-radius: 2rem;
+  width: 11rem;
+  height:3rem;
+  margin-top:2rem;
+  margin-bottom: 4rem;
+  }
+  
+  .text3{
+    @include montserrat_regular_L;
+  width: 25rem;
+  max-width: 25rem;
+  height: 4rem;
+  color: $Black_00;
+  margin-right:17.5rem;
+  margin-bottom: 4rem;
+  }
+  
+  .yandex_map{
+  width: 9rem;
+  height:3rem;
+  }
+  
+  .picture_side{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 48rem;
+    width: 41rem;
+    margin:0;
+  }
+  
+  .text2_button_catalog:hover{
+    border-bottom: $Black_01 1px;;
+  }
+  
+  .yandex_map{
+      transition: transform 0.1s;
+    }
+  
+    .yandex_map:hover {
+      transform: scale(1.1);
+  }
+
+
