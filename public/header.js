@@ -5,42 +5,45 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('search');
     const clearButton = document.getElementById('clearButton');
 
-    searchToggle.addEventListener('click', function(event) {
-        if (searchContainer.classList.contains('show')) {
-            closeSearch();
-        } else {
-            searchContainer.classList.add('show');
-        }
-    });
+    if (searchToggle) {
+        searchToggle.addEventListener('click', function(event) {
+            if (searchContainer.classList.contains('show')) {
+                closeSearch();
+            } else {
+                searchContainer.classList.add('show');
+            }
+        });
+    
 
-    const closeSearch = () => {
-        searchContainer.classList.remove('show');
-        searchInput.value = '';
-        clearButton.style.display = 'none';
-    }
-
-    searchInput.addEventListener('input', function() {
-        if (searchInput.value.length > 0) {
-            clearButton.style.display = 'inline';
-        } else {
+        const closeSearch = () => {
+            searchContainer.classList.remove('show');
+            searchInput.value = '';
             clearButton.style.display = 'none';
         }
-    });
 
-  //Функция для появления/удаления крестика в поле поиска
-    clearButton.addEventListener('click', function() {
-        searchInput.value = '';
-        clearButton.style.display = 'none';
-        searchInput.focus(); 
-    });
-    
-    searchInput.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {
-            closeSearch();
-        }
-    });
-    
-});
+        searchInput.addEventListener('input', function() {
+            if (searchInput.value.length > 0) {
+                clearButton.style.display = 'inline';
+            } else {
+                clearButton.style.display = 'none';
+            }
+        });
+
+    //Функция для появления/удаления крестика в поле поиска
+        clearButton.addEventListener('click', function() {
+            searchInput.value = '';
+            clearButton.style.display = 'none';
+            searchInput.focus(); 
+        });
+        
+        searchInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                closeSearch();
+            }
+        });
+        
+    }}
+);
 
 //Функция для выплывающего бургер-меню
 const burger = document.querySelector("#burger");
