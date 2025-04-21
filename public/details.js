@@ -4,28 +4,8 @@
 class PlantDetails {
   constructor() {
     this.loadPlantDetails();
-    this.initSearch();
   }
 
-  async initSearch() {
-    const searchInput = document.getElementById('search');
-    const searchBtn = document.getElementById('searchBtn');
-
-    // Click event for search button
-    searchBtn.addEventListener('click', () => {
-      if (searchInput.value.length >= 3) {
-        window.location.href = `/?search=${encodeURIComponent(searchInput.value)}`;
-      }
-    });
-
-    // Enter key event for search input
-    searchInput.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' && searchInput.value.length >= 3) {
-        event.preventDefault();
-        window.location.href = `/?search=${encodeURIComponent(searchInput.value)}`;
-      }
-    });
-  }
 
   async loadPlantDetails() {
     // Get plant ID from URL parameters

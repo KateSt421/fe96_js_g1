@@ -51,6 +51,20 @@
   background-size: cover;
   background-position: bottom;
 }
+.hero-service {
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  height: fit-content;
+  margin: 0 auto;
+}
+.hero-service_image {
+  max-width: 41.5rem;
+  width: 100%;
+  background-image: url('../images/catalog-services-cart-1.jpg');
+  background-size: cover;
+  background-position: bottom;
+}
 
 /* ----------- breakpoint 1280 ----------- */
 @media (max-width: 1280px) {
@@ -77,6 +91,12 @@
     background-size: cover;
     background-position: bottom;
   }
+  .hero-service {
+    margin: 0;
+    background-image: url('../images/catalog-services-cart-2.jpg');
+    background-size: cover;
+    background-position: bottom;
+  }
   .hero_wrapper {
     max-width: none;
     padding: 2rem 0;
@@ -97,6 +117,9 @@
   .hero_image {
     display: none;
   }
+  .hero-service_image {
+    display: none;
+}
 }
 
 /* ----------- breakpoint 640 ----------- */
