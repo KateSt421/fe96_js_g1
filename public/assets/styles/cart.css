@@ -3,6 +3,8 @@
 :root {
   --basic-font-weight: 600;
   --title-font-weight: 400;
+  --primary-color: #667777;
+  --secondary-color: #677e51;
 }
 
 /* ----------- Цвета ----------- */
@@ -43,6 +45,31 @@
 /* ----------- Ограничения ширин, шаблоны для @media ----------- */
 /* ----------- Кнопки и ссылки ----------- */
 /* разные настройки размеров кнопок */
+.btn_solid_text_52 {
+  color: #ffffff;
+  background-color: #000000;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.25rem;
+  padding: 1rem 3rem;
+  border-radius: 2.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
+  font-size: 1rem;
+  line-height: 125%;
+}
+.btn_solid_text_52:hover {
+  background-color: #677e51;
+  border-style: none;
+}
+.btn_solid_text_52:active {
+  background-color: #9bb96c;
+}
+
 /* ----------- Контейнеры-карточки ----------- */
 .cart {
   padding: 3rem;
@@ -210,19 +237,18 @@
 
 .cart__btn-pay {
   box-sizing: border-box;
-  height: 3.25rem;
-  width: -moz-fit-content;
-  width: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 3.25rem;
   padding: 1rem 3rem;
+  border-radius: 2.5rem;
+  transition: 0.2s ease-out;
   /* служебный миксин, его использовать не надо */
   font-family: "Montserrat";
   font-weight: var(--basic-font-weight);
   font-size: 1rem;
   line-height: 125%;
-  border-radius: 2.5rem;
   display: block;
   margin: 2rem auto 0;
   background-color: #000000;

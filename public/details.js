@@ -70,10 +70,10 @@ class PlantDetails {
         <p><stronge>Категория:  </stronge>${plant.category.charAt(0).toUpperCase() + plant.category.slice(1)}</p>
         <p><stronge>Комментарий:  </stronge>${plant.comment.charAt(0).toUpperCase() + plant.comment.slice(1)}</p>
         <p><stronge>Тип услуги:  </stronge>${plant.service.charAt(0).toUpperCase() + plant.service.slice(1)}</p>
-        <div class="plant-details-actions">
+        <div class="product-details-actions">
             ${quantity === 0 ?
-              `<button class="add-to-cart-btn" onclick="plantDetails.updateQuantity(${plant.id}, 1)">Add to Cart</button>` :
-              `<div class="quantity-controls">
+              `<button class="product-add-to-cart-btn" onclick="plantDetails.updateQuantity(${plant.id}, 1)">Добавить</button>` :
+              `<div class="product-quantity-controls">
                   <button onclick="plantDetails.updateQuantity(${plant.id}, -1)">-</button>
                   <span>${quantity}</span>
                   <button onclick="plantDetails.updateQuantity(${plant.id}, 1)">+</button>
