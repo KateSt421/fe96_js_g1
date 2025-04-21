@@ -63,7 +63,7 @@ function burgerHandler(e) {
     renderPopup();
 }
 
-function renderPopup() {
+const renderPopup = () => {
 popup.appendChild(menu);
 }
 
@@ -73,7 +73,7 @@ links.forEach((link) => {
     link.addEventListener("click", closeOnClick);
 });
 
-function closeOnClick() {
+const closeOnClick = () => {
     popup.classList.remove("open");
     burger.classList.remove("active");
     body.classList.remove("noscroll");

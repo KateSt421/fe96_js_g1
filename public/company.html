@@ -20,6 +20,25 @@
     <link rel="stylesheet" href="./assets/styles/header.css" />
     <link rel="stylesheet" href="./assets/styles/company.css">
     <link rel="stylesheet" href="./assets/styles/footer.css">
+    <!-- Фавиконы -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/images/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="assets/images/favicon/favicon.svg"
+    />
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
   </head>
   <body>
     <header class="header">
@@ -51,19 +70,21 @@
 
         <!-- навигация по сайту -->
         <ul class="nav__menu" id="menu">
-          <li>
-            <a href="/" class="nav__menu-plants">Цветы</a>
-          </li>
+          <li><a href="#flowers" class="nav__menu-plants">Растения</a></li>
           <li><a href="service.html" class="nav__menu-services">Услуги</a></li>
-          <li><a href="#" class="nav__menu-company">О Нас</a></li>
+          <li><a href="company.html" class="nav__menu-company">О&nbsp;Нас</a></li>
         </ul>
 
         <!-- иконки -->
         <div class="nav__icons">
+          <button class="cart-link" id="searchToggle">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
           <a href="/cart.html" class="cart-link">
             <i class="fa-regular fa-user fa-sm"></i>
           </a>
           <a href="/cart.html" class="cart-link">
+            <span id="cart-count" class="cart-count"></span>
             <i class="fa-solid fa-cart-shopping"></i>
           </a>
         </div>
