@@ -1,0 +1,113 @@
+@charset "UTF-8";
+/* ----------- Константы ----------- */
+:root {
+  --basic-font-weight: 600;
+  --title-font-weight: 400;
+  --primary-color: #667777;
+  --secondary-color: #677e51;
+}
+
+/* ----------- Цвета ----------- */
+/* ----------- Стили шрифтов ----------- */
+/* ----------- Привязанные шрифты ----------- */
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-SemiBold.eot");
+  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("../fonts/Montserrat-SemiBold.woff") format("woff"), url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.eot");
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraBold.eot");
+  src: local("Montserrat ExtraBold"), local("Montserrat-ExtraBold"), url("../fonts/Montserrat-ExtraBold.woff") format("woff"), url("../fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Belleza";
+  src: url("../fonts/Belleza-Regular.eot");
+  src: local("Belleza Regular"), local("Belleza-Regular"), url("../fonts/Belleza-Regular.woff2") format("woff2"), url("../fonts/Belleza-Regular.woff") format("woff"), url("../fonts/Belleza-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Заголовки, на макете шрифты */
+/* Жирные цифры */
+/* Заголовки, на макете шрифт Belleza */
+/* ----------- Размеры отступов, паддингов ----------- */
+/* ----------- Ограничения ширин, шаблоны для @media ----------- */
+/* ----------- Кнопки и ссылки ----------- */
+/* разные настройки размеров кнопок */
+.btn_solid_text_52 {
+  color: #ffffff;
+  background-color: #000000;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.25rem;
+  padding: 1rem 3rem;
+  border-radius: 2.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
+  font-size: 1rem;
+  line-height: 125%;
+}
+.btn_solid_text_52:hover {
+  background-color: #677e51;
+  border-style: none;
+}
+.btn_solid_text_52:active {
+  background-color: #9bb96c;
+}
+
+/* ----------- Контейнеры-карточки ----------- */
+.title_email {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--title-font-weight);
+  font-size: 1.5rem;
+  line-height: 133%;
+  color: #000000;
+}
+
+.text_email {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--title-font-weight);
+  font-size: 1rem;
+  line-height: 150%;
+  color: rgba(0, 0, 0, 0.64);
+}
+
+.input_email {
+  box-sizing: border-box;
+  align-items: center;
+  padding: 0.75rem;
+  width: 15.5rem;
+  height: 2.5rem;
+  background: #ffffff;
+  border: 0.0625rem solid #f2f2f3;
+  border-radius: 0.75rem;
+}
+
+.email_form {
+  margin: 4.5rem 0;
+}
+
+#submit_form {
+  margin-left: 0.5rem;
+  width: 4rem;
+  height: 2.5rem;
+  background: #010101;
+  border-radius: 2.5rem;
+}/*# sourceMappingURL=company.css.map */

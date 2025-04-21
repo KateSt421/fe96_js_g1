@@ -1,0 +1,252 @@
+@charset "UTF-8";
+/* ----------- Константы ----------- */
+:root {
+  --basic-font-weight: 600;
+  --title-font-weight: 400;
+  --primary-color: #667777;
+  --secondary-color: #677e51;
+}
+
+/* ----------- Цвета ----------- */
+/* ----------- Стили шрифтов ----------- */
+/* ----------- Привязанные шрифты ----------- */
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-SemiBold.eot");
+  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("../fonts/Montserrat-SemiBold.woff") format("woff"), url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.eot");
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraBold.eot");
+  src: local("Montserrat ExtraBold"), local("Montserrat-ExtraBold"), url("../fonts/Montserrat-ExtraBold.woff") format("woff"), url("../fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Belleza";
+  src: url("../fonts/Belleza-Regular.eot");
+  src: local("Belleza Regular"), local("Belleza-Regular"), url("../fonts/Belleza-Regular.woff2") format("woff2"), url("../fonts/Belleza-Regular.woff") format("woff"), url("../fonts/Belleza-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Заголовки, на макете шрифты */
+/* Жирные цифры */
+/* Заголовки, на макете шрифт Belleza */
+/* ----------- Размеры отступов, паддингов ----------- */
+/* ----------- Ограничения ширин, шаблоны для @media ----------- */
+/* ----------- Кнопки и ссылки ----------- */
+/* разные настройки размеров кнопок */
+.btn_solid_text_52 {
+  color: #ffffff;
+  background-color: #000000;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.25rem;
+  padding: 1rem 3rem;
+  border-radius: 2.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
+  font-size: 1rem;
+  line-height: 125%;
+}
+.btn_solid_text_52:hover {
+  background-color: #677e51;
+  border-style: none;
+}
+.btn_solid_text_52:active {
+  background-color: #9bb96c;
+}
+
+/* ----------- Контейнеры-карточки ----------- */
+/* ----------- main breakpoint  ----------- */
+/* ----------- hero section ----------- */
+.hero {
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0 auto;
+}
+
+.page_block_wrapper_hero {
+  margin: 0 !important;
+  width: 100%;
+}
+
+.hero_block_wrapper {
+  width: 100%;
+  padding: 0 3rem;
+}
+
+.hero_wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 4rem 0;
+  gap: 4rem;
+}
+
+.hero_slogan {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Belleza";
+  font-weight: var(--title-font-weight);
+  line-height: 110%;
+  letter-spacing: -0.5px;
+  font-size: 5rem;
+  line-height: 5.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: #000000;
+}
+
+.hero_button {
+  width: 11rem;
+}
+
+.hero_description {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--title-font-weight);
+  font-size: 1.5rem;
+  line-height: 133%;
+  max-width: 25rem;
+  color: #000000;
+}
+
+.hero_reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--title-font-weight);
+  font-size: 1rem;
+  line-height: 150%;
+}
+
+.hero_image {
+  max-width: 41.5rem;
+  width: 100%;
+  background-image: url("../images/main_hero_img.jpg");
+  background-size: cover;
+  background-position: bottom;
+}
+
+.hero-service {
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0 auto;
+}
+
+.hero-service_image {
+  max-width: 41.5rem;
+  width: 100%;
+  background-image: url("../images/catalog-services-cart-1.jpg");
+  background-size: cover;
+  background-position: bottom;
+}
+
+/* ----------- breakpoint 1280 ----------- */
+@media (max-width: 1280px) {
+  /* ----------- hero section ----------- */
+  .hero_wrapper {
+    padding: 2rem 0;
+    gap: 3rem;
+  }
+  .hero_block_wrapper {
+    padding: 0 2rem;
+  }
+  .hero_slogan {
+    /* служебный миксин, его использовать не надо */
+    font-family: "Belleza";
+    font-weight: var(--title-font-weight);
+    line-height: 110%;
+    letter-spacing: -0.5px;
+    font-size: 4rem;
+    line-height: 4.5rem;
+    gap: 1rem;
+  }
+}
+/* ----------- breakpoint 1024 ----------- */
+@media (max-width: 1024px) {
+  /* ----------- hero section ----------- */
+  .hero {
+    margin: 0;
+    background-image: url("../images/main_hero_img.jpg");
+    background-size: cover;
+    background-position: bottom;
+  }
+  .hero-service {
+    margin: 0;
+    background-image: url("../images/catalog-services-cart-2.jpg");
+    background-size: cover;
+    background-position: bottom;
+  }
+  .hero_wrapper {
+    max-width: none;
+    padding: 2rem 0;
+    gap: 3rem;
+  }
+  .hero_block_wrapper {
+    padding: 0 1.5rem;
+  }
+  .hero_slogan {
+    /* служебный миксин, его использовать не надо */
+    font-family: "Belleza";
+    font-weight: var(--title-font-weight);
+    line-height: 110%;
+    letter-spacing: -0.5px;
+    font-size: 4rem;
+    line-height: 4.5rem;
+    gap: 1rem;
+  }
+  .hero_description {
+    /* служебный миксин, его использовать не надо */
+    font-family: "Montserrat";
+    font-weight: var(--title-font-weight);
+    font-size: 1rem;
+    line-height: 150%;
+    max-width: 16.5rem;
+    color: #000000;
+  }
+  .hero_image {
+    display: none;
+  }
+  .hero-service_image {
+    display: none;
+  }
+}
+/* ----------- breakpoint 640 ----------- */
+@media (max-width: 640px) {
+  .hero_block_wrapper {
+    padding: 0 1rem;
+  }
+  /* ----------- hero section ----------- */
+  .hero_slogan {
+    /* служебный миксин, его использовать не надо */
+    font-family: "Belleza";
+    font-weight: var(--title-font-weight);
+    line-height: 110%;
+    letter-spacing: -0.5px;
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+}/*# sourceMappingURL=main_hero_section.css.map */

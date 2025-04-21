@@ -53,6 +53,7 @@ class CartManager {
   }
 
   displayCart(items) {
+    console.log(document)
     const cartItems = document.getElementById('cart-items')
     if (!cartItems) return
 
@@ -141,3 +142,4 @@ class CartManager {
 }
 
 const cartManager = new CartManager()
+module.exports = cartManager

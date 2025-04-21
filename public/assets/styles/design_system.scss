@@ -5,6 +5,8 @@
 :root {
   --basic-font-weight: 600;
   --title-font-weight: 400;
+  --primary-color: #667777;
+  --secondary-color: #677e51;
 }
 
 /* ----------- Цвета ----------- */
@@ -24,16 +26,16 @@ $Border_d: #ddd;
 
 /* ----------- Стили шрифтов ----------- */
 
+/* ----------- Привязанные шрифты ----------- */
 @font-face {
   font-family: 'Montserrat';
   src: url('../fonts/Montserrat-SemiBold.eot');
   src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
     url('../fonts/Montserrat-SemiBold.woff') format('woff'),
     url('../fonts/Montserrat-SemiBold.ttf') format('truetype');
-  font-weight: var(--basic-font-weight);
+  font-weight: 600;
   font-style: normal;
 }
-
 @font-face {
   font-family: 'Montserrat';
   src: url('../fonts/Montserrat-Regular.eot');
@@ -41,6 +43,15 @@ $Border_d: #ddd;
     url('../fonts/Montserrat-Regular.woff') format('woff'),
     url('../fonts/Montserrat-Regular.ttf') format('truetype');
   font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-ExtraBold.eot');
+  src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'),
+    url('../fonts/Montserrat-ExtraBold.woff') format('woff'),
+    url('../fonts/Montserrat-ExtraBold.ttf') format('truetype');
+  font-weight: 900;
   font-style: normal;
 }
 @font-face {
@@ -112,6 +123,23 @@ $Border_d: #ddd;
 @mixin txt_title_80 {
   @include txt_title;
   font-size: 5rem;
+  line-height: 5.5rem;
+}
+
+@mixin page_title_64 {
+  @include txt_title;
+  font-size: 4rem;
+  line-height: 4.5rem;
+}
+@mixin page_title_48 {
+  @include txt_title;
+  font-size: 3rem;
+  line-height: 3.5rem;
+}
+@mixin page_title_32 {
+  @include txt_title;
+  font-size: 2rem;
+  line-height: 2.5rem;
 }
 
 /* ----------- Размеры отступов, паддингов ----------- */
@@ -132,16 +160,28 @@ $Border_d: #ddd;
 
 /* ----------- Кнопки и ссылки ----------- */
 /* разные настройки размеров кнопок */
-@mixin btn_size_52 {
+@mixin btn_text_52 {
   box-sizing: border-box;
-  height: 3.25rem;
-  width: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 3.25rem;
   padding: 1rem 3rem;
-  @include montserrat_semi_S;
   border-radius: 2.5rem;
+  transition: 0.2s ease-out;
+  @include montserrat_semi_S;
+}
+.btn_solid_text_52 {
+  color: $White_00;
+  background-color: $Black_00;
+  &:hover {
+    background-color: $Green_67;
+    border-style: none;
+  }
+  &:active {
+    background-color: $Green_96;
+  }
+  @include btn_text_52;
 }
 
 @mixin btn_size_36 {
