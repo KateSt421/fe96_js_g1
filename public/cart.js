@@ -125,9 +125,9 @@ class CartManager {
     const discount = this.calculateDiscount(subtotal)
     const total = subtotal - discount
 
-    document.getElementById(
-      'subtotal'
-    ).textContent = `${subtotal.toLocaleString('ru-RU')} ₽`
+    //document.getElementById(
+    //  'subtotal'
+    //).textContent = `${subtotal.toLocaleString('ru-RU')} ₽`
     document.getElementById(
       'discount'
     ).textContent = `${discount.toLocaleString('ru-RU')} ₽`
