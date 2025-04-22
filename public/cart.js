@@ -61,34 +61,37 @@ class CartManager {
       .map(
         (item) => `
       <div class="cart__item">
-        <img src="${item.image}" alt="${item.name}" class="cart__image" />
-        <div class="cart__item-content">
-          <div class="cart__details">
-            <p class="cart__name">${item.name}</p>
-            <p class="cart__unit-price">${item.price.toFixed(2)} ₽</p>
-          </div>
+  <img src="${item.image}" alt="${item.name}" class="cart__image" />
 
-          <div class="cart__quantity-controls">
-            <button class="cart__btn" onclick="cartManager.updateQuantity(${
-              item.id
-            }, -1)">-</button>
-            <span class="cart__count">${item.quantity}</span>
-            <button class="cart__btn" onclick="cartManager.updateQuantity(${
-              item.id
-            }, 1)">+</button>
-          </div>
+  <div class="cart__item-content">
+    <div class="cart__details">
+      <p class="cart__name">${item.name}</p>
+      <p class="cart__unit-price">${item.price.toLocaleString('ru-RU')} ₽</p>
+    </div>
 
-          <div class="cart__price-total"><span id="subtotal">${(
-            item.price * item.quantity
-          ).toFixed(2)} ₽</span></div>
-
-          <button class="cart__delete" onclick="cartManager.removeItem(${
-            item.id
-          })">
-            <img src="assets/images/clear_cart.svg" alt="Delete item" />
-          </button>
-        </div>
+    <div class="cart__controls">
+      <div class="cart__quantity-controls">
+        <button class="cart__btn" onclick="cartManager.updateQuantity(${
+          item.id
+        }, -1)">-</button>
+        <span class="cart__count">${item.quantity}</span>
+        <button class="cart__btn" onclick="cartManager.updateQuantity(${
+          item.id
+        }, 1)">+</button>
       </div>
+
+      <div class="cart__price-total">
+        <span id="subtotal">${(item.price * item.quantity).toLocaleString(
+          'ru-RU'
+        )} ₽</span>
+      </div>
+
+      <button class="cart__delete" onclick="cartManager.removeItem(${item.id})">
+        <img src="assets/images/clear_cart.svg" alt="Delete item" />
+      </button>
+    </div>
+  </div>
+  </div>
     `
       )
       .join('')
@@ -122,9 +125,15 @@ class CartManager {
     const discount = this.calculateDiscount(subtotal)
     const total = subtotal - discount
 
-    document.getElementById('subtotal').textContent = `${subtotal.toFixed(2)} ₽`
-    document.getElementById('discount').textContent = `${discount.toFixed(2)} ₽`
-    document.getElementById('total').textContent = `${total.toFixed(2)} ₽`
+    document.getElementById(
+      'subtotal'
+    ).textContent = `${subtotal.toLocaleString('ru-RU')} ₽`
+    document.getElementById(
+      'discount'
+    ).textContent = `${discount.toLocaleString('ru-RU')} ₽`
+    document.getElementById('total').textContent = `${total.toLocaleString(
+      'ru-RU'
+    )} ₽`
   }
 
   removeItem(itemId) {

@@ -62,14 +62,6 @@
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.02);
     width: 100%;
 
-    &-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex: 1;
-      gap: 1rem;
-    }
-
     img {
       width: 5rem;
       height: 5rem;
@@ -77,6 +69,24 @@
       object-fit: cover;
       flex-shrink: 0;
     }
+  }
+
+  .cart__controls {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    // чтобы не сжималось
+    min-width: 20rem;
+    justify-content: flex-end;
+  }
+
+  .cart__item-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    gap: 2rem; // было 1rem — увеличили расстояние
   }
 
   &__details {
@@ -105,6 +115,9 @@
   &__quantity-controls {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 15rem; // 240px
+    height: 3.25rem; // 52px
     gap: 0.75rem;
   }
 
@@ -112,40 +125,47 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.5rem;
     width: 1.5rem;
     height: 1.5rem;
+    line-height: 1.5rem;
     border: none;
     background: none;
     cursor: pointer;
-    font-size: 1.25rem;
     padding: 0;
+    flex-shrink: 0;
   }
 
   &__count {
     @include montserrat_regular_S;
-    width: 5rem;
-    height: 2.5rem;
+    width: 7rem; // 112px
+    height: 2.8rem; // 45px
     text-align: center;
     border-radius: 0.75rem;
     border: 1px solid #d9d9d9;
     font-size: 1rem;
-    padding: 0 0.75rem;
-    line-height: 2.5rem;
+    line-height: 2.8rem;
     background-color: $White_00;
   }
 
   &__price-total {
     @include montserrat_semi_L;
+    width: 12.5rem;
     margin-left: 1rem;
+    text-align: right;
     white-space: nowrap;
   }
 
   &__delete {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0;
-    margin-left: 1rem;
 
     img {
       width: 1.25rem;
