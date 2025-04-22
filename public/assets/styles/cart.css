@@ -169,20 +169,13 @@
   font-weight: 500;
   color: rgb(44, 21, 0);
 }
-.cart .cart__name {
+.cart__name, .cart__unit-price {
   /* служебный миксин, его использовать не надо */
   font-family: "Montserrat";
   font-weight: var(--basic-font-weight);
   font-size: 1rem;
   line-height: 1.5rem;
   margin-bottom: 0.25rem;
-}
-.cart .cart__unit-price {
-  /* служебный миксин, его использовать не надо */
-  font-family: "Montserrat";
-  font-weight: var(--basic-font-weight);
-  font-size: 1rem;
-  line-height: 1.5rem;
 }
 .cart__quantity-controls {
   display: flex;
@@ -259,15 +252,17 @@
 .cart__promo .promo__input {
   width: 18.375rem;
   height: 2.5rem;
-  padding: 0 1rem;
+  padding: 0.75rem;
   font-size: 1rem;
   border: 1px solid #f2f2f3;
   border-radius: 0.75rem;
   background-color: #ffffff;
+  gap: 0.625rem;
 }
 .cart__promo .promo__btn {
   height: 2.5rem;
-  padding: 0 1.5rem;
+  width: 7.94rem;
+  padding: 0.625rem 1.25rem;
   /* служебный миксин, его использовать не надо */
   font-family: "Montserrat";
   font-weight: var(--basic-font-weight);

@@ -126,13 +126,10 @@
     color: rgba(44, 21, 0, 1);
   }
 
-  .cart__name {
+  &__name,
+  &__unit-price {
     @include montserrat_semi_M;
     margin-bottom: 0.25rem;
-  }
-
-  .cart__unit-price {
-    @include montserrat_semi_M;
   }
 
   &__quantity-controls {
@@ -209,16 +206,18 @@
     .promo__input {
       width: 18.375rem;
       height: 2.5rem;
-      padding: 0 1rem;
+      padding: 0.75rem;
       font-size: 1rem;
       border: 1px solid $Grey_94;
       border-radius: 0.75rem;
       background-color: $White_00;
+      gap: 0.625rem;
     }
 
     .promo__btn {
       height: 2.5rem;
-      padding: 0 1.5rem;
+      width: 7.94rem;
+      padding: 0.625rem 1.25rem;
       @include montserrat_semi_XS;
       background-color: $Black_00;
       color: $White_00;
