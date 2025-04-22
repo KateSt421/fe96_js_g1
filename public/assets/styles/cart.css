@@ -75,8 +75,13 @@
   padding: 3rem;
   padding-bottom: 6rem;
 }
+.cart__image {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 1.75rem;
+}
 .cart__header {
-  background-color: #f2f2f3;
+  background-color: rgba(0, 0, 0, 0.02);
   border-radius: 2rem;
   padding: 1.5rem;
   margin-bottom: 2rem;
@@ -98,6 +103,16 @@
   border: none;
   border-radius: 2.5rem;
   cursor: pointer;
+  background-color: #f2f2f3;
+  color: #000000;
+}
+.cart__btn-clear:hover {
+  background-color: #677e51;
+  color: #ffffff;
+}
+.cart__btn-clear:active {
+  background-color: #9bb96c;
+  transform: scale(0.96);
 }
 .cart__items {
   display: flex;
@@ -114,6 +129,7 @@
   background-color: #ffffff;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.02);
   width: 100%;
+  height: 7rem;
 }
 .cart__item img {
   width: 5rem;
@@ -232,7 +248,7 @@
   height: 1.25rem;
 }
 .cart__promo {
-  background-color: #f2f2f3;
+  background-color: rgba(0, 0, 0, 0.02);
   border-radius: 2rem;
   padding: 1.5rem;
   margin-bottom: 2rem;
@@ -262,6 +278,15 @@
   border: none;
   border-radius: 2rem;
   cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.cart__promo .promo__btn:hover {
+  background-color: #677e51;
+  color: #ffffff;
+}
+.cart__promo .promo__btn:active {
+  background-color: #9bb96c;
+  transform: scale(0.96);
 }
 .cart__promo .promo__discount {
   /* служебный миксин, его использовать не надо */
@@ -286,7 +311,7 @@
   margin: 0;
 }
 .cart__delivery {
-  background-color: #f2f2f3;
+  background-color: rgba(0, 0, 0, 0.02);
   border-radius: 2rem;
   padding: 1.5rem;
   margin-bottom: 2rem;
@@ -342,6 +367,15 @@
   color: #ffffff;
   border: none;
   cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.cart__btn-pay:hover {
+  background-color: #677e51;
+  color: #ffffff;
+}
+.cart__btn-pay:active {
+  background-color: #9bb96c;
+  transform: scale(0.96);
 }
 .cart__empty-wrapper {
   display: flex;

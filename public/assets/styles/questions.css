@@ -11,39 +11,30 @@
 /* ----------- Стили шрифтов ----------- */
 /* ----------- Привязанные шрифты ----------- */
 @font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat-SemiBold.eot');
-  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
-    url('../fonts/Montserrat-SemiBold.woff') format('woff'),
-    url('../fonts/Montserrat-SemiBold.ttf') format('truetype');
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-SemiBold.eot");
+  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("../fonts/Montserrat-SemiBold.woff") format("woff"), url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat-Regular.eot');
-  src: local('Montserrat Regular'), local('Montserrat-Regular'),
-    url('../fonts/Montserrat-Regular.woff') format('woff'),
-    url('../fonts/Montserrat-Regular.ttf') format('truetype');
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.eot");
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat-ExtraBold.eot');
-  src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'),
-    url('../fonts/Montserrat-ExtraBold.woff') format('woff'),
-    url('../fonts/Montserrat-ExtraBold.ttf') format('truetype');
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraBold.eot");
+  src: local("Montserrat ExtraBold"), local("Montserrat-ExtraBold"), url("../fonts/Montserrat-ExtraBold.woff") format("woff"), url("../fonts/Montserrat-ExtraBold.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Belleza';
-  src: url('../fonts/Belleza-Regular.eot');
-  src: local('Belleza Regular'), local('Belleza-Regular'),
-    url('../fonts/Belleza-Regular.woff2') format('woff2'),
-    url('../fonts/Belleza-Regular.woff') format('woff'),
-    url('../fonts/Belleza-Regular.ttf') format('truetype');
+  font-family: "Belleza";
+  src: url("../fonts/Belleza-Regular.eot");
+  src: local("Belleza Regular"), local("Belleza-Regular"), url("../fonts/Belleza-Regular.woff2") format("woff2"), url("../fonts/Belleza-Regular.woff") format("woff"), url("../fonts/Belleza-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -66,7 +57,7 @@
   border-radius: 2.5rem;
   transition: 0.2s ease-out;
   /* служебный миксин, его использовать не надо */
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: var(--basic-font-weight);
   font-size: 1rem;
   line-height: 125%;
@@ -91,13 +82,13 @@
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   /* служебный миксин, его использовать не надо */
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: var(--title-font-weight);
   font-size: 1rem;
   line-height: 150%;
   border-radius: 1.5rem;
   /* служебный миксин, его использовать не надо */
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: var(--title-font-weight);
   font-size: 1rem;
   line-height: 150%;
@@ -120,15 +111,14 @@
   background-size: 0.75rem;
   outline: none;
 }
-.classquestionList option:checked,
-.classquestionList:focus option:checked {
+.classquestionList option:checked, .classquestionList:focus option:checked {
   background-color: #677e51;
   color: #ffffff;
 }
 
 .classquestionList option {
   /* служебный миксин, его использовать не надо */
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: var(--title-font-weight);
   font-size: 1rem;
   line-height: 150%;
@@ -150,13 +140,13 @@
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   /* служебный миксин, его использовать не надо */
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: var(--title-font-weight);
   font-size: 1rem;
   line-height: 150%;
   border-radius: 1.5rem;
   /* служебный миксин, его использовать не надо */
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: var(--title-font-weight);
   font-size: 1rem;
   line-height: 150%;
@@ -171,7 +161,7 @@
 
 .classmessage {
   /* служебный миксин, его использовать не надо */
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: var(--title-font-weight);
   font-size: 1rem;
   line-height: 150%;
@@ -245,7 +235,7 @@
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   /* служебный миксин, его использовать не надо */
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: var(--title-font-weight);
   font-size: 1rem;
   line-height: 150%;
@@ -255,4 +245,4 @@
   border: none;
   cursor: pointer;
   flex-shrink: 0;
-} /*# sourceMappingURL=questions.css.map */
+}/*# sourceMappingURL=questions.css.map */
