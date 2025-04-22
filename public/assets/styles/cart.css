@@ -177,6 +177,16 @@
   line-height: 1.5rem;
   margin-bottom: 0.25rem;
 }
+.cart__unit-comment {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #b1b1b1;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+}
 .cart__quantity-controls {
   display: flex;
   align-items: center;

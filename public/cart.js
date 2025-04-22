@@ -59,48 +59,50 @@ class CartManager {
 
     cartItems.innerHTML = items
       .map((item) => {
-        const isService = item.category === 'service' // добавили проверку категории
+        const isService = item.category === 'service'
 
         return `
-        <div class="cart__item">
-          <img src="${item.image}" alt="${item.name}" class="cart__image" />
-  
-          <div class="cart__item-content">
-            <div class="cart__details">
-              <p class="cart__name">${item.name}</p>
-              <p class="cart__unit-price">${item.price.toLocaleString(
-                'ru-RU'
-              )} ₽</p>
-            </div>
-  
-            <div class="cart__controls">
-              ${
-                !isService
-                  ? `
-                <div class="cart__quantity-controls">
-                  <button class="cart__btn" onclick="cartManager.updateQuantity(${item.id}, -1)">-</button>
-                  <span class="cart__count">${item.quantity}</span>
-                  <button class="cart__btn" onclick="cartManager.updateQuantity(${item.id}, 1)">+</button>
-                </div>
-              `
-                  : ''
-              }
-  
-              <div class="cart__price-total">
-                <span id="subtotal">${(
-                  item.price * item.quantity
-                ).toLocaleString('ru-RU')} ₽</span>
-              </div>
-  
-              <button class="cart__delete" onclick="cartManager.removeItem(${
-                item.id
-              })">
-                <img src="assets/images/clear_cart.svg" alt="Delete item" />
-              </button>
-            </div>
-          </div>
+    <div class="cart__item">
+      <img src="${item.image}" alt="${item.name}" class="cart__image" />
+
+      <div class="cart__item-content">
+        <div class="cart__details">
+          <p class="cart__name">${item.name}</p>
+          <p class="cart__unit-price ${isService ? 'cart__unit-comment' : ''}">
+  ${isService ? item.comment : item.price.toLocaleString('ru-RU') + ' ₽'}
+</p>
         </div>
-        `
+
+        <div class="cart__controls">
+          ${
+            !isService
+              ? `
+            <div class="cart__quantity-controls">
+              <button class="cart__btn" onclick="cartManager.updateQuantity(${item.id}, -1)">-</button>
+              <span class="cart__count">${item.quantity}</span>
+              <button class="cart__btn" onclick="cartManager.updateQuantity(${item.id}, 1)">+</button>
+            </div>
+          `
+              : ''
+          }
+
+          <div class="cart__price-total">
+            <span id="subtotal">${
+              isService
+                ? item.price.toLocaleString('ru-RU') + ' ₽'
+                : (item.price * item.quantity).toLocaleString('ru-RU') + ' ₽'
+            }</span>
+          </div>
+
+          <button class="cart__delete" onclick="cartManager.removeItem(${
+            item.id
+          })">
+            <img src="assets/images/clear_cart.svg" alt="Delete item" />
+          </button>
+        </div>
+      </div>
+    </div>
+    `
       })
       .join('')
   }

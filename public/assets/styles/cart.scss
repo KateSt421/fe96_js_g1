@@ -132,6 +132,13 @@
     margin-bottom: 0.25rem;
   }
 
+  &__unit-comment {
+    @include montserrat_semi_M;
+    color: $Grey_02;
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+  }
+
   &__quantity-controls {
     display: flex;
     align-items: center;
