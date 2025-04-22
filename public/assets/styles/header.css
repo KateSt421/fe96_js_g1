@@ -168,6 +168,12 @@
   border: none;
   background-color: #ffffff;
 }
+.header .header__nav .nav__icons .cart-link {
+  color: #000000;
+}
+.header .header__nav .nav__icons .cart-link:hover {
+  color: #9bb96c;
+}
 
 .burger {
   display: none;
@@ -293,12 +299,12 @@
     height: 4rem;
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1279px) {
+@media screen and (min-width: 911px) and (max-width: 1279px) {
   .header {
     padding: 0;
   }
   .header .header__nav {
-    height: 9rem;
+    height: 12.9rem;
     width: 97%;
   }
   .header .header__nav .nav__logo {
@@ -309,42 +315,22 @@
     width: 35%;
   }
   .header .header__nav .nav__icons {
-    width: 16%;
-  }
-  .header .header__searchContainer .input-container input {
-    height: 3rem;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .header {
-    padding: 0;
-  }
-  .header .header__nav {
-    height: 9rem;
-    width: 100%;
-  }
-  .header .header__nav .nav__menu {
-    width: 40%;
-    font-size: 1.2rem;
-  }
-  .header .header__nav .nav__icons {
-    gap: 0.4rem;
-    width: 18%;
+    width: 14%;
   }
   .header .header__searchContainer {
-    top: 17%;
+    top: 15%;
   }
   .header .header__searchContainer .input-container input {
-    margin-left: 4.2rem;
-    height: 2.8rem;
+    margin-left: 5rem;
+    height: 3.7rem;
   }
 }
-@media screen and (min-width: 640px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 910px) {
   .header {
     padding: 0;
   }
   .header .header__nav {
-    height: 9rem;
+    height: 11.3rem;
     width: 98%;
   }
   .header .header__nav .nav__menu {
@@ -355,18 +341,52 @@
     width: 18%;
   }
   .header .header__searchContainer {
-    top: 16%;
+    top: 15%;
   }
   .header .header__searchContainer .input-container input {
     margin-left: 4.5rem;
   }
 }
-@media screen and (min-width: 220px) and (max-width: 659px) {
+@media screen and (min-width: 425px) and (max-width: 767px) {
   .header {
     padding: 0;
   }
   .header .header__nav {
-    width: 99%;
+    height: 10rem;
+    width: 98%;
+  }
+  .header .header__nav .nav__menu {
+    margin: 0 0 1rem 0;
+    width: 47%;
+  }
+  .header .header__nav .nav__icons {
+    width: 16%;
+  }
+  .header .header__searchContainer {
+    top: 16.5%;
+  }
+  .header .header__searchContainer .input-container input {
+    margin-left: 4.5rem;
+  }
+}
+@media screen and (min-width: 200px) and (max-width: 424px) {
+  .header {
+    padding: 0;
+  }
+  .header .header__nav {
+    height: 11.2rem;
+    width: 98%;
+  }
+  .header .header__searchContainer {
+    top: 14.9%;
+  }
+  .header .header__searchContainer .input-container input {
+    margin-left: 4.5rem;
+  }
+}
+@media screen and (min-width: 150px) and (max-width: 639px) {
+  .header {
+    padding: 0;
   }
   .header .header__nav .burger {
     display: flex;
@@ -459,17 +479,5 @@
   }
   body.noscroll {
     overflow: hidden;
-  }
-  .header__searchContainer {
-    top: 7%;
-    border-top: none;
-  }
-  .header__searchContainer .input-container {
-    border: none;
-  }
-  .header__searchContainer .input-container input {
-    margin-left: 1rem;
-    height: 2.5rem;
-    width: 98%;
   }
 }/*# sourceMappingURL=header.css.map */
