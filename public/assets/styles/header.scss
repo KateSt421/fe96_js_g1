@@ -1,7 +1,6 @@
 @import 'design_system.scss';
 
 .header{
-    padding: 1rem;
     min-height: calc(20vh + 2rem);
     background-size: cover;
 
@@ -9,6 +8,7 @@
 
     .header__nav{
         @include container;
+        max-width: 96rem;
 
         display: flex;
         justify-content: space-between;
@@ -106,7 +106,7 @@
     display: none;
     position: fixed;
     padding: 1rem 0 1rem 1rem;
-    top: 8%;
+    top: 16%;
     left: 0;
     right: 0;
 
@@ -283,6 +283,7 @@
 
             .nav__menu{
                 width: 40%;
+                font-size: 1.2rem;
             }
 
             .nav__icons{
@@ -410,7 +411,7 @@
         @include btn_size_36;
         margin-bottom: 3rem;
 
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         color: ($Black_00);
         text-decoration: none;
     }
@@ -442,12 +443,15 @@
     }
 
     .header__searchContainer {
-        top: 19%;
+        top: 7%;
+        border-top: none;
 
         .input-container{
+            border: none;
             input {
-                margin-left: 4rem;
+                margin-left: 1rem;
                 height: 2.5rem;
+                width: 98%;
             }
         }
     }

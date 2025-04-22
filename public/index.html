@@ -20,9 +20,9 @@
     <link rel="stylesheet" href="./assets/styles/normalize.css" />
     <link href="assets/styles/styles.css" rel="stylesheet" />
     <link href="assets/styles/footer.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/styles/service_hero_section.css" />
+    <link rel="stylesheet" href="assets/styles/main_hero_section.css">
     <link href="assets/styles/header.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./assets/styles/main_filters.css" />
+    <link rel="stylesheet" href="assets/styles/main_filters.css" />
     <link href="assets/styles/cards.css" rel="stylesheet" />
     <!-- Фавиконы -->
     <link
@@ -63,9 +63,9 @@
             alt="company logo"
             class="nav__logo-icon"
           />
-          <a href="http://localhost:7001/">
+          <a href="/">
             <img
-              src="./assets/images/vector_Planty'x.svg"
+              src="./assets/images/vector_Planty.svg"
               alt="company logo"
               class="nav__logo-text"
             />
@@ -74,9 +74,9 @@
 
         <!-- навигация по сайту -->
         <ul class="nav__menu" id="menu">
-          <li><a href="#flowers" class="nav__menu-plants">Цветы</a></li>
-          <li><a href="services.html" class="nav__menu-services">Услуги</a></li>
-          <li><a href="company.html" class="nav__menu-company">О Нас</a></li>
+          <li><a href="#flowers" class="nav__menu-plants">Растения</a></li>
+          <li><a href="service.html" class="nav__menu-services">Услуги</a></li>
+          <li><a href="company.html" class="nav__menu-company">О&nbsp;Нас</a></li>
         </ul>
 
         <!-- иконки -->
@@ -109,25 +109,30 @@
     </header>
 
     <main class="container">
-      <div class="container-hero">
-        <div class="blok_1">
-          <h1><span>Озеленение</span> <span>и уход</span></h1>
-          <p class="text_blok_1">
-            Если вы понимаете, что покупка, пересадка, удобрение и уход за живым
-            растением - ответственный момент, и у вас нет на это времени или
-            желания - мы предлагаем вам готовое решение!
-          </p>
-          <img
-            src="assets/images/cataloge-services-cart-2.jpg"
-            class="image_blok_1"
-            alt=""
-          />
+      <section class="hero">
+        <div class="hero_block_wrapper">
+          <div class="hero_wrapper">
+            <div class="hero_slogan">
+              Растения</br>
+              с любовью
+            <a class="btn_solid_text_52 hero_button" href="#plants-grid">Выбрать</a>
+            </div>
+            <div class="hero_description">Комнатные растения для уюта и свежести в вашем доме</div>
+            <div class="hero_reviews">Наши отзывы на Яндекс картах:
+            <iframe src="https://yandex.ru/sprav/widget/rating-badge/118008288343" width="150" height="50" frameborder="0"></iframe>
+          </div>
+          </div>
         </div>
-        <div class="blok_2">
-          <img src="assets/images/catalog-services-cart-1.jpg" alt="" />
-        </div>
-      </div>
+        <div class="hero_image"></div>
+      </section>
       <div class="categories">
+        <button class="category-btn" data-category="flowering">
+          <img
+            src="./assets/images/filter_images/blooming.png"
+            alt="Цветок в горшке"
+          />
+          Цветущие
+        </button>
         <button class="category-btn" data-category="orchids">
           <img src="./assets/images/filter_images/orchid.png" alt="Орхидея" />
           Орхидеи
@@ -149,13 +154,6 @@
           <img src="./assets/images/filter_images/cactus.png" alt="Кактус" />
           Суккуленты и кактусы
         </button>
-        <button class="category-btn" data-category="flowering">
-          <img
-            src="./assets/images/filter_images/blooming.png"
-            alt="Цветок в горшке"
-          />
-          Цветущие
-        </button>
         <button class="category-btn" data-category="palms">
           <img
             src="./assets/images/filter_images/palms.png"
@@ -174,21 +172,16 @@
       <div id="plants-grid" class="products-grid"></div>
     </main>
 
-    <footer>
-      <div class="container">
-        <img
-          src="assets/images/logo.png"
-          alt="Логотип"
-          class="mb-3"
-          style="max-width: 123px"
-        />
+        <footer >
+            <div class="container">
+                <img src="assets/images/logo.png" alt="Логотип" class="mb-3" style="max-width: 123px;">
 
         <ul class="list-inline mb-3">
           <li class="list-inline-item">
-            <a href="catalog.html" class="text-dark">Каталог</a>
+            <a href="/" class="text-dark">Каталог</a>
           </li>
           <li class="list-inline-item">
-            <a href="services.html" class="text-dark">Услуги</a>
+            <a href="service.html" class="text-dark">Услуги</a>
           </li>
           <li class="list-inline-item">
             <a href="company.html" class="text-dark">Компания</a>
@@ -198,23 +191,23 @@
           <a
             class="media-brands"
             target="_blank"
-            href="https://twitter.com/?lang=ru"
+            href="#"
           >
-            <i class="fa-brands fa-twitter" aria-hidden="true"></i
+            <i class="fab fa-vk"></i>&nbsp;
+          </a>
+          <a
+            class="media-brands"
+            href="#"
+            target="_blank"
+          >
+            <i class="fa fa-pinterest-p" aria-hidden="true"></i
           ></a>
           <a
             class="media-brands"
-            href="https://www.facebook.com/?locale=ru_RU"
+            href="#"
             target="_blank"
           >
-            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i
-          ></a>
-          <a
-            class="media-brands"
-            href="https://www.instagram.com/"
-            target="_blank"
-          >
-            <i class="fa-brands fa-instagram" aria-hidden="true"></i
+            <i class="fa fa-telegram" aria-hidden="true"></i
           ></a>
         </div>
       </div>
