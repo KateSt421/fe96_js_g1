@@ -1,4 +1,43 @@
+@charset "UTF-8";
+/* ----------- Константы ----------- */
+:root {
+  --basic-font-weight: 600;
+  --title-font-weight: 400;
+  --primary-color: #667777;
+  --secondary-color: #677e51;
+}
 
+/* ----------- Цвета ----------- */
+/* ----------- Стили шрифтов ----------- */
+/* ----------- Привязанные шрифты ----------- */
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-SemiBold.eot");
+  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("../fonts/Montserrat-SemiBold.woff") format("woff"), url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.eot");
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraBold.eot");
+  src: local("Montserrat ExtraBold"), local("Montserrat-ExtraBold"), url("../fonts/Montserrat-ExtraBold.woff") format("woff"), url("../fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Belleza";
+  src: url("../fonts/Belleza-Regular.eot");
+  src: local("Belleza Regular"), local("Belleza-Regular"), url("../fonts/Belleza-Regular.woff2") format("woff2"), url("../fonts/Belleza-Regular.woff") format("woff"), url("../fonts/Belleza-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}4
 .container-participate {
   min-height: 100vh;
   padding: 0 0.5rem;
@@ -154,14 +193,32 @@
 }
 
 .navLink {
-  margin: 0 1rem;
+  box-sizing: border-box;
+  height: 2.25rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   padding: 0.5rem 1rem;
-  border-radius: 4px;
-  background-color: #2e7d32;
-  color: white;
-  transition: background-color 0.3s;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--title-font-weight);
+  font-size: 1rem;
+  line-height: 150%;
+  border-radius: 1.5rem;
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  text-decoration: none;
+  color: #000000;
+  background-color: rgba(155, 185, 108, 0.08);
+  cursor: pointer;
 }
 
 .navLink:hover {
-  background-color: #1b5e20;
+  color: white;
+  background-color: #9bb96c;
+  color: #ffffff;
+  transition: background-color 0.2s;
 }
