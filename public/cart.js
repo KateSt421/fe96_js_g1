@@ -2,12 +2,28 @@ class CartManager {
   constructor() {
     this.loadCart()
     this.initCheckout()
+    this.activePromoCode = null
 
     const clearBtn = document.getElementById('clear-cart')
     if (clearBtn) {
       clearBtn.addEventListener('click', () => {
         localStorage.setItem('cart', '[]')
         this.loadCart()
+      })
+    }
+
+    const applyPromoBtn = document.querySelector('.promo__btn')
+    const promoInput = document.querySelector('.promo__input')
+
+    if (applyPromoBtn && promoInput) {
+      applyPromoBtn.addEventListener('click', () => {
+        const enteredCode = promoInput.value.trim().toLowerCase()
+        if (enteredCode === 'trava') {
+          this.activePromoCode = 'trava'
+        } else {
+          this.activePromoCode = null
+        }
+        this.loadCart() // пересчитать всё с учётом промокода
       })
     }
   }
@@ -124,7 +140,10 @@ class CartManager {
   }
 
   calculateDiscount(total) {
-    return total > 100 ? total * 0.1 : 0
+    if (this.activePromoCode === 'trava' && total > 100) {
+      return total * 0.1
+    }
+    return 0
   }
 
   calculateTotals(items) {
@@ -154,6 +173,34 @@ class CartManager {
   }
 
   initCheckout() {
+    const applyPromoBtn = document.querySelector('.promo__btn')
+    const promoInput = document.querySelector('.promo__input')
+
+    if (applyPromoBtn && promoInput) {
+      // При клике "Применить"
+      applyPromoBtn.addEventListener('click', () => {
+        const enteredCode = promoInput.value.trim().toLowerCase()
+
+        if (enteredCode === 'trava') {
+          this.activePromoCode = 'trava'
+        } else {
+          this.activePromoCode = null
+        }
+
+        this.loadCart()
+      })
+
+      // При изменении инпута — сбрасываем скидку
+      promoInput.addEventListener('input', () => {
+        const currentCode = promoInput.value.trim().toLowerCase()
+        if (currentCode !== 'trava') {
+          this.activePromoCode = null
+          this.loadCart()
+        }
+      })
+    }
+
+    // Оформление заказа
     document.getElementById('checkout-form').addEventListener('submit', (e) => {
       e.preventDefault()
       alert('Order placed successfully!')
