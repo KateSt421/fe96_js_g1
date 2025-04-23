@@ -55,7 +55,7 @@
   font-weight: normal;
   font-style: normal;
 }
-.list {
+.main_page {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -78,37 +78,43 @@
 }
 
 .text1 {
+  /* служебный миксин, его использовать не надо */
   font-family: "Belleza";
-  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.5px;
   font-size: 5rem;
-  line-height: 5rem;
+  font-style: normal;
   color: #010101;
   align-self: stretch;
 }
 
 .text2_button_catalog {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 125%;
   align-items: center;
   background: #010101;
-  color: #FFFFFF;
+  color: #ffffff;
   border-radius: 2rem;
-  font: "Montserrat";
-  font-size: 1rem;
   width: 11rem;
   height: 3rem;
   margin-top: 2rem;
   margin-bottom: 4rem;
-  font-size: 1rem;
-  font-style: normal;
 }
 
 .text3 {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 133%;
   width: 25rem;
   max-width: 25rem;
   height: 4rem;
-  font: "Montserrat";
-  font-style: normal;
   color: #000000;
-  font-size: 1.5rem;
   margin-right: 17.5rem;
   margin-bottom: 4rem;
 }
@@ -129,7 +135,7 @@
 }
 
 .text2_button_catalog:hover {
-  background: rgba(21, 19, 19, 0.842);
+  border-bottom: #010101 1px;
 }
 
 .yandex_map {
@@ -138,4 +144,4 @@
 
 .yandex_map:hover {
   transform: scale(1.1);
-}/*# sourceMappingURL=intro.css.map */
+}/*# sourceMappingURL=introStyle.css.map */
