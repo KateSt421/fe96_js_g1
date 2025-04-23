@@ -83,14 +83,14 @@
 .cart__header {
   background-color: rgba(0, 0, 0, 0.02);
   border-radius: 2rem;
-  padding: 1.5rem;
+  padding: 1rem 1.5rem 1.75rem 1.5rem;
   margin-bottom: 2rem;
 }
 .cart__header-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .cart__btn-clear {
   /* служебный миксин, его использовать не надо */
@@ -160,14 +160,12 @@
   justify-content: center;
 }
 .cart__title {
-  /* служебный миксин, его использовать не надо */
-  font-family: "Montserrat";
-  font-weight: var(--basic-font-weight);
+  /*@include montserrat_semi_XL;
+  letter-spacing: -0.03rem;*/
   font-size: 2rem;
-  line-height: 2.5rem;
-  letter-spacing: -0.03rem;
-  font-weight: 500;
+  font-weight: 400;
   color: rgb(44, 21, 0);
+  margin-left: 1rem;
 }
 .cart__name, .cart__unit-price {
   /* служебный миксин, его использовать не надо */
@@ -307,6 +305,8 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+  padding-right: 1.5rem;
+  padding-left: 2rem;
 }
 .cart__total p,
 .cart__total h3,
@@ -331,11 +331,11 @@
   line-height: 150%;
   font-size: 1rem;
   margin-bottom: 0.5rem;
+  color: rgba(0, 0, 0, 0.64);
 }
 .cart__delivery .cart__input {
   font-size: 1rem;
-  color: #000000;
-  background-color: #ffffff;
+  color: #b1b1b1;
   border: 1px solid #f2f2f3;
   border-radius: 0.75rem;
   height: 2.5rem;
