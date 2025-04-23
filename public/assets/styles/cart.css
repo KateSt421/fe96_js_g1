@@ -468,4 +468,74 @@ select.cart__input {
 .form__submit {
   text-align: center;
   margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .cart {
+    padding: 1.5rem;
+  }
+  .cart__item {
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    height: auto;
+  }
+  .cart__item-content {
+    flex: 1;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+  .cart__price-total {
+    font-size: 1rem;
+    width: auto;
+    margin-left: 0;
+    text-align: right;
+  }
+  .cart__controls {
+    min-width: auto;
+    gap: 0.75rem;
+  }
+  .cart__count {
+    width: 4rem;
+    font-size: 1rem;
+  }
+  .cart__promo {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+  .cart__promo .promo__input {
+    flex: 1 1 auto;
+    min-width: 10rem;
+  }
+  .cart__promo .promo__btn {
+    flex-shrink: 0;
+  }
+  .cart__btn-pay {
+    width: 11rem;
+    margin: 2rem auto 0;
+    display: block;
+  }
+  .form__group-row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+  }
+  .form__group {
+    width: 100%;
+  }
+  .form__group.half {
+    width: calc(50% - 0.5rem);
+  }
+  .form__group.quarter {
+    width: calc(25% - 0.5rem);
+  }
+  .form__submit {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .form-label {
+    padding-left: 1rem;
+  }
 }/*# sourceMappingURL=cart.css.map */

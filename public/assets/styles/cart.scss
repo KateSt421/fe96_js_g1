@@ -399,3 +399,90 @@ select.cart__input {
   text-align: center;
   margin-top: 2rem;
 }
+
+// ========== ADAPTIVE LAYOUT ==========
+
+@media (max-width: 768px) {
+  .cart {
+    padding: 1.5rem;
+
+    &__item {
+      flex-direction: row;
+      align-items: center;
+      padding: 1rem;
+      gap: 1rem;
+      height: auto;
+    }
+
+    &__item-content {
+      flex: 1;
+      gap: 1rem;
+      justify-content: space-between;
+    }
+
+    &__price-total {
+      font-size: 1rem;
+      width: auto;
+      margin-left: 0;
+      text-align: right;
+    }
+
+    &__controls {
+      min-width: auto;
+      gap: 0.75rem;
+    }
+
+    &__count {
+      width: 4rem;
+      font-size: 1rem;
+    }
+
+    &__promo {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+
+      .promo__input {
+        flex: 1 1 auto;
+        min-width: 10rem;
+      }
+
+      .promo__btn {
+        flex-shrink: 0;
+      }
+    }
+
+    &__btn-pay {
+      width: 11rem;
+      margin: 2rem auto 0;
+      display: block;
+    }
+  }
+
+  .form__group-row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+  }
+
+  .form__group {
+    width: 100%;
+
+    &.half {
+      width: calc(50% - 0.5rem);
+    }
+
+    &.quarter {
+      width: calc(25% - 0.5rem);
+    }
+  }
+
+  .form__submit {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .form-label {
+    padding-left: 1rem;
+  }
+}
