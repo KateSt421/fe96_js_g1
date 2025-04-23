@@ -1,0 +1,147 @@
+@charset "UTF-8";
+:root {
+  /* ----------- Константы ----------- */
+}
+
+/* ----------- Цвета ----------- */
+/* ----------- Стили шрифтов ----------- */
+@font-face {
+  font-family: "Montserrat";
+  src: url("/public/assets/fonts/Montserrat-SemiBold.eot");
+  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("/public/assets/fonts/Montserrat-SemiBold.woff") format("woff"), url("/public/assets/fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("/public/assets/fonts/Montserrat-Regular.eot");
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("/public/assets/fonts/Montserrat-Regular.woff") format("woff"), url("/public/assets/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Belleza";
+  src: url("/public/assets/fonts/Belleza-Regular.eot");
+  src: local("Belleza Regular"), local("Belleza-Regular"), url("/public/assets/fonts/Belleza-Regular.woff2") format("woff2"), url("/public/assets/fonts/Belleza-Regular.woff") format("woff"), url("/public/assets/fonts/Belleza-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Заголовки, на макете шрифты */
+/* Жирные цифры */
+/* Заголовки, на макете шрифт Belleza */
+/* ----------- Размеры отступов, паддингов ----------- */
+/* ----------- Ограничения ширин, шаблоны для @media ----------- */
+/* ----------- Кнопки и ссылки ----------- */
+/* разные настройки размеров кнопок */
+/* ----------- Контейнеры-карточки ----------- */
+@font-face {
+  font-family: "Montserrat";
+  src: url("/public/assets/fonts/Montserrat-SemiBold.eot");
+  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("/public/assets/fonts/Montserrat-SemiBold.woff") format("woff"), url("/public/assets/fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("/public/assets/fonts/Montserrat-Regular.eot");
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("/public/assets/fonts/Montserrat-Regular.woff") format("woff"), url("/public/assets/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Belleza";
+  src: url("/public/assets/fonts/Belleza-Regular.eot");
+  src: local("Belleza Regular"), local("Belleza-Regular"), url("/public/assets/fonts/Belleza-Regular.woff2") format("woff2"), url("/public/assets/fonts/Belleza-Regular.woff") format("woff"), url("/public/assets/fonts/Belleza-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.main_page {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.text_side {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 48rem;
+  width: 42rem;
+  margin: 0;
+}
+
+.text {
+  height: 48rem;
+  width: 42rem;
+  padding: 4rem 3rem;
+}
+
+.text1 {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Belleza";
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.5px;
+  font-size: 5rem;
+  font-style: normal;
+  color: #010101;
+  align-self: stretch;
+}
+
+.text2_button_catalog {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 125%;
+  align-items: center;
+  background: #010101;
+  color: #ffffff;
+  border-radius: 2rem;
+  width: 11rem;
+  height: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.text3 {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 133%;
+  width: 25rem;
+  max-width: 25rem;
+  height: 4rem;
+  color: #000000;
+  margin-right: 17.5rem;
+  margin-bottom: 4rem;
+}
+
+.yandex_map {
+  width: 9rem;
+  height: 3rem;
+}
+
+.picture_side {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 48rem;
+  width: 41rem;
+  margin: 0;
+}
+
+.text2_button_catalog:hover {
+  border-bottom: #010101 1px;
+}
+
+.yandex_map {
+  transition: transform 0.1s;
+}
+
+.yandex_map:hover {
+  transform: scale(1.1);
+}/*# sourceMappingURL=introStyle.css.map */
