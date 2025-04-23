@@ -76,13 +76,12 @@
   flex-direction: column;
   justify-content: flex-start;
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .form__group-row {
   display: flex;
   gap: 1rem;
-  margin-bottom: 1.25rem;
   align-items: flex-start;
 }
 
@@ -91,6 +90,7 @@
   color: rgba(0, 0, 0, 0.64);
   margin-bottom: 0.25rem;
   display: block;
+  padding-left: 1rem;
 }
 
 .half {
@@ -407,6 +407,9 @@ select.cart__input {
   border-radius: 2rem;
   padding: 1.5rem;
   margin-bottom: 2rem;
+}
+.cart__delivery .cart__title {
+  margin-bottom: 1.5rem;
 }
 .cart__btn-pay {
   box-sizing: border-box;
