@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/styles.css">
+    <link rel="stylesheet" href="assets/styles/main_hero_section.css">
+    <link rel="stylesheet" href="assets/styles/header.css">
+    <link rel="stylesheet" href="assets/styles/footer.css">
+    <link rel="stylesheet" href="assets/styles/schedule.css">
+    <link rel="stylesheet" href="assets/styles/participate.css">
+    <title>Flower Shop</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/362708026e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <header class="header">
+      <nav class="header__nav">
+        <!-- бургер меню -->
+        <div class="burger">
+          <div class="burger__field" id="burger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </div>
+
+        <!-- логотип компании -->
+        <div class="nav__logo">
+          <img
+            src="./assets/images/vector_logo.svg"
+            alt="company logo"
+            class="nav__logo-icon"
+          />
+          <a href="/">
+            <img
+              src="./assets/images/vector_Planty.svg"
+              alt="company logo"
+              class="nav__logo-text"
+            />
+          </a>
+        </div>
+
+        <!-- навигация по сайту -->
+        <ul class="nav__menu" id="menu">
+          <li><a href="/" class="nav__menu-plants">Растения</a></li>
+          <li><a href="service.html" class="nav__menu-services">Услуги</a></li>
+          <li><a href="company.html" class="nav__menu-company">О&nbsp;Нас</a></li>
+        </ul>
+
+        <!-- иконки -->
+        <div class="nav__icons">
+
+          <a href="/cart.html" class="cart-link">
+            <i class="fa-regular fa-user fa-sm"></i>
+          </a>
+          <a href="/cart.html" class="cart-link">
+            <span id="cart-count" class="cart-count"></span>
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+        </div>
+      </nav>
+
+      <!-- попап для бургера (для мобилки) -->
+      <div class="header__popup" id="popup"></div>
+    </header>
+
+    <section class="hero">
+        <div class="hero_block_wrapper">
+          <div class="hero_wrapper">
+            <div class="hero_slogan">
+              Зелёная<br>
+              планета
+            <a class="btn_solid_text_52 hero_button" href="#plants-form">Участвовать</a>
+            </div>
+            <div class="hero_description">2% прибыли от всех заказов мы жертвуем на программу восстановления лесов. </div>
+          </div>
+        </div>
+        <div class="hero_image"></div>
+    </section>
+    <main class="container">
+        <h3 class="title-chart">График высадок</h3>
+        <p class="item-description">
+            Деревья - "легкие Земли". Они создают из углекислого газа кислород, необходимый для жизни всего живого на планете. Мы поставили себе амбициозную цель - посадить миллион деревьев.
+        </p>
+        <div class="box-chart"><canvas id="myChart"></canvas></div>
+
+        <div id="plants-form">
+            <div class="upcomingEvents">
+              <h2>Ближайшие мероприятия:</h2>
+              <ul class="eventsList">
+                <li class="eventItem">
+                  <h3>Высадка редких растений в Измайловском парке</h3>
+                  <p><strong>Дата:</strong> 22 мая 2025</p>
+                  <p><strong>Требуется волонтеров:</strong> 15</p>
+                </li>
+                <li class="eventItem">
+                  <h3>Мониторинг популяции орхидей в Битцевском лесу</h3>
+                  <p><strong>Дата:</strong> 1 июня 2025</p>
+                  <p><strong>Требуется волонтеров:</strong> 10</p>
+                </li>
+                <li class="eventItem">
+                  <h3>Образовательная лекция о редких растениях Москвы</h3>
+                  <p><strong>Дата:</strong> 15 июня 2023</p>
+                  <p><strong>Место:</strong> Ботанический сад МГУ</p>
+                </li>
+              </ul>
+            </div>
+        </div>
+
+        <div class="navigation">
+          <a href="/" class="navLink">
+            Поиск растений
+          </a>
+          <a href="/company.html" class="navLink">
+            Карта событий
+          </a>
+        </div>
+
+      <section class="participate-footer">
+        <p>Проект по сохранению редких растений Москвы и Московской области</p>
+      </section>
+
+    </main>
+    <footer >
+        <div class="container">
+            <img src="assets/images/logo.png" alt="Логотип" class="mb-3" style="max-width: 123px;">
+
+        <ul class="list-inline mb-3">
+          <li class="list-inline-item">
+            <a href="/" class="text-dark">Каталог</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="service.html" class="text-dark">Услуги</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="company.html" class="text-dark">Компания</a>
+          </li>
+        </ul>
+        <div class="social-icons">
+          <a
+            class="media-brands"
+            target="_blank"
+            href="#"
+          >
+            <i class="fab fa-vk"></i>&nbsp;
+          </a>
+          <a
+            class="media-brands"
+            href="#"
+            target="_blank"
+          >
+            <i class="fa fa-pinterest-p" aria-hidden="true"></i
+          ></a>
+          <a
+            class="media-brands"
+            href="#"
+            target="_blank"
+          >
+            <i class="fa fa-telegram" aria-hidden="true"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+    <script src="header.js"></script>
+    <script src="schedule.js"></script>
+
+</body>
+</html>
