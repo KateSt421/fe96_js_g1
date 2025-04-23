@@ -99,12 +99,11 @@
   font-size: 0.875rem;
   line-height: 1.25rem;
   padding: 0.625rem 1.25rem;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: #f2f2f3;
+  color: #000000;
   border: none;
   border-radius: 2.5rem;
   cursor: pointer;
-  background-color: #f2f2f3;
-  color: #000000;
 }
 .cart__btn-clear:hover {
   background-color: #677e51;
@@ -160,8 +159,6 @@
   justify-content: center;
 }
 .cart__title {
-  /*@include montserrat_semi_XL;
-  letter-spacing: -0.03rem;*/
   font-size: 2rem;
   font-weight: 400;
   color: rgb(44, 21, 0);
@@ -200,7 +197,6 @@
   font-size: 1.5rem;
   width: 1.5rem;
   height: 1.5rem;
-  line-height: 1.5rem;
   border: none;
   background: none;
   cursor: pointer;
@@ -267,7 +263,6 @@
   border: 1px solid #f2f2f3;
   border-radius: 0.75rem;
   background-color: #ffffff;
-  gap: 0.625rem;
 }
 .cart__promo .promo__btn {
   height: 2.5rem;
@@ -330,8 +325,17 @@
   font-size: 1rem;
   line-height: 150%;
   font-size: 1rem;
-  margin-bottom: 0.5rem;
+  display: block;
   color: rgba(0, 0, 0, 0.64);
+}
+.cart__delivery select.cart__input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url("/assets/images/arrow_drop_down.svg") no-repeat right 1rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+  background-color: #ffffff;
 }
 .cart__delivery .cart__input {
   font-size: 1rem;
@@ -346,14 +350,26 @@
 .cart__delivery .form__group-row {
   display: flex;
   gap: 1rem;
+  margin: 0 0 1.25rem 0;
+  align-items: flex-start;
+}
+.cart__delivery .form__group-row .form__group {
+  flex: 1;
+}
+.cart__delivery .form__group {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
   margin-bottom: 1rem;
 }
-.cart__delivery .form__group-row .half {
+.cart__delivery .half {
   width: 50%;
 }
-.cart__delivery .form__group-row .quarter {
+.cart__delivery .quarter {
   width: 25%;
 }
+
 .cart__btn-pay {
   box-sizing: border-box;
   display: flex;
@@ -384,6 +400,7 @@
   background-color: #9bb96c;
   transform: scale(0.96);
 }
+
 .cart__empty-wrapper {
   display: flex;
   flex-direction: column;
@@ -392,12 +409,14 @@
   gap: 1.6rem;
   padding: 4rem 0;
 }
+
 .cart__empty-img {
   width: 8rem;
   height: 8rem;
   -o-object-fit: contain;
      object-fit: contain;
 }
+
 .cart__empty-text {
   /* служебный миксин, его использовать не надо */
   font-family: "Montserrat";
@@ -408,7 +427,70 @@
   margin: 0;
   text-align: center;
 }
-.cart .form__submit {
+
+.form__submit {
   text-align: center;
   margin-top: 2rem;
+}
+
+.cart__input,
+.promo__input {
+  border: 1px solid #f2f2f3;
+  background-color: #ffffff;
+  color: #000000;
+}
+.cart__input::-moz-placeholder, .promo__input::-moz-placeholder {
+  color: #b1b1b1;
+}
+.cart__input::placeholder,
+.promo__input::placeholder {
+  color: #b1b1b1;
+}
+.cart__input:hover:-moz-placeholder-shown, .promo__input:hover:-moz-placeholder-shown {
+  border-color: #677e51;
+}
+.cart__input:hover:placeholder-shown,
+.promo__input:hover:placeholder-shown {
+  border-color: #677e51;
+}
+.cart__input:hover:not(:-moz-placeholder-shown), .promo__input:hover:not(:-moz-placeholder-shown) {
+  border-color: #677e51;
+}
+.cart__input:hover:not(:placeholder-shown),
+.promo__input:hover:not(:placeholder-shown) {
+  border-color: #677e51;
+}
+.cart__input:focus,
+.promo__input:focus {
+  outline: none;
+  border-color: #b1b1b1;
+}
+.cart__input.error:-moz-placeholder-shown, .promo__input.error:-moz-placeholder-shown {
+  border-color: #fa6c59;
+  color: #fa6c59;
+}
+.cart__input.error:placeholder-shown,
+.promo__input.error:placeholder-shown {
+  border-color: #fa6c59;
+  color: #fa6c59;
+}
+.cart__input.error:placeholder-shown::-moz-placeholder, .promo__input.error:placeholder-shown::-moz-placeholder {
+  color: #fa6c59;
+}
+.cart__input.error:-moz-placeholder-shown::placeholder, .promo__input.error:-moz-placeholder-shown::placeholder {
+  color: #fa6c59;
+}
+.cart__input.error:placeholder-shown::placeholder,
+.promo__input.error:placeholder-shown::placeholder {
+  color: #fa6c59;
+}
+.cart__input.error:-moz-placeholder-shown:hover, .cart__input.error:-moz-placeholder-shown:focus, .cart__input.error:not(:-moz-placeholder-shown), .cart__input.error:not(:-moz-placeholder-shown):hover, .promo__input.error:-moz-placeholder-shown:hover, .promo__input.error:-moz-placeholder-shown:focus, .promo__input.error:not(:-moz-placeholder-shown), .promo__input.error:not(:-moz-placeholder-shown):hover {
+  border-color: #fa6c59;
+}
+.cart__input.error:placeholder-shown:hover, .cart__input.error:placeholder-shown:focus, .cart__input.error:not(:placeholder-shown), .cart__input.error:not(:placeholder-shown):hover,
+.promo__input.error:placeholder-shown:hover,
+.promo__input.error:placeholder-shown:focus,
+.promo__input.error:not(:placeholder-shown),
+.promo__input.error:not(:placeholder-shown):hover {
+  border-color: #fa6c59;
 }/*# sourceMappingURL=cart.css.map */
