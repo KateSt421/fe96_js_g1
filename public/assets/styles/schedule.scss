@@ -2,11 +2,11 @@
 .text-chart{
     @font-face {
         font-family: 'Belleza';
-        src: url('/public/assets/fonts/Belleza-Regular.eot');
+        src: url('../fonts/Belleza-Regular.eot');
         src: local('Belleza Regular'), local('Belleza-Regular'),
-            url('/public/assets/fonts/Belleza-Regular.woff2') format('woff2'),
-            url('/public/assets/fonts/Belleza-Regular.woff') format('woff'),
-            url('/public/assets/fonts/Belleza-Regular.ttf') format('truetype');
+            url('../fonts/Belleza-Regular.woff2') format('woff2'),
+            url('../fonts/Belleza-Regular.woff') format('woff'),
+            url('../fonts/Belleza-Regular.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
     }
@@ -14,16 +14,16 @@
 .title-chart{
     @font-face {
         font-family: 'Montserrat';
-        src: url('/public/assets/fonts/Montserrat-SemiBold.eot');
+        src: url('../fonts/Montserrat-SemiBold.eot');
         src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'),
-            url('/public/assets/fonts/Montserrat-SemiBold.woff') format('woff'),
-            url('/public/assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
+            url('../fonts/Montserrat-SemiBold.woff') format('woff'),
+            url('../fonts/Montserrat-SemiBold.ttf') format('truetype');
         font-weight: 600;
         font-style: normal;
         
     }
 }
 .box-chart{
-    width: 80%;
-    height: 80%;
+    width: 98%;
+    height: 50rem;
 }
