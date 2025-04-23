@@ -18,6 +18,99 @@
   line-height: 1.25rem; // 20px
 }
 
+// ========== GLOBAL FORM UTILITIES ==========
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.form__group-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  align-items: flex-start;
+}
+
+.form-label {
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.64);
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.half {
+  width: 50%;
+}
+
+.quarter {
+  width: 25%;
+}
+
+// ========== INPUT STYLES ==========
+
+.cart__input,
+.promo__input {
+  font-size: 1rem;
+  color: $Grey_02;
+  background-color: $White_00;
+  border: 1px solid $Grey_94;
+  border-radius: 0.75rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  padding: 0 1rem;
+  width: 100%;
+
+  &::placeholder {
+    color: $Grey_02;
+  }
+
+  &:hover:placeholder-shown,
+  &:hover:not(:placeholder-shown) {
+    border-color: $Green_67;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $Grey_02;
+  }
+
+  &.error:placeholder-shown {
+    border-color: $Orange_00;
+    color: $Orange_00;
+
+    &::placeholder {
+      color: $Orange_00;
+    }
+  }
+
+  &.error:placeholder-shown:hover,
+  &.error:placeholder-shown:focus,
+  &.error:not(:placeholder-shown),
+  &.error:not(:placeholder-shown):hover {
+    border-color: $Orange_00;
+  }
+}
+
+select.cart__input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  color: $Grey_02;
+  background-color: $White_00;
+  background-image: url('/assets/images/arrow_drop_down.svg');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+}
+
+// ========== CART STYLES ==========
+
 .cart {
   padding: 3rem;
   padding-bottom: 6rem;
@@ -31,15 +124,15 @@
   &__header {
     background-color: rgba(0, 0, 0, 0.02);
     border-radius: 2rem;
-    padding: 1rem 1.5rem 1.75rem 1.5rem;
+    padding: 1rem 1.5rem 1.75rem;
     margin-bottom: 2rem;
-  }
 
-  &__header-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
+    &-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
   }
 
   &__btn-clear {
@@ -77,7 +170,6 @@
     border-radius: 2rem;
     background-color: $White_00;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.02);
-    width: 100%;
     height: 7rem;
 
     img {
@@ -89,7 +181,7 @@
     }
   }
 
-  .cart__controls {
+  &__controls {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -97,7 +189,7 @@
     justify-content: flex-end;
   }
 
-  .cart__item-content {
+  &__item-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -120,16 +212,15 @@
   }
 
   &__name,
-  &__unit-price {
+  &__unit-price,
+  &__unit-comment {
     @include montserrat_semi_M;
     margin-bottom: 0.25rem;
   }
 
   &__unit-comment {
-    @include montserrat_semi_M;
     color: $Grey_02;
     font-weight: 400;
-    margin-bottom: 0.25rem;
   }
 
   &__quantity-controls {
@@ -205,12 +296,6 @@
 
     .promo__input {
       width: 18.375rem;
-      height: 2.5rem;
-      padding: 0.75rem;
-      font-size: 1rem;
-      border: 1px solid $Grey_94;
-      border-radius: 0.75rem;
-      background-color: $White_00;
     }
 
     .promo__btn {
@@ -227,7 +312,6 @@
 
       &:hover {
         background-color: $Green_67;
-        color: $White_00;
       }
 
       &:active {
@@ -246,8 +330,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
-    padding-right: 1.5rem;
-    padding-left: 2rem;
+    padding: 0 1.5rem;
 
     p,
     h3,
@@ -263,149 +346,52 @@
     border-radius: 2rem;
     padding: 1.5rem;
     margin-bottom: 2rem;
-
-    .form-label {
-      @include montserrat_regular_S;
-      font-size: 1rem;
-      display: block;
-      color: rgba(0, 0, 0, 0.64);
-    }
-
-    select.cart__input {
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      background: url('/assets/images/arrow_drop_down.svg') no-repeat right 1rem
-        center;
-      background-size: 1rem;
-      padding-right: 2.5rem;
-      background-color: $White_00;
-    }
-
-    .cart__input {
-      font-size: 1rem;
-      color: $Grey_02;
-      border: 1px solid $Grey_94;
-      border-radius: 0.75rem;
-      height: 2.5rem;
-      line-height: 2.5rem;
-      padding: 0 1rem;
-      width: 100%;
-    }
-
-    .form__group-row {
-      display: flex;
-      gap: 1rem;
-      margin: 0 0 1.25rem 0;
-      align-items: flex-start;
-
-      .form__group {
-        flex: 1;
-      }
-    }
-
-    .form__group {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      width: 100%;
-      margin-bottom: 1rem;
-    }
-
-    .half {
-      width: 50%;
-    }
-
-    .quarter {
-      width: 25%;
-    }
   }
-}
 
-.cart__btn-pay {
-  @include btn_text_52;
-  display: block;
-  margin: 2rem auto 0;
-  background-color: $Black_00;
-  color: $White_00;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-
-  &:hover {
-    background-color: $Green_67;
+  &__btn-pay {
+    @include btn_text_52;
+    display: block;
+    margin: 2rem auto 0;
+    background-color: $Black_00;
     color: $White_00;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+
+    &:hover {
+      background-color: $Green_67;
+    }
+
+    &:active {
+      background-color: $Green_96;
+      transform: scale(0.96);
+    }
   }
 
-  &:active {
-    background-color: $Green_96;
-    transform: scale(0.96);
+  &__empty-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+    padding: 4rem 0;
   }
-}
 
-.cart__empty-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1.6rem;
-  padding: 4rem 0;
-}
+  &__empty-img {
+    width: 8rem;
+    height: 8rem;
+    object-fit: contain;
+  }
 
-.cart__empty-img {
-  width: 8rem;
-  height: 8rem;
-  object-fit: contain;
-}
-
-.cart__empty-text {
-  @include montserrat_semi_M;
-  font-size: 1.25rem;
-  margin: 0;
-  text-align: center;
+  &__empty-text {
+    @include montserrat_semi_M;
+    font-size: 1.25rem;
+    margin: 0;
+    text-align: center;
+  }
 }
 
 .form__submit {
   text-align: center;
   margin-top: 2rem;
-}
-
-.cart__input,
-.promo__input {
-  border: 1px solid $Grey_94;
-  background-color: $White_00;
-  color: $Black_00;
-
-  &::placeholder {
-    color: $Grey_02;
-  }
-
-  &:hover:placeholder-shown {
-    border-color: $Green_67;
-  }
-
-  &:hover:not(:placeholder-shown) {
-    border-color: $Green_67;
-  }
-
-  &:focus {
-    outline: none;
-    border-color: $Grey_02;
-  }
-
-  &.error:placeholder-shown {
-    border-color: $Orange_00;
-    color: $Orange_00;
-
-    &::placeholder {
-      color: $Orange_00;
-    }
-  }
-
-  &.error:placeholder-shown:hover,
-  &.error:placeholder-shown:focus,
-  &.error:not(:placeholder-shown),
-  &.error:not(:placeholder-shown):hover {
-    border-color: $Orange_00;
-  }
 }
