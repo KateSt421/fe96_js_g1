@@ -12,6 +12,6 @@ buttonCatalog.addEventListener(`click`,function (){
       })
 
 // Функция для изображения рейтинга в яндекс для перехода на ссылку с адресом магазина
-      document.querySelector(`.yandex_link`).addEventListener(`click`,function(){
+      document.querySelector(`.yandex_map`).addEventListener(`click`,function(){
         window.location.href="https://yandex.ru/maps/org/krapiva/228180338570/?ll=37.640482%2C55.740109&mode=search&sll=37.640482%2C55.740109&sspn=0.136860%2C0.058641&text=Магазины растений&z=13.4";
       })
