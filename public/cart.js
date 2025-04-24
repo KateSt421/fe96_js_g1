@@ -200,13 +200,150 @@ class CartManager {
       })
     }
 
-    // Оформление заказа
+    /* Оформление заказа
     document.getElementById('checkout-form').addEventListener('submit', (e) => {
       e.preventDefault()
       alert('Order placed successfully!')
       localStorage.removeItem('cart')
       this.loadCart()
+    }) */
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault()
+
+      const isNameValid = this.validateField(
+        document.getElementById('name'),
+        this.regex.name
+      )
+      const isStreetValid = this.validateField(
+        document.getElementById('street'),
+        this.regex.street
+      )
+      const isHouseValid = this.validateField(
+        document.getElementById('house'),
+        this.regex.house
+      )
+      const isAptValid = this.validateField(
+        document.getElementById('apt'),
+        this.regex.apt
+      )
+      const isDateValid = this.validateDate(document.getElementById('date'))
+      const isTimeValid = this.validateTime(document.getElementById('time'))
+
+      if (
+        isNameValid &&
+        isStreetValid &&
+        isHouseValid &&
+        isAptValid &&
+        isDateValid &&
+        isTimeValid
+      ) {
+        alert('Форма успешно отправлена!')
+        localStorage.removeItem('cart')
+        this.loadCart()
+      }
     })
+
+    document
+      .getElementById('name')
+      .addEventListener('input', (e) =>
+        this.validateField(e.target, this.regex.name)
+      )
+    document
+      .getElementById('street')
+      .addEventListener('input', (e) =>
+        this.validateField(e.target, this.regex.street)
+      )
+    document
+      .getElementById('house')
+      .addEventListener('input', (e) =>
+        this.validateField(e.target, this.regex.house)
+      )
+    document
+      .getElementById('apt')
+      .addEventListener('input', (e) =>
+        this.validateField(e.target, this.regex.apt)
+      )
+    document
+      .getElementById('date')
+      .addEventListener('change', (e) => this.validateDate(e.target))
+    document
+      .getElementById('time')
+      .addEventListener('change', (e) => this.validateTime(e.target))
+  }
+
+  get regex() {
+    return {
+      name: /^(?!.*[- ]{2})[a-zA-Zа-яА-ЯёЁ][a-zA-Zа-яА-ЯёЁ\s-]*[a-zA-Zа-яА-ЯёЁ]$/u,
+      street: /^(?=.*[a-zA-Zа-яА-ЯёЁ])[a-zA-Zа-яА-ЯёЁ0-9\s\-,.]{3,50}$/u,
+      house:
+        /^(?:\d+[a-zA-Zа-яА-ЯёЁ]?|[a-zA-Zа-яА-ЯёЁ]\d*)(?:\/\d+[a-zA-Zа-яА-ЯёЁ]?)?$/u,
+      apt: /^(?:\d+[a-zA-Zа-яА-ЯёЁ]?|[a-zA-Zа-яА-ЯёЁ]\d*)(?:\/\d+[a-zA-Zа-яА-ЯёЁ]?)?$/u,
+    }
+  }
+
+  validateField(field, regex) {
+    const value = field.value.trim()
+    const errorElement = field.nextElementSibling
+
+    if (!value) {
+      field.classList.add('is-invalid')
+      field.classList.remove('is-valid')
+      errorElement.textContent = `Поле обязательно`
+      return false
+    }
+
+    const isValid = regex.test(value)
+    if (!isValid) {
+      field.classList.add('is-invalid')
+      field.classList.remove('is-valid')
+      errorElement.textContent = `Некорректное значение`
+    } else {
+      field.classList.remove('is-invalid')
+      field.classList.add('is-valid')
+      errorElement.textContent = ''
+    }
+    return isValid
+  }
+
+  validateDate(dateField) {
+    if (!dateField.value) {
+      dateField.classList.add('is-invalid')
+      dateField.classList.remove('is-valid')
+      return false
+    }
+
+    const selectedDate = new Date(dateField.value + 'T00:00:00')
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
+    const maxDate = new Date()
+    maxDate.setFullYear(today.getFullYear() + 2)
+
+    const isValid = selectedDate >= today && selectedDate <= maxDate
+
+    if (!isValid) {
+      dateField.classList.add('is-invalid')
+      dateField.classList.remove('is-valid')
+      dateField.nextElementSibling.textContent = 'Выберите корректную дату'
+    } else {
+      dateField.classList.remove('is-invalid')
+      dateField.classList.add('is-valid')
+      dateField.nextElementSibling.textContent = ''
+    }
+
+    return isValid
+  }
+
+  validateTime(timeField) {
+    const isValid = timeField.value && timeField.value !== 'Любое'
+    if (!isValid) {
+      timeField.classList.add('is-invalid')
+      timeField.classList.remove('is-valid')
+    } else {
+      timeField.classList.remove('is-invalid')
+      timeField.classList.add('is-valid')
+    }
+    return isValid
   }
 }
 
