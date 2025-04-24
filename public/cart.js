@@ -213,16 +213,19 @@ class CartManager {
     form.addEventListener('submit', (e) => {
       e.preventDefault()
 
-      const isValid =
-        this.validateField(document.getElementById('name'), this.regex.name) &
+      const validations = [
+        this.validateField(document.getElementById('name'), this.regex.name),
         this.validateField(
           document.getElementById('street'),
           this.regex.street
-        ) &
-        this.validateField(document.getElementById('house'), this.regex.house) &
-        this.validateField(document.getElementById('apt'), this.regex.apt) &
-        this.validateDate(dateInput) &
-        this.validateTime(timeInput)
+        ),
+        this.validateField(document.getElementById('house'), this.regex.house),
+        this.validateField(document.getElementById('apt'), this.regex.apt),
+        this.validateDate(dateInput),
+        this.validateTime(timeInput),
+      ]
+
+      const isValid = validations.every(Boolean)
 
       if (isValid) {
         alert('Форма успешно отправлена!')
@@ -245,48 +248,37 @@ class CartManager {
     const value = field.value.trim()
     const error = field.nextElementSibling
 
+    const errorMessages = {
+      name: {
+        empty: 'Укажите имя',
+        invalid: 'Такого получателя не существует',
+      },
+      street: {
+        empty: 'Добавьте улицу',
+        invalid: 'Такой улицы не существует',
+      },
+      house: {
+        empty: 'Добавьте номер дома',
+        invalid: 'Такого номера дома не существует',
+      },
+      apt: {
+        empty: 'Добавьте номер квартиры',
+        invalid: 'Неверный номер квартиры',
+      },
+    }
+
+    const id = field.id
     if (!value) {
       field.classList.add('is-invalid')
       field.classList.remove('is-valid')
-      error.textContent = 'Поле обязательно'
+      error.textContent = errorMessages[id].empty
       return false
     }
 
-    const valid = regex.test(value)
-    if (!valid) {
+    if (!regex.test(value)) {
       field.classList.add('is-invalid')
       field.classList.remove('is-valid')
-      error.textContent = 'Некорректное значение'
-      return false
-    }
-
-    field.classList.remove('is-invalid')
-    field.classList.add('is-valid')
-    error.textContent = ''
-    return true
-  }
-
-  validateDate(field) {
-    const error = field.nextElementSibling
-    if (!field.value) {
-      field.classList.add('is-invalid')
-      field.classList.remove('is-valid')
-      error.textContent = 'Выберите дату'
-      return false
-    }
-
-    field.classList.remove('is-invalid')
-    field.classList.add('is-valid')
-    error.textContent = ''
-    return true
-  }
-
-  validateTime(field) {
-    const error = field.nextElementSibling
-    if (!field.value || field.value === 'Любое') {
-      field.classList.add('is-invalid')
-      field.classList.remove('is-valid')
-      error.textContent = 'Выберите время'
+      error.textContent = errorMessages[id].invalid
       return false
     }
 
