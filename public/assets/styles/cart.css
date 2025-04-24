@@ -588,47 +588,86 @@ select.cart__input.is-valid {
   }
 }
 @media (max-width: 400px) {
+  .cart__item {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+  .cart__image {
+    width: 3rem;
+    height: 3rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 0.5rem;
+    flex-shrink: 0;
+  }
+  .cart__item-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  .cart__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+    margin: 0;
+  }
+  .cart__name {
+    font-size: 0.875rem;
+    line-height: 1.2;
+    font-weight: 500;
+    margin: 0;
+  }
+  .cart__unit-price {
+    font-size: 0.75rem;
+    color: #888;
+    margin: 0;
+  }
+  /* Картинка + детали теперь флексом — в строку! */
   .cart__item-content {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 100%;
   }
-  .cart__details {
-    flex: 1 1 50%;
-    min-width: 50%;
-  }
+  /* Quantity, price и корзина */
   .cart__controls {
-    flex: 1 1 50%;
-    min-width: 50%;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.25rem;
+    flex-wrap: nowrap;
   }
   .cart__quantity-controls {
-    order: -1;
-    align-self: flex-end;
-    justify-content: flex-end;
-    gap: 0.25rem;
+    display: flex;
+    gap: 0.125rem;
+    align-items: center;
   }
   .cart__price-total {
-    margin: 0;
-    text-align: right;
     font-size: 1rem;
     white-space: nowrap;
   }
   .cart__delete {
-    align-self: flex-end;
+    padding: 0;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
   }
   .cart__count {
-    width: 3rem;
-    font-size: 1rem;
-    height: 2.5rem;
-    line-height: 2.5rem;
-    border-radius: 0.5rem;
+    width: 2.25rem;
+    height: 2.25rem;
     border: 1px solid #f2f2f3;
+    border-radius: 0.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
   }
   .cart__promo {
     flex-direction: column;
