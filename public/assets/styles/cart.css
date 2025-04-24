@@ -538,4 +538,34 @@ select.cart__input {
   .form-label {
     padding-left: 1rem;
   }
+}
+.cart__input.is-valid {
+  border-color: #677e51;
+  color: #000000;
+}
+
+.cart__input.is-invalid {
+  border-color: #fa6c59;
+  color: #fa6c59;
+}
+.cart__input.is-invalid::-moz-placeholder {
+  color: #fa6c59;
+}
+.cart__input.is-invalid::placeholder {
+  color: #fa6c59;
+}
+
+select.cart__input.is-invalid {
+  color: #fa6c59;
+}
+
+select.cart__input.is-valid {
+  color: #000000;
+}
+
+.form-error {
+  font-size: 0.875rem;
+  color: #fa6c59;
+  margin-top: 0.25rem;
+  padding-left: 1rem;
 }/*# sourceMappingURL=cart.css.map */

@@ -65,6 +65,7 @@
               placeholder="Имя"
               required
             />
+            <div class="form-error"></div>
           </div>
 
           <div class="form__group-row">
@@ -77,6 +78,7 @@
                 placeholder="ул.Ленина"
                 required
               />
+              <div class="form-error"></div>
             </div>
             <div class="form__group quarter">
               <label for="house" class="form-label">Дом*</label>
@@ -87,6 +89,7 @@
                 placeholder="12к1"
                 required
               />
+              <div class="form-error"></div>
             </div>
             <div class="form__group quarter">
               <label for="apt" class="form-label">Квартира / офис*</label>
@@ -97,18 +100,25 @@
                 placeholder="12"
                 required
               />
+              <div class="form-error"></div>
             </div>
           </div>
 
           <div class="form__group-row">
             <div class="form__group half">
               <label for="date" class="form-label">Дата</label>
-              <input type="date" id="date" class="cart__input input--date" />
+              <input
+                type="date"
+                id="date"
+                class="cart__input input--date"
+                required
+              />
+              <div class="form-error"></div>
             </div>
             <div class="form__group half">
               <label for="time" class="form-label">Время</label>
-              <select id="time" class="cart__input input--time">
-                <option selected>Любое</option>
+              <select id="time" class="cart__input input--time" required>
+                <option value="" selected disabled hidden>Любое</option>
                 <option>08:00 - 10:00</option>
                 <option>10:00 - 12:00</option>
                 <option>12:00 - 14:00</option>
@@ -117,6 +127,7 @@
                 <option>18:00 - 20:00</option>
                 <option>20:00 - 22:00</option>
               </select>
+              <div class="form-error"></div>
             </div>
           </div>
         </section>

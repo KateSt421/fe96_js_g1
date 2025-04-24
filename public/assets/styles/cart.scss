@@ -486,3 +486,34 @@ select.cart__input {
     padding-left: 1rem;
   }
 }
+
+// ========== VALIDATION STYLES ==========
+
+.cart__input.is-valid {
+  border-color: $Green_67;
+  color: $Black_00;
+}
+
+.cart__input.is-invalid {
+  border-color: $Orange_00;
+  color: $Orange_00;
+
+  &::placeholder {
+    color: $Orange_00;
+  }
+}
+
+select.cart__input.is-invalid {
+  color: $Orange_00;
+}
+
+select.cart__input.is-valid {
+  color: $Black_00;
+}
+
+.form-error {
+  font-size: 0.875rem;
+  color: $Orange_00;
+  margin-top: 0.25rem;
+  padding-left: 1rem;
+}

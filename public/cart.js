@@ -18,12 +18,16 @@ class CartManager {
     if (applyPromoBtn && promoInput) {
       applyPromoBtn.addEventListener('click', () => {
         const enteredCode = promoInput.value.trim().toLowerCase()
-        if (enteredCode === 'trava') {
-          this.activePromoCode = 'trava'
-        } else {
+        this.activePromoCode = enteredCode === 'trava' ? 'trava' : null
+        this.loadCart()
+      })
+
+      promoInput.addEventListener('input', () => {
+        const currentCode = promoInput.value.trim().toLowerCase()
+        if (currentCode !== 'trava') {
           this.activePromoCode = null
+          this.loadCart()
         }
-        this.loadCart() // пересчитать всё с учётом промокода
       })
     }
   }
@@ -54,7 +58,6 @@ class CartManager {
           </div>
         `
       }
-
       return
     } else {
       if (promoWrapper) promoWrapper.style.display = 'flex'
@@ -69,56 +72,56 @@ class CartManager {
   }
 
   displayCart(items) {
-    console.log(document)
     const cartItems = document.getElementById('cart-items')
     if (!cartItems) return
 
     cartItems.innerHTML = items
       .map((item) => {
         const isService = item.category === 'service'
-
         return `
-    <div class="cart__item">
-      <img src="${item.image}" alt="${item.name}" class="cart__image" />
-
-      <div class="cart__item-content">
-        <div class="cart__details">
-          <p class="cart__name">${item.name}</p>
-          <p class="cart__unit-price ${isService ? 'cart__unit-comment' : ''}">
-  ${isService ? item.comment : item.price.toLocaleString('ru-RU') + ' ₽'}
-</p>
-        </div>
-
-        <div class="cart__controls">
-          ${
-            !isService
-              ? `
-            <div class="cart__quantity-controls">
-              <button class="cart__btn" onclick="cartManager.updateQuantity(${item.id}, -1)">-</button>
-              <span class="cart__count">${item.quantity}</span>
-              <button class="cart__btn" onclick="cartManager.updateQuantity(${item.id}, 1)">+</button>
+        <div class="cart__item">
+          <img src="${item.image}" alt="${item.name}" class="cart__image" />
+          <div class="cart__item-content">
+            <div class="cart__details">
+              <p class="cart__name">${item.name}</p>
+              <p class="cart__unit-price ${
+                isService ? 'cart__unit-comment' : ''
+              }">
+                ${
+                  isService
+                    ? item.comment
+                    : item.price.toLocaleString('ru-RU') + ' ₽'
+                }
+              </p>
             </div>
-          `
-              : ''
-          }
-
-          <div class="cart__price-total">
-            <span id="subtotal">${
-              isService
-                ? item.price.toLocaleString('ru-RU') + ' ₽'
-                : (item.price * item.quantity).toLocaleString('ru-RU') + ' ₽'
-            }</span>
+            <div class="cart__controls">
+              ${
+                !isService
+                  ? `
+                <div class="cart__quantity-controls">
+                  <button class="cart__btn" onclick="cartManager.updateQuantity(${item.id}, -1)">-</button>
+                  <span class="cart__count">${item.quantity}</span>
+                  <button class="cart__btn" onclick="cartManager.updateQuantity(${item.id}, 1)">+</button>
+                </div>`
+                  : ''
+              }
+              <div class="cart__price-total">
+                <span id="subtotal">${
+                  isService
+                    ? item.price.toLocaleString('ru-RU') + ' ₽'
+                    : (item.price * item.quantity).toLocaleString('ru-RU') +
+                      ' ₽'
+                }</span>
+              </div>
+              <button class="cart__delete" onclick="cartManager.removeItem(${
+                item.id
+              })">
+                <img src="assets/images/clear_cart.svg" alt="Delete item" />
+              </button>
+            </div>
           </div>
-
-          <button class="cart__delete" onclick="cartManager.removeItem(${
-            item.id
-          })">
-            <img src="assets/images/clear_cart.svg" alt="Delete item" />
-          </button>
         </div>
-      </div>
-    </div>
-    `
+      `
       })
       .join('')
   }
@@ -126,7 +129,6 @@ class CartManager {
   updateQuantity(itemId, change) {
     let cart = JSON.parse(localStorage.getItem('cart') || '[]')
     const item = cart.find((item) => item.id === itemId)
-
     if (item) {
       item.quantity = Math.max(0, item.quantity + change)
       if (item.quantity === 0) {
@@ -135,15 +137,11 @@ class CartManager {
       localStorage.setItem('cart', JSON.stringify(cart))
       this.loadCart()
       this.calculateTotals(cart)
-      // Обновление цены товара производится в loadCart, поэтому отдельный updatePrice не обязателен
     }
   }
 
   calculateDiscount(total) {
-    if (this.activePromoCode === 'trava' && total > 100) {
-      return total * 0.1
-    }
-    return 0
+    return this.activePromoCode === 'trava' && total > 100 ? total * 0.1 : 0
   }
 
   calculateTotals(items) {
@@ -154,9 +152,6 @@ class CartManager {
     const discount = this.calculateDiscount(subtotal)
     const total = subtotal - discount
 
-    //document.getElementById(
-    //  'subtotal'
-    //).textContent = `${subtotal.toLocaleString('ru-RU')} ₽`
     document.getElementById(
       'discount'
     ).textContent = `${discount.toLocaleString('ru-RU')} ₽`
@@ -173,177 +168,132 @@ class CartManager {
   }
 
   initCheckout() {
-    const applyPromoBtn = document.querySelector('.promo__btn')
-    const promoInput = document.querySelector('.promo__input')
+    const form = document.getElementById('checkout-form')
+    const dateInput = document.getElementById('date')
+    const timeInput = document.getElementById('time')
 
-    if (applyPromoBtn && promoInput) {
-      // При клике "Применить"
-      applyPromoBtn.addEventListener('click', () => {
-        const enteredCode = promoInput.value.trim().toLowerCase()
-
-        if (enteredCode === 'trava') {
-          this.activePromoCode = 'trava'
+    const today = new Date()
+    const dd = String(today.getDate()).padStart(2, '0')
+    const mm = String(today.getMonth() + 1).padStart(2, '0')
+    const yyyy = today.getFullYear()
+    const formatted = `${yyyy}-${mm}-${dd}`
+    if (dateInput) {
+      dateInput.value = formatted
+      dateInput.dataset.default = 'true'
+      dateInput.addEventListener('change', () => {
+        if (!dateInput.value) {
+          dateInput.value = formatted
+          dateInput.dataset.default = 'true'
         } else {
-          this.activePromoCode = null
-        }
-
-        this.loadCart()
-      })
-
-      // При изменении инпута — сбрасываем скидку
-      promoInput.addEventListener('input', () => {
-        const currentCode = promoInput.value.trim().toLowerCase()
-        if (currentCode !== 'trava') {
-          this.activePromoCode = null
-          this.loadCart()
+          dateInput.removeAttribute('data-default')
         }
       })
     }
 
-    /* Оформление заказа
-    document.getElementById('checkout-form').addEventListener('submit', (e) => {
-      e.preventDefault()
-      alert('Order placed successfully!')
-      localStorage.removeItem('cart')
-      this.loadCart()
-    }) */
+    if (timeInput) {
+      const updateColor = () => {
+        timeInput.style.color =
+          timeInput.value && timeInput.value !== 'Любое'
+            ? '#000'
+            : 'rgba(0, 0, 0, 0.4)'
+      }
+      updateColor()
+      timeInput.addEventListener('change', updateColor)
+    }
+
+    const fields = ['name', 'street', 'house', 'apt']
+    fields.forEach((id) => {
+      const el = document.getElementById(id)
+      el.addEventListener('input', () => this.validateField(el, this.regex[id]))
+    })
+
+    dateInput.addEventListener('change', () => this.validateDate(dateInput))
+    timeInput.addEventListener('change', () => this.validateTime(timeInput))
 
     form.addEventListener('submit', (e) => {
       e.preventDefault()
 
-      const isNameValid = this.validateField(
-        document.getElementById('name'),
-        this.regex.name
-      )
-      const isStreetValid = this.validateField(
-        document.getElementById('street'),
-        this.regex.street
-      )
-      const isHouseValid = this.validateField(
-        document.getElementById('house'),
-        this.regex.house
-      )
-      const isAptValid = this.validateField(
-        document.getElementById('apt'),
-        this.regex.apt
-      )
-      const isDateValid = this.validateDate(document.getElementById('date'))
-      const isTimeValid = this.validateTime(document.getElementById('time'))
+      const isValid =
+        this.validateField(document.getElementById('name'), this.regex.name) &
+        this.validateField(
+          document.getElementById('street'),
+          this.regex.street
+        ) &
+        this.validateField(document.getElementById('house'), this.regex.house) &
+        this.validateField(document.getElementById('apt'), this.regex.apt) &
+        this.validateDate(dateInput) &
+        this.validateTime(timeInput)
 
-      if (
-        isNameValid &&
-        isStreetValid &&
-        isHouseValid &&
-        isAptValid &&
-        isDateValid &&
-        isTimeValid
-      ) {
+      if (isValid) {
         alert('Форма успешно отправлена!')
         localStorage.removeItem('cart')
         this.loadCart()
       }
     })
-
-    document
-      .getElementById('name')
-      .addEventListener('input', (e) =>
-        this.validateField(e.target, this.regex.name)
-      )
-    document
-      .getElementById('street')
-      .addEventListener('input', (e) =>
-        this.validateField(e.target, this.regex.street)
-      )
-    document
-      .getElementById('house')
-      .addEventListener('input', (e) =>
-        this.validateField(e.target, this.regex.house)
-      )
-    document
-      .getElementById('apt')
-      .addEventListener('input', (e) =>
-        this.validateField(e.target, this.regex.apt)
-      )
-    document
-      .getElementById('date')
-      .addEventListener('change', (e) => this.validateDate(e.target))
-    document
-      .getElementById('time')
-      .addEventListener('change', (e) => this.validateTime(e.target))
   }
 
   get regex() {
     return {
-      name: /^(?!.*[- ]{2})[a-zA-Zа-яА-ЯёЁ][a-zA-Zа-яА-ЯёЁ\s-]*[a-zA-Zа-яА-ЯёЁ]$/u,
-      street: /^(?=.*[a-zA-Zа-яА-ЯёЁ])[a-zA-Zа-яА-ЯёЁ0-9\s\-,.]{3,50}$/u,
-      house:
-        /^(?:\d+[a-zA-Zа-яА-ЯёЁ]?|[a-zA-Zа-яА-ЯёЁ]\d*)(?:\/\d+[a-zA-Zа-яА-ЯёЁ]?)?$/u,
-      apt: /^(?:\d+[a-zA-Zа-яА-ЯёЁ]?|[a-zA-Zа-яА-ЯёЁ]\d*)(?:\/\d+[a-zA-Zа-яА-ЯёЁ]?)?$/u,
+      name: /^[a-zA-Zа-яА-ЯёЁ\s-]{2,}$/,
+      street: /^[a-zA-Zа-яА-ЯёЁ0-9\s\-,.]{3,}$/,
+      house: /^\d+[a-zа-яА-ЯёЁA-Z]?$/,
+      apt: /^\d+[a-zа-яА-ЯёЁA-Z]?$/,
     }
   }
 
   validateField(field, regex) {
     const value = field.value.trim()
-    const errorElement = field.nextElementSibling
+    const error = field.nextElementSibling
 
     if (!value) {
       field.classList.add('is-invalid')
       field.classList.remove('is-valid')
-      errorElement.textContent = `Поле обязательно`
+      error.textContent = 'Поле обязательно'
       return false
     }
 
-    const isValid = regex.test(value)
-    if (!isValid) {
+    const valid = regex.test(value)
+    if (!valid) {
       field.classList.add('is-invalid')
       field.classList.remove('is-valid')
-      errorElement.textContent = `Некорректное значение`
-    } else {
-      field.classList.remove('is-invalid')
-      field.classList.add('is-valid')
-      errorElement.textContent = ''
-    }
-    return isValid
-  }
-
-  validateDate(dateField) {
-    if (!dateField.value) {
-      dateField.classList.add('is-invalid')
-      dateField.classList.remove('is-valid')
+      error.textContent = 'Некорректное значение'
       return false
     }
 
-    const selectedDate = new Date(dateField.value + 'T00:00:00')
-    const today = new Date()
-    today.setHours(0, 0, 0, 0)
-    const maxDate = new Date()
-    maxDate.setFullYear(today.getFullYear() + 2)
-
-    const isValid = selectedDate >= today && selectedDate <= maxDate
-
-    if (!isValid) {
-      dateField.classList.add('is-invalid')
-      dateField.classList.remove('is-valid')
-      dateField.nextElementSibling.textContent = 'Выберите корректную дату'
-    } else {
-      dateField.classList.remove('is-invalid')
-      dateField.classList.add('is-valid')
-      dateField.nextElementSibling.textContent = ''
-    }
-
-    return isValid
+    field.classList.remove('is-invalid')
+    field.classList.add('is-valid')
+    error.textContent = ''
+    return true
   }
 
-  validateTime(timeField) {
-    const isValid = timeField.value && timeField.value !== 'Любое'
-    if (!isValid) {
-      timeField.classList.add('is-invalid')
-      timeField.classList.remove('is-valid')
-    } else {
-      timeField.classList.remove('is-invalid')
-      timeField.classList.add('is-valid')
+  validateDate(field) {
+    const error = field.nextElementSibling
+    if (!field.value) {
+      field.classList.add('is-invalid')
+      field.classList.remove('is-valid')
+      error.textContent = 'Выберите дату'
+      return false
     }
-    return isValid
+
+    field.classList.remove('is-invalid')
+    field.classList.add('is-valid')
+    error.textContent = ''
+    return true
+  }
+
+  validateTime(field) {
+    const error = field.nextElementSibling
+    if (!field.value || field.value === 'Любое') {
+      field.classList.add('is-invalid')
+      field.classList.remove('is-valid')
+      error.textContent = 'Выберите время'
+      return false
+    }
+
+    field.classList.remove('is-invalid')
+    field.classList.add('is-valid')
+    error.textContent = ''
+    return true
   }
 }
 
