@@ -589,34 +589,38 @@ select.cart__input.is-valid {
 }
 @media (max-width: 400px) {
   .cart__item-content {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
-    gap: 0.5rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
     width: 100%;
+  }
+  .cart__details {
+    flex: 1 1 50%;
+    min-width: 50%;
   }
   .cart__controls {
+    flex: 1 1 50%;
+    min-width: 50%;
     display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
   }
   .cart__quantity-controls {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: flex-start;
-    flex-grow: 1;
-    min-width: 0;
+    order: -1;
+    align-self: flex-end;
+    justify-content: flex-end;
+    gap: 0.25rem;
   }
   .cart__price-total {
-    margin-left: auto;
+    margin: 0;
     text-align: right;
     font-size: 1rem;
     white-space: nowrap;
   }
   .cart__delete {
-    margin-left: 0.5rem;
-    flex-shrink: 0;
+    align-self: flex-end;
   }
   .cart__count {
     width: 3rem;
@@ -641,15 +645,31 @@ select.cart__input.is-valid {
   .cart__promo .promo__discount {
     text-align: right;
   }
-  .form__group-row {
+  .cart__delivery {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .cart__delivery .form__group-row {
+    display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
   }
-  .form__group {
-    width: 100% !important;
+  .cart__delivery .form__group {
+    width: 100%;
+    margin-bottom: 1rem;
   }
-  .form__group.half, .form__group.quarter {
-    width: calc(50% - 0.5rem) !important;
+  .cart__delivery .form__group.half, .cart__delivery .form__group.quarter {
+    width: 100%;
+  }
+  .cart__delivery .form__group input,
+  .cart__delivery .form__group select {
+    margin-bottom: 0 !important;
+  }
+  .cart__delivery .form__group.quarter:nth-child(2), .cart__delivery .form__group.quarter:nth-child(3) {
+    width: calc(50% - 0.5rem);
+  }
+  .cart__delivery .form-label {
+    margin-bottom: 0.5rem;
   }
   .form__submit {
     text-align: center;

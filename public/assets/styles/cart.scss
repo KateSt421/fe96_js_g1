@@ -548,38 +548,43 @@ select.cart__input.is-valid {
 
 @media (max-width: 400px) {
   .cart__item-content {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
-    gap: 0.5rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
     width: 100%;
+  }
+
+  .cart__details {
+    flex: 1 1 50%;
+    min-width: 50%;
   }
 
   .cart__controls {
+    flex: 1 1 50%;
+    min-width: 50%;
     display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
   }
 
   .cart__quantity-controls {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: flex-start;
-    flex-grow: 1;
-    min-width: 0;
+    order: -1;
+    align-self: flex-end;
+    justify-content: flex-end;
+    gap: 0.25rem;
   }
 
   .cart__price-total {
-    margin-left: auto;
+    margin: 0;
     text-align: right;
     font-size: 1rem;
     white-space: nowrap;
   }
 
   .cart__delete {
-    margin-left: 0.5rem;
-    flex-shrink: 0;
+    align-self: flex-end;
   }
 
   .cart__count {
@@ -610,18 +615,39 @@ select.cart__input.is-valid {
     }
   }
 
-  // Форма
-  .form__group-row {
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
+  .cart__delivery {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 
-  .form__group {
-    width: 100% !important;
+    .form__group-row {
+      display: flex;
+      flex-wrap: wrap;
+    }
 
-    &.half,
-    &.quarter {
-      width: calc(50% - 0.5rem) !important;
+    .form__group {
+      width: 100%;
+      margin-bottom: 1rem;
+
+      &.half,
+      &.quarter {
+        width: 100%; // Все в столбик
+      }
+
+      input,
+      select {
+        margin-bottom: 0 !important; // жёстко прибиваем к сетке
+      }
+
+      // Переопределим только дом и квартиру
+      &.quarter:nth-child(2),
+      &.quarter:nth-child(3) {
+        width: calc(50% - 0.5rem);
+      }
+    }
+
+    .form-label {
+      margin-bottom: 0.5rem;
     }
   }
 
