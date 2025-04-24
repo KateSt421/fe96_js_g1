@@ -109,7 +109,6 @@
   border: 1px solid #f2f2f3;
   border-radius: 0.75rem;
   height: 2.5rem;
-  line-height: 2.5rem;
   padding: 0 1rem;
   width: 100%;
 }
@@ -477,75 +476,6 @@ input[type=date]:not([data-default=true]) {
   margin-top: 2rem;
 }
 
-@media (max-width: 768px) {
-  .cart {
-    padding: 1.5rem;
-  }
-  .cart__item {
-    flex-direction: row;
-    align-items: center;
-    padding: 1rem;
-    gap: 1rem;
-    height: auto;
-  }
-  .cart__item-content {
-    flex: 1;
-    gap: 1rem;
-    justify-content: space-between;
-  }
-  .cart__price-total {
-    font-size: 1rem;
-    width: auto;
-    margin-left: 0;
-    text-align: right;
-  }
-  .cart__controls {
-    min-width: auto;
-    gap: 0.75rem;
-  }
-  .cart__count {
-    width: 4rem;
-    font-size: 1rem;
-  }
-  .cart__promo {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 0.75rem;
-  }
-  .cart__promo .promo__input {
-    flex: 1 1 auto;
-    min-width: 10rem;
-  }
-  .cart__promo .promo__btn {
-    flex-shrink: 0;
-  }
-  .cart__btn-pay {
-    width: 11rem;
-    margin: 2rem auto 0;
-    display: block;
-  }
-  .form__group-row {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 1rem;
-  }
-  .form__group {
-    width: 100%;
-  }
-  .form__group.half {
-    width: calc(50% - 0.5rem);
-  }
-  .form__group.quarter {
-    width: calc(25% - 0.5rem);
-  }
-  .form__submit {
-    text-align: center;
-    margin-top: 2rem;
-  }
-  .form-label {
-    padding-left: 1rem;
-  }
-}
 .cart__input.is-valid {
   border-color: #677e51;
   color: #000000;
@@ -575,4 +505,154 @@ select.cart__input.is-valid {
   color: #fa6c59;
   margin-top: 0.25rem;
   padding-left: 1rem;
+}
+
+@media (max-width: 768px) {
+  .cart {
+    padding: 1.5rem;
+  }
+  .cart__item {
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    height: auto;
+  }
+  .cart__item-content {
+    flex: 1;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+  .cart__price-total {
+    font-size: 1rem;
+    width: auto;
+    margin-left: 0;
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .cart__controls {
+    min-width: auto;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-width: 0;
+  }
+  .cart__quantity-controls {
+    flex-shrink: 1;
+    min-width: 6rem;
+  }
+  .cart__count {
+    width: 4rem;
+    font-size: 1rem;
+  }
+  .cart__promo {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+  .cart__promo .promo__input {
+    flex: 1 1 auto;
+    min-width: 10rem;
+  }
+  .cart__promo .promo__btn {
+    flex-shrink: 0;
+  }
+  .cart__btn-pay {
+    width: 11rem;
+    margin: 2rem auto 0;
+    display: block;
+  }
+  .form__group-row {
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+  .form__group {
+    width: 100%;
+  }
+  .form__group.half {
+    width: calc(50% - 0.5rem);
+  }
+  .form__group.quarter {
+    width: calc(25% - 0.5rem);
+  }
+  .form__group label {
+    height: 1.25rem;
+    display: inline-block;
+  }
+  .form__submit {
+    margin-top: 2rem;
+  }
+  .form-label {
+    padding-left: 1rem;
+  }
+}
+@media (max-width: 400px) {
+  .cart__item-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .cart__controls {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  .cart__quantity-controls {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    flex-grow: 1;
+    min-width: 0;
+  }
+  .cart__price-total {
+    margin-left: auto;
+    text-align: right;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+  .cart__delete {
+    margin-left: 0.5rem;
+    flex-shrink: 0;
+  }
+  .cart__count {
+    width: 3rem;
+    font-size: 1rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #f2f2f3;
+  }
+  .cart__promo {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  .cart__promo .promo__input {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  .cart__promo .promo__btn {
+    width: 100%;
+  }
+  .cart__promo .promo__discount {
+    text-align: right;
+  }
+  .form__group-row {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .form__group {
+    width: 100% !important;
+  }
+  .form__group.half, .form__group.quarter {
+    width: calc(50% - 0.5rem) !important;
+  }
+  .form__submit {
+    text-align: center;
+    margin-top: 2rem;
+  }
 }/*# sourceMappingURL=cart.css.map */

@@ -1,6 +1,6 @@
 @import 'design_system';
 
-//МИКСИНЫ
+//Миксины
 
 @mixin montserrat_semi_XL {
   @include title_Montserrat_semi;
@@ -20,31 +20,14 @@
   line-height: 1.25rem;
 }
 
-@mixin убрать_стили_селекта {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-@mixin адаптивная_ширина($процент) {
-  width: calc(#{$процент}% - 0.5rem);
-}
-
-//ОБЁРТКИ ДЛЯ ФОРМЫ
+//Обёртки для полей формы
 
 .form__group {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   width: 100%;
   margin-bottom: 1.5rem;
-
-  &.half {
-    @include адаптивная_ширина(50);
-  }
-
-  &.quarter {
-    @include адаптивная_ширина(25);
-  }
 }
 
 .form__group-row {
@@ -61,7 +44,15 @@
   padding-left: 1rem;
 }
 
-//ПОЛЯ ВВОДА
+.half {
+  width: 50%;
+}
+
+.quarter {
+  width: 25%;
+}
+
+//Стили для полей ввода
 
 .cart__input,
 .promo__input {
@@ -71,7 +62,6 @@
   border: 1px solid $Grey_94;
   border-radius: 0.75rem;
   height: 2.5rem;
-  line-height: 2.5rem;
   padding: 0 1rem;
   width: 100%;
 
@@ -88,10 +78,29 @@
     outline: none;
     border-color: $Grey_02;
   }
+
+  &.error:placeholder-shown {
+    border-color: $Orange_00;
+    color: $Orange_00;
+
+    &::placeholder {
+      color: $Orange_00;
+    }
+  }
+
+  &.error:placeholder-shown:hover,
+  &.error:placeholder-shown:focus,
+  &.error:not(:placeholder-shown),
+  &.error:not(:placeholder-shown):hover {
+    border-color: $Orange_00;
+  }
 }
 
 select.cart__input {
-  @include убрать_стили_селекта;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
   color: $Grey_02;
   background-color: $White_00;
   background-image: url('/assets/images/arrow_drop_down.svg');
@@ -100,6 +109,8 @@ select.cart__input {
   background-size: 1rem;
   padding-right: 2.5rem;
 }
+
+//Цвет текста в поле даты
 
 input[type='date'] {
   &[data-default='true'] {
@@ -111,7 +122,300 @@ input[type='date'] {
   }
 }
 
-//СООБЩЕНИЯ ОБ ОШИБКАХ
+//Карточка корзины
+
+.cart {
+  padding: 3rem;
+  padding-bottom: 6rem;
+
+  &__image {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 1.75rem;
+  }
+
+  &__header {
+    background-color: rgba(0, 0, 0, 0.02);
+    border-radius: 2rem;
+    padding: 1rem 1.5rem 1.75rem;
+    margin-bottom: 2rem;
+
+    &-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__btn-clear {
+    @include montserrat_semi_XS;
+    padding: 0.625rem 1.25rem;
+    background-color: $Grey_94;
+    color: $Black_00;
+    border: none;
+    border-radius: 2.5rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $Green_67;
+      color: $White_00;
+    }
+
+    &:active {
+      background-color: $Green_96;
+      transform: scale(0.96);
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    background-color: $White_00;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.02);
+    height: 7rem;
+
+    img {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 1.5rem;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 20rem;
+    justify-content: flex-end;
+  }
+
+  &__item-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    gap: 2rem;
+  }
+
+  &__details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 400;
+    color: rgba(44, 21, 0, 1);
+    margin-left: 1rem;
+  }
+
+  &__name,
+  &__unit-price,
+  &__unit-comment {
+    @include montserrat_semi_M;
+    margin-bottom: 0.25rem;
+  }
+
+  &__unit-comment {
+    color: $Grey_02;
+    font-weight: 400;
+  }
+
+  &__quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 15rem;
+    height: 3.25rem;
+    gap: 0.75rem;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  &__count {
+    @include montserrat_regular_S;
+    width: 7rem;
+    height: 2.8rem;
+    text-align: center;
+    border-radius: 0.75rem;
+    border: 1px solid $Grey_94;
+    font-size: 1rem;
+    line-height: 2.8rem;
+    background-color: $White_00;
+  }
+
+  &__price-total {
+    @include montserrat_semi_L;
+    width: 12.5rem;
+    margin-left: 1rem;
+    text-align: right;
+    white-space: nowrap;
+    position: relative;
+    top: 0.125rem;
+  }
+
+  &__delete {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  &__promo {
+    background-color: rgba(0, 0, 0, 0.02);
+    border-radius: 2rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .promo__input {
+      width: 18.375rem;
+    }
+
+    .promo__btn {
+      height: 2.5rem;
+      width: 7.94rem;
+      padding: 0.625rem 1.25rem;
+      @include montserrat_semi_XS;
+      background-color: $Black_00;
+      color: $White_00;
+      border: none;
+      border-radius: 2rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+
+      &:hover {
+        background-color: $Green_67;
+      }
+
+      &:active {
+        background-color: $Green_96;
+        transform: scale(0.96);
+      }
+    }
+
+    .promo__discount {
+      @include montserrat_semi_L;
+    }
+  }
+
+  &__total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0 1.5rem;
+
+    p,
+    h3,
+    .total__amount {
+      @include title_Montserrat_semi;
+      font-size: 1.5rem;
+      margin: 0;
+    }
+  }
+
+  &__delivery {
+    background-color: rgba(0, 0, 0, 0.02);
+    border-radius: 2rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+
+    .cart__title {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__btn-pay {
+    @include btn_text_52;
+    display: block;
+    margin: 2rem auto 0;
+    background-color: $Black_00;
+    color: $White_00;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+
+    &:hover {
+      background-color: $Green_67;
+    }
+
+    &:active {
+      background-color: $Green_96;
+      transform: scale(0.96);
+    }
+  }
+
+  &__empty-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+    padding: 4rem 0;
+  }
+
+  &__empty-img {
+    width: 8rem;
+    height: 8rem;
+    object-fit: contain;
+  }
+
+  &__empty-text {
+    @include montserrat_semi_M;
+    font-size: 1.25rem;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+//Кнопка отправки формы
+
+.form__submit {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+//Стили для валидации
 
 .cart__input.is-valid {
   border-color: $Green_67;
@@ -142,35 +446,9 @@ select.cart__input.is-valid {
   padding-left: 1rem;
 }
 
-//КНОПКА ОТПРАВКИ
-
-.form__submit {
-  text-align: center;
-  margin-top: 2rem;
-}
-
-//АДАПТИВ
+//Адаптив
 
 @media (max-width: 768px) {
-  .form__group-row {
-    flex-wrap: nowrap;
-    gap: 1rem;
-  }
-
-  .form__submit {
-    margin-top: 2rem;
-  }
-
-  .form__group {
-    &.half {
-      width: calc(50% - 0.5rem);
-    }
-
-    &.quarter {
-      width: calc(25% - 0.5rem);
-    }
-  }
-
   .cart {
     padding: 1.5rem;
 
@@ -193,11 +471,20 @@ select.cart__input.is-valid {
       width: auto;
       margin-left: 0;
       text-align: right;
+      flex-shrink: 0;
     }
 
     &__controls {
       min-width: auto;
       gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      min-width: 0;
+    }
+
+    &__quantity-controls {
+      flex-shrink: 1;
+      min-width: 6rem;
     }
 
     &__count {
@@ -225,5 +512,121 @@ select.cart__input.is-valid {
       margin: 2rem auto 0;
       display: block;
     }
+  }
+
+  .form__group-row {
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+
+  .form__group {
+    width: 100%;
+
+    &.half {
+      width: calc(50% - 0.5rem);
+    }
+
+    &.quarter {
+      width: calc(25% - 0.5rem);
+    }
+
+    label {
+      height: 1.25rem;
+      display: inline-block;
+    }
+  }
+
+  .form__submit {
+    margin-top: 2rem;
+  }
+
+  .form-label {
+    padding-left: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .cart__item-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .cart__controls {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .cart__quantity-controls {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    flex-grow: 1;
+    min-width: 0;
+  }
+
+  .cart__price-total {
+    margin-left: auto;
+    text-align: right;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  .cart__delete {
+    margin-left: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .cart__count {
+    width: 3rem;
+    font-size: 1rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid $Grey_94;
+  }
+
+  .cart__promo {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+
+    .promo__input {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+
+    .promo__btn {
+      width: 100%;
+    }
+
+    .promo__discount {
+      text-align: right;
+    }
+  }
+
+  // Форма
+  .form__group-row {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .form__group {
+    width: 100% !important;
+
+    &.half,
+    &.quarter {
+      width: calc(50% - 0.5rem) !important;
+    }
+  }
+
+  .form__submit {
+    text-align: center;
+    margin-top: 2rem;
   }
 }
