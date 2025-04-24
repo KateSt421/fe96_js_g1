@@ -103,13 +103,14 @@ class PlantStore {
             plant.id
           }'">Подробнее..</button>
           <h3>${plant.name}</h3>
-          <p class-"cart-product-price">${plant.price.toFixed(2)} Руб.</p>
+          <p class"cart-product-price">${plant.price.toFixed(2)} Руб.</p>
           <p class="product-item-description">${plant.description}</p>
           <p>${plant.comment}</p>
           ${
             quantity === 0
               ? `<button class="product-add-to-cart-btn" onclick="plantStore.updateQuantity(${plant.id}, 1)">Добавить</button>`
               : `<div class="product-quantity-controls">
+
                 <button onclick="plantStore.updateQuantity(${plant.id}, -1)">-</button>
                 <span>${quantity}</span>
                 <button onclick="plantStore.updateQuantity(${plant.id}, 1)">+</button>
