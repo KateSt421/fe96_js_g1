@@ -111,11 +111,10 @@
 }
 .header .header__nav .nav__logo-icon {
   height: 23%;
-  margin-bottom: 1rem;
+  margin-bottom: 0.9rem;
 }
 .header .header__nav .nav__logo-text {
   height: 15%;
-  margin-top: 0.2rem;
 }
 .header .header__nav .nav__menu {
   display: flex;
