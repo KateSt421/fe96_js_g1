@@ -110,10 +110,12 @@
   margin-left: 1rem;
 }
 .header .header__nav .nav__logo-icon {
+  height: 23%;
   margin-bottom: 1rem;
 }
 .header .header__nav .nav__logo-text {
   height: 15%;
+  margin-top: 0.2rem;
 }
 .header .header__nav .nav__menu {
   display: flex;
@@ -310,6 +312,9 @@
   .header .header__nav .nav__logo {
     gap: 0.3rem;
   }
+  .header .header__nav .nav__logo-icon {
+    height: 16%;
+  }
   .header .header__nav .nav__menu {
     margin-left: 3.5rem;
     width: 35%;
@@ -333,6 +338,9 @@
     height: 11.3rem;
     width: 98%;
   }
+  .header .header__nav .nav__logo-icon {
+    height: 16%;
+  }
   .header .header__nav .nav__menu {
     margin: 0 0 1rem 0;
     width: 47%;
@@ -354,6 +362,9 @@
   .header .header__nav {
     height: 10rem;
     width: 98%;
+  }
+  .header .header__nav .nav__logo-icon {
+    height: 18%;
   }
   .header .header__nav .nav__menu {
     margin: 0 0 1rem 0;
@@ -377,6 +388,9 @@
     height: 11.2rem;
     width: 98%;
   }
+  .header .header__nav .nav__logo-icon {
+    height: 17%;
+  }
   .header .header__searchContainer {
     top: 14.9%;
   }
@@ -397,9 +411,9 @@
   }
   .header .header__nav .bar {
     display: block;
-    margin: 0.375rem auto;
-    width: 1.875rem;
-    height: 0.1875rem;
+    margin: 0.37rem auto;
+    width: 1.8rem;
+    height: 0.18rem;
     background-color: #000000;
     transition: 0.3s;
   }
@@ -475,7 +489,7 @@
     opacity: 0;
   }
   .burger__field.active .bar:nth-child(3) {
-    transform: translateY(-0.5rem) rotate(-45deg);
+    transform: translateY(-0.56rem) rotate(-45deg);
   }
   body.noscroll {
     overflow: hidden;

@@ -23,59 +23,90 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Фавиконы -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/images/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="assets/images/favicon/favicon.svg"
+    />
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
 </head>
 <body>
 
-    <header class="header">
-      <nav class="header__nav">
-        <!-- бургер меню -->
-        <div class="burger">
-          <div class="burger__field" id="burger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </div>
+  <header class="header">
+    <nav class="header__nav">
+      <!-- бургер меню -->
+      <div class="burger">
+        <div class="burger__field" id="burger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </div>
+      </div>
 
-        <!-- логотип компании -->
-        <div class="nav__logo">
+      <!-- логотип компании -->
+      <div class="nav__logo">
+        <img
+          src="./assets/images/vector_logo.svg"
+          alt="company logo"
+          class="nav__logo-icon"
+        />
+        <a href="/">
           <img
-            src="./assets/images/vector_logo.svg"
+            src="./assets/images/vector_Planty.svg"
             alt="company logo"
-            class="nav__logo-icon"
+            class="nav__logo-text"
           />
-          <a href="/">
-            <img
-              src="./assets/images/vector_Planty.svg"
-              alt="company logo"
-              class="nav__logo-text"
-            />
-          </a>
-        </div>
+        </a>
+      </div>
 
-        <!-- навигация по сайту -->
-        <ul class="nav__menu" id="menu">
-          <li><a href="/" class="nav__menu-plants">Растения</a></li>
-          <li><a href="service.html" class="nav__menu-services">Услуги</a></li>
-          <li><a href="company.html" class="nav__menu-company">О&nbsp;Нас</a></li>
-        </ul>
+      <!-- навигация по сайту -->
+      <ul class="nav__menu" id="menu">
+        <li><a href="#flowers" class="nav__menu-plants">Растения</a></li>
+        <li><a href="service.html" class="nav__menu-services">Услуги</a></li>
+        <li><a href="company.html" class="nav__menu-company">О&nbsp;Нас</a></li>
+      </ul>
 
-        <!-- иконки -->
-        <div class="nav__icons">
+      <!-- иконки -->
+      <div class="nav__icons">
+        <button class="cart-link" id="searchToggle">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <a href="/cart.html" class="cart-link">
+          <i class="fa-regular fa-user fa-sm"></i>
+        </a>
+        <a href="/cart.html" class="cart-link">
+          <span id="cart-count" class="cart-count"></span>
+          <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+      </div>
+    </nav>
 
-          <a href="/cart.html" class="cart-link">
-            <i class="fa-regular fa-user fa-sm"></i>
-          </a>
-          <a href="/cart.html" class="cart-link">
-            <span id="cart-count" class="cart-count"></span>
-            <i class="fa-solid fa-cart-shopping"></i>
-          </a>
-        </div>
-      </nav>
+    <!-- попап для бургера (для мобилки) -->
+    <div class="header__popup" id="popup"></div>
 
-      <!-- попап для бургера (для мобилки) -->
-      <div class="header__popup" id="popup"></div>
-    </header>
+    <!-- инпут для поиска по сайту-->
+    <form class="header__searchContainer" id="searchContainer">
+      <div class="input-container">
+        <input type="text" id="search" placeholder="Поиск..." />
+        <span id="clearButton" class="clearButton">
+          <img src="./assets/images/vector_close.svg" alt="erase" />
+        </span>
+      </div>
+    </form>
+  </header>
 
     <section class="hero">
         <div class="hero_block_wrapper">
