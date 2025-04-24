@@ -95,8 +95,6 @@ class PlantStore {
           <button class="product-details-btn" onclick="window.location.href='/details.html?id=${plant.id}'">Подробнее..</button>
           <h3>${plant.name}</h3>
           <p class-"cart-product-price">${plant.price.toFixed(2)} Руб.</p>
-          <p class="product-item-description">${plant.description}</p>
-          <p>${plant.comment}</p>
           ${quantity === 0 ?
             `<button class="product-add-to-cart-btn" onclick="plantStore.updateQuantity(${plant.id}, 1)">Добавить</button>` :
             `<div class="product-quantity-controls">
