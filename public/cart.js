@@ -180,12 +180,15 @@ class CartManager {
     if (dateInput) {
       dateInput.value = formatted
       dateInput.dataset.default = 'true'
+      dateInput.style.color = '$Grey_94'
+
       dateInput.addEventListener('change', () => {
-        if (!dateInput.value) {
-          dateInput.value = formatted
+        if (!dateInput.value || dateInput.value === formatted) {
           dateInput.dataset.default = 'true'
+          dateInput.style.color = '$Grey_94'
         } else {
           dateInput.removeAttribute('data-default')
+          dateInput.style.color = '$Black_00'
         }
       })
     }
@@ -238,7 +241,7 @@ class CartManager {
   get regex() {
     return {
       name: /^[a-zA-Zа-яА-ЯёЁ\s-]{2,}$/,
-      street: /^[a-zA-Zа-яА-ЯёЁ0-9\s\-,.]{3,}$/,
+      street: /^(?=.*[a-zA-Zа-яА-ЯёЁ])[a-zA-Zа-яА-ЯёЁ0-9\s\-,.]{3,}$/u,
       house: /^\d+[a-zа-яА-ЯёЁA-Z]?$/,
       apt: /^\d+[a-zа-яА-ЯёЁA-Z]?$/,
     }

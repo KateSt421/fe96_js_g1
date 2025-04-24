@@ -109,6 +109,16 @@ select.cart__input {
   padding-right: 2.5rem;
 }
 
+input[type='date'] {
+  &[data-default='true'] {
+    color: $Grey_02;
+  }
+
+  &:not([data-default='true']) {
+    color: $Black_00;
+  }
+}
+
 // ========== CART STYLES ==========
 
 .cart {

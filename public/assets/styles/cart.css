@@ -176,6 +176,13 @@ select.cart__input {
   padding-right: 2.5rem;
 }
 
+input[type=date][data-default=true] {
+  color: #b1b1b1;
+}
+input[type=date]:not([data-default=true]) {
+  color: #000000;
+}
+
 .cart {
   padding: 3rem;
   padding-bottom: 6rem;
