@@ -512,7 +512,7 @@ select.cart__input.is-valid {
   padding-left: 1rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .cart__item {
     align-items: flex-start;
     gap: 1rem;
@@ -650,7 +650,7 @@ select.cart__input.is-valid {
   padding-left: 1rem;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 656px) {
   .cart__item {
     display: flex;
     align-items: flex-start;
