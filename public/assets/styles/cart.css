@@ -591,6 +591,21 @@ select.cart__input.is-valid {
     padding-left: 1rem;
   }
 }
+@media (max-width: 656px) {
+  .cart__quantity-controls {
+    width: 100%;
+    max-width: 10rem;
+  }
+  .cart__controls {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+  .cart__controls-bottom {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
 @media (max-width: 400px) {
   .cart__item {
     align-items: flex-start;
