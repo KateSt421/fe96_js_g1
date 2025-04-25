@@ -655,8 +655,9 @@ select.cart__input.is-valid {
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
-    padding: 0.75rem 0.75rem 0.75rem 1rem;
+    padding: 0.75rem;
     width: 100%;
+    box-sizing: border-box;
   }
   .cart__item-content {
     display: flex;
@@ -664,7 +665,8 @@ select.cart__input.is-valid {
     justify-content: space-between;
     align-items: flex-start;
     gap: 0.75rem;
-    flex: 1 1 auto;
+    flex: 1 1 0;
+    min-width: 0;
     width: 100%;
   }
   .cart__image {
@@ -690,21 +692,16 @@ select.cart__input.is-valid {
     gap: 0.5rem;
     width: 100%;
   }
-  .cart__quantity-controls {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 0.5rem;
-    align-self: flex-end;
-    margin-right: 2rem;
-  }
+  .cart__quantity-controls,
   .cart__controls-bottom {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    gap: 0.75rem;
-    align-self: flex-end;
-    margin-right: 1rem;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding-inline-end: clamp(0.5rem, 4vw, 1rem);
+    flex-shrink: 1;
+    min-width: 0;
+    max-width: 100%;
   }
   .cart__btn {
     width: 1.25rem;
@@ -714,9 +711,10 @@ select.cart__input.is-valid {
     justify-content: center;
   }
   .cart__count {
-    min-width: 2.75rem;
-    height: 2.75rem;
-    padding: 0 0.75rem;
+    flex: 1 1 auto;
+    min-width: 2.5rem;
+    max-width: 5rem;
+    height: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -727,13 +725,16 @@ select.cart__input.is-valid {
     font-weight: 600;
     white-space: nowrap;
     text-align: right;
+    flex-shrink: 1;
+    min-width: 0;
   }
   .cart__delete {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 2.5rem;
     height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
   }
   .cart__delete img {
     width: 1.5rem;

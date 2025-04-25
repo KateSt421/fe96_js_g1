@@ -610,17 +610,19 @@ select.cart__input.is-valid {
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
-    padding: 0.75rem 0.75rem 0.75rem 1rem; // добавлен левый отступ
+    padding: 0.75rem; // без лишних нестабильных отступов
     width: 100%;
+    box-sizing: border-box; // чтобы padding учитывался правильно
   }
 
   .cart__item-content {
     display: flex;
-    flex-direction: row; // было column
+    flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
     gap: 0.75rem;
-    flex: 1 1 auto;
+    flex: 1 1 0; // ❗ Чтобы оно сжималось при уменьшении
+    min-width: 0; // ❗
     width: 100%;
   }
 
@@ -649,22 +651,16 @@ select.cart__input.is-valid {
     width: 100%;
   }
 
-  .cart__quantity-controls {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 0.5rem;
-    align-self: flex-end;
-    margin-right: 2rem; // выравнивание по правому краю
-  }
-
+  .cart__quantity-controls,
   .cart__controls-bottom {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    gap: 0.75rem; // отступ между ценой и корзиной
-    align-self: flex-end;
-    margin-right: 1rem;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding-inline-end: clamp(0.5rem, 4vw, 1rem);
+    flex-shrink: 1;
+    min-width: 0;
+    max-width: 100%;
   }
 
   .cart__btn {
@@ -676,9 +672,10 @@ select.cart__input.is-valid {
   }
 
   .cart__count {
-    min-width: 2.75rem;
-    height: 2.75rem;
-    padding: 0 0.75rem;
+    flex: 1 1 auto; // чтобы тянулось
+    min-width: 2.5rem;
+    max-width: 5rem;
+    height: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -690,14 +687,17 @@ select.cart__input.is-valid {
     font-weight: 600;
     white-space: nowrap;
     text-align: right;
+    flex-shrink: 1;
+    min-width: 0;
   }
 
   .cart__delete {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 2.5rem;
     height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 
     img {
       width: 1.5rem;
