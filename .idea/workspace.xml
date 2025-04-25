@@ -6,19 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="07014d12-d9d0-4000-8098-00b753f52272" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/styles/cards.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/cards.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/styles/cart.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/cart.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/styles/design_system.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/design_system.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/styles/details.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/details.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/styles/design_system.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/design_system.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/styles/details.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/details.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/styles/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/styles/header.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/header.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/styles/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/styles/service_hero_section.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/service_hero_section.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/company.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/company.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/service.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/styles/schedule.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/schedule.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/styles/schedule.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/schedule.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/styles/schedule.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/schedule.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/styles/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/schedule.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/schedule.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +59,7 @@
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature/header",
+    "git-widget-placeholder": "bugfix/chart-styles",
     "last_opened_file_path": "C:/Users/MegaVolt/PycharmProjects/fe96_js_g1/public"
   }
 }]]></component>
