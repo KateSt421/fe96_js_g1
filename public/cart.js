@@ -79,7 +79,7 @@ class CartManager {
       .map((item) => {
         const isService = item.category === 'service'
         return `
-        <div class="cart__item">
+        <div class="cart__item" data-plant-id="${item.id}">
           <img src="${item.image}" alt="${item.name}" class="cart__image" />
           <div class="cart__item-content">
             <div class="cart__details">
@@ -167,6 +167,16 @@ class CartManager {
     cart = cart.filter((item) => item.id !== itemId)
     localStorage.setItem('cart', JSON.stringify(cart))
     this.loadCart()
+  }
+
+  clearCart() {
+    localStorage.setItem('cart', '[]')
+    this.loadCart()
+  }
+
+  getTotal() {
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]')
+    return cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
   }
 
   initCheckout() {
@@ -295,4 +305,10 @@ class CartManager {
 }
 
 const cartManager = new CartManager()
+
+// для теста на loadCart()
+if (document.getElementById('cart-items')) {
+  cartManager.loadCart()
+}
+
 module.exports = cartManager
