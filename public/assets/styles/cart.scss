@@ -486,6 +486,7 @@ select.cart__input.is-valid {
     align-items: center;
     width: 100%;
     gap: 0.5rem;
+    min-width: 0;
   }
 
   .cart__quantity-controls {
@@ -493,16 +494,18 @@ select.cart__input.is-valid {
     gap: 0.5rem;
     flex: 1 1 auto;
     min-width: 0;
-    max-width: 12rem;
+    max-width: 10rem;
   }
 
   .cart__controls-bottom {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    flex-shrink: 0;
-    white-space: nowrap;
+    flex-shrink: 1;
+    white-space: normal;
     margin-left: auto;
+    flex-wrap: nowrap;
+    min-width: 0;
   }
 
   .cart__btn {
@@ -602,36 +605,6 @@ select.cart__input.is-valid {
   padding-left: 1rem;
 }
 
-/*@media (max-width: 656px) {
-  .cart__item-content {
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-
-  .cart__controls {
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0.5rem;
-    width: 100%;
-  }
-
-  .cart__quantity-controls {
-    justify-content: flex-end;
-    width: 100%;
-  }
-
-  .cart__controls-bottom {
-    display: flex;
-    justify-content: flex-end;
-    gap: 0.5rem;
-    width: 100%;
-  }
-
-  .cart__price-total {
-    text-align: right;
-  }
-} */
-
 @media (max-width: 400px) {
   .cart__item {
     align-items: flex-start;
@@ -678,13 +651,12 @@ select.cart__input.is-valid {
     justify-content: flex-end;
     gap: 0.375rem;
     height: 2.8125rem;
-    margin-left: auto; // ключ к прижатию вправо
+    margin-left: auto;
   }
 
   .cart__btn {
     width: 1.25rem;
     height: 1.25rem;
-    font-size: 1rem;
     padding: 0;
     display: flex;
     align-items: center;
@@ -706,6 +678,7 @@ select.cart__input.is-valid {
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
+    justify-content: flex-end;
   }
 
   .cart__controls-bottom {
