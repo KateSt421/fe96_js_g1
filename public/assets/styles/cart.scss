@@ -549,15 +549,16 @@ select.cart__input.is-valid {
 @media (max-width: 400px) {
   .cart__item {
     display: flex;
-    gap: 0.75rem;
     align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem;
   }
 
   .cart__image {
     width: 3rem;
     height: 3rem;
-    object-fit: cover;
     border-radius: 0.5rem;
+    object-fit: cover;
     flex-shrink: 0;
   }
 
@@ -565,78 +566,70 @@ select.cart__input.is-valid {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     gap: 0.5rem;
   }
 
   .cart__details {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.25rem;
-    margin: 0;
-  }
-
-  .cart__name {
-    font-size: 0.875rem;
-    line-height: 1.2;
-    font-weight: 500;
-    margin: 0;
-  }
-
-  .cart__unit-price {
-    font-size: 0.75rem;
-    color: #888;
-    margin: 0;
-  }
-
-  /* Картинка + детали теперь флексом — в строку! */
-  .cart__item-content {
     flex-direction: row;
     align-items: flex-start;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    gap: 0.75rem;
   }
 
-  /* Quantity, price и корзина */
   .cart__controls {
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 0.25rem;
     flex-wrap: nowrap;
+    gap: 0.25rem;
   }
 
   .cart__quantity-controls {
     display: flex;
-    gap: 0.125rem;
     align-items: center;
+    gap: 0.125rem;
+  }
+
+  .cart__btn {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cart__count {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    padding: 0;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cart__price-total,
+  .cart__delete {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
   }
 
   .cart__price-total {
-    font-size: 1rem;
-    white-space: nowrap;
+    margin-right: 0.5rem;
   }
 
   .cart__delete {
     padding: 0;
-    background: none;
-    border: none;
-    display: flex;
-    align-items: center;
+    margin: 0;
   }
 
-  .cart__count {
-    width: 2.25rem;
-    height: 2.25rem;
-    border: 1px solid $Grey_94;
-    border-radius: 0.5rem;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
+  .cart__delete img {
+    width: 1rem;
+    height: 1rem;
   }
 
   .cart__promo {
