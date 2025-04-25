@@ -102,7 +102,9 @@
         <ul class="nav__menu" id="menu">
           <li><a href="index.html" class="nav__menu-plants">Растения</a></li>
           <li><a href="service.html" class="nav__menu-services">Услуги</a></li>
-          <li><a href="company.html" class="nav__menu-company">О&nbsp;Нас</a></li>
+          <li>
+            <a href="company.html" class="nav__menu-company">О&nbsp;Нас</a>
+          </li>
         </ul>
 
         <!-- иконки -->
@@ -169,6 +171,7 @@
               class="cart__input input--name"
               required
             />
+            <div class="invalid-feedback"></div>
           </div>
 
           <div class="form__group-row">
@@ -180,6 +183,7 @@
                 class="cart__input input--street"
                 required
               />
+              <div class="invalid-feedback"></div>
             </div>
             <div class="form__group quarter">
               <label for="house" class="form-label">Дом*</label>
@@ -189,6 +193,7 @@
                 class="cart__input input--house"
                 required
               />
+              <div class="invalid-feedback"></div>
             </div>
             <div class="form__group quarter">
               <label for="apt" class="form-label">Квартира / офис*</label>
@@ -198,6 +203,7 @@
                 class="cart__input input--apt"
                 required
               />
+              <div class="invalid-feedback"></div>
             </div>
           </div>
 
@@ -205,6 +211,7 @@
             <div class="form__group half">
               <label for="date" class="form-label">Дата</label>
               <input type="date" id="date" class="cart__input input--date" />
+              <div class="invalid-feedback"></div>
             </div>
             <div class="form__group half">
               <label for="time" class="form-label">Время</label>
@@ -218,6 +225,7 @@
                 <option>18:00 - 20:00</option>
                 <option>20:00 - 22:00</option>
               </select>
+              <div class="invalid-feedback"></div>
             </div>
           </div>
         </section>
@@ -249,25 +257,13 @@
           </li>
         </ul>
         <div class="social-icons">
-          <a
-            class="media-brands"
-            target="_blank"
-            href="#"
-          >
+          <a class="media-brands" target="_blank" href="#">
             <i class="fab fa-vk"></i>&nbsp;
           </a>
-          <a
-            class="media-brands"
-            href="#"
-            target="_blank"
-          >
+          <a class="media-brands" href="#" target="_blank">
             <i class="fa fa-pinterest-p" aria-hidden="true"></i
           ></a>
-          <a
-            class="media-brands"
-            href="#"
-            target="_blank"
-          >
+          <a class="media-brands" href="#" target="_blank">
             <i class="fa fa-telegram" aria-hidden="true"></i
           ></a>
         </div>
@@ -276,5 +272,6 @@
 
     <script src="cart.js"></script>
     <script src="header.js"></script>
+    <script src="delivery.js"></script>
   </body>
 </html>
