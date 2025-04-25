@@ -454,118 +454,167 @@ select.cart__input.is-valid {
 //Адаптив
 
 @media (max-width: 768px) {
-  .cart {
-    padding: 1.5rem;
-
-    &__item {
-      flex-direction: row;
-      align-items: center;
-      padding: 1rem;
-      gap: 1rem;
-      height: auto;
-    }
-
-    &__item-content {
-      flex: 1;
-      gap: 1rem;
-      justify-content: space-between;
-    }
-
-    &__price-total {
-      font-size: 1rem;
-      width: auto;
-      margin-left: 0;
-      text-align: right;
-      flex-shrink: 0;
-    }
-
-    &__controls {
-      min-width: auto;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      min-width: 0;
-    }
-
-    &__quantity-controls {
-      flex-shrink: 1;
-      min-width: 6rem;
-    }
-
-    &__count {
-      width: 4rem;
-      font-size: 1rem;
-    }
-
-    &__promo {
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 0.75rem;
-
-      .promo__input {
-        flex: 1 1 auto;
-        min-width: 10rem;
-      }
-
-      .promo__btn {
-        flex-shrink: 0;
-      }
-    }
-
-    &__btn-pay {
-      width: 11rem;
-      margin: 2rem auto 0;
-      display: block;
-    }
-  }
-
-  .form__group-row {
-    flex-wrap: nowrap;
-    align-items: flex-end;
+  .cart__item {
+    align-items: flex-start;
     gap: 1rem;
+    padding: 1rem;
+    height: auto;
   }
 
-  .form__group {
+  .cart__item-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.75rem;
     width: 100%;
-
-    &.half {
-      width: calc(50% - 0.5rem);
-    }
-
-    &.quarter {
-      width: calc(25% - 0.5rem);
-    }
-
-    label {
-      height: 1.25rem;
-      display: inline-block;
-    }
   }
 
-  .form__submit {
-    margin-top: 2rem;
-  }
-
-  .form-label {
-    padding-left: 1rem;
-  }
-}
-
-@media (max-width: 656px) {
-  .cart__quantity-controls {
-    width: 100%;
-    max-width: 10rem;
+  .cart__details {
+    flex: 1 1 calc(100% - 7rem); // картинка 6rem + gap
+    margin-left: 1rem;
   }
 
   .cart__controls {
+    display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: space-between;
+    width: 100%;
     gap: 0.5rem;
   }
 
+  .cart__quantity-controls {
+    display: flex;
+    gap: 0.375rem;
+    order: 1;
+  }
+
   .cart__controls-bottom {
-    width: 100%;
+    display: flex;
+    align-items: center;
     justify-content: flex-end;
+    gap: 0.5rem;
+    order: 2;
+  }
+
+  .cart__btn {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1.25rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cart__count {
+    width: 3rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .cart__price-total {
+    font-size: 1.25rem;
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  .cart__delete {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+
+  .cart__promo {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.75rem;
+
+    .promo__input {
+      flex: 1 1 auto;
+      min-width: 10rem;
+    }
+
+    .promo__btn {
+      flex-shrink: 0;
+    }
+  }
+
+  .cart__btn-pay {
+    width: 11rem;
+    margin: 2rem auto 0;
+    display: block;
+  }
+}
+
+.form__group-row {
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.form__group {
+  width: 100%;
+
+  &.half {
+    width: calc(50% - 0.5rem);
+  }
+
+  &.quarter {
+    width: calc(25% - 0.5rem);
+  }
+
+  label {
+    height: 1.25rem;
+    display: inline-block;
+  }
+}
+
+.form__submit {
+  margin-top: 2rem;
+}
+
+.form-label {
+  padding-left: 1rem;
+}
+
+@media (max-width: 656px) {
+  .cart__item-content {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .cart__controls {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .cart__quantity-controls {
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .cart__controls-bottom {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .cart__price-total {
+    text-align: right;
   }
 }
 
