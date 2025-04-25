@@ -105,6 +105,7 @@ class CartManager {
                 </div>`
                   : ''
               }
+              <div class="cart__controls-bottom">
               <div class="cart__price-total">
                 <span id="subtotal">${
                   isService
@@ -118,6 +119,7 @@ class CartManager {
               })">
                 <img src="assets/images/clear_cart.svg" alt="Delete item" />
               </button>
+              </div>
             </div>
           </div>
         </div>
