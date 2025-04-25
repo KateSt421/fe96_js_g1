@@ -45,6 +45,30 @@ app.post('/api/cart', (req, res) => {
   res.status(201).json(cart);
 });
 
+// Mock API for chat
+app.get('/api/chat', (req, res) => {
+    try {
+        const question = req.query.question.toLowerCase();
+
+        const responses = {
+            '/start': 'Возможные вопросы: "мероприятия", "участие", "деревья"',
+            'привет': 'Здравствуйте! Чем могу помочь?',
+            'мероприятия': 'Ближайшие мероприятия запланированы на выходные в Московской области.',
+            'участие': 'Регистрация доступна по клику на иконку пользователя',
+            'деревья': 'Мы сажаем дубы, клёны и сосны. Какие вас интересуют?'
+        };
+
+        const answer = responses[question] ||
+            'Оставьте свои контакты для связи с нашими специалистами';
+
+        res.status(201).json({ answer });
+
+    } catch (error) {
+        res.status(500).json({ error: 'Ошибка сервера' });
+    }
+});
+
+
 // Default to localhost for security, but allow override via environment variable
 const host = process.env.HOST || 'localhost';
 app.listen(port, host, () => {

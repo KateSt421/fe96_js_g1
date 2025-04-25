@@ -1,0 +1,203 @@
+@import 'design_system';
+
+@mixin montserrat_semi_XL {
+  @include title_Montserrat_semi;
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+@mixin montserrat_semi_M {
+  @include title_Montserrat_semi;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+@mixin montserrat_semi_XS {
+  @include title_Montserrat_semi;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.chat-modal {
+    display: none;
+    position: fixed;
+    bottom: 2rem;
+    right: 3rem;
+    width: 30rem;
+    max-width: 90%;
+    background: $White_00;
+    border-radius: 2rem;
+    box-shadow: 0 0.25rem 0.5rem $Grey_02;
+    @include montserrat_semi_M;
+}
+
+.chat-header {
+    padding: 1rem;
+    background: $Green_Light_08;
+    color: $Green_67;
+    border-radius: 2rem 2rem 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include montserrat_semi_XL;
+}
+
+.chat-messages {
+    height: 20rem;
+    overflow-y: auto;
+    padding: 2rem;
+    background: $White_00;
+}
+
+/* Стили для сообщений */
+.message {
+    margin: 1rem 0;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    max-width: 80%;
+}
+
+.user-message {
+    background: $Green_Light_08;
+    margin-left: auto;
+}
+
+.bot-message {
+    background: $White_00;
+    margin-right: auto;
+    box-shadow: 0 0.675rem 1rem rgba(0,0,0,0.1);
+}
+
+.chat-input {
+    margin: 0.75rem 1rem;
+}
+
+.chat-input input {
+    @include montserrat_semi_XS;
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid $Border_d;
+    border-radius: 3rem;
+    margin-right: 1rem;
+    outline: none;
+    width: 60%;
+
+    &::placeholder {
+    color: $Grey_02;
+  }
+
+  &:hover:placeholder-shown,
+  &:hover:not(:placeholder-shown) {
+    border-color: $Green_67;
+  }
+
+  &:focus {
+    outline: none;
+    border-top: 1px solid $Grey_02;
+    border-color: $Grey_02;
+  }
+
+  &.error:placeholder-shown {
+    border-color: $Orange_00;
+    color: $Orange_00;
+
+    &::placeholder {
+      color: $Orange_00;
+    }
+  }
+
+  &.error:placeholder-shown:hover,
+  &.error:placeholder-shown:focus,
+  &.error:not(:placeholder-shown),
+  &.error:not(:placeholder-shown):hover {
+    border-color: $Orange_00;
+  }
+}
+
+.chat-input button {
+    @include montserrat_semi_XS;
+    flex: 1;
+    padding: 0.75rem 1rem;
+    background: $Green_67;
+    border: none;
+    border-radius: 3rem;
+    color: $White_00;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.chat-input button:hover {
+    background: $Green_96;
+}
+
+.chat-delete {
+    @include montserrat_semi_XL;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.5px solid $Border_d;
+    color: $Green_96;
+    border-radius: 2rem;
+    background: $Green_Light_08;
+
+    img {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+}
+
+.chat-delete:hover {
+    cursor: pointer;
+    box-shadow: 0 0.1rem 0.1rem $Grey_02;
+    border: 0.5px solid $Grey_02;
+    color: $Green_67
+}
+
+.chat-button {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background: $Green_Light_08;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    box-shadow: 0 0.25rem 0.5rem $Green_Light_08;
+    transition: transform 0.3s, background 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+      background-color: $Green_67;
+      color: $White_00;
+    }
+}
+
+//Стили для валидации
+
+.chat-input.is-valid {
+  border-color: $Green_67;
+  color: $Black_00;
+}
+
+.chat-input.is-invalid {
+  border-color: $Orange_00;
+  color: $Orange_00;
+
+  &::placeholder {
+    color: $Orange_00;
+  }
+}
+
+/* Адаптив */
+@media (max-width: 480px) {
+    .chat-modal {
+        width: 90%;
+        right: 5%;
+        bottom: 10rem;
+    }
+}

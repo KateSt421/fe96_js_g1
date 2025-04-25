@@ -1,0 +1,283 @@
+@charset "UTF-8";
+/* ----------- Константы ----------- */
+:root {
+  --basic-font-weight: 600;
+  --title-font-weight: 400;
+  --primary-color: #667777;
+  --secondary-color: #677e51;
+}
+
+/* ----------- Цвета ----------- */
+/* ----------- Стили шрифтов ----------- */
+/* ----------- Привязанные шрифты ----------- */
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-SemiBold.eot");
+  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("../fonts/Montserrat-SemiBold.woff") format("woff"), url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.eot");
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-ExtraBold.eot");
+  src: local("Montserrat ExtraBold"), local("Montserrat-ExtraBold"), url("../fonts/Montserrat-ExtraBold.woff") format("woff"), url("../fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Belleza";
+  src: url("../fonts/Belleza-Regular.eot");
+  src: local("Belleza Regular"), local("Belleza-Regular"), url("../fonts/Belleza-Regular.woff2") format("woff2"), url("../fonts/Belleza-Regular.woff") format("woff"), url("../fonts/Belleza-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Заголовки, на макете шрифты */
+/* Жирные цифры */
+/* Заголовки, на макете шрифт Belleza */
+/* ----------- Размеры отступов, паддингов ----------- */
+/* ----------- Ограничения ширин, шаблоны для @media ----------- */
+/* ----------- Кнопки и ссылки ----------- */
+/* разные настройки размеров кнопок */
+.btn_solid_text_52 {
+  color: #ffffff;
+  background-color: #000000;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.25rem;
+  padding: 1rem 3rem;
+  border-radius: 2.5rem;
+  transition: 0.2s ease-out;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
+  font-size: 1rem;
+  line-height: 125%;
+}
+.btn_solid_text_52:hover {
+  background-color: #677e51;
+  border-style: none;
+}
+.btn_solid_text_52:active {
+  background-color: #9bb96c;
+}
+
+/* ----------- Контейнеры-карточки ----------- */
+.chat-modal {
+  display: none;
+  position: fixed;
+  bottom: 2rem;
+  right: 3rem;
+  width: 30rem;
+  max-width: 90%;
+  background: #ffffff;
+  border-radius: 2rem;
+  box-shadow: 0 0.25rem 0.5rem #b1b1b1;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.chat-header {
+  padding: 1rem;
+  background: rgba(155, 185, 108, 0.08);
+  color: #677e51;
+  border-radius: 2rem 2rem 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+.chat-messages {
+  height: 20rem;
+  overflow-y: auto;
+  padding: 2rem;
+  background: #ffffff;
+}
+
+/* Стили для сообщений */
+.message {
+  margin: 1rem 0;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  max-width: 80%;
+}
+
+.user-message {
+  background: rgba(155, 185, 108, 0.08);
+  margin-left: auto;
+}
+
+.bot-message {
+  background: #ffffff;
+  margin-right: auto;
+  box-shadow: 0 0.675rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.chat-input {
+  margin: 0.75rem 1rem;
+}
+
+.chat-input input {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 3rem;
+  margin-right: 1rem;
+  outline: none;
+  width: 60%;
+}
+.chat-input input::-moz-placeholder {
+  color: #b1b1b1;
+}
+.chat-input input::placeholder {
+  color: #b1b1b1;
+}
+.chat-input input:hover:-moz-placeholder-shown, .chat-input input:hover:not(:-moz-placeholder-shown) {
+  border-color: #677e51;
+}
+.chat-input input:hover:placeholder-shown, .chat-input input:hover:not(:placeholder-shown) {
+  border-color: #677e51;
+}
+.chat-input input:focus {
+  outline: none;
+  border-top: 1px solid #b1b1b1;
+  border-color: #b1b1b1;
+}
+.chat-input input.error:-moz-placeholder-shown {
+  border-color: #fa6c59;
+  color: #fa6c59;
+}
+.chat-input input.error:placeholder-shown {
+  border-color: #fa6c59;
+  color: #fa6c59;
+}
+.chat-input input.error:placeholder-shown::-moz-placeholder {
+  color: #fa6c59;
+}
+.chat-input input.error:-moz-placeholder-shown::placeholder {
+  color: #fa6c59;
+}
+.chat-input input.error:placeholder-shown::placeholder {
+  color: #fa6c59;
+}
+.chat-input input.error:-moz-placeholder-shown:hover, .chat-input input.error:-moz-placeholder-shown:focus, .chat-input input.error:not(:-moz-placeholder-shown), .chat-input input.error:not(:-moz-placeholder-shown):hover {
+  border-color: #fa6c59;
+}
+.chat-input input.error:placeholder-shown:hover, .chat-input input.error:placeholder-shown:focus, .chat-input input.error:not(:placeholder-shown), .chat-input input.error:not(:placeholder-shown):hover {
+  border-color: #fa6c59;
+}
+
+.chat-input button {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: #677e51;
+  border: none;
+  border-radius: 3rem;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.chat-input button:hover {
+  background: #9bb96c;
+}
+
+.chat-delete {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
+  font-size: 2rem;
+  line-height: 2.5rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.5px solid #ddd;
+  color: #9bb96c;
+  border-radius: 2rem;
+  background: rgba(155, 185, 108, 0.08);
+}
+.chat-delete img {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.chat-delete:hover {
+  cursor: pointer;
+  box-shadow: 0 0.1rem 0.1rem #b1b1b1;
+  border: 0.5px solid #b1b1b1;
+  color: #677e51;
+}
+
+.chat-button {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background: rgba(155, 185, 108, 0.08);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  box-shadow: 0 0.25rem 0.5rem rgba(155, 185, 108, 0.08);
+  transition: transform 0.3s, background 0.3s;
+}
+.chat-button:hover {
+  transform: scale(1.1);
+  background-color: #677e51;
+  color: #ffffff;
+}
+
+.chat-input.is-valid {
+  border-color: #677e51;
+  color: #000000;
+}
+
+.chat-input.is-invalid {
+  border-color: #fa6c59;
+  color: #fa6c59;
+}
+.chat-input.is-invalid::-moz-placeholder {
+  color: #fa6c59;
+}
+.chat-input.is-invalid::placeholder {
+  color: #fa6c59;
+}
+
+/* Адаптив */
+@media (max-width: 480px) {
+  .chat-modal {
+    width: 90%;
+    right: 5%;
+    bottom: 10rem;
+  }
+}/*# sourceMappingURL=chat.css.map */
