@@ -607,15 +607,20 @@ select.cart__input.is-valid {
 
 @media (max-width: 400px) {
   .cart__item {
+    display: flex;
     align-items: flex-start;
     gap: 0.75rem;
-    padding: 0.75rem;
+    padding: 0.75rem 0.75rem 0.75rem 1rem; // добавлен левый отступ
+    width: 100%;
   }
 
   .cart__item-content {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row; // было column
     justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.75rem;
+    flex: 1 1 auto;
     width: 100%;
   }
 
@@ -628,36 +633,43 @@ select.cart__input.is-valid {
   }
 
   .cart__details {
-    flex: 1 1 auto;
-    min-width: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 0.25rem;
-    margin-left: 0.5rem;
+    flex-grow: 1;
+    min-width: 0;
   }
 
   .cart__controls {
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 0.375rem;
+    gap: 0.5rem;
+    width: 100%;
   }
 
   .cart__quantity-controls {
     display: flex;
-    align-items: center;
     justify-content: flex-end;
-    gap: 0.375rem;
-    height: 2.8125rem;
-    margin-left: auto;
+    align-items: center;
+    gap: 0.5rem;
+    align-self: flex-end;
+    margin-right: 2rem; // выравнивание по правому краю
+  }
+
+  .cart__controls-bottom {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.75rem; // отступ между ценой и корзиной
+    align-self: flex-end;
+    margin-right: 1rem;
   }
 
   .cart__btn {
     width: 1.25rem;
     height: 1.25rem;
-    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -665,7 +677,7 @@ select.cart__input.is-valid {
 
   .cart__count {
     min-width: 2.75rem;
-    height: 2.8125rem;
+    height: 2.75rem;
     padding: 0 0.75rem;
     display: flex;
     align-items: center;
@@ -673,19 +685,24 @@ select.cart__input.is-valid {
     text-align: center;
   }
 
-  .cart__price-total,
-  .cart__delete {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-    justify-content: flex-end;
+  .cart__price-total {
+    font-size: 1.5rem;
+    font-weight: 600;
+    white-space: nowrap;
+    text-align: right;
   }
 
-  .cart__controls-bottom {
+  .cart__delete {
     display: flex;
-    justify-content: flex-end;
-    gap: 0.5rem;
-    width: 100%;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 
   .cart__promo {
@@ -723,15 +740,14 @@ select.cart__input.is-valid {
 
       &.half,
       &.quarter {
-        width: 100%; // Все в столбик
+        width: 100%;
       }
 
       input,
       select {
-        margin-bottom: 0 !important; // жёстко прибиваем к сетке
+        margin-bottom: 0 !important;
       }
 
-      // Переопределим только дом и квартиру
       &.quarter:nth-child(2),
       &.quarter:nth-child(3) {
         width: calc(50% - 0.5rem);
