@@ -106,7 +106,7 @@
   font-size: 1rem;
   color: #000000;
   background-color: #ffffff;
-  border: 1px solid #f2f2f3;
+  border: 0.063rem solid #f2f2f3;
   border-radius: 0.75rem;
   height: 2.5rem;
   padding: 0 1rem;
@@ -253,11 +253,13 @@ input[type=date]:not([data-default=true]) {
   align-items: center;
   gap: 1rem;
   flex-shrink: 0;
+  min-width: 0;
 }
 .cart__controls-bottom {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  min-width: 0;
 }
 .cart__item-content {
   display: flex;
@@ -321,10 +323,20 @@ input[type=date]:not([data-default=true]) {
   height: 2.8rem;
   text-align: center;
   border-radius: 0.75rem;
-  border: 1px solid #f2f2f3;
+  border: 0.063rem solid #f2f2f3;
   font-size: 1rem;
   line-height: 2.8rem;
   background-color: #ffffff;
+}
+.cart__price-delete-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+  flex-shrink: 1;
+  min-width: 0;
+  max-width: 100%;
 }
 .cart__price-total {
   /* служебный миксин, его использовать не надо */
@@ -332,12 +344,14 @@ input[type=date]:not([data-default=true]) {
   font-weight: var(--basic-font-weight);
   font-size: 1.5rem;
   line-height: 133%;
-  width: 12.5rem;
-  margin-left: 1rem;
   text-align: right;
   white-space: nowrap;
   position: relative;
   top: 0.125rem;
+  min-width: 5rem;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .cart__delete {
   width: 2.5rem;
@@ -585,6 +599,15 @@ select.cart__input.is-valid {
     justify-content: center;
     text-align: center;
   }
+  .cart__price-delete-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+    min-width: 0;
+  }
   .cart__price-total {
     font-size: 1.5rem;
     font-weight: 600;
@@ -720,6 +743,12 @@ select.cart__input.is-valid {
     align-items: center;
     justify-content: center;
     text-align: center;
+  }
+  .cart__price-delete-wrapper {
+    width: 100%;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
   }
   .cart__price-total {
     font-size: 1.5rem;
