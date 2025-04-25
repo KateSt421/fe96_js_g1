@@ -353,8 +353,7 @@ input[type='date'] {
     p,
     h3,
     .total__amount {
-      @include title_Montserrat_semi;
-      font-size: 1.5rem;
+      @include montserrat_semi_XL;
       margin: 0;
     }
   }
@@ -470,8 +469,13 @@ select.cart__input.is-valid {
   }
 
   .cart__details {
-    flex: 1 1 calc(100% - 7rem); // картинка 6rem + gap
+    flex: 1 1 calc(100% - 7rem);
     margin-left: 1rem;
+  }
+
+  .cart__name,
+  .cart__unit-price {
+    @include montserrat_semi_M;
   }
 
   .cart__controls {
@@ -507,9 +511,10 @@ select.cart__input.is-valid {
   }
 
   .cart__count {
-    width: 3rem;
+    width: 7rem;
     height: 2.5rem;
     font-size: 1rem;
+    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -517,21 +522,22 @@ select.cart__input.is-valid {
   }
 
   .cart__price-total {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    font-weight: 600;
     white-space: nowrap;
     text-align: right;
   }
 
   .cart__delete {
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
 
     img {
-      width: 1.25rem;
-      height: 1.25rem;
+      width: 1.5rem;
+      height: 1.5rem;
     }
   }
 

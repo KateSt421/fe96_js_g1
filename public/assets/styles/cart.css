@@ -409,7 +409,8 @@ input[type=date]:not([data-default=true]) {
   /* служебный миксин, его использовать не надо */
   font-family: "Montserrat";
   font-weight: var(--basic-font-weight);
-  font-size: 1.5rem;
+  font-size: 2rem;
+  line-height: 2.5rem;
   margin: 0;
 }
 .cart__delivery {
@@ -529,6 +530,14 @@ select.cart__input.is-valid {
     flex: 1 1 calc(100% - 7rem);
     margin-left: 1rem;
   }
+  .cart__name,
+  .cart__unit-price {
+    /* служебный миксин, его использовать не надо */
+    font-family: "Montserrat";
+    font-weight: var(--basic-font-weight);
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
   .cart__controls {
     display: flex;
     flex-wrap: wrap;
@@ -558,29 +567,31 @@ select.cart__input.is-valid {
     justify-content: center;
   }
   .cart__count {
-    width: 3rem;
+    width: 7rem;
     height: 2.5rem;
     font-size: 1rem;
+    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
   }
   .cart__price-total {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    font-weight: 600;
     white-space: nowrap;
     text-align: right;
   }
   .cart__delete {
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .cart__delete img {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1.5rem;
+    height: 1.5rem;
   }
   .cart__promo {
     flex-wrap: wrap;
