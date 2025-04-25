@@ -34,3 +34,36 @@ height: 2.5rem;
 background: $Black_01;
 border-radius: 2.5rem;
 }
+.tx_1{
+  display: flex;
+  justify-content: space-between;
+}
+.tx_num_1{
+  font-weight: 800;
+  @include montserrat_semi_L;
+}
+.nt_1{
+font-size: 20px;
+margin: 0;
+}
+.section_right{
+  width: 15%;
+}
+.row{
+  width: 85%;
+}
+.container-horizontal {
+  display: flex;
+  align-items: stretch; 
+  flex-direction: row-reverse;
+}
+.section_text{
+  @include montserrat_regular_S;
+  color: rgba(0, 0, 0, 0.64);
+  font-size: 0.8rem;
+}
+
+
+
+
+

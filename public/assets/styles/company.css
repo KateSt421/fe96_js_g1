@@ -110,4 +110,47 @@
   height: 2.5rem;
   background: #010101;
   border-radius: 2.5rem;
+}
+
+.tx_1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tx_num_1 {
+  font-weight: 800;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
+  font-size: 1.5rem;
+  line-height: 133%;
+}
+
+.nt_1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.section_right {
+  width: 15%;
+}
+
+.row {
+  width: 85%;
+}
+
+.container-horizontal {
+  display: flex;
+  align-items: stretch;
+  flex-direction: row-reverse;
+}
+
+.section_text {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--title-font-weight);
+  font-size: 1rem;
+  line-height: 150%;
+  color: rgba(0, 0, 0, 0.64);
+  font-size: 0.8rem;
 }/*# sourceMappingURL=company.css.map */
