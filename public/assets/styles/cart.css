@@ -656,7 +656,6 @@ select.cart__input.is-valid {
     align-items: flex-start;
     gap: 0.75rem;
     padding: 0.75rem;
-    width: 100%;
     box-sizing: border-box;
   }
   .cart__item-content {
@@ -691,14 +690,16 @@ select.cart__input.is-valid {
     align-items: flex-end;
     gap: 0.5rem;
     width: 100%;
+    padding-inline-end: clamp(0.5rem, 4vw, 1rem);
+    box-sizing: border-box;
   }
   .cart__quantity-controls,
   .cart__controls-bottom {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    gap: 1rem;
     gap: 0.5rem;
-    padding-inline-end: clamp(0.5rem, 4vw, 1rem);
     flex-shrink: 1;
     min-width: 0;
     max-width: 100%;

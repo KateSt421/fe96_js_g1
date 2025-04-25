@@ -222,9 +222,6 @@ class CartManager {
       el.addEventListener('input', () => this.validateField(el, this.regex[id]))
     })
 
-    dateInput.addEventListener('change', () => this.validateDate(dateInput))
-    timeInput.addEventListener('change', () => this.validateTime(timeInput))
-
     form.addEventListener('submit', (e) => {
       e.preventDefault()
 
@@ -236,8 +233,6 @@ class CartManager {
         ),
         this.validateField(document.getElementById('house'), this.regex.house),
         this.validateField(document.getElementById('apt'), this.regex.apt),
-        this.validateDate(dateInput),
-        this.validateTime(timeInput),
       ]
 
       const isValid = validations.every(Boolean)
@@ -248,6 +243,46 @@ class CartManager {
         this.loadCart()
       }
     })
+  }
+
+  //По макету сейчас нет валидации полей Дата и Время, на всякий случай оставила методы, но они сейчас нигде не вызываются
+  validateDate(input) {
+    const value = input.value
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
+
+    const selectedDate = new Date(value)
+
+    const error = input.nextElementSibling
+
+    if (!value || isNaN(selectedDate) || selectedDate < today) {
+      input.classList.add('is-invalid')
+      input.classList.remove('is-valid')
+      if (error) error.textContent = 'Введите корректную дату'
+      return false
+    }
+
+    input.classList.remove('is-invalid')
+    input.classList.add('is-valid')
+    if (error) error.textContent = ''
+    return true
+  }
+
+  validateTime(input) {
+    const value = input.value
+    const error = input.nextElementSibling
+
+    if (!value || value === 'Любое') {
+      input.classList.add('is-invalid')
+      input.classList.remove('is-valid')
+      if (error) error.textContent = 'Выберите время доставки'
+      return false
+    }
+
+    input.classList.remove('is-invalid')
+    input.classList.add('is-valid')
+    if (error) error.textContent = ''
+    return true
   }
 
   get regex() {
@@ -311,4 +346,6 @@ if (document.getElementById('cart-items')) {
   cartManager.loadCart()
 }
 
-module.exports = cartManager
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = cartManager
+}
