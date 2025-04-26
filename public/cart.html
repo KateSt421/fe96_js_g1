@@ -46,6 +46,68 @@
     <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
   </head>
   <body>
+  <header class="header">
+      <nav class="header__nav">
+        <!-- бургер меню -->
+        <div class="burger">
+          <div class="burger__field" id="burger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </div>
+
+        <!-- логотип компании -->
+        <div class="nav__logo">
+          <img
+            src="./assets/images/vector_logo.svg"
+            alt="company logo"
+            class="nav__logo-icon"
+          />
+          <a href="/">
+            <img
+              src="./assets/images/vector_Planty.svg"
+              alt="company logo"
+              class="nav__logo-text"
+            />
+          </a>
+        </div>
+
+        <!-- навигация по сайту -->
+        <ul class="nav__menu" id="menu">
+          <li><a href="index.html" class="nav__menu-plants">Растения</a></li>
+          <li><a href="service.html" class="nav__menu-services">Услуги</a></li>
+          <li><a href="company.html" class="nav__menu-company">О&nbsp;Нас</a></li>
+        </ul>
+
+        <!-- иконки -->
+        <div class="nav__icons">
+          <button class="cart-link" id="searchToggle">
+<!--            <i class="fa-solid fa-magnifying-glass"></i>-->
+          </button>
+          <a href="/questions.html" class="cart-link">
+            <i class="fa-regular fa-user fa-sm"></i>
+          </a>
+          <a href="/cart.html" class="cart-link">
+            <span id="cart-count" class="cart-count"></span>
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+        </div>
+      </nav>
+
+      <!-- попап для бургера (для мобилки) -->
+      <div class="header__popup" id="popup"></div>
+
+      <!-- инпут для поиска по сайту-->
+      <form class="header__searchContainer" id="searchContainer">
+        <div class="input-container">
+          <input type="text" id="search" placeholder="Поиск..." />
+          <span id="clearButton" class="clearButton">
+            <img src="./assets/images/vector_close.svg" alt="erase" />
+          </span>
+        </div>
+      </form>
+    </header>
     <div class="cart container">
       <section class="cart__header">
         <div class="cart__header-top">

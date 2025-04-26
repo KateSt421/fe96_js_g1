@@ -69,12 +69,15 @@ popup.appendChild(menu);
 
 const links = Array.from(menu.children);
 
-links.forEach((link) => {
-    link.addEventListener("click", closeOnClick);
-});
-
 const closeOnClick = () => {
     popup.classList.remove("open");
     burger.classList.remove("active");
     body.classList.remove("noscroll");
 }
+
+links.forEach((link) => {
+    if (link) {
+        link.addEventListener("click", closeOnClick);
+    }
+});
+
