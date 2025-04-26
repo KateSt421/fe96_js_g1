@@ -63,10 +63,7 @@ class PlantStore {
     const activeCategory = document.querySelector('[data-category="flowering"]')
     if (activeCategory) {
       activeCategory.classList.add('active')
-    } else
-      document
-        .querySelector('[data-category="service"]')
-        .classList.add('active')
+    }
   }
 
   filterByCategory(category) {
