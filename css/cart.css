@@ -1,0 +1,286 @@
+@charset "UTF-8";
+/* ----------- Константы ----------- */
+:root {
+  --basic-font-weight: 600;
+  --title-font-weight: 400;
+}
+
+/* ----------- Цвета ----------- */
+/* ----------- Стили шрифтов ----------- */
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-SemiBold.eot");
+  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("../fonts/Montserrat-SemiBold.woff") format("woff"), url("../fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: var(--basic-font-weight);
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.eot");
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Belleza";
+  src: url("../fonts/Belleza-Regular.eot");
+  src: local("Belleza Regular"), local("Belleza-Regular"), url("../fonts/Belleza-Regular.woff2") format("woff2"), url("../fonts/Belleza-Regular.woff") format("woff"), url("../fonts/Belleza-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Заголовки, на макете шрифты */
+/* Жирные цифры */
+/* Заголовки, на макете шрифт Belleza */
+/* ----------- Размеры отступов, паддингов ----------- */
+/* ----------- Ограничения ширин, шаблоны для @media ----------- */
+/* ----------- Кнопки и ссылки ----------- */
+/* разные настройки размеров кнопок */
+/* ----------- Контейнеры-карточки ----------- */
+.cart {
+  padding: 3rem;
+  padding-bottom: 6rem;
+}
+.cart__header {
+  background-color: #f2f2f3;
+  border-radius: 2rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+.cart__header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.cart__btn-clear {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 0.625rem 1.25rem;
+  background-color: rgba(0, 0, 0, 0.05);
+  border: none;
+  border-radius: 2.5rem;
+  cursor: pointer;
+}
+.cart__items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.cart__item {
+  background-color: #ffffff;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  gap: 1.5rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.02);
+}
+.cart__item img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 1.5rem;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.cart__details {
+  flex-grow: 1;
+  margin: 0 1.5rem;
+}
+.cart .cart__title {
+  font-family: "Belleza", serif !important;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+.cart .cart__name,
+.cart .cart__unit-price {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.cart__quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.cart__quantity-controls .cart__btn {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #f2f2f3;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding: 0;
+}
+.cart__quantity-controls .cart__count {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--title-font-weight);
+  font-size: 1rem;
+  line-height: 150%;
+  min-width: 1.5rem;
+  text-align: center;
+}
+.cart .cart__price-total {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
+  font-size: 1.5rem;
+  line-height: 133%;
+  font-size: 1rem;
+  min-width: 5rem;
+  white-space: nowrap;
+  text-align: right;
+}
+.cart__promo {
+  background-color: #f2f2f3;
+  border-radius: 2rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart__promo .promo__input {
+  width: 18.375rem;
+  height: 2.5rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+  border: 1px solid #f2f2f3;
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+}
+.cart__promo .promo__btn {
+  height: 2.5rem;
+  padding: 0 1.5rem;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+.cart__promo .promo__discount {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
+  font-size: 1.5rem;
+  line-height: 133%;
+}
+.cart__price-total, .cart__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.cart__price-total p,
+.cart__price-total h3,
+.cart__price-total .total__amount, .cart__total p,
+.cart__total h3,
+.cart__total .total__amount {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
+  font-size: 1.5rem;
+  margin: 0;
+}
+.cart__delivery {
+  background-color: #f2f2f3;
+  border-radius: 2rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+.cart__delivery .form-label {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--title-font-weight);
+  font-size: 1rem;
+  line-height: 150%;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.cart__delivery .cart__input {
+  font-size: 1rem;
+  color: #000000;
+  background-color: #ffffff;
+  border: 1px solid #f2f2f3;
+  border-radius: 0.75rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  padding: 0 1rem;
+  width: 100%;
+}
+.cart__delivery .form__group-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.cart__delivery .form__group-row .half {
+  width: 50%;
+}
+.cart__delivery .form__group-row .quarter {
+  width: 25%;
+}
+.cart__btn-pay {
+  box-sizing: border-box;
+  height: 3.25rem;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 3rem;
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
+  font-size: 1rem;
+  line-height: 125%;
+  border-radius: 2.5rem;
+  display: block;
+  margin: 2rem auto 0;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+.cart__empty-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  padding: 4rem 0;
+}
+.cart__empty-img {
+  width: 8rem;
+  height: 8rem;
+  object-fit: contain;
+}
+.cart__empty-text {
+  /* служебный миксин, его использовать не надо */
+  font-family: "Montserrat";
+  font-weight: var(--basic-font-weight);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-size: 1.25rem;
+  margin: 0;
+  text-align: center;
+}
+
+.form__submit {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/*# sourceMappingURL=cart.css.map */

@@ -17,11 +17,11 @@ describe('check whole f*ng cart', () => {
     console.log(document.body.childElementCount)
     console.log(document.body.childNodes.length)
     const cartItems = document.getElementById('clear-cart')
-    expect(cartItems.textContent).toEqual('Очистить')
+    expect(cartItems.textContent.trim()).toEqual('Очистить')
   })
 
   test('the DOM opens correctly and sees the page', () => {
-    const cart = document.querySelector('.product-card')
+    const cart = document.querySelector('.cart__item')
     expect(cart).toBeNull()
 
     const cartWrapper = document.querySelector('.cart__empty-wrapper')
@@ -46,7 +46,7 @@ describe('check whole f*ng cart', () => {
     cartManager.loadCart()
 
     // В DOM не должно быть карточек товара
-    expect(document.querySelector('.product-card')).toBeNull()
+    expect(document.querySelector('.cart__item')).toBeNull()
 
     // Должен отображаться empty‑state
     const emptyText = document.querySelector('.cart__empty-text')
@@ -60,8 +60,8 @@ describe('check whole f*ng cart', () => {
     localStorage.setItem('cart', JSON.stringify(fakeCart))
     cartManager.loadCart()
 
-    // Должен быть отображён .product-card
-    const card = document.querySelector('.product-card')
+    // Должен быть отображён .cart__item
+    const card = document.querySelector('.cart__item')
     expect(card).not.toBeNull()
     expect(card.getAttribute('data-plant-id')).toBe('42')
 
@@ -84,5 +84,80 @@ describe('check whole f*ng cart', () => {
     expect(
       getComputedStyle(document.getElementById('checkout-form')).display
     ).not.toBe('none')
+  })
+
+  //Тренируюсь на кошках...
+
+  //Удаление товара
+  test('remove item from cart', () => {
+    const cart = [
+      { id: 1, name: 'Pasta', price: 100, quantity: 1 },
+      { id: 2, name: 'Sauce', price: 50, quantity: 1 },
+    ]
+    localStorage.setItem('cart', JSON.stringify(cart))
+
+    cartManager.removeItem(1)
+
+    const updated = JSON.parse(localStorage.getItem('cart'))
+    expect(updated.length).toBe(1)
+    expect(updated[0].id).toBe(2)
+  })
+
+  //Очистка корзины
+  test('clear cart removes all items', () => {
+    const cart = [{ id: 1, name: 'Cheese', price: 80, quantity: 1 }]
+    localStorage.setItem('cart', JSON.stringify(cart))
+
+    cartManager.clearCart()
+
+    const cleared = JSON.parse(localStorage.getItem('cart'))
+    expect(cleared).toEqual([])
+  })
+
+  //updateQuantity удаляет товар при quantity === 0
+  test('updateQuantity removes item when quantity reaches 0', () => {
+    const cart = [{ id: 3, name: 'Garlic', price: 20, quantity: 1 }]
+    localStorage.setItem('cart', JSON.stringify(cart))
+
+    cartManager.updateQuantity(3, -1)
+
+    const result = JSON.parse(localStorage.getItem('cart'))
+    expect(result).toEqual([])
+  })
+
+  //getTotal() должен считать общую сумму
+  test('getTotal returns correct sum', () => {
+    const cart = [
+      { id: 1, price: 100, quantity: 2 }, // 200
+      { id: 2, price: 50, quantity: 1 }, // 50
+    ]
+    localStorage.setItem('cart', JSON.stringify(cart))
+
+    const total = cartManager.getTotal()
+    expect(total).toBe(250)
+  })
+
+  //При loadCart() отрисовываются элементы
+  test('loadCart renders cart items in DOM', () => {
+    const cart = [
+      {
+        id: 1,
+        name: 'Фикус',
+        image: 'img.jpg',
+        price: 100,
+        quantity: 1,
+        category: 'plant',
+      },
+    ]
+    localStorage.setItem('cart', JSON.stringify(cart))
+
+    cartManager.loadCart()
+
+    const cartItems = document.getElementById('cart-items')
+    const nameElement = cartItems.querySelector('.cart__name')
+    expect(nameElement).not.toBeNull()
+    expect(nameElement.textContent).toContain('Фикус')
+
+    expect(cartItems.querySelectorAll('.cart__item').length).toBe(1)
   })
 })

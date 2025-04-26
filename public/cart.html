@@ -16,6 +16,10 @@
       src="https://kit.fontawesome.com/362708026e.js"
       crossorigin="anonymous"
     ></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Belleza&display=swap"
+    />
     <link href="assets/styles/cart.css" rel="stylesheet" />
     <link href="assets/styles/cards.css" rel="stylesheet" />
     <link href="assets/styles/styles.css" rel="stylesheet" />
@@ -42,102 +46,14 @@
     <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
   </head>
   <body>
-    <!--<div class="container">
-      <nav class="mt-3">
-        <a href="/" class="btn btn-outline-success">&larr; Back to Shop</a>
-      </nav>
-      <h1>Shopping Cart</h1>
-      <div class="row">
-        <div class="col-md-8">
-          <div id="cart-items"></div>
-        </div>
-        <div class="col-md-4">
-          <div class="checkout-form">
-            <h3>Checkout</h3>
-            <form id="checkout-form">
-              <div class="mb-3">
-                <label>Address</label>
-                <input type="text" class="form-control" required />
-              </div>
-              <div class="price-summary">
-                <p>Subtotal: <span id="subtotal">$0</span></p>
-                <p>Discount: <span id="discount">$0</span></p>
-                <p>Total: <span id="total">$0</span></p>
-              </div>
-              <button type="submit" class="category-btn">Place Order</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>-->
-
-    <header class="header">
-      <nav class="header__nav">
-        <!-- бургер меню -->
-        <div class="burger">
-          <div class="burger__field" id="burger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </div>
-        </div>
-
-        <!-- логотип компании -->
-        <div class="nav__logo">
-          <img
-            src="./assets/images/vector_logo.svg"
-            alt="company logo"
-            class="nav__logo-icon"
-          />
-          <a href="/">
-            <img
-              src="./assets/images/vector_Planty.svg"
-              alt="company logo"
-              class="nav__logo-text"
-            />
-          </a>
-        </div>
-
-        <!-- навигация по сайту -->
-        <ul class="nav__menu" id="menu">
-          <li><a href="index.html" class="nav__menu-plants">Растения</a></li>
-          <li><a href="service.html" class="nav__menu-services">Услуги</a></li>
-          <li><a href="company.html" class="nav__menu-company">О&nbsp;Нас</a></li>
-        </ul>
-
-        <!-- иконки -->
-        <div class="nav__icons">
-          <button class="cart-link" id="searchToggle">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-          <a href="/cart.html" class="cart-link">
-            <i class="fa-regular fa-user fa-sm"></i>
-          </a>
-          <a href="/cart.html" class="cart-link">
-            <span id="cart-count" class="cart-count"></span>
-            <i class="fa-solid fa-cart-shopping"></i>
-          </a>
-        </div>
-      </nav>
-
-      <!-- попап для бургера (для мобилки) -->
-      <div class="header__popup" id="popup"></div>
-
-      <!-- инпут для поиска по сайту-->
-      <form class="header__searchContainer" id="searchContainer">
-        <div class="input-container">
-          <input type="text" id="search" placeholder="Поиск..." />
-          <span id="clearButton" class="clearButton">
-            <img src="./assets/images/vector_close.svg" alt="erase" />
-          </span>
-        </div>
-      </form>
-    </header>
-
     <div class="cart container">
       <section class="cart__header">
-        <h1 class="cart__title">Корзина</h1>
-        <button class="cart__btn-clear" id="clear-cart">Очистить</button>
+        <div class="cart__header-top">
+          <h1 class="cart__title">Корзина</h1>
+          <button type="button" class="cart__btn-clear" id="clear-cart">
+            Очистить
+          </button>
+        </div>
 
         <div id="cart-items" class="cart__items"></div>
       </section>
@@ -149,8 +65,6 @@
         </div>
         <div class="promo__discount" id="discount">0 ₽</div>
       </section>
-
-      <p>Всего: <span id="subtotal">0 ₽</span></p>
 
       <section id="cart-total" class="cart__total">
         <h3>Итого</h3>
@@ -167,8 +81,9 @@
               type="text"
               id="name"
               class="cart__input input--name"
-              required
+              placeholder="Имя"
             />
+            <div class="form-error"></div>
           </div>
 
           <div class="form__group-row">
@@ -178,8 +93,9 @@
                 type="text"
                 id="street"
                 class="cart__input input--street"
-                required
+                placeholder="ул.Ленина"
               />
+              <div class="form-error"></div>
             </div>
             <div class="form__group quarter">
               <label for="house" class="form-label">Дом*</label>
@@ -187,17 +103,19 @@
                 type="text"
                 id="house"
                 class="cart__input input--house"
-                required
+                placeholder="12к1"
               />
+              <div class="form-error"></div>
             </div>
             <div class="form__group quarter">
-              <label for="apt" class="form-label">Квартира / офис*</label>
+              <label for="apt" class="form-label">Кв./ офис*</label>
               <input
                 type="text"
                 id="apt"
                 class="cart__input input--apt"
-                required
+                placeholder="12"
               />
+              <div class="form-error"></div>
             </div>
           </div>
 
@@ -205,11 +123,12 @@
             <div class="form__group half">
               <label for="date" class="form-label">Дата</label>
               <input type="date" id="date" class="cart__input input--date" />
+              <div class="form-error"></div>
             </div>
             <div class="form__group half">
               <label for="time" class="form-label">Время</label>
               <select id="time" class="cart__input input--time">
-                <option selected>Любое</option>
+                <option value="" selected disabled hidden>Любое</option>
                 <option>08:00 - 10:00</option>
                 <option>10:00 - 12:00</option>
                 <option>12:00 - 14:00</option>
@@ -218,61 +137,16 @@
                 <option>18:00 - 20:00</option>
                 <option>20:00 - 22:00</option>
               </select>
+              <div class="form-error"></div>
             </div>
           </div>
         </section>
 
         <div class="form__submit">
-          <button class="cart__btn-pay">Оплатить</button>
+          <button type="submit" class="cart__btn-pay">Оплатить</button>
         </div>
       </form>
     </div>
-
-    <footer>
-      <div class="container">
-        <img
-          src="assets/images/logo.png"
-          alt="Логотип"
-          class="mb-3"
-          style="max-width: 123px"
-        />
-
-        <ul class="list-inline mb-3">
-          <li class="list-inline-item">
-            <a href="/" class="text-dark">Каталог</a>
-          </li>
-          <li class="list-inline-item">
-            <a href="service.html" class="text-dark">Услуги</a>
-          </li>
-          <li class="list-inline-item">
-            <a href="company.html" class="text-dark">Компания</a>
-          </li>
-        </ul>
-        <div class="social-icons">
-          <a
-            class="media-brands"
-            target="_blank"
-            href="#"
-          >
-            <i class="fab fa-vk"></i>&nbsp;
-          </a>
-          <a
-            class="media-brands"
-            href="#"
-            target="_blank"
-          >
-            <i class="fa fa-pinterest-p" aria-hidden="true"></i
-          ></a>
-          <a
-            class="media-brands"
-            href="#"
-            target="_blank"
-          >
-            <i class="fa fa-telegram" aria-hidden="true"></i
-          ></a>
-        </div>
-      </div>
-    </footer>
 
     <script src="cart.js"></script>
     <script src="header.js"></script>
